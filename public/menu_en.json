@@ -12,7 +12,7 @@
           "description": "Fresh pita bread with chicken, lettuce, tomatoes, onions and sauce",
           "price": 6.50,
           "popular": true,
-          "image": "/placeholder.svg"
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "beef-doner",
@@ -20,7 +20,7 @@
           "description": "Premium beef with fresh ingredients and homemade sauce",
           "price": 7.50,
           "popular": true,
-          "image": "/placeholder.svg"
+          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "veggie-doner",
@@ -28,7 +28,7 @@
           "description": "Grilled vegetables, falafel, fresh salad and tahini sauce",
           "price": 6.00,
           "vegetarian": true,
-          "image": "/placeholder.svg"
+          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "spicy-doner",
@@ -36,7 +36,14 @@
           "description": "With extra spicy sauce and jalapeños",
           "price": 7.00,
           "spicy": true,
-          "image": "/placeholder.svg"
+          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "mixed-doner",
+          "name": "Mixed Meat Doner",
+          "description": "Combination of chicken and beef with special sauce",
+          "price": 8.00,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         }
       ]
     },
@@ -49,14 +56,116 @@
           "name": "Chicken Dürüm",
           "description": "Thin flatbread rolled with chicken and fresh ingredients",
           "price": 7.00,
-          "image": "/placeholder.svg"
+          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "lamb-durum",
           "name": "Lamb Dürüm",
           "description": "Tender lamb meat in thin flatbread",
           "price": 8.00,
-          "image": "/placeholder.svg"
+          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "adana-durum",
+          "name": "Adana Dürüm",
+          "description": "Spicy minced meat kebab in lavash bread",
+          "price": 8.50,
+          "spicy": true,
+          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "vegan-durum",
+          "name": "Vegan Dürüm",
+          "description": "Plant-based proteins with fresh vegetables and vegan sauce",
+          "price": 7.50,
+          "vegetarian": true,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+        }
+      ]
+    },
+    {
+      "id": "platters",
+      "name": "Kebab Platters",
+      "items": [
+        {
+          "id": "mixed-grill",
+          "name": "Mixed Grill Platter",
+          "description": "Assorted grilled meats with rice, salad and bread",
+          "price": 15.00,
+          "popular": true,
+          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "chicken-platter",
+          "name": "Chicken Shish Platter",
+          "description": "Grilled chicken skewers with bulgur rice and vegetables",
+          "price": 12.00,
+          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "lamb-platter",
+          "name": "Lamb Shish Platter",
+          "description": "Tender lamb skewers with traditional sides",
+          "price": 14.00,
+          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "vegetarian-platter",
+          "name": "Vegetarian Platter",
+          "description": "Falafel, grilled vegetables, hummus and tabbouleh",
+          "price": 11.00,
+          "vegetarian": true,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+        }
+      ]
+    },
+    {
+      "id": "salads",
+      "name": "Fresh Salads",
+      "items": [
+        {
+          "id": "shepherd-salad",
+          "name": "Shepherd's Salad",
+          "description": "Tomatoes, cucumbers, onions, peppers with olive oil and lemon",
+          "price": 5.50,
+          "vegetarian": true,
+          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "tabbouleh",
+          "name": "Tabbouleh",
+          "description": "Fresh parsley salad with bulgur, tomatoes and mint",
+          "price": 6.00,
+          "vegetarian": true,
+          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "chicken-salad",
+          "name": "Grilled Chicken Salad",
+          "description": "Mixed greens with grilled chicken and Mediterranean dressing",
+          "price": 8.50,
+          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
+        }
+      ]
+    },
+    {
+      "id": "soups",
+      "name": "Traditional Soups",
+      "items": [
+        {
+          "id": "lentil-soup",
+          "name": "Red Lentil Soup",
+          "description": "Turkish red lentil soup with herbs and spices",
+          "price": 4.50,
+          "vegetarian": true,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "chicken-soup",
+          "name": "Chicken Broth",
+          "description": "Traditional chicken soup with vegetables",
+          "price": 5.00,
+          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         }
       ]
     },
@@ -69,7 +178,7 @@
           "name": "Golden Fries",
           "description": "Crispy golden french fries",
           "price": 3.50,
-          "image": "/placeholder.svg"
+          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "hummus",
@@ -77,15 +186,61 @@
           "description": "Homemade hummus with warm pita bread",
           "price": 4.00,
           "vegetarian": true,
-          "image": "/placeholder.svg"
+          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
+        {
+          "id": "stuffed-grape-leaves",
+          "name": "Stuffed Grape Leaves",
+          "description": "Dolma with rice, herbs and olive oil",
+          "price": 5.50,
+          "vegetarian": true,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "cheese-borek",
+          "name": "Cheese Börek",
+          "description": "Crispy pastry filled with cheese and herbs",
+          "price": 4.50,
+          "vegetarian": true,
+          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "falafel",
+          "name": "Falafel (6 pieces)",
+          "description": "Deep-fried chickpea balls with tahini sauce",
+          "price": 5.00,
+          "vegetarian": true,
+          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Sweet Desserts",
+      "items": [
         {
           "id": "baklava",
           "name": "Baklava",
           "description": "Sweet Turkish pastry with nuts and honey",
           "price": 3.00,
           "vegetarian": true,
-          "image": "/placeholder.svg"
+          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "kunefe",
+          "name": "Künefe",
+          "description": "Traditional cheese pastry soaked in syrup",
+          "price": 4.50,
+          "vegetarian": true,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "rice-pudding",
+          "name": "Rice Pudding",
+          "description": "Creamy Turkish rice pudding with cinnamon",
+          "price": 3.50,
+          "vegetarian": true,
+          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         }
       ]
     },
@@ -98,21 +253,42 @@
           "name": "Ayran",
           "description": "Turkish yogurt drink",
           "price": 2.50,
-          "image": "/placeholder.svg"
+          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "turkish-tea",
           "name": "Turkish Tea",
           "description": "Traditional black tea",
           "price": 2.00,
-          "image": "/placeholder.svg"
+          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "turkish-coffee",
+          "name": "Turkish Coffee",
+          "description": "Strong traditional coffee with foam",
+          "price": 3.00,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "cola",
           "name": "Cola",
           "description": "Refreshing cola drink",
           "price": 2.50,
-          "image": "/placeholder.svg"
+          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "fresh-orange",
+          "name": "Fresh Orange Juice",
+          "description": "Freshly squeezed orange juice",
+          "price": 3.50,
+          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "pomegranate-juice",
+          "name": "Pomegranate Juice",
+          "description": "Fresh pomegranate juice",
+          "price": 4.00,
+          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         }
       ]
     }

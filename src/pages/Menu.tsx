@@ -121,14 +121,15 @@ export default function Menu() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.15,
+        delayChildren: 0.1
       }
     }
   };
 
   const categoryVariants = {
     hidden: { 
-      opacity: 0,
+      opacity: 0, 
       x: isRTL ? 50 : -50,
       scale: 0.95
     },
@@ -137,7 +138,10 @@ export default function Menu() {
       x: 0,
       scale: 1,
       transition: {
-        duration: 0.5
+        duration: 0.6,
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 15
       }
     }
   };
@@ -145,7 +149,7 @@ export default function Menu() {
   const itemVariants = {
     hidden: { 
       opacity: 0, 
-      y: 20,
+      y: 30,
       scale: 0.95
     },
     visible: {
@@ -153,23 +157,69 @@ export default function Menu() {
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.4
+        duration: 0.5,
+        type: "spring" as const,
+        stiffness: 120,
+        damping: 12
       }
     },
     hover: {
       scale: 1.02,
-      y: -2,
+      y: -4,
       transition: {
-        duration: 0.2
+        duration: 0.2,
+        type: "spring" as const,
+        stiffness: 400,
+        damping: 10
       }
     }
   };
 
   const cardImageVariants = {
     hover: {
-      scale: 1.05,
+      scale: 1.1,
       transition: {
-        duration: 0.3
+        duration: 0.4,
+        type: "spring" as const,
+        stiffness: 200,
+        damping: 15
+      }
+    }
+  };
+
+  const buttonVariants = {
+    hover: { 
+      scale: 1.05,
+      transition: { 
+        duration: 0.2,
+        type: "spring" as const,
+        stiffness: 400,
+        damping: 10
+      }
+    },
+    tap: { 
+      scale: 0.95,
+      transition: { 
+        duration: 0.1 
+      }
+    }
+  };
+
+  const cartBadgeVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: { 
+      scale: 1, 
+      opacity: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 500,
+        damping: 15
+      }
+    },
+    hover: {
+      scale: 1.1,
+      transition: {
+        duration: 0.2
       }
     }
   };
