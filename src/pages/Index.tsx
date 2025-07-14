@@ -16,7 +16,7 @@ const Index = () => {
 
   const handleLanguageSelect = (langCode: string) => {
     localStorage.setItem('selectedLanguage', langCode);
-    navigate('/menu');
+    navigate(`/menu/${langCode}`);
   };
 
   const containerVariants = {
