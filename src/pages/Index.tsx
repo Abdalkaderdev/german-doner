@@ -36,8 +36,7 @@ const Index = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1]
+        duration: 0.6
       }
     }
   };
@@ -62,15 +61,13 @@ const Index = () => {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.5,
-        ease: [0.4, 0, 0.2, 1]
+        duration: 0.5
       }
     },
     hover: {
       scale: 1.05,
       transition: {
-        duration: 0.2,
-        ease: [0.4, 0, 0.2, 1]
+        duration: 0.2
       }
     },
     tap: {

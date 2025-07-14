@@ -137,8 +137,7 @@ export default function Menu() {
       x: 0,
       scale: 1,
       transition: {
-        duration: 0.5,
-        ease: [0.4, 0, 0.2, 1]
+        duration: 0.5
       }
     }
   };
@@ -154,16 +153,14 @@ export default function Menu() {
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.4,
-        ease: [0.4, 0, 0.2, 1]
+        duration: 0.4
       }
     },
     hover: {
       scale: 1.02,
       y: -2,
       transition: {
-        duration: 0.2,
-        ease: "easeInOut"
+        duration: 0.2
       }
     }
   };
@@ -172,8 +169,7 @@ export default function Menu() {
     hover: {
       scale: 1.05,
       transition: {
-        duration: 0.3,
-        ease: "easeInOut"
+        duration: 0.3
       }
     }
   };
