@@ -312,7 +312,7 @@ export default function Menu() {
             <Separator orientation="vertical" className="h-4" />
             <div className="flex items-center gap-2 text-muted-foreground">
               <MapPin className="h-4 w-4" />
-              <span>Friedrichshain, Berlin</span>
+              <span>Queen Towers, Erbil Iraq</span>
             </div>
             <Separator orientation="vertical" className="h-4" />
             <div className="flex items-center gap-2 text-muted-foreground">
