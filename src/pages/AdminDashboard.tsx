@@ -18,10 +18,10 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
-import MenuManagement from "@/components/admin/MenuManagement";
-import RestaurantSettings from "@/components/admin/RestaurantSettings";
-import LiveUpdates from "@/components/admin/LiveUpdates";
-import AnalyticsDashboard from "@/components/admin/AnalyticsDashboard";
+import { MenuManagement } from "@/components/admin/MenuManagement";
+import { RestaurantSettings } from "@/components/admin/RestaurantSettings";
+import { LiveUpdates } from "@/components/admin/LiveUpdates";
+import { AnalyticsDashboard } from "@/components/admin/AnalyticsDashboard";
 import MenuEditor from "@/components/admin/MenuEditor";
 
 export default function AdminDashboard() {
