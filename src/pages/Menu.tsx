@@ -16,6 +16,14 @@ interface MenuItem {
   spicy?: boolean;
   vegetarian?: boolean;
   popular?: boolean;
+  available?: boolean;
+  stock?: number;
+  isSpecial?: boolean;
+  specialPrice?: number;
+  halal?: boolean;
+  vegan?: boolean;
+  glutenFree?: boolean;
+  allergens?: string[];
 }
 
 interface MenuCategory {
@@ -350,7 +358,7 @@ export default function Menu() {
                   className="grid gap-6 md:gap-8"
                   variants={containerVariants}
                 >
-                  {category.items.map((item, index) => (
+                  {category.items.filter(item => item.available !== false && (item.stock === undefined || item.stock > 0)).map((item, index) => (
                     <motion.div
                       key={item.id}
                       variants={itemVariants}
@@ -406,6 +414,21 @@ export default function Menu() {
                                         🌱 Vegetarian
                                       </Badge>
                                     )}
+                                    {item.vegan && (
+                                      <Badge className="bg-fresh-green text-white">
+                                        🌿 Vegan  
+                                      </Badge>
+                                    )}
+                                    {item.halal && (
+                                      <Badge className="bg-blue-600 text-white">
+                                        ☪️ Halal
+                                      </Badge>
+                                    )}
+                                    {item.glutenFree && (
+                                      <Badge className="bg-purple-600 text-white">
+                                        🌾 Gluten Free
+                                      </Badge>
+                                    )}
                                   </div>
                                   
                                   <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -413,7 +436,19 @@ export default function Menu() {
                                   </p>
                                   
                                   <div className="text-2xl font-bold text-primary mb-4">
-                                    {menuData.currency}{item.price.toFixed(2)}
+                                    {item.isSpecial ? (
+                                      <div className="flex items-center gap-2">
+                                        <span className="text-destructive line-through text-lg">
+                                          {menuData.currency}{item.price.toFixed(2)}
+                                        </span>
+                                        <span className="text-primary">
+                                          {menuData.currency}{(item.specialPrice || item.price).toFixed(2)}
+                                        </span>
+                                        <Badge className="bg-berlin-gold text-white">Special!</Badge>
+                                      </div>
+                                    ) : (
+                                      <span>{menuData.currency}{item.price.toFixed(2)}</span>
+                                    )}
                                   </div>
                                 </div>
                                 

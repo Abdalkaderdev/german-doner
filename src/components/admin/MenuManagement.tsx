@@ -24,9 +24,14 @@ import {
   Save,
   Languages,
   Eye,
-  EyeOff
+  EyeOff,
+  Upload,
+  Star,
+  AlertTriangle,
+  Package
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 interface MenuItem {
   id: string;
@@ -38,6 +43,13 @@ interface MenuItem {
   vegetarian?: boolean;
   spicy?: boolean;
   available?: boolean;
+  stock?: number;
+  isSpecial?: boolean;
+  specialPrice?: number;
+  halal?: boolean;
+  vegan?: boolean;
+  glutenFree?: boolean;
+  allergens?: string[];
 }
 
 interface MenuCategory {
@@ -172,9 +184,17 @@ export const MenuManagement = () => {
         popular: false,
         vegetarian: false,
         spicy: false,
-        available: true
+        available: true,
+        stock: 50,
+        isSpecial: false,
+        specialPrice: 0,
+        halal: false,
+        vegan: false,
+        glutenFree: false,
+        allergens: []
       }
     );
+    const [uploadingImage, setUploadingImage] = useState(false);
 
     const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
@@ -182,6 +202,46 @@ export const MenuManagement = () => {
         saveMenuItem(categoryId, formData as MenuItem);
       }
     };
+
+    const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+
+      setUploadingImage(true);
+      try {
+        // For demo purposes, we'll use a URL.createObjectURL
+        // In a real app, you'd upload to cloud storage
+        const imageUrl = URL.createObjectURL(file);
+        setFormData(prev => ({ ...prev, image: imageUrl }));
+        
+        toast({
+          title: "Success",
+          description: "Image uploaded successfully",
+        });
+      } catch (error) {
+        console.error("Error uploading image:", error);
+        toast({
+          title: "Error",
+          description: "Failed to upload image",
+          variant: "destructive"
+        });
+      } finally {
+        setUploadingImage(false);
+      }
+    };
+
+    const handleAllergenToggle = (allergen: string) => {
+      setFormData(prev => ({
+        ...prev,
+        allergens: prev.allergens?.includes(allergen)
+          ? prev.allergens.filter(a => a !== allergen)
+          : [...(prev.allergens || []), allergen]
+      }));
+    };
+
+    const allergenOptions = [
+      "Gluten", "Dairy", "Eggs", "Nuts", "Peanuts", "Soy", "Fish", "Shellfish", "Sesame"
+    ];
 
     return (
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -218,14 +278,89 @@ export const MenuManagement = () => {
           />
         </div>
 
-        <div>
-          <Label htmlFor="image">Image URL (optional)</Label>
-          <Input
-            id="image"
-            value={formData.image || ""}
-            onChange={(e) => setFormData(prev => ({ ...prev, image: e.target.value }))}
-            placeholder="https://example.com/image.jpg"
-          />
+        <div className="space-y-4">
+          <Label>Image</Label>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <Label htmlFor="image-url">Image URL</Label>
+              <Input
+                id="image-url"
+                value={formData.image || ""}
+                onChange={(e) => setFormData(prev => ({ ...prev, image: e.target.value }))}
+                placeholder="https://example.com/image.jpg"
+              />
+            </div>
+            <div>
+              <Label htmlFor="image-upload">Upload Image</Label>
+              <div className="flex items-center gap-2">
+                <Input
+                  id="image-upload"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  disabled={uploadingImage}
+                />
+                {uploadingImage && (
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"></div>
+                )}
+              </div>
+            </div>
+          </div>
+          {formData.image && (
+            <div className="w-32 h-24 rounded-lg overflow-hidden bg-muted">
+              <img 
+                src={formData.image} 
+                alt="Preview"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="stock">Stock Quantity</Label>
+            <Input
+              id="stock"
+              type="number"
+              min="0"
+              value={formData.stock || ""}
+              onChange={(e) => setFormData(prev => ({ ...prev, stock: parseInt(e.target.value) || 0 }))}
+            />
+          </div>
+          <div className="flex items-center space-x-2 mt-6">
+            <Switch
+              id="available"
+              checked={formData.available !== false}
+              onCheckedChange={(checked) => setFormData(prev => ({ ...prev, available: checked }))}
+            />
+            <Label htmlFor="available">Available</Label>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="is-special"
+              checked={formData.isSpecial || false}
+              onCheckedChange={(checked) => setFormData(prev => ({ ...prev, isSpecial: checked }))}
+            />
+            <Label htmlFor="is-special">Daily Special</Label>
+          </div>
+          
+          {formData.isSpecial && (
+            <div>
+              <Label htmlFor="special-price">Special Price (€)</Label>
+              <Input
+                id="special-price"
+                type="number"
+                step="0.10"
+                value={formData.specialPrice || ""}
+                onChange={(e) => setFormData(prev => ({ ...prev, specialPrice: parseFloat(e.target.value) }))}
+                placeholder="Special offer price"
+              />
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-2 gap-4">
@@ -239,30 +374,64 @@ export const MenuManagement = () => {
           </div>
           <div className="flex items-center space-x-2">
             <Switch
-              id="vegetarian"
-              checked={formData.vegetarian || false}
-              onCheckedChange={(checked) => setFormData(prev => ({ ...prev, vegetarian: checked }))}
-            />
-            <Label htmlFor="vegetarian">Vegetarian</Label>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          <div className="flex items-center space-x-2">
-            <Switch
               id="spicy"
               checked={formData.spicy || false}
               onCheckedChange={(checked) => setFormData(prev => ({ ...prev, spicy: checked }))}
             />
             <Label htmlFor="spicy">Spicy</Label>
           </div>
-          <div className="flex items-center space-x-2">
-            <Switch
-              id="available"
-              checked={formData.available !== false}
-              onCheckedChange={(checked) => setFormData(prev => ({ ...prev, available: checked }))}
-            />
-            <Label htmlFor="available">Available</Label>
+        </div>
+
+        <div className="space-y-3">
+          <Label>Dietary Options</Label>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex items-center space-x-2">
+              <Switch
+                id="vegetarian"
+                checked={formData.vegetarian || false}
+                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, vegetarian: checked }))}
+              />
+              <Label htmlFor="vegetarian">Vegetarian</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Switch
+                id="vegan"
+                checked={formData.vegan || false}
+                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, vegan: checked }))}
+              />
+              <Label htmlFor="vegan">Vegan</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Switch
+                id="halal"
+                checked={formData.halal || false}
+                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, halal: checked }))}
+              />
+              <Label htmlFor="halal">Halal</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Switch
+                id="gluten-free"
+                checked={formData.glutenFree || false}
+                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, glutenFree: checked }))}
+              />
+              <Label htmlFor="gluten-free">Gluten Free</Label>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-3">
+          <Label>Allergen Information</Label>
+          <div className="grid grid-cols-3 gap-2">
+            {allergenOptions.map(allergen => (
+              <div key={allergen} className="flex items-center space-x-2">
+                <Switch
+                  checked={formData.allergens?.includes(allergen) || false}
+                  onCheckedChange={() => handleAllergenToggle(allergen)}
+                />
+                <Label className="text-sm">{allergen}</Label>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -362,14 +531,52 @@ export const MenuManagement = () => {
                         )}
                         
                         <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
+                          <div className="flex items-center gap-2 mb-1 flex-wrap">
                             <h3 className="font-semibold">{item.name}</h3>
-                            <span className="font-bold text-primary">€{item.price}</span>
+                            <div className="flex items-center gap-2">
+                              {item.isSpecial ? (
+                                <div className="flex items-center gap-1">
+                                  <span className="font-bold text-destructive line-through">€{item.price}</span>
+                                  <span className="font-bold text-primary">€{item.specialPrice || item.price}</span>
+                                  <Badge className="bg-berlin-gold text-white">
+                                    <Star className="h-3 w-3 mr-1" />
+                                    Special
+                                  </Badge>
+                                </div>
+                              ) : (
+                                <span className="font-bold text-primary">€{item.price}</span>
+                              )}
+                            </div>
+                          </div>
+                          
+                          <div className="flex items-center gap-1 mb-2 flex-wrap">
                             {item.popular && <Badge variant="secondary">Popular</Badge>}
                             {item.vegetarian && <Badge variant="outline" className="text-fresh-green border-fresh-green">Vegetarian</Badge>}
+                            {item.vegan && <Badge variant="outline" className="text-fresh-green border-fresh-green">Vegan</Badge>}
+                            {item.halal && <Badge variant="outline" className="text-blue-600 border-blue-600">Halal</Badge>}
+                            {item.glutenFree && <Badge variant="outline" className="text-purple-600 border-purple-600">Gluten Free</Badge>}
                             {item.spicy && <Badge variant="outline" className="text-destructive border-destructive">Spicy</Badge>}
+                            {item.allergens && item.allergens.length > 0 && (
+                              <Badge variant="outline" className="text-orange-600 border-orange-600">
+                                <AlertTriangle className="h-3 w-3 mr-1" />
+                                Allergens
+                              </Badge>
+                            )}
+                            {item.stock !== undefined && (
+                              <Badge variant={item.stock > 10 ? "outline" : item.stock > 0 ? "secondary" : "destructive"}>
+                                <Package className="h-3 w-3 mr-1" />
+                                Stock: {item.stock}
+                              </Badge>
+                            )}
                           </div>
-                          <p className="text-sm text-muted-foreground">{item.description}</p>
+                          <p className="text-sm text-muted-foreground mb-2">{item.description}</p>
+                          
+                          {item.allergens && item.allergens.length > 0 && (
+                            <div className="text-xs text-orange-600 flex items-center gap-1">
+                              <AlertTriangle className="h-3 w-3" />
+                              Contains: {item.allergens.join(", ")}
+                            </div>
+                          )}
                         </div>
                       </div>
 
