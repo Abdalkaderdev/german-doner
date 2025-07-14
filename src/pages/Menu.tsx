@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ShoppingCart, Plus, Minus, ImageOff } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowLeft, ImageOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -42,7 +42,6 @@ interface MenuData {
 export default function Menu() {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [cart, setCart] = useState<Record<string, number>>({});
   const [menuData, setMenuData] = useState<MenuData | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentLanguage, setCurrentLanguage] = useState("en");
@@ -72,7 +71,6 @@ export default function Menu() {
         const data = await response.json();
         setMenuData(data);
         
-        // Categories will be auto-selected based on scroll position
       } catch (error) {
         console.error('Error loading menu:', error);
         toast({
@@ -88,42 +86,12 @@ export default function Menu() {
     loadMenuData();
   }, [toast]);
 
-  const addToCart = (itemId: string, itemName: string) => {
-    setCart(prev => ({
-      ...prev,
-      [itemId]: (prev[itemId] || 0) + 1
-    }));
-    
-    toast({
-      title: "Added to cart",
-      description: `${itemName} has been added to your cart`,
-    });
-  };
-
-  const removeFromCart = (itemId: string) => {
-    setCart(prev => {
-      const newCart = { ...prev };
-      if (newCart[itemId] > 1) {
-        newCart[itemId]--;
-      } else {
-        delete newCart[itemId];
-      }
-      return newCart;
-    });
-  };
-
-  const getTotalItems = () => {
-    return Object.values(cart).reduce((sum, count) => sum + count, 0);
-  };
-
-  const getTotalPrice = () => {
-    if (!menuData) return 0;
-    return Object.entries(cart).reduce((total, [itemId, count]) => {
-      const item = menuData.categories
-        .flatMap(cat => cat.items)
-        .find(item => item.id === itemId);
-      return total + (item ? item.price * count : 0);
-    }, 0);
+  const formatPrice = (price: number, currency: string) => {
+    // Format Iraqi Dinar prices appropriately
+    if (currency === 'IQD') {
+      return `${price.toLocaleString()} ${currency}`;
+    }
+    return `${currency}${(price / 1000).toFixed(2)}`;
   };
 
   const containerVariants = {
@@ -197,43 +165,6 @@ export default function Menu() {
     }
   };
 
-  const buttonVariants = {
-    hover: { 
-      scale: 1.05,
-      transition: { 
-        duration: 0.2,
-        type: "spring" as const,
-        stiffness: 400,
-        damping: 10
-      }
-    },
-    tap: { 
-      scale: 0.95,
-      transition: { 
-        duration: 0.1 
-      }
-    }
-  };
-
-  const cartBadgeVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: { 
-      scale: 1, 
-      opacity: 1,
-      transition: {
-        type: "spring" as const,
-        stiffness: 500,
-        damping: 15
-      }
-    },
-    hover: {
-      scale: 1.1,
-      transition: {
-        duration: 0.2
-      }
-    }
-  };
-
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -283,25 +214,6 @@ export default function Menu() {
                 {menuData.shopName}
               </motion.h1>
             </div>
-            
-            <AnimatePresence>
-              {getTotalItems() > 0 && (
-                <motion.div
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0, opacity: 0 }}
-                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                >
-                  <Button variant="secondary" className="relative shadow-warm">
-                    <ShoppingCart className="h-4 w-4" />
-                    <span className="ml-2">{menuData.currency}{getTotalPrice().toFixed(2)}</span>
-                    <Badge className="absolute -top-2 -right-2 bg-primary text-primary-foreground">
-                      {getTotalItems()}
-                    </Badge>
-                  </Button>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </div>
         </div>
       </motion.div>
@@ -447,71 +359,21 @@ export default function Menu() {
                                   {item.description}
                                 </p>
                                 
-                                <div className="text-2xl font-bold text-primary mb-4">
+                                <div className="text-2xl font-bold text-primary">
                                   {item.isSpecial ? (
                                     <div className="flex items-center gap-2">
                                       <span className="text-destructive line-through text-lg">
-                                        {menuData.currency}{item.price.toFixed(2)}
+                                        {formatPrice(item.price, menuData.currency)}
                                       </span>
                                       <span className="text-primary">
-                                        {menuData.currency}{(item.specialPrice || item.price).toFixed(2)}
+                                        {formatPrice(item.specialPrice || item.price, menuData.currency)}
                                       </span>
                                       <Badge className="bg-berlin-gold text-white">Special!</Badge>
                                     </div>
                                   ) : (
-                                    <span>{menuData.currency}{item.price.toFixed(2)}</span>
+                                    <span>{formatPrice(item.price, menuData.currency)}</span>
                                   )}
                                 </div>
-                              </div>
-                              
-                              <div className="flex items-center gap-2">
-                                <AnimatePresence>
-                                  {cart[item.id] > 0 && (
-                                    <motion.div
-                                      initial={{ scale: 0, opacity: 0 }}
-                                      animate={{ scale: 1, opacity: 1 }}
-                                      exit={{ scale: 0, opacity: 0 }}
-                                      transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                                    >
-                                      <Button
-                                        size="sm"
-                                        variant="outline"
-                                        onClick={() => removeFromCart(item.id)}
-                                        className="h-10 w-10 p-0"
-                                      >
-                                        <Minus className="h-4 w-4" />
-                                      </Button>
-                                    </motion.div>
-                                  )}
-                                </AnimatePresence>
-                                
-                                <AnimatePresence>
-                                  {cart[item.id] > 0 && (
-                                    <motion.span
-                                      className="w-8 text-center font-semibold"
-                                      initial={{ scale: 0 }}
-                                      animate={{ scale: 1 }}
-                                      exit={{ scale: 0 }}
-                                      key={cart[item.id]}
-                                    >
-                                      {cart[item.id]}
-                                    </motion.span>
-                                  )}
-                                </AnimatePresence>
-                                
-                                <motion.div
-                                  variants={buttonVariants}
-                                  whileHover="hover"
-                                  whileTap="tap"
-                                >
-                                  <Button
-                                    size="sm"
-                                    onClick={() => addToCart(item.id, item.name)}
-                                    className="h-10 w-10 p-0 shadow-warm"
-                                  >
-                                    <Plus className="h-4 w-4" />
-                                  </Button>
-                                </motion.div>
                               </div>
                             </div>
                           </div>
