@@ -68,7 +68,7 @@ export const MenuManagement = () => {
 
   const languages = [
     { code: "en", name: "English", flag: "🇬🇧" },
-    { code: "de", name: "Deutsch", flag: "🇩🇪" },
+    { code: "ku", name: "Kurdish", flag: "🇮🇶" },
     { code: "ar", name: "العربية", flag: "🇸🇾" }
   ];
 

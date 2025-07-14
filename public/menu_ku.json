@@ -4,44 +4,44 @@
   "categories": [
     {
       "id": "doner",
-      "name": "Döner Kebab",
+      "name": "دۆنەر کەباب",
       "items": [
         {
           "id": "classic-doner",
-          "name": "Klassischer Döner",
-          "description": "Frisches Fladenbrot mit Hähnchen, Salat, Tomaten, Zwiebeln und Sauce",
+          "name": "دۆنەری کلاسیکی",
+          "description": "نانی تازە لەگەڵ مریشک، سەوزە، تەماتە، پیاز و سۆس",
           "price": 10000,
           "popular": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "beef-doner",
-          "name": "Premium Rindfleisch Döner",
-          "description": "Premium Rindfleisch mit frischen Zutaten und hausgemachter Sauce",
+          "name": "دۆنەری گۆشتی گاوی باڵا",
+          "description": "گۆشتی گاوی باڵا لەگەڵ پێکهاتە تازەکان و سۆسی ماڵەوە",
           "price": 12000,
           "popular": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "veggie-doner",
-          "name": "Vegetarischer Döner",
-          "description": "Gegrilltes Gemüse, Falafel, frischer Salat und Tahini-Sauce",
+          "name": "دۆنەری ڕووەکی",
+          "description": "سەوزەی برژاو، فەلافەل، سەلاتای تازە و سۆسی تاهینی",
           "price": 9500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "spicy-doner",
-          "name": "Scharfer Döner",
-          "description": "Mit extra scharfer Sauce und Jalapeños",
+          "name": "دۆنەری تیژ",
+          "description": "لەگەڵ سۆسی زۆر تیژ و جالاپینۆ",
           "price": 11000,
           "spicy": true,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
           "id": "mixed-doner",
-          "name": "Gemischter Döner",
-          "description": "Kombination aus Hähnchen und Rindfleisch mit spezieller Sauce",
+          "name": "دۆنەری تێکەڵ",
+          "description": "تێکەڵی مریشک و گۆشتی گاو لەگەڵ سۆسی تایبەت",
           "price": 12500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         }
@@ -49,34 +49,34 @@
     },
     {
       "id": "wraps",
-      "name": "Dürüm Wraps",
+      "name": "درووم ڕاپ",
       "items": [
         {
           "id": "chicken-durum",
-          "name": "Hähnchen Dürüm",
-          "description": "Dünnes Fladenbrot gerollt mit Hähnchen und frischen Zutaten",
+          "name": "درووم مریشک",
+          "description": "نانی باریک پێچراوە لەگەڵ مریشک و پێکهاتە تازەکان",
           "price": 11000,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "lamb-durum",
-          "name": "Lamm Dürüm",
-          "description": "Zartes Lammfleisch in dünnem Fladenbrot",
+          "name": "درووم بەرانی",
+          "description": "گۆشتی بەرانی نەرم لە نانی باریکدا",
           "price": 12500,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "adana-durum",
-          "name": "Adana Dürüm",
-          "description": "Scharfer Hackfleisch-Kebab in Lavash-Brot",
+          "name": "درووم ئەدەنە",
+          "description": "کەباب گۆشتی تیژ لە نانی لاڤاشدا",
           "price": 13500,
           "spicy": true,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
           "id": "vegan-durum",
-          "name": "Veganer Dürüm",
-          "description": "Pflanzliche Proteine mit frischem Gemüse und veganer Sauce",
+          "name": "درووم ڤێگان",
+          "description": "پڕۆتینی ڕووەکی لەگەڵ سەوزەی تازە و سۆسی ڤێگان",
           "price": 12000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
@@ -85,34 +85,34 @@
     },
     {
       "id": "platters",
-      "name": "Kebab Teller",
+      "name": "کەباب لەگەڵ خوان",
       "items": [
         {
           "id": "mixed-grill",
-          "name": "Gemischter Grill-Teller",
-          "description": "Verschiedene gegrillte Fleischsorten mit Reis, Salat und Brot",
+          "name": "خوانی گریڵی تێکەڵ",
+          "description": "جۆرەها گۆشتی برژاو لەگەڵ برنج، سەلاتە و نان",
           "price": 24000,
           "popular": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "chicken-platter",
-          "name": "Hähnchen Schaschlik Teller",
-          "description": "Gegrillte Hähnchen-Spieße mit Bulgur-Reis und Gemüse",
+          "name": "خوانی شاشلیکی مریشک",
+          "description": "شیشی مریشکی برژاو لەگەڵ برنجی بولغور و سەوزە",
           "price": 19000,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "lamb-platter",
-          "name": "Lamm Schaschlik Teller",
-          "description": "Zarte Lamm-Spieße mit traditionellen Beilagen",
+          "name": "خوانی شاشلیکی بەرانی",
+          "description": "شیشی بەرانی نەرم لەگەڵ خوراکە کلاسیکییەکان",
           "price": 22000,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
           "id": "vegetarian-platter",
-          "name": "Vegetarischer Teller",
-          "description": "Falafel, gegrilltes Gemüse, Hummus und Taboulé",
+          "name": "خوانی ڕووەکی",
+          "description": "فەلافەل، سەوزەی برژاو، حوموس و تەبولە",
           "price": 17500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
@@ -121,28 +121,28 @@
     },
     {
       "id": "salads",
-      "name": "Frische Salate",
+      "name": "سەلاتە تازەکان",
       "items": [
         {
           "id": "shepherd-salad",
-          "name": "Hirten-Salat",
-          "description": "Tomaten, Gurken, Zwiebeln, Paprika mit Olivenöl und Zitrone",
+          "name": "سەلاتەی شوان",
+          "description": "تەماتە، خیار، پیاز، بیبەر لەگەڵ زەیتوون و لیمۆ",
           "price": 8500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "tabbouleh",
-          "name": "Taboulé",
-          "description": "Frischer Petersilien-Salat mit Bulgur, Tomaten und Minze",
+          "name": "تەبولە",
+          "description": "سەلاتەی جەعدەی تازە لەگەڵ بولغور، تەماتە و پونگ",
           "price": 9500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "chicken-salad",
-          "name": "Gegrillter Hähnchen-Salat",
-          "description": "Gemischtes Grün mit gegrilltem Hähnchen und mediterranem Dressing",
+          "name": "سەلاتەی مریشکی برژاو",
+          "description": "سەوزەی تێکەڵ لەگەڵ مریشکی برژاو و سۆسی مەدیتەرانی",
           "price": 13500,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         }
@@ -150,20 +150,20 @@
     },
     {
       "id": "soups",
-      "name": "Traditionelle Suppen",
+      "name": "شوربەی کلاسیکی",
       "items": [
         {
           "id": "lentil-soup",
-          "name": "Rote Linsen-Suppe",
-          "description": "Türkische rote Linsen-Suppe mit Kräutern und Gewürzen",
+          "name": "شوربەی نیسکی سوور",
+          "description": "شوربەی نیسکی سووری تورکی لەگەڵ ڕووەک و بەهارات",
           "price": 7000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "chicken-soup",
-          "name": "Hühnerbrühe",
-          "description": "Traditionelle Hühnersuppe mit Gemüse",
+          "name": "شوربەی مریشک",
+          "description": "شوربەی کلاسیکی مریشک لەگەڵ سەوزە",
           "price": 8000,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         }
@@ -171,43 +171,43 @@
     },
     {
       "id": "sides",
-      "name": "Beilagen & Vorspeisen",
+      "name": "لاتەنیشت و پێشکە",
       "items": [
         {
           "id": "fries",
-          "name": "Goldene Pommes",
-          "description": "Knusprige goldene Pommes Frites",
+          "name": "قەڵاتووی زەڕین",
+          "description": "قەڵاتووی ترخ و زەڕین",
           "price": 5500,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "hummus",
-          "name": "Hummus mit Brot",
-          "description": "Hausgemachter Hummus mit warmem Fladenbrot",
+          "name": "حوموس لەگەڵ نان",
+          "description": "حوموسی ماڵەوە لەگەڵ نانی گەرم",
           "price": 6500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
           "id": "stuffed-grape-leaves",
-          "name": "Gefüllte Weinblätter",
-          "description": "Dolma mit Reis, Kräutern und Olivenöl",
+          "name": "گەڵای مۆی پڕکراو",
+          "description": "دۆڵمە لەگەڵ برنج، ڕووەکی بۆنخۆش و زەیتوون",
           "price": 8500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "cheese-borek",
-          "name": "Käse Börek",
-          "description": "Knuspriges Gebäck gefüllt mit Käse und Kräutern",
+          "name": "بۆرەکی پەنیر",
+          "description": "ناشتەی ترخ پڕکراو بە پەنیر و ڕووەکی بۆنخۆش",
           "price": 7000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "falafel",
-          "name": "Falafel (6 Stück)",
-          "description": "Frittierte Kichererbsen-Bällchen mit Tahini-Sauce",
+          "name": "فەلافەل (٦ دانە)",
+          "description": "تۆپی نۆک سوورکراو لەگەڵ سۆسی تاهینی",
           "price": 8000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
@@ -216,28 +216,28 @@
     },
     {
       "id": "desserts",
-      "name": "Süße Desserts",
+      "name": "دەسەری شیرین",
       "items": [
         {
           "id": "baklava",
-          "name": "Baklava",
-          "description": "Süßes türkisches Gebäck mit Nüssen und Honig",
+          "name": "بەقلەوە",
+          "description": "ناشتەی شیرینی تورکی لەگەڵ گوێز و هەنگوین",
           "price": 4500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
           "id": "kunefe",
-          "name": "Künefe",
-          "description": "Traditionelles Käsegebäck getränkt in Sirup",
+          "name": "کونافە",
+          "description": "ناشتەی پەنیری کلاسیکی ئاوگیراو بە شیرەی شیرین",
           "price": 7000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "rice-pudding",
-          "name": "Milchreis",
-          "description": "Cremiger türkischer Milchreis mit Zimt",
+          "name": "شیری برنج",
+          "description": "شیری برنجی تورکی کرێمی لەگەڵ دارچین",
           "price": 5500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
@@ -246,47 +246,47 @@
     },
     {
       "id": "drinks",
-      "name": "Getränke",
+      "name": "خواردنەوە",
       "items": [
         {
           "id": "ayran",
-          "name": "Ayran",
-          "description": "Türkisches Joghurtgetränk",
+          "name": "ئایران",
+          "description": "خواردنەوەی ماستی تورکی",
           "price": 4000,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "turkish-tea",
-          "name": "Türkischer Tee",
-          "description": "Traditioneller schwarzer Tee",
+          "name": "چای تورکی",
+          "description": "چای ڕەشی کلاسیکی",
           "price": 3000,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
           "id": "turkish-coffee",
-          "name": "Türkischer Kaffee",
-          "description": "Starker traditioneller Kaffee mit Schaum",
+          "name": "قاوەی تورکی",
+          "description": "قاوەی بەهێزی کلاسیکی لەگەڵ کەف",
           "price": 4500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "cola",
-          "name": "Cola",
-          "description": "Erfrischende Cola",
+          "name": "کۆلا",
+          "description": "کۆلای فێنک",
           "price": 4000,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "fresh-orange",
-          "name": "Frischer Orangensaft",
-          "description": "Frisch gepresster Orangensaft",
+          "name": "ئاوی پڕتەقاڵی تازە",
+          "description": "ئاوی پڕتەقاڵی تازە گوشراو",
           "price": 5500,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "pomegranate-juice",
-          "name": "Granatapfelsaft",
-          "description": "Frischer Granatapfelsaft",
+          "name": "ئاوی هەنار",
+          "description": "ئاوی هەناری تازە",
           "price": 6500,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         }

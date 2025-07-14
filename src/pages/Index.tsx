@@ -10,7 +10,7 @@ const Index = () => {
 
   const languages = [
     { code: "en", name: "English", flag: "🇬🇧", nativeName: "English" },
-    { code: "de", name: "Deutsch", flag: "🇩🇪", nativeName: "Deutsch" },
+    { code: "ku", name: "Kurdish", flag: "🇮🇶", nativeName: "کوردی" },
     { code: "ar", name: "العربية", flag: "🇸🇾", nativeName: "العربية" },
   ];
 
