@@ -1,6 +1,6 @@
 {
   "shopName": "دونر برلين",
-  "currency": "€",
+  "currency": "د.ع",
   "categories": [
     {
       "id": "doner",
@@ -10,7 +10,7 @@
           "id": "classic-doner",
           "name": "دونر كلاسيكي",
           "description": "خبز البيتا الطازج مع الدجاج والخس والطماطم والبصل والصلصة",
-          "price": 6.50,
+          "price": 10000,
           "popular": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
@@ -18,7 +18,7 @@
           "id": "beef-doner",
           "name": "دونر لحم البقر المميز",
           "description": "لحم بقر مميز مع مكونات طازجة وصلصة منزلية",
-          "price": 7.50,
+          "price": 12000,
           "popular": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
@@ -26,7 +26,7 @@
           "id": "veggie-doner",
           "name": "دونر نباتي",
           "description": "خضار مشوية وفلافل وسلطة طازجة وصلصة الطحينة",
-          "price": 6.00,
+          "price": 9500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
@@ -34,7 +34,7 @@
           "id": "spicy-doner",
           "name": "دونر حار",
           "description": "مع صلصة حارة إضافية وفلفل هالابينو",
-          "price": 7.00,
+          "price": 11000,
           "spicy": true,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
@@ -42,7 +42,7 @@
           "id": "mixed-doner",
           "name": "دونر لحوم مختلطة",
           "description": "مزيج من الدجاج ولحم البقر مع صلصة خاصة",
-          "price": 8.00,
+          "price": 12500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         }
       ]
@@ -55,21 +55,21 @@
           "id": "chicken-durum",
           "name": "دورم دجاج",
           "description": "خبز رقيق ملفوف بالدجاج والمكونات الطازجة",
-          "price": 7.00,
+          "price": 11000,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "lamb-durum",
           "name": "دورم لحم ضأن",
           "description": "لحم ضأن طري في خبز رقيق",
-          "price": 8.00,
+          "price": 12500,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "adana-durum",
           "name": "دورم أضنة",
           "description": "كباب لحم مفروم حار في خبز لافاش",
-          "price": 8.50,
+          "price": 13500,
           "spicy": true,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
@@ -77,7 +77,7 @@
           "id": "vegan-durum",
           "name": "دورم نباتي",
           "description": "بروتينات نباتية مع خضار طازجة وصلصة نباتية",
-          "price": 7.50,
+          "price": 12000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         }
@@ -91,7 +91,7 @@
           "id": "mixed-grill",
           "name": "طبق مشاوي مختلطة",
           "description": "أنواع مختلفة من اللحوم المشوية مع الأرز والسلطة والخبز",
-          "price": 15.00,
+          "price": 24000,
           "popular": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
@@ -99,21 +99,21 @@
           "id": "chicken-platter",
           "name": "طبق شيش دجاج",
           "description": "أسياخ دجاج مشوية مع أرز البرغل والخضار",
-          "price": 12.00,
+          "price": 19000,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "lamb-platter",
           "name": "طبق شيش لحم ضأن",
           "description": "أسياخ لحم ضأن طرية مع الأطباق الجانبية التقليدية",
-          "price": 14.00,
+          "price": 22000,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
           "id": "vegetarian-platter",
           "name": "طبق نباتي",
           "description": "فلافل وخضار مشوية وحمص وتبولة",
-          "price": 11.00,
+          "price": 17500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         }
@@ -127,7 +127,7 @@
           "id": "shepherd-salad",
           "name": "سلطة الراعي",
           "description": "طماطم وخيار وبصل وفلفل مع زيت الزيتون والليمون",
-          "price": 5.50,
+          "price": 8500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
@@ -135,7 +135,7 @@
           "id": "tabbouleh",
           "name": "تبولة",
           "description": "سلطة بقدونس طازجة مع البرغل والطماطم والنعناع",
-          "price": 6.00,
+          "price": 9500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
@@ -143,7 +143,7 @@
           "id": "chicken-salad",
           "name": "سلطة دجاج مشوي",
           "description": "خضار ورقية مختلطة مع دجاج مشوي وتتبيلة متوسطية",
-          "price": 8.50,
+          "price": 13500,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         }
       ]
@@ -156,7 +156,7 @@
           "id": "lentil-soup",
           "name": "شوربة العدس الأحمر",
           "description": "شوربة عدس أحمر تركية مع الأعشاب والتوابل",
-          "price": 4.50,
+          "price": 7000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
@@ -164,7 +164,7 @@
           "id": "chicken-soup",
           "name": "مرق دجاج",
           "description": "شوربة دجاج تقليدية مع الخضار",
-          "price": 5.00,
+          "price": 8000,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         }
       ]
@@ -177,14 +177,14 @@
           "id": "fries",
           "name": "البطاطس الذهبية",
           "description": "بطاطس مقلية ذهبية مقرمشة",
-          "price": 3.50,
+          "price": 5500,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "hummus",
           "name": "حمص مع خبز",
           "description": "حمص منزلي مع خبز البيتا الدافئ",
-          "price": 4.00,
+          "price": 6500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
@@ -192,7 +192,7 @@
           "id": "stuffed-grape-leaves",
           "name": "ورق عنب محشي",
           "description": "ورق عنب محشي بالأرز والأعشاب وزيت الزيتون",
-          "price": 5.50,
+          "price": 8500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
@@ -200,7 +200,7 @@
           "id": "cheese-borek",
           "name": "بوريك بالجبن",
           "description": "معجنات مقرمشة محشوة بالجبن والأعشاب",
-          "price": 4.50,
+          "price": 7000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
@@ -208,7 +208,7 @@
           "id": "falafel",
           "name": "فلافل (6 قطع)",
           "description": "كرات الحمص المقلية مع صلصة الطحينة",
-          "price": 5.00,
+          "price": 8000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         }
@@ -222,7 +222,7 @@
           "id": "baklava",
           "name": "بقلاوة",
           "description": "حلوى تركية بالمكسرات والعسل",
-          "price": 3.00,
+          "price": 4500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
@@ -230,7 +230,7 @@
           "id": "kunefe",
           "name": "كنافة",
           "description": "معجنات الجبن التقليدية منقوعة في الشراب",
-          "price": 4.50,
+          "price": 7000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
@@ -238,7 +238,7 @@
           "id": "rice-pudding",
           "name": "مهلبية أرز",
           "description": "مهلبية أرز تركية كريمية مع القرفة",
-          "price": 3.50,
+          "price": 5500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         }
@@ -252,42 +252,42 @@
           "id": "ayran",
           "name": "عيران",
           "description": "مشروب الزبادي التركي",
-          "price": 2.50,
+          "price": 4000,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "turkish-tea",
           "name": "شاي تركي",
           "description": "شاي أسود تقليدي",
-          "price": 2.00,
+          "price": 3000,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
           "id": "turkish-coffee",
           "name": "قهوة تركية",
           "description": "قهوة تقليدية قوية مع الرغوة",
-          "price": 3.00,
+          "price": 4500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "cola",
           "name": "كولا",
           "description": "مشروب كولا منعش",
-          "price": 2.50,
+          "price": 4000,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "fresh-orange",
           "name": "عصير برتقال طازج",
           "description": "عصير برتقال طازج مع اللب",
-          "price": 3.50,
+          "price": 5500,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "pomegranate-juice",
           "name": "عصير رمان",
           "description": "عصير رمان طبيعي طازج",
-          "price": 4.00,
+          "price": 6500,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         }
       ]

@@ -1,6 +1,6 @@
 {
   "shopName": "Berlin Döner",
-  "currency": "€",
+  "currency": "IQD",
   "categories": [
     {
       "id": "doner",
@@ -10,7 +10,7 @@
           "id": "classic-doner",
           "name": "Klassischer Döner",
           "description": "Frisches Fladenbrot mit Hähnchen, Salat, Tomaten, Zwiebeln und Sauce",
-          "price": 6.50,
+          "price": 10000,
           "popular": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
@@ -18,7 +18,7 @@
           "id": "beef-doner",
           "name": "Premium Rindfleisch Döner",
           "description": "Premium Rindfleisch mit frischen Zutaten und hausgemachter Sauce",
-          "price": 7.50,
+          "price": 12000,
           "popular": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
@@ -26,7 +26,7 @@
           "id": "veggie-doner",
           "name": "Vegetarischer Döner",
           "description": "Gegrilltes Gemüse, Falafel, frischer Salat und Tahini-Sauce",
-          "price": 6.00,
+          "price": 9500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
@@ -34,7 +34,7 @@
           "id": "spicy-doner",
           "name": "Scharfer Döner",
           "description": "Mit extra scharfer Sauce und Jalapeños",
-          "price": 7.00,
+          "price": 11000,
           "spicy": true,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
@@ -42,7 +42,7 @@
           "id": "mixed-doner",
           "name": "Gemischter Döner",
           "description": "Kombination aus Hähnchen und Rindfleisch mit spezieller Sauce",
-          "price": 8.00,
+          "price": 12500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         }
       ]
@@ -55,21 +55,21 @@
           "id": "chicken-durum",
           "name": "Hähnchen Dürüm",
           "description": "Dünnes Fladenbrot gerollt mit Hähnchen und frischen Zutaten",
-          "price": 7.00,
+          "price": 11000,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "lamb-durum",
           "name": "Lamm Dürüm",
           "description": "Zartes Lammfleisch in dünnem Fladenbrot",
-          "price": 8.00,
+          "price": 12500,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "adana-durum",
           "name": "Adana Dürüm",
           "description": "Scharfer Hackfleisch-Kebab in Lavash-Brot",
-          "price": 8.50,
+          "price": 13500,
           "spicy": true,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
@@ -77,7 +77,7 @@
           "id": "vegan-durum",
           "name": "Veganer Dürüm",
           "description": "Pflanzliche Proteine mit frischem Gemüse und veganer Sauce",
-          "price": 7.50,
+          "price": 12000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         }
@@ -91,7 +91,7 @@
           "id": "mixed-grill",
           "name": "Gemischter Grill-Teller",
           "description": "Verschiedene gegrillte Fleischsorten mit Reis, Salat und Brot",
-          "price": 15.00,
+          "price": 24000,
           "popular": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
@@ -99,21 +99,21 @@
           "id": "chicken-platter",
           "name": "Hähnchen Schaschlik Teller",
           "description": "Gegrillte Hähnchen-Spieße mit Bulgur-Reis und Gemüse",
-          "price": 12.00,
+          "price": 19000,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "lamb-platter",
           "name": "Lamm Schaschlik Teller",
           "description": "Zarte Lamm-Spieße mit traditionellen Beilagen",
-          "price": 14.00,
+          "price": 22000,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
           "id": "vegetarian-platter",
           "name": "Vegetarischer Teller",
           "description": "Falafel, gegrilltes Gemüse, Hummus und Taboulé",
-          "price": 11.00,
+          "price": 17500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         }
@@ -127,7 +127,7 @@
           "id": "shepherd-salad",
           "name": "Hirten-Salat",
           "description": "Tomaten, Gurken, Zwiebeln, Paprika mit Olivenöl und Zitrone",
-          "price": 5.50,
+          "price": 8500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
@@ -135,7 +135,7 @@
           "id": "tabbouleh",
           "name": "Taboulé",
           "description": "Frischer Petersilien-Salat mit Bulgur, Tomaten und Minze",
-          "price": 6.00,
+          "price": 9500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
@@ -143,7 +143,7 @@
           "id": "chicken-salad",
           "name": "Gegrillter Hähnchen-Salat",
           "description": "Gemischtes Grün mit gegrilltem Hähnchen und mediterranem Dressing",
-          "price": 8.50,
+          "price": 13500,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         }
       ]
@@ -156,7 +156,7 @@
           "id": "lentil-soup",
           "name": "Rote Linsen-Suppe",
           "description": "Türkische rote Linsen-Suppe mit Kräutern und Gewürzen",
-          "price": 4.50,
+          "price": 7000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
@@ -164,7 +164,7 @@
           "id": "chicken-soup",
           "name": "Hühnerbrühe",
           "description": "Traditionelle Hühnersuppe mit Gemüse",
-          "price": 5.00,
+          "price": 8000,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         }
       ]
@@ -177,14 +177,14 @@
           "id": "fries",
           "name": "Goldene Pommes",
           "description": "Knusprige goldene Pommes Frites",
-          "price": 3.50,
+          "price": 5500,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "hummus",
           "name": "Hummus mit Brot",
           "description": "Hausgemachter Hummus mit warmem Fladenbrot",
-          "price": 4.00,
+          "price": 6500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
@@ -192,7 +192,7 @@
           "id": "stuffed-grape-leaves",
           "name": "Gefüllte Weinblätter",
           "description": "Dolma mit Reis, Kräutern und Olivenöl",
-          "price": 5.50,
+          "price": 8500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
@@ -200,7 +200,7 @@
           "id": "cheese-borek",
           "name": "Käse Börek",
           "description": "Knuspriges Gebäck gefüllt mit Käse und Kräutern",
-          "price": 4.50,
+          "price": 7000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
@@ -208,7 +208,7 @@
           "id": "falafel",
           "name": "Falafel (6 Stück)",
           "description": "Frittierte Kichererbsen-Bällchen mit Tahini-Sauce",
-          "price": 5.00,
+          "price": 8000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         }
@@ -222,7 +222,7 @@
           "id": "baklava",
           "name": "Baklava",
           "description": "Süßes türkisches Gebäck mit Nüssen und Honig",
-          "price": 3.00,
+          "price": 4500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
@@ -230,7 +230,7 @@
           "id": "kunefe",
           "name": "Künefe",
           "description": "Traditionelles Käsegebäck getränkt in Sirup",
-          "price": 4.50,
+          "price": 7000,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
@@ -238,7 +238,7 @@
           "id": "rice-pudding",
           "name": "Milchreis",
           "description": "Cremiger türkischer Milchreis mit Zimt",
-          "price": 3.50,
+          "price": 5500,
           "vegetarian": true,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         }
@@ -252,42 +252,42 @@
           "id": "ayran",
           "name": "Ayran",
           "description": "Türkisches Joghurtgetränk",
-          "price": 2.50,
+          "price": 4000,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "turkish-tea",
           "name": "Türkischer Tee",
           "description": "Traditioneller schwarzer Tee",
-          "price": 2.00,
+          "price": 3000,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
           "id": "turkish-coffee",
           "name": "Türkischer Kaffee",
           "description": "Starker traditioneller Kaffee mit Schaum",
-          "price": 3.00,
+          "price": 4500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "cola",
           "name": "Cola",
           "description": "Erfrischende Cola",
-          "price": 2.50,
+          "price": 4000,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "fresh-orange",
           "name": "Frischer Orangensaft",
           "description": "Frisch gepresster Orangensaft",
-          "price": 3.50,
+          "price": 5500,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "pomegranate-juice",
           "name": "Granatapfelsaft",
           "description": "Frischer Granatapfelsaft",
-          "price": 4.00,
+          "price": 6500,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         }
       ]
