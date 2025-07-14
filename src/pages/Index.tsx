@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Languages } from "lucide-react";
+import { Languages, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/doner-hero.jpg";
 
@@ -82,6 +82,24 @@ const Index = () => {
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-hero-gradient" />
+      
+      {/* Admin Access Button */}
+      <motion.div 
+        className="absolute top-4 right-4 z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1, duration: 0.5 }}
+      >
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => navigate('/admin')}
+          className="text-white/70 hover:text-white hover:bg-white/10 backdrop-blur-sm"
+        >
+          <Settings className="h-4 w-4 mr-2" />
+          Admin
+        </Button>
+      </motion.div>
       
       {/* Content */}
       <motion.div 
