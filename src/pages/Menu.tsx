@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ImageOff } from "lucide-react";
+import { ArrowLeft, Search, Filter, Clock, MapPin, Star, Heart, X, ImageOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollCategory } from "@/hooks/useScrollCategory";
@@ -47,10 +49,24 @@ export default function Menu() {
   const [currentLanguage, setCurrentLanguage] = useState("en");
   const [isRTL, setIsRTL] = useState(false);
   
+  // Search and filter states
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [showFilters, setShowFilters] = useState(false);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  
   const categoryRefs = useRef<Map<string, HTMLElement>>(new Map());
   const { activeCategory, scrollToCategory, observeCategory } = useScrollCategory({
     categories: menuData?.categories.map(cat => cat.id) || []
   });
+
+  // Load favorites from localStorage
+  useEffect(() => {
+    const savedFavorites = localStorage.getItem('menuFavorites');
+    if (savedFavorites) {
+      setFavorites(JSON.parse(savedFavorites));
+    }
+  }, []);
 
   // Load menu data based on selected language
   useEffect(() => {
@@ -85,6 +101,63 @@ export default function Menu() {
 
     loadMenuData();
   }, [toast]);
+
+  // Toggle favorite item
+  const toggleFavorite = (itemId: string) => {
+    const newFavorites = favorites.includes(itemId)
+      ? favorites.filter(id => id !== itemId)
+      : [...favorites, itemId];
+    setFavorites(newFavorites);
+    localStorage.setItem('menuFavorites', JSON.stringify(newFavorites));
+  };
+
+  // Filter items based on search and filters
+  const filteredCategories = menuData?.categories.map(category => ({
+    ...category,
+    items: category.items.filter(item => {
+      // Check availability and stock
+      if (item.available === false || (item.stock !== undefined && item.stock <= 0)) {
+        return false;
+      }
+
+      // Search filter
+      if (searchQuery) {
+        const query = searchQuery.toLowerCase();
+        const matchesName = item.name.toLowerCase().includes(query);
+        const matchesDescription = item.description.toLowerCase().includes(query);
+        if (!matchesName && !matchesDescription) return false;
+      }
+
+      // Dietary filters
+      if (selectedFilters.length > 0) {
+        const itemFilters = [];
+        if (item.vegetarian) itemFilters.push('vegetarian');
+        if (item.vegan) itemFilters.push('vegan');
+        if (item.halal) itemFilters.push('halal');
+        if (item.glutenFree) itemFilters.push('glutenFree');
+        if (item.spicy) itemFilters.push('spicy');
+        if (item.popular) itemFilters.push('popular');
+        if (item.isSpecial) itemFilters.push('special');
+        if (favorites.includes(item.id)) itemFilters.push('favorites');
+
+        return selectedFilters.every(filter => itemFilters.includes(filter));
+      }
+
+      return true;
+    })
+  })).filter(category => category.items.length > 0);
+
+  // Available filter options
+  const filterOptions = [
+    { id: 'vegetarian', label: '🌱 Vegetarian', count: 0 },
+    { id: 'vegan', label: '🌿 Vegan', count: 0 },
+    { id: 'halal', label: '☪️ Halal', count: 0 },
+    { id: 'glutenFree', label: '🌾 Gluten Free', count: 0 },
+    { id: 'spicy', label: '🌶️ Spicy', count: 0 },
+    { id: 'popular', label: '⭐ Popular', count: 0 },
+    { id: 'special', label: '🏷️ Special Offers', count: 0 },
+    { id: 'favorites', label: '❤️ Favorites', count: favorites.length },
+  ];
 
   const formatPrice = (price: number, currency: string) => {
     // Format Iraqi Dinar prices appropriately
@@ -218,21 +291,137 @@ export default function Menu() {
         </div>
       </motion.div>
 
+      {/* Restaurant Status & Info */}
+      <motion.div 
+        className="bg-card border-b"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex flex-wrap items-center gap-4 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-foreground font-medium">Open Now</span>
+            </div>
+            <Separator orientation="vertical" className="h-4" />
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Clock className="h-4 w-4" />
+              <span>Closes at 11:00 PM</span>
+            </div>
+            <Separator orientation="vertical" className="h-4" />
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <MapPin className="h-4 w-4" />
+              <span>Friedrichshain, Berlin</span>
+            </div>
+            <Separator orientation="vertical" className="h-4" />
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+              <span>4.8 (324 reviews)</span>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Search and Filters */}
+      <motion.div 
+        className="bg-background border-b sticky top-[73px] z-40"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex gap-3 items-center">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                placeholder="Search menu items..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10 pr-4"
+              />
+            </div>
+            <Button
+              variant={showFilters ? "default" : "outline"}
+              size="sm"
+              onClick={() => setShowFilters(!showFilters)}
+              className="flex items-center gap-2"
+            >
+              <Filter className="h-4 w-4" />
+              Filters
+              {selectedFilters.length > 0 && (
+                <Badge variant="secondary" className="ml-1">
+                  {selectedFilters.length}
+                </Badge>
+              )}
+            </Button>
+          </div>
+
+          {/* Filter Options */}
+          {showFilters && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="mt-4 pt-4 border-t"
+            >
+              <div className="flex flex-wrap gap-2">
+                {filterOptions.map((option) => (
+                  <Button
+                    key={option.id}
+                    variant={selectedFilters.includes(option.id) ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => {
+                      setSelectedFilters(prev => 
+                        prev.includes(option.id)
+                          ? prev.filter(f => f !== option.id)
+                          : [...prev, option.id]
+                      );
+                    }}
+                    className="text-xs"
+                  >
+                    {option.label}
+                    {option.count > 0 && !selectedFilters.includes(option.id) && (
+                      <Badge variant="secondary" className="ml-1 text-xs">
+                        {option.count}
+                      </Badge>
+                    )}
+                  </Button>
+                ))}
+              </div>
+              {selectedFilters.length > 0 && (
+                <div className="flex items-center gap-2 mt-4">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setSelectedFilters([])}
+                    className="text-xs"
+                  >
+                    <X className="h-3 w-3 mr-1" />
+                    Clear all filters
+                  </Button>
+                </div>
+              )}
+            </motion.div>
+          )}
+        </div>
+      </motion.div>
+
       {/* Category Navigation */}
       <motion.div 
-        className="bg-card border-b sticky top-[73px] z-40"
+        className="bg-card border-b sticky top-[177px] z-40"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
       >
         <div className="container mx-auto px-4">
           <div className="flex gap-2 py-4 overflow-x-auto">
-            {menuData.categories.map((category, index) => (
+            {(filteredCategories || []).map((category, index) => (
               <motion.div
                 key={category.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
+                transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
               >
                 <Button
                   variant={activeCategory === category.id ? "default" : "ghost"}
@@ -240,7 +429,7 @@ export default function Menu() {
                   onClick={() => scrollToCategory(category.id)}
                   className="whitespace-nowrap transition-all duration-300 hover:scale-105"
                 >
-                  {category.name}
+                  {category.name} ({category.items.length})
                 </Button>
               </motion.div>
             ))}
@@ -256,7 +445,7 @@ export default function Menu() {
           initial="hidden"
           animate="visible"
         >
-          {menuData.categories.map((category, categoryIndex) => (
+          {(filteredCategories || []).map((category, categoryIndex) => (
             <motion.section
               key={category.id}
               id={`category-${category.id}`}
@@ -269,7 +458,7 @@ export default function Menu() {
                 }
               }}
               variants={categoryVariants}
-              className="scroll-mt-36"
+              className="scroll-mt-[240px]"
             >
               <motion.h2 
                 className="text-4xl font-bold mb-8 text-foreground"
@@ -282,7 +471,7 @@ export default function Menu() {
                 className="grid gap-6 md:gap-8"
                 variants={containerVariants}
               >
-                {category.items.filter(item => item.available !== false && (item.stock === undefined || item.stock > 0)).map((item, index) => (
+                {category.items.map((item, index) => (
                   <motion.div
                     key={item.id}
                     variants={itemVariants}
@@ -359,20 +548,38 @@ export default function Menu() {
                                   {item.description}
                                 </p>
                                 
-                                <div className="text-2xl font-bold text-primary">
-                                  {item.isSpecial ? (
-                                    <div className="flex items-center gap-2">
-                                      <span className="text-destructive line-through text-lg">
-                                        {formatPrice(item.price, menuData.currency)}
-                                      </span>
-                                      <span className="text-primary">
-                                        {formatPrice(item.specialPrice || item.price, menuData.currency)}
-                                      </span>
-                                      <Badge className="bg-berlin-gold text-white">Special!</Badge>
-                                    </div>
-                                  ) : (
-                                    <span>{formatPrice(item.price, menuData.currency)}</span>
-                                  )}
+                                <div className="flex items-center justify-between">
+                                  <div className="text-2xl font-bold text-primary">
+                                    {item.isSpecial ? (
+                                      <div className="flex items-center gap-2">
+                                        <span className="text-destructive line-through text-lg">
+                                          {formatPrice(item.price, menuData.currency)}
+                                        </span>
+                                        <span className="text-primary">
+                                          {formatPrice(item.specialPrice || item.price, menuData.currency)}
+                                        </span>
+                                        <Badge className="bg-berlin-gold text-white">Special!</Badge>
+                                      </div>
+                                    ) : (
+                                      <span>{formatPrice(item.price, menuData.currency)}</span>
+                                    )}
+                                  </div>
+                                  
+                                  {/* Favorite Button */}
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    onClick={() => toggleFavorite(item.id)}
+                                    className="ml-4 p-2 hover:scale-110 transition-transform"
+                                  >
+                                    <Heart 
+                                      className={`h-5 w-5 ${
+                                        favorites.includes(item.id) 
+                                          ? 'fill-red-500 text-red-500' 
+                                          : 'text-muted-foreground hover:text-red-500'
+                                      }`}
+                                    />
+                                  </Button>
                                 </div>
                               </div>
                             </div>
@@ -385,6 +592,35 @@ export default function Menu() {
               </motion.div>
             </motion.section>
           ))}
+          
+          {/* No Results Message */}
+          {(filteredCategories?.length === 0 || filteredCategories?.every(cat => cat.items.length === 0)) && (
+            <motion.div 
+              className="text-center py-16"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <div className="max-w-md mx-auto">
+                <Search className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-xl font-medium text-foreground mb-2">No items found</h3>
+                <p className="text-muted-foreground mb-4">
+                  {searchQuery 
+                    ? `No items match "${searchQuery}" with the selected filters.`
+                    : "No items match the selected filters."
+                  }
+                </p>
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setSearchQuery("");
+                    setSelectedFilters([]);
+                  }}
+                >
+                  Clear search and filters
+                </Button>
+              </div>
+            </motion.div>
+          )}
         </motion.div>
       </div>
     </div>
