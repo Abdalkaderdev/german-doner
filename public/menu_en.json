@@ -1,0 +1,120 @@
+{
+  "shopName": "Berlin Doner",
+  "currency": "€",
+  "categories": [
+    {
+      "id": "doner",
+      "name": "Doner Kebab",
+      "items": [
+        {
+          "id": "classic-doner",
+          "name": "Classic Doner",
+          "description": "Fresh pita bread with chicken, lettuce, tomatoes, onions and sauce",
+          "price": 6.50,
+          "popular": true,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "beef-doner",
+          "name": "Premium Beef Doner",
+          "description": "Premium beef with fresh ingredients and homemade sauce",
+          "price": 7.50,
+          "popular": true,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "veggie-doner",
+          "name": "Vegetarian Doner",
+          "description": "Grilled vegetables, falafel, fresh salad and tahini sauce",
+          "price": 6.00,
+          "vegetarian": true,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "spicy-doner",
+          "name": "Spicy Doner",
+          "description": "With extra spicy sauce and jalapeños",
+          "price": 7.00,
+          "spicy": true,
+          "image": "/placeholder.svg"
+        }
+      ]
+    },
+    {
+      "id": "wraps",
+      "name": "Dürüm Wraps",
+      "items": [
+        {
+          "id": "chicken-durum",
+          "name": "Chicken Dürüm",
+          "description": "Thin flatbread rolled with chicken and fresh ingredients",
+          "price": 7.00,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "lamb-durum",
+          "name": "Lamb Dürüm",
+          "description": "Tender lamb meat in thin flatbread",
+          "price": 8.00,
+          "image": "/placeholder.svg"
+        }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "Sides & Appetizers",
+      "items": [
+        {
+          "id": "fries",
+          "name": "Golden Fries",
+          "description": "Crispy golden french fries",
+          "price": 3.50,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "hummus",
+          "name": "Hummus & Bread",
+          "description": "Homemade hummus with warm pita bread",
+          "price": 4.00,
+          "vegetarian": true,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "baklava",
+          "name": "Baklava",
+          "description": "Sweet Turkish pastry with nuts and honey",
+          "price": 3.00,
+          "vegetarian": true,
+          "image": "/placeholder.svg"
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "Beverages",
+      "items": [
+        {
+          "id": "ayran",
+          "name": "Ayran",
+          "description": "Turkish yogurt drink",
+          "price": 2.50,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "turkish-tea",
+          "name": "Turkish Tea",
+          "description": "Traditional black tea",
+          "price": 2.00,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "cola",
+          "name": "Cola",
+          "description": "Refreshing cola drink",
+          "price": 2.50,
+          "image": "/placeholder.svg"
+        }
+      ]
+    }
+  ]
+}

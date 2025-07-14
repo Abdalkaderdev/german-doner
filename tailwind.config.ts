@@ -65,6 +65,8 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'berlin-red': 'hsl(var(--berlin-red))',
+				'berlin-gold': 'hsl(var(--berlin-gold))',
 				'spice-gold': 'hsl(var(--spice-gold))',
 				'meat-brown': 'hsl(var(--meat-brown))',
 				'fresh-green': 'hsl(var(--fresh-green))',

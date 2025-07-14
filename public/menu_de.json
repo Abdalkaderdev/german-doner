@@ -1,0 +1,120 @@
+{
+  "shopName": "Berlin Döner",
+  "currency": "€",
+  "categories": [
+    {
+      "id": "doner",
+      "name": "Döner Kebab",
+      "items": [
+        {
+          "id": "classic-doner",
+          "name": "Klassischer Döner",
+          "description": "Frisches Fladenbrot mit Hähnchen, Salat, Tomaten, Zwiebeln und Sauce",
+          "price": 6.50,
+          "popular": true,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "beef-doner",
+          "name": "Premium Rindfleisch Döner",
+          "description": "Premium Rindfleisch mit frischen Zutaten und hausgemachter Sauce",
+          "price": 7.50,
+          "popular": true,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "veggie-doner",
+          "name": "Vegetarischer Döner",
+          "description": "Gegrilltes Gemüse, Falafel, frischer Salat und Tahini-Sauce",
+          "price": 6.00,
+          "vegetarian": true,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "spicy-doner",
+          "name": "Scharfer Döner",
+          "description": "Mit extra scharfer Sauce und Jalapeños",
+          "price": 7.00,
+          "spicy": true,
+          "image": "/placeholder.svg"
+        }
+      ]
+    },
+    {
+      "id": "wraps",
+      "name": "Dürüm Wraps",
+      "items": [
+        {
+          "id": "chicken-durum",
+          "name": "Hähnchen Dürüm",
+          "description": "Dünnes Fladenbrot gerollt mit Hähnchen und frischen Zutaten",
+          "price": 7.00,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "lamb-durum",
+          "name": "Lamm Dürüm",
+          "description": "Zartes Lammfleisch in dünnem Fladenbrot",
+          "price": 8.00,
+          "image": "/placeholder.svg"
+        }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "Beilagen & Vorspeisen",
+      "items": [
+        {
+          "id": "fries",
+          "name": "Goldene Pommes",
+          "description": "Knusprige goldene Pommes Frites",
+          "price": 3.50,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "hummus",
+          "name": "Hummus mit Brot",
+          "description": "Hausgemachter Hummus mit warmem Fladenbrot",
+          "price": 4.00,
+          "vegetarian": true,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "baklava",
+          "name": "Baklava",
+          "description": "Süßes türkisches Gebäck mit Nüssen und Honig",
+          "price": 3.00,
+          "vegetarian": true,
+          "image": "/placeholder.svg"
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "Getränke",
+      "items": [
+        {
+          "id": "ayran",
+          "name": "Ayran",
+          "description": "Türkisches Joghurtgetränk",
+          "price": 2.50,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "turkish-tea",
+          "name": "Türkischer Tee",
+          "description": "Traditioneller schwarzer Tee",
+          "price": 2.00,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "cola",
+          "name": "Cola",
+          "description": "Erfrischende Cola",
+          "price": 2.50,
+          "image": "/placeholder.svg"
+        }
+      ]
+    }
+  ]
+}

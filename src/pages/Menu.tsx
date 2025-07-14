@@ -1,9 +1,11 @@
-import { useState } from "react";
-import { ArrowLeft, ShoppingCart, Plus, Minus } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, ShoppingCart, Plus, Minus, ImageOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 interface MenuItem {
   id: string;
@@ -22,347 +24,70 @@ interface MenuCategory {
   items: MenuItem[];
 }
 
-const menuData: Record<string, { categories: MenuCategory[], shopName: string, currency: string }> = {
-  de: {
-    shopName: "Deutscher Döner",
-    currency: "€",
-    categories: [
-      {
-        id: "doner",
-        name: "Döner Kebab",
-        items: [
-          {
-            id: "classic-doner",
-            name: "Klassischer Döner",
-            description: "Frisches Fladenbrot mit Hähnchen, Salat, Tomaten, Zwiebeln und Sauce",
-            price: 6.50,
-            popular: true
-          },
-          {
-            id: "beef-doner",
-            name: "Rindfleisch Döner",
-            description: "Premium Rindfleisch mit frischen Zutaten und hausgemachter Sauce",
-            price: 7.50,
-            popular: true
-          },
-          {
-            id: "veggie-doner",
-            name: "Vegetarischer Döner",
-            description: "Gegrilltes Gemüse, Falafel, frischer Salat und Tahini-Sauce",
-            price: 6.00,
-            vegetarian: true
-          },
-          {
-            id: "spicy-doner",
-            name: "Scharfer Döner",
-            description: "Mit extra scharfer Sauce und jalapeños",
-            price: 7.00,
-            spicy: true
-          }
-        ]
-      },
-      {
-        id: "durum",
-        name: "Dürüm Wraps",
-        items: [
-          {
-            id: "chicken-durum",
-            name: "Hähnchen Dürüm",
-            description: "Dünnes Fladenbrot gerollt mit Hähnchen und frischen Zutaten",
-            price: 7.00
-          },
-          {
-            id: "lamb-durum",
-            name: "Lamm Dürüm",
-            description: "Zartes Lammfleisch in dünnem Fladenbrot",
-            price: 8.00
-          }
-        ]
-      },
-      {
-        id: "sides",
-        name: "Beilagen",
-        items: [
-          {
-            id: "fries",
-            name: "Pommes Frites",
-            description: "Knusprige goldene Pommes",
-            price: 3.50
-          },
-          {
-            id: "hummus",
-            name: "Hummus mit Brot",
-            description: "Hausgemachter Hummus mit warmem Fladenbrot",
-            price: 4.00,
-            vegetarian: true
-          },
-          {
-            id: "baklava",
-            name: "Baklava",
-            description: "Süßes türkisches Gebäck mit Nüssen und Honig",
-            price: 3.00,
-            vegetarian: true
-          }
-        ]
-      },
-      {
-        id: "drinks",
-        name: "Getränke",
-        items: [
-          {
-            id: "ayran",
-            name: "Ayran",
-            description: "Türkisches Joghurtgetränk",
-            price: 2.50
-          },
-          {
-            id: "turkish-tea",
-            name: "Türkischer Tee",
-            description: "Traditioneller schwarzer Tee",
-            price: 2.00
-          },
-          {
-            id: "cola",
-            name: "Cola",
-            description: "Erfrischende Cola",
-            price: 2.50
-          }
-        ]
-      }
-    ]
-  },
-  en: {
-    shopName: "German Doner",
-    currency: "€",
-    categories: [
-      {
-        id: "doner",
-        name: "Doner Kebab",
-        items: [
-          {
-            id: "classic-doner",
-            name: "Classic Doner",
-            description: "Fresh pita bread with chicken, lettuce, tomatoes, onions and sauce",
-            price: 6.50,
-            popular: true
-          },
-          {
-            id: "beef-doner",
-            name: "Beef Doner",
-            description: "Premium beef with fresh ingredients and homemade sauce",
-            price: 7.50,
-            popular: true
-          },
-          {
-            id: "veggie-doner",
-            name: "Vegetarian Doner",
-            description: "Grilled vegetables, falafel, fresh salad and tahini sauce",
-            price: 6.00,
-            vegetarian: true
-          },
-          {
-            id: "spicy-doner",
-            name: "Spicy Doner",
-            description: "With extra spicy sauce and jalapeños",
-            price: 7.00,
-            spicy: true
-          }
-        ]
-      },
-      {
-        id: "durum",
-        name: "Dürüm Wraps",
-        items: [
-          {
-            id: "chicken-durum",
-            name: "Chicken Dürüm",
-            description: "Thin flatbread rolled with chicken and fresh ingredients",
-            price: 7.00
-          },
-          {
-            id: "lamb-durum",
-            name: "Lamb Dürüm",
-            description: "Tender lamb meat in thin flatbread",
-            price: 8.00
-          }
-        ]
-      },
-      {
-        id: "sides",
-        name: "Sides",
-        items: [
-          {
-            id: "fries",
-            name: "French Fries",
-            description: "Crispy golden fries",
-            price: 3.50
-          },
-          {
-            id: "hummus",
-            name: "Hummus with Bread",
-            description: "Homemade hummus with warm pita bread",
-            price: 4.00,
-            vegetarian: true
-          },
-          {
-            id: "baklava",
-            name: "Baklava",
-            description: "Sweet Turkish pastry with nuts and honey",
-            price: 3.00,
-            vegetarian: true
-          }
-        ]
-      },
-      {
-        id: "drinks",
-        name: "Drinks",
-        items: [
-          {
-            id: "ayran",
-            name: "Ayran",
-            description: "Turkish yogurt drink",
-            price: 2.50
-          },
-          {
-            id: "turkish-tea",
-            name: "Turkish Tea",
-            description: "Traditional black tea",
-            price: 2.00
-          },
-          {
-            id: "cola",
-            name: "Cola",
-            description: "Refreshing cola",
-            price: 2.50
-          }
-        ]
-      }
-    ]
-  },
-  tr: {
-    shopName: "Alman Döner",
-    currency: "€",
-    categories: [
-      {
-        id: "doner",
-        name: "Döner Kebab",
-        items: [
-          {
-            id: "classic-doner",
-            name: "Klasik Döner",
-            description: "Taze pide ekmeği ile tavuk, marul, domates, soğan ve sos",
-            price: 6.50,
-            popular: true
-          },
-          {
-            id: "beef-doner",
-            name: "Dana Döner",
-            description: "Premium dana eti ile taze malzemeler ve ev yapımı sos",
-            price: 7.50,
-            popular: true
-          },
-          {
-            id: "veggie-doner",
-            name: "Vejetaryen Döner",
-            description: "Izgara sebzeler, falafel, taze salata ve tahin sosu",
-            price: 6.00,
-            vegetarian: true
-          },
-          {
-            id: "spicy-doner",
-            name: "Acılı Döner",
-            description: "Ekstra acı sos ve jalapeño ile",
-            price: 7.00,
-            spicy: true
-          }
-        ]
-      },
-      {
-        id: "durum",
-        name: "Dürüm",
-        items: [
-          {
-            id: "chicken-durum",
-            name: "Tavuk Dürüm",
-            description: "İnce lavaş ile sarılmış tavuk ve taze malzemeler",
-            price: 7.00
-          },
-          {
-            id: "lamb-durum",
-            name: "Kuzu Dürüm",
-            description: "Yumuşak kuzu eti ince lavaş içinde",
-            price: 8.00
-          }
-        ]
-      },
-      {
-        id: "sides",
-        name: "Yan Ürünler",
-        items: [
-          {
-            id: "fries",
-            name: "Patates Kızartması",
-            description: "Çıtır altın patates",
-            price: 3.50
-          },
-          {
-            id: "hummus",
-            name: "Humus ve Ekmek",
-            description: "Ev yapımı humus ile sıcak pide",
-            price: 4.00,
-            vegetarian: true
-          },
-          {
-            id: "baklava",
-            name: "Baklava",
-            description: "Fındıklı ve ballı Türk tatlısı",
-            price: 3.00,
-            vegetarian: true
-          }
-        ]
-      },
-      {
-        id: "drinks",
-        name: "İçecekler",
-        items: [
-          {
-            id: "ayran",
-            name: "Ayran",
-            description: "Türk yoğurt içeceği",
-            price: 2.50
-          },
-          {
-            id: "turkish-tea",
-            name: "Türk Çayı",
-            description: "Geleneksel siyah çay",
-            price: 2.00
-          },
-          {
-            id: "cola",
-            name: "Kola",
-            description: "Serinletici kola",
-            price: 2.50
-          }
-        ]
-      }
-    ]
-  }
-};
+interface MenuData {
+  shopName: string;
+  currency: string;
+  categories: MenuCategory[];
+}
 
 export default function Menu() {
-  const { lang } = useParams<{ lang: string }>();
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [cart, setCart] = useState<Record<string, number>>({});
   const [selectedCategory, setSelectedCategory] = useState<string>("doner");
+  const [menuData, setMenuData] = useState<MenuData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [currentLanguage, setCurrentLanguage] = useState("en");
+  const [isRTL, setIsRTL] = useState(false);
 
-  const currentLanguage = lang || "de";
-  const menuInfo = menuData[currentLanguage] || menuData.de;
+  // Load menu data based on selected language
+  useEffect(() => {
+    const loadMenuData = async () => {
+      try {
+        const selectedLang = localStorage.getItem('selectedLanguage') || 'en';
+        setCurrentLanguage(selectedLang);
+        setIsRTL(selectedLang === 'ar');
+        
+        // Update document direction for RTL
+        document.documentElement.dir = selectedLang === 'ar' ? 'rtl' : 'ltr';
+        document.documentElement.lang = selectedLang;
 
-  const addToCart = (itemId: string) => {
+        const response = await fetch(`/menu_${selectedLang}.json`);
+        if (!response.ok) {
+          throw new Error('Failed to load menu');
+        }
+        const data = await response.json();
+        setMenuData(data);
+        
+        // Set first category as default
+        if (data.categories && data.categories.length > 0) {
+          setSelectedCategory(data.categories[0].id);
+        }
+      } catch (error) {
+        console.error('Error loading menu:', error);
+        toast({
+          title: "Error loading menu",
+          description: "Please try refreshing the page",
+          variant: "destructive"
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadMenuData();
+  }, [toast]);
+
+  const addToCart = (itemId: string, itemName: string) => {
     setCart(prev => ({
       ...prev,
       [itemId]: (prev[itemId] || 0) + 1
     }));
+    
+    toast({
+      title: "Added to cart",
+      description: `${itemName} has been added to your cart`,
+    });
   };
 
   const removeFromCart = (itemId: string) => {
@@ -382,18 +107,106 @@ export default function Menu() {
   };
 
   const getTotalPrice = () => {
+    if (!menuData) return 0;
     return Object.entries(cart).reduce((total, [itemId, count]) => {
-      const item = menuInfo.categories
+      const item = menuData.categories
         .flatMap(cat => cat.items)
         .find(item => item.id === itemId);
       return total + (item ? item.price * count : 0);
     }, 0);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const categoryVariants = {
+    hidden: { 
+      opacity: 0,
+      x: isRTL ? 50 : -50,
+      scale: 0.95
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.4, 0, 0.2, 1]
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 20,
+      scale: 0.95
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.4,
+        ease: [0.4, 0, 0.2, 1]
+      }
+    },
+    hover: {
+      scale: 1.02,
+      y: -2,
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const cardImageVariants = {
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+          className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full"
+        />
+      </div>
+    );
+  }
+
+  if (!menuData) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <p className="text-muted-foreground">Failed to load menu</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="sticky top-0 z-50 bg-hero-gradient backdrop-blur-md border-b border-white/10">
+    <div className={`min-h-screen bg-background ${isRTL ? 'rtl' : 'ltr'}`}>
+      {/* Sticky Header */}
+      <motion.div 
+        className="sticky top-0 z-50 bg-warm-gradient backdrop-blur-md border-b border-white/10"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -405,119 +218,218 @@ export default function Menu() {
               >
                 <ArrowLeft className="h-4 w-4" />
               </Button>
-              <h1 className="text-2xl font-bold text-white">{menuInfo.shopName}</h1>
+              <motion.h1 
+                className="text-2xl font-bold text-white"
+                initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                {menuData.shopName}
+              </motion.h1>
             </div>
             
-            {getTotalItems() > 0 && (
-              <Button variant="hero" className="relative">
-                <ShoppingCart className="h-4 w-4" />
-                <span className="ml-2">{menuInfo.currency}{getTotalPrice().toFixed(2)}</span>
-                <Badge className="absolute -top-2 -right-2 bg-accent text-accent-foreground">
-                  {getTotalItems()}
-                </Badge>
-              </Button>
-            )}
+            <AnimatePresence>
+              {getTotalItems() > 0 && (
+                <motion.div
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                >
+                  <Button variant="secondary" className="relative shadow-warm">
+                    <ShoppingCart className="h-4 w-4" />
+                    <span className="ml-2">{menuData.currency}{getTotalPrice().toFixed(2)}</span>
+                    <Badge className="absolute -top-2 -right-2 bg-primary text-primary-foreground">
+                      {getTotalItems()}
+                    </Badge>
+                  </Button>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Category Navigation */}
-      <div className="bg-card border-b sticky top-[73px] z-40">
+      <motion.div 
+        className="bg-card border-b sticky top-[73px] z-40"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         <div className="container mx-auto px-4">
           <div className="flex gap-2 py-4 overflow-x-auto">
-            {menuInfo.categories.map((category) => (
-              <Button
+            {menuData.categories.map((category, index) => (
+              <motion.div
                 key={category.id}
-                variant={selectedCategory === category.id ? "default" : "ghost"}
-                size="sm"
-                onClick={() => setSelectedCategory(category.id)}
-                className="whitespace-nowrap"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
               >
-                {category.name}
-              </Button>
+                <Button
+                  variant={selectedCategory === category.id ? "default" : "ghost"}
+                  size="sm"
+                  onClick={() => setSelectedCategory(category.id)}
+                  className="whitespace-nowrap transition-all duration-300 hover:scale-105"
+                >
+                  {category.name}
+                </Button>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Menu Items */}
       <div className="container mx-auto px-4 py-6">
-        {menuInfo.categories
-          .filter(category => selectedCategory === category.id)
-          .map((category) => (
-            <div key={category.id}>
-              <h2 className="text-3xl font-bold mb-6 text-foreground">
-                {category.name}
-              </h2>
-              
-              <div className="grid gap-4 md:gap-6">
-                {category.items.map((item) => (
-                  <Card key={item.id} className="hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/30">
-                    <CardContent className="p-6">
-                      <div className="flex justify-between items-start gap-4">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-2">
-                            <h3 className="text-xl font-semibold text-foreground">
-                              {item.name}
-                            </h3>
-                            {item.popular && (
-                              <Badge className="bg-accent text-accent-foreground">
-                                Popular
-                              </Badge>
-                            )}
-                            {item.spicy && (
-                              <Badge className="bg-destructive text-destructive-foreground">
-                                🌶️ Spicy
-                              </Badge>
-                            )}
-                            {item.vegetarian && (
-                              <Badge className="bg-fresh-green text-white">
-                                🌱 Vegetarian
-                              </Badge>
-                            )}
+        <AnimatePresence mode="wait">
+          {menuData.categories
+            .filter(category => selectedCategory === category.id)
+            .map((category) => (
+              <motion.div 
+                key={category.id}
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+              >
+                <motion.h2 
+                  className="text-4xl font-bold mb-8 text-foreground"
+                  variants={categoryVariants}
+                >
+                  {category.name}
+                </motion.h2>
+                
+                <motion.div 
+                  className="grid gap-6 md:gap-8"
+                  variants={containerVariants}
+                >
+                  {category.items.map((item, index) => (
+                    <motion.div
+                      key={item.id}
+                      variants={itemVariants}
+                      whileHover="hover"
+                      custom={index}
+                    >
+                      <Card className="overflow-hidden hover:shadow-warm transition-all duration-300 border-border/50 hover:border-primary/30">
+                        <CardContent className="p-0">
+                          <div className="flex flex-col md:flex-row">
+                            {/* Image Section */}
+                            <div className="md:w-48 h-48 md:h-32 relative overflow-hidden bg-muted flex-shrink-0">
+                              {item.image ? (
+                                <motion.img
+                                  src={item.image}
+                                  alt={item.name}
+                                  className="w-full h-full object-cover"
+                                  variants={cardImageVariants}
+                                  onError={(e) => {
+                                    const target = e.target as HTMLImageElement;
+                                    target.style.display = 'none';
+                                    target.nextElementSibling?.classList.remove('hidden');
+                                  }}
+                                />
+                              ) : null}
+                              <div className={`absolute inset-0 flex items-center justify-center bg-muted ${item.image ? 'hidden' : ''}`}>
+                                <div className="text-center">
+                                  <ImageOff className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+                                  <p className="text-xs text-muted-foreground">No Image</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Content Section */}
+                            <div className="flex-1 p-6">
+                              <div className="flex justify-between items-start gap-4">
+                                <div className="flex-1">
+                                  <div className="flex items-center gap-2 mb-3">
+                                    <h3 className="text-xl font-semibold text-foreground">
+                                      {item.name}
+                                    </h3>
+                                    {item.popular && (
+                                      <Badge className="bg-berlin-gold text-white">
+                                        Popular
+                                      </Badge>
+                                    )}
+                                    {item.spicy && (
+                                      <Badge className="bg-destructive text-destructive-foreground">
+                                        🌶️ Spicy
+                                      </Badge>
+                                    )}
+                                    {item.vegetarian && (
+                                      <Badge className="bg-fresh-green text-white">
+                                        🌱 Vegetarian
+                                      </Badge>
+                                    )}
+                                  </div>
+                                  
+                                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                                    {item.description}
+                                  </p>
+                                  
+                                  <div className="text-2xl font-bold text-primary mb-4">
+                                    {menuData.currency}{item.price.toFixed(2)}
+                                  </div>
+                                </div>
+                                
+                                <div className="flex items-center gap-2">
+                                  <AnimatePresence>
+                                    {cart[item.id] > 0 && (
+                                      <motion.div
+                                        initial={{ scale: 0, opacity: 0 }}
+                                        animate={{ scale: 1, opacity: 1 }}
+                                        exit={{ scale: 0, opacity: 0 }}
+                                        transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                                      >
+                                        <Button
+                                          size="sm"
+                                          variant="outline"
+                                          onClick={() => removeFromCart(item.id)}
+                                          className="h-10 w-10 p-0"
+                                        >
+                                          <Minus className="h-4 w-4" />
+                                        </Button>
+                                      </motion.div>
+                                    )}
+                                  </AnimatePresence>
+                                  
+                                  <AnimatePresence>
+                                    {cart[item.id] > 0 && (
+                                      <motion.span
+                                        className="w-8 text-center font-semibold"
+                                        initial={{ scale: 0 }}
+                                        animate={{ scale: 1 }}
+                                        exit={{ scale: 0 }}
+                                        key={cart[item.id]}
+                                      >
+                                        {cart[item.id]}
+                                      </motion.span>
+                                    )}
+                                  </AnimatePresence>
+                                  
+                                  <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                  >
+                                    <Button
+                                      size="sm"
+                                      onClick={() => addToCart(item.id, item.name)}
+                                      className="h-10 shadow-warm"
+                                    >
+                                      <Plus className="h-4 w-4" />
+                                    </Button>
+                                  </motion.div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          
-                          <p className="text-muted-foreground mb-4 leading-relaxed">
-                            {item.description}
-                          </p>
-                          
-                          <div className="text-2xl font-bold text-primary">
-                            {menuInfo.currency}{item.price.toFixed(2)}
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-center gap-2">
-                          {cart[item.id] > 0 && (
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={() => removeFromCart(item.id)}
-                            >
-                              <Minus className="h-4 w-4" />
-                            </Button>
-                          )}
-                          
-                          {cart[item.id] > 0 && (
-                            <span className="w-8 text-center font-semibold">
-                              {cart[item.id]}
-                            </span>
-                          )}
-                          
-                          <Button
-                            size="sm"
-                            onClick={() => addToCart(item.id)}
-                            variant="default"
-                          >
-                            <Plus className="h-4 w-4" />
-                          </Button>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          ))}
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
+            ))}
+        </AnimatePresence>
       </div>
     </div>
   );

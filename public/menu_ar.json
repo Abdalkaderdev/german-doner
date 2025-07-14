@@ -1,0 +1,120 @@
+{
+  "shopName": "دونر برلين",
+  "currency": "€",
+  "categories": [
+    {
+      "id": "doner",
+      "name": "دونر كباب",
+      "items": [
+        {
+          "id": "classic-doner",
+          "name": "دونر كلاسيكي",
+          "description": "خبز البيتا الطازج مع الدجاج والخس والطماطم والبصل والصلصة",
+          "price": 6.50,
+          "popular": true,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "beef-doner",
+          "name": "دونر لحم البقر المميز",
+          "description": "لحم بقر مميز مع مكونات طازجة وصلصة منزلية",
+          "price": 7.50,
+          "popular": true,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "veggie-doner",
+          "name": "دونر نباتي",
+          "description": "خضار مشوية وفلافل وسلطة طازجة وصلصة الطحينة",
+          "price": 6.00,
+          "vegetarian": true,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "spicy-doner",
+          "name": "دونر حار",
+          "description": "مع صلصة حارة إضافية وفلفل هالابينو",
+          "price": 7.00,
+          "spicy": true,
+          "image": "/placeholder.svg"
+        }
+      ]
+    },
+    {
+      "id": "wraps",
+      "name": "لفائف دورم",
+      "items": [
+        {
+          "id": "chicken-durum",
+          "name": "دورم دجاج",
+          "description": "خبز رقيق ملفوف بالدجاج والمكونات الطازجة",
+          "price": 7.00,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "lamb-durum",
+          "name": "دورم لحم ضأن",
+          "description": "لحم ضأن طري في خبز رقيق",
+          "price": 8.00,
+          "image": "/placeholder.svg"
+        }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "المقبلات والجانبية",
+      "items": [
+        {
+          "id": "fries",
+          "name": "البطاطس الذهبية",
+          "description": "بطاطس مقلية ذهبية مقرمشة",
+          "price": 3.50,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "hummus",
+          "name": "حمص مع خبز",
+          "description": "حمص منزلي مع خبز البيتا الدافئ",
+          "price": 4.00,
+          "vegetarian": true,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "baklava",
+          "name": "بقلاوة",
+          "description": "حلوى تركية بالمكسرات والعسل",
+          "price": 3.00,
+          "vegetarian": true,
+          "image": "/placeholder.svg"
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "المشروبات",
+      "items": [
+        {
+          "id": "ayran",
+          "name": "عيران",
+          "description": "مشروب الزبادي التركي",
+          "price": 2.50,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "turkish-tea",
+          "name": "شاي تركي",
+          "description": "شاي أسود تقليدي",
+          "price": 2.00,
+          "image": "/placeholder.svg"
+        },
+        {
+          "id": "cola",
+          "name": "كولا",
+          "description": "مشروب كولا منعش",
+          "price": 2.50,
+          "image": "/placeholder.svg"
+        }
+      ]
+    }
+  ]
+}

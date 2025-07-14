@@ -17,17 +17,18 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 20 50% 15%;
 
-    --primary: 15 75% 45%;
+    /* Berlin Doner Brand Colors - Red & Gold */
+    --primary: 0 75% 55%; /* Rich Red */
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 20 85% 55%;
+    --primary-glow: 0 85% 65%; /* Lighter Red */
 
-    --secondary: 35 25% 25%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 45 90% 55%; /* Berlin Gold */
+    --secondary-foreground: 20 50% 15%;
 
     --muted: 25 10% 90%;
     --muted-foreground: 20 25% 45%;
 
-    --accent: 40 95% 60%;
+    --accent: 45 85% 60%; /* Warm Gold */
     --accent-foreground: 20 50% 15%;
 
     --destructive: 0 84.2% 60.2%;
@@ -37,9 +38,11 @@ All colors MUST be HSL.
     --input: 25 15% 85%;
     --ring: 15 75% 45%;
 
-    /* Custom design tokens for doner shop */
-    --warm-gradient: linear-gradient(135deg, hsl(15 75% 45%), hsl(20 85% 55%));
-    --hero-gradient: linear-gradient(135deg, hsl(20 50% 15% / 0.95), hsl(15 45% 25% / 0.90));
+    /* Berlin Doner Brand Gradients & Colors */
+    --warm-gradient: linear-gradient(135deg, hsl(0 75% 55%), hsl(45 85% 60%));
+    --hero-gradient: linear-gradient(135deg, hsl(0 40% 15% / 0.95), hsl(0 50% 25% / 0.90));
+    --berlin-red: 0 75% 55%;
+    --berlin-gold: 45 85% 60%;
     --spice-gold: 45 90% 65%;
     --meat-brown: 25 40% 35%;
     --fresh-green: 120 60% 45%;
@@ -81,17 +84,17 @@ All colors MUST be HSL.
     --popover: 20 45% 12%;
     --popover-foreground: 25 15% 95%;
 
-    --primary: 20 85% 55%;
+    --primary: 0 85% 65%; /* Lighter Red for dark mode */
     --primary-foreground: 20 50% 8%;
-    --primary-glow: 25 90% 65%;
+    --primary-glow: 0 90% 75%;
 
-    --secondary: 25 35% 20%;
-    --secondary-foreground: 25 15% 95%;
+    --secondary: 45 85% 65%; /* Gold for dark mode */
+    --secondary-foreground: 20 50% 8%;
 
     --muted: 20 40% 15%;
     --muted-foreground: 25 15% 65%;
 
-    --accent: 40 95% 60%;
+    --accent: 45 90% 70%; /* Bright Gold for dark mode */
     --accent-foreground: 20 50% 8%;
 
     --destructive: 0 62.8% 30.6%;
@@ -101,8 +104,10 @@ All colors MUST be HSL.
     --input: 20 40% 20%;
     --ring: 20 85% 55%;
 
-    --warm-gradient: linear-gradient(135deg, hsl(20 85% 55%), hsl(25 90% 65%));
-    --hero-gradient: linear-gradient(135deg, hsl(20 50% 8% / 0.95), hsl(15 45% 15% / 0.90));
+    --warm-gradient: linear-gradient(135deg, hsl(0 85% 65%), hsl(45 90% 70%));
+    --hero-gradient: linear-gradient(135deg, hsl(0 40% 8% / 0.95), hsl(0 50% 15% / 0.90));
+    --berlin-red: 0 85% 65%;
+    --berlin-gold: 45 90% 70%;
     --spice-gold: 45 85% 70%;
     --meat-brown: 25 35% 45%;
     --fresh-green: 120 55% 55%;
