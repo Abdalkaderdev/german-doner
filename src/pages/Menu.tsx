@@ -23,7 +23,6 @@ interface MenuItem {
   stock?: number;
   isSpecial?: boolean;
   specialPrice?: number;
-  halal?: boolean;
   vegan?: boolean;
   glutenFree?: boolean;
   allergens?: string[];
@@ -133,7 +132,6 @@ export default function Menu() {
         const itemFilters = [];
         if (item.vegetarian) itemFilters.push('vegetarian');
         if (item.vegan) itemFilters.push('vegan');
-        if (item.halal) itemFilters.push('halal');
         if (item.glutenFree) itemFilters.push('glutenFree');
         if (item.spicy) itemFilters.push('spicy');
         if (item.popular) itemFilters.push('popular');
@@ -151,7 +149,6 @@ export default function Menu() {
   const filterOptions = [
     { id: 'vegetarian', label: '🌱 Vegetarian', count: 0 },
     { id: 'vegan', label: '🌿 Vegan', count: 0 },
-    { id: 'halal', label: '☪️ Halal', count: 0 },
     { id: 'glutenFree', label: '🌾 Gluten Free', count: 0 },
     { id: 'spicy', label: '🌶️ Spicy', count: 0 },
     { id: 'popular', label: '⭐ Popular', count: 0 },
@@ -530,11 +527,6 @@ export default function Menu() {
                                   {item.vegan && (
                                     <Badge className="bg-fresh-green text-white">
                                       🌿 Vegan  
-                                    </Badge>
-                                  )}
-                                  {item.halal && (
-                                    <Badge className="bg-blue-600 text-white">
-                                      ☪️ Halal
                                     </Badge>
                                   )}
                                   {item.glutenFree && (

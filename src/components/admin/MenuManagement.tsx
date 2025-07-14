@@ -46,7 +46,6 @@ interface MenuItem {
   stock?: number;
   isSpecial?: boolean;
   specialPrice?: number;
-  halal?: boolean;
   vegan?: boolean;
   glutenFree?: boolean;
   allergens?: string[];
@@ -188,7 +187,6 @@ export const MenuManagement = () => {
         stock: 50,
         isSpecial: false,
         specialPrice: 0,
-        halal: false,
         vegan: false,
         glutenFree: false,
         allergens: []
@@ -403,14 +401,6 @@ export const MenuManagement = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Switch
-                id="halal"
-                checked={formData.halal || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, halal: checked }))}
-              />
-              <Label htmlFor="halal">Halal</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Switch
                 id="gluten-free"
                 checked={formData.glutenFree || false}
                 onCheckedChange={(checked) => setFormData(prev => ({ ...prev, glutenFree: checked }))}
@@ -553,7 +543,6 @@ export const MenuManagement = () => {
                             {item.popular && <Badge variant="secondary">Popular</Badge>}
                             {item.vegetarian && <Badge variant="outline" className="text-fresh-green border-fresh-green">Vegetarian</Badge>}
                             {item.vegan && <Badge variant="outline" className="text-fresh-green border-fresh-green">Vegan</Badge>}
-                            {item.halal && <Badge variant="outline" className="text-blue-600 border-blue-600">Halal</Badge>}
                             {item.glutenFree && <Badge variant="outline" className="text-purple-600 border-purple-600">Gluten Free</Badge>}
                             {item.spicy && <Badge variant="outline" className="text-destructive border-destructive">Spicy</Badge>}
                             {item.allergens && item.allergens.length > 0 && (

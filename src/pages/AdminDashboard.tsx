@@ -22,7 +22,7 @@ import { MenuManagement } from "@/components/admin/MenuManagement";
 import { RestaurantSettings } from "@/components/admin/RestaurantSettings";
 import { LiveUpdates } from "@/components/admin/LiveUpdates";
 import { AnalyticsDashboard } from "@/components/admin/AnalyticsDashboard";
-import MenuEditor from "@/components/admin/MenuEditor";
+
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
@@ -121,10 +121,9 @@ export default function AdminDashboard() {
         </motion.div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5">
+          <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="menu">Menu</TabsTrigger>
-            <TabsTrigger value="editor">Menu Editor</TabsTrigger>
+            <TabsTrigger value="menu">Menu Management</TabsTrigger>
             <TabsTrigger value="settings">Settings</TabsTrigger>
             <TabsTrigger value="live">Live Updates</TabsTrigger>
           </TabsList>
@@ -161,10 +160,6 @@ export default function AdminDashboard() {
 
           <TabsContent value="menu" className="space-y-4">
             <MenuManagement />
-          </TabsContent>
-
-          <TabsContent value="editor" className="space-y-4">
-            <MenuEditor />
           </TabsContent>
 
           <TabsContent value="settings" className="space-y-4">
