@@ -59,25 +59,12 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
         <CardContent className="p-0">
           {/* Image Section */}
           <div className="w-full h-48 relative overflow-hidden bg-gray-100 flex-shrink-0">
-            {item.image ? (
-              <motion.img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-full object-cover"
-                variants={cardImageVariants}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = logo;
-                }}
-              />
-            ) : (
-              <motion.img
-                src={logo}
-                alt="Logo"
-                className="w-full h-full object-cover"
-                variants={cardImageVariants}
-              />
-            )}
+            <motion.img
+              src={logo}
+              alt="Logo"
+              className="w-full h-full object-cover"
+              variants={cardImageVariants}
+            />
             {/* Placeholder if no image */}
             <div className={`absolute inset-0 flex items-center justify-center bg-gray-100 ${item.image ? 'hidden' : ''}`}>
               <img src="/images/placeholder.png" alt="No Image" className="w-16 h-16 object-contain opacity-60 mb-2" />
