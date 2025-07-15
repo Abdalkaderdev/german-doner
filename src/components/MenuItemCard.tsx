@@ -65,11 +65,6 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
               className="w-full h-full object-cover"
               variants={cardImageVariants}
             />
-            {/* Placeholder if no image */}
-            <div className={`absolute inset-0 flex items-center justify-center bg-gray-100 ${item.image ? 'hidden' : ''}`}>
-              <img src="/images/placeholder.png" alt="No Image" className="w-16 h-16 object-contain opacity-60 mb-2" />
-              <ImageOff className="h-8 w-8 text-gray-400 absolute bottom-2 right-2" />
-            </div>
           </div>
 
           {/* Content Section */}

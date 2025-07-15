@@ -510,15 +510,13 @@ export const MenuManagement = () => {
                       whileHover={{ scale: 1.02 }}
                     >
                       <div className="flex items-center gap-4">
-                        {item.image && (
-                          <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted">
-                            <img 
-                              src={item.image} 
-                              alt={item.name}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        )}
+                        <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted">
+                          <img 
+                            src={item.image || require('../../assets/logo.jpg')}
+                            alt={item.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                         
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1 flex-wrap">
