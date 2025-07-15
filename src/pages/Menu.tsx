@@ -468,7 +468,7 @@ export default function Menu() {
                   variant={activeCategory === category.id ? "default" : "ghost"}
                   size="sm"
                   onClick={() => scrollToCategory(category.id)}
-                  className="whitespace-nowrap transition-all duration-300 hover:scale-105"
+                  className="whitespace-nowrap transition-all duration-300 hover:scale-105 text-[#C62828] border-[#C62828] focus:text-[#C62828] focus:border-[#C62828]"
                 >
                   {category.name} ({category.items.length})
                 </Button>
