@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Languages, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/doner-hero.jpg";
+import background from "../assets/background.jpg";
+import logo from "../assets/logo.jpg";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -78,28 +80,10 @@ const Index = () => {
   return (
     <div 
       className="min-h-screen relative flex items-center justify-center bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${heroImage})` }}
+      style={{ backgroundImage: `url(${background})` }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-hero-gradient" />
-      
-      {/* Admin Access Button */}
-      <motion.div 
-        className="absolute top-4 right-4 z-20"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-      >
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => navigate('/admin')}
-          className="text-white/70 hover:text-white hover:bg-white/10 backdrop-blur-sm"
-        >
-          <Settings className="h-4 w-4 mr-2" />
-          Admin
-        </Button>
-      </motion.div>
       
       {/* Content */}
       <motion.div 
@@ -111,10 +95,10 @@ const Index = () => {
         {/* Logo/Brand */}
         <motion.div className="mb-8" variants={itemVariants}>
           <motion.div 
-            className="w-28 h-28 mx-auto mb-6 bg-warm-gradient rounded-full flex items-center justify-center shadow-warm"
+            className="w-28 h-28 mx-auto mb-6 bg-white rounded-full flex items-center justify-center shadow-warm"
             variants={logoVariants}
           >
-            <span className="text-5xl font-bold text-white">🥙</span>
+            <img src={logo} alt="German Doner Logo" className="w-20 h-20 object-contain" />
           </motion.div>
           <motion.h1 
             className="text-6xl md:text-7xl font-bold text-white mb-4 drop-shadow-lg"
@@ -171,11 +155,8 @@ const Index = () => {
                       onClick={() => handleLanguageSelect(lang.code)}
                       className="w-full text-lg py-6 justify-start gap-4 border-2 hover:border-primary transition-all duration-300"
                     >
-                      <span className="text-3xl">{lang.flag}</span>
-                      <div className="flex flex-col items-start">
-                        <span className="font-semibold">{lang.name}</span>
-                        <span className="text-sm text-muted-foreground">{lang.nativeName}</span>
-                      </div>
+                      <span className="font-semibold">{lang.name}</span>
+                      <span className="text-sm text-muted-foreground">{lang.nativeName}</span>
                     </Button>
                   </motion.div>
                 ))}
@@ -197,7 +178,7 @@ const Index = () => {
               <CardContent className="p-6 text-center">
                 <div className="text-3xl mb-3">📍</div>
                 <h3 className="font-semibold text-foreground mb-2">Location</h3>
-                <p className="text-muted-foreground">Hauptstraße 123, Berlin</p>
+                <p className="text-muted-foreground">Queen Towers, Erbil</p>
               </CardContent>
             </Card>
           </motion.div>
