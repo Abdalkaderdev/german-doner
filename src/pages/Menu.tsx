@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useScrollCategory } from "@/hooks/useScrollCategory";
 import MenuSection from "@/components/MenuSection";
 import logo from "@/assets/logo.jpg";
+import DynamicCategoryNav from "@/components/ui/DynamicCategoryNav";
 
 interface MenuItem {
   id: string;
@@ -448,37 +449,12 @@ export default function Menu() {
         </div>
       </motion.div>
 
-      {/* Category Navigation */}
-      <motion.div 
-        className="bg-card border-b sticky top-[112px] z-40"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-      >
-        <div className="relative w-full">
-          <div className="flex gap-2 py-4 overflow-x-auto scrollbar-hide w-full" style={{ WebkitOverflowScrolling: 'touch' }}>
-            {(filteredCategories || []).map((category, index) => (
-              <motion.div
-                key={category.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
-              >
-                <Button
-                  variant={activeCategory === category.id ? "default" : "ghost"}
-                  size="sm"
-                  onClick={() => scrollToCategory(category.id)}
-                  className="whitespace-nowrap transition-all duration-300 hover:scale-105 text-[#C62828] border-[#C62828] focus:text-[#C62828] focus:border-[#C62828]"
-                >
-                  {category.name} ({category.items.length})
-                </Button>
-              </motion.div>
-            ))}
-          </div>
-          {/* Right-edge fade for scroll cue */}
-          <div className="pointer-events-none absolute top-0 right-0 h-full w-8 bg-gradient-to-l from-card to-transparent" />
-        </div>
-      </motion.div>
+      {/* Dynamic Category Navigation */}
+      <DynamicCategoryNav
+        categories={(filteredCategories || []).map(cat => ({ id: cat.id, name: cat.name, count: cat.items.length }))}
+        activeCategory={activeCategory}
+        onCategoryClick={scrollToCategory}
+      />
 
       {/* Menu Sections */}
       <main ref={mainRef} className="container mx-auto px-2 py-6">
