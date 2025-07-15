@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import MenuItemCard from "./MenuItemCard";
 
 // Props for MenuSection
@@ -11,7 +11,7 @@ interface MenuSectionProps {
   onFavoriteToggle?: (id: string) => void;
 }
 
-const sectionVariants = {
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
@@ -28,7 +28,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ category, currency, isRTL, fa
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       id={`category-${category.id}`}
-      className="mb-12"
+      className="mb-12 border-4 border-dashed border-yellow-400 bg-yellow-50"
     >
       <motion.h2
         className="text-3xl md:text-4xl font-bold mb-6 px-2"
