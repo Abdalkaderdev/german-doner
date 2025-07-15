@@ -30,7 +30,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ category, currency, isRTL, fa
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, type: 'spring', stiffness: 80, damping: 18 }}
       id={`category-${category.id}`}
-      className={`mb-12${category.id === 'pizza' ? ' bg-red-100 border border-red-500' : ''}`}
+      className="mb-12"
     >
       <motion.h2
         className="text-3xl md:text-4xl font-bold mb-6 px-2"
