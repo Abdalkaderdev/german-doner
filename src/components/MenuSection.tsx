@@ -26,10 +26,9 @@ const MenuSection: React.FC<MenuSectionProps> = ({ category, currency, isRTL, fa
   const isPizza = category.id === 'pizza';
   return (
     <motion.section
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, type: 'spring', stiffness: 80, damping: 18 }}
       id={`category-${category.id}`}
       className="mb-12"
     >
