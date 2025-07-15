@@ -23,14 +23,23 @@ const sectionVariants: Variants = {
 const MenuSection: React.FC<MenuSectionProps> = ({ category, currency, isRTL, favorites = [], onFavoriteToggle }) => {
   // Debug: Log category and items
   console.log('Rendering category:', category.id, category.items);
+  const isPizza = category.id === 'pizza';
   return (
     <motion.section
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      {...(isPizza
+        ? {
+            initial: { opacity: 0, y: 50 },
+            animate: { opacity: 1, y: 0 },
+            transition: { duration: 0.7, type: 'spring', stiffness: 80, damping: 18 }
+          }
+        : {
+            variants: sectionVariants,
+            initial: 'hidden',
+            whileInView: 'visible',
+            viewport: { once: true, amount: 0.2 }
+          })}
       id={`category-${category.id}`}
-      className={`mb-12 ${category.id === 'pizza' ? 'border-4 border-red-500' : ''}`}
+      className={`mb-12 ${isPizza ? 'border-4 border-red-500 bg-red-100 min-h-[100px]' : ''}`}
     >
       <motion.h2
         className="text-3xl md:text-4xl font-bold mb-6 px-2"
