@@ -7,63 +7,45 @@
       "name": "Doner Kebab",
       "items": [
         {
-          "id": "classic-doner",
-          "name": "Classic Doner",
-          "description": "Fresh pita bread with chicken, lettuce, tomatoes, onions and sauce",
-          "price": 10000,
-          "popular": true,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "beef-doner",
-          "name": "Premium Beef Doner",
-          "description": "Premium beef with fresh ingredients and homemade sauce",
-          "price": 12000,
-          "popular": true,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "veggie-doner",
-          "name": "Vegetarian Doner",
-          "description": "Grilled vegetables, falafel, fresh salad and tahini sauce",
-          "price": 9500,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "spicy-doner",
-          "name": "Spicy Doner",
-          "description": "With extra spicy sauce and jalapeños",
-          "price": 11000,
-          "spicy": true,
-          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "mixed-doner",
-          "name": "Mixed Meat Doner",
-          "description": "Combination of chicken and beef with special sauce",
-          "price": 12500,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "doner-kebap",
-          "name": "Doner Kebap",
-          "description": "Classic doner kebap in fresh bread.",
+          "id": "doner-kebap-beef",
+          "name": "Doner Kebap Beef",
+          "description": "Classic beef doner kebap in fresh bread.",
           "price": 5500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
-          "id": "yufka-kebap",
-          "name": "Yufka Kebap",
-          "description": "Yufka wrap with doner meat and salad.",
+          "id": "doner-kebap-chicken",
+          "name": "Doner Kebap Chicken",
+          "description": "Classic chicken doner kebap in fresh bread.",
+          "price": 4500,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "yufka-kebap-beef",
+          "name": "Yufka Kebap Beef",
+          "description": "Yufka wrap with beef doner meat and salad.",
           "price": 6000,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
-          "id": "kebap-plate",
-          "name": "Kebap Plate",
-          "description": "Doner kebap served on a plate with sides.",
+          "id": "yufka-kebap-chicken",
+          "name": "Yufka Kebap Chicken",
+          "description": "Yufka wrap with chicken doner meat and salad.",
+          "price": 5000,
+          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "kebap-plate-beef",
+          "name": "Kebap Plate Beef",
+          "description": "Beef doner kebap served on a plate with sides.",
           "price": 11000,
+          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "kebap-plate-chicken",
+          "name": "Kebap Plate Chicken",
+          "description": "Chicken doner kebap served on a plate with sides.",
+          "price": 10000,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {

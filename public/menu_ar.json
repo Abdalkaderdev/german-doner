@@ -7,63 +7,45 @@
       "name": "دونر كباب",
       "items": [
         {
-          "id": "classic-doner",
-          "name": "دونر كلاسيكي",
-          "description": "خبز البيتا الطازج مع الدجاج والخس والطماطم والبصل والصلصة",
-          "price": 10000,
-          "popular": true,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "beef-doner",
-          "name": "دونر لحم البقر المميز",
-          "description": "لحم بقر مميز مع مكونات طازجة وصلصة منزلية",
-          "price": 12000,
-          "popular": true,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "veggie-doner",
-          "name": "دونر نباتي",
-          "description": "خضار مشوية وفلافل وسلطة طازجة وصلصة الطحينة",
-          "price": 9500,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "spicy-doner",
-          "name": "دونر حار",
-          "description": "مع صلصة حارة إضافية وفلفل هالابينو",
-          "price": 11000,
-          "spicy": true,
-          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "mixed-doner",
-          "name": "دونر لحوم مختلطة",
-          "description": "مزيج من الدجاج ولحم البقر مع صلصة خاصة",
-          "price": 12500,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "doner-kebap",
-          "name": "دونر كباب",
-          "description": "دونر كباب كلاسيكي في خبز طازج.",
+          "id": "doner-kebap-beef",
+          "name": "دونر كباب لحم",
+          "description": "دونر كباب لحم بقري كلاسيكي في خبز طازج.",
           "price": 5500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
-          "id": "yufka-kebap",
-          "name": "يوفكا كباب",
-          "description": "لفافة يوفكا مع لحم الدونر وسلطة.",
+          "id": "doner-kebap-chicken",
+          "name": "دونر كباب دجاج",
+          "description": "دونر كباب دجاج كلاسيكي في خبز طازج.",
+          "price": 4500,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "yufka-kebap-beef",
+          "name": "يوفكا كباب لحم",
+          "description": "لفافة يوفكا مع لحم بقري دونر وسلطة.",
           "price": 6000,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
-          "id": "kebap-plate",
-          "name": "طبق كباب",
-          "description": "دونر كباب يقدم في طبق مع مقبلات.",
+          "id": "yufka-kebap-chicken",
+          "name": "يوفكا كباب دجاج",
+          "description": "لفافة يوفكا مع دجاج دونر وسلطة.",
+          "price": 5000,
+          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "kebap-plate-beef",
+          "name": "طبق كباب لحم",
+          "description": "دونر كباب لحم بقري يقدم في طبق مع مقبلات.",
           "price": 11000,
+          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "kebap-plate-chicken",
+          "name": "طبق كباب دجاج",
+          "description": "دونر كباب دجاج يقدم في طبق مع مقبلات.",
+          "price": 10000,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {

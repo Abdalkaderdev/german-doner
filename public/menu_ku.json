@@ -7,63 +7,45 @@
       "name": "دۆنەر کەباب",
       "items": [
         {
-          "id": "classic-doner",
-          "name": "دۆنەری کلاسیکی",
-          "description": "نانی تازە لەگەڵ مریشک، سەوزە، تەماتە، پیاز و سۆس",
-          "price": 10000,
-          "popular": true,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "beef-doner",
-          "name": "دۆنەری گۆشتی گاوی باڵا",
-          "description": "گۆشتی گاوی باڵا لەگەڵ پێکهاتە تازەکان و سۆسی ماڵەوە",
-          "price": 12000,
-          "popular": true,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "veggie-doner",
-          "name": "دۆنەری ڕووەکی",
-          "description": "سەوزەی برژاو، فەلافەل، سەلاتای تازە و سۆسی تاهینی",
-          "price": 9500,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "spicy-doner",
-          "name": "دۆنەری تیژ",
-          "description": "لەگەڵ سۆسی زۆر تیژ و جالاپینۆ",
-          "price": 11000,
-          "spicy": true,
-          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "mixed-doner",
-          "name": "دۆنەری تێکەڵ",
-          "description": "تێکەڵی مریشک و گۆشتی گاو لەگەڵ سۆسی تایبەت",
-          "price": 12500,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "doner-kebap",
-          "name": "دۆنەر کباب",
-          "description": "دۆنەر کبابی کلاسیکی لە نانی تازەدا.",
+          "id": "doner-kebap-beef",
+          "name": "دۆنەر کباب گۆشت",
+          "description": "دۆنەر کبابی گۆشتی کلاسیکی لە نانی تازەدا.",
           "price": 5500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
-          "id": "yufka-kebap",
-          "name": "یوفکا کباب",
-          "description": "یوفکا وەرەقە لەگەڵ گۆشت و سەلاتە.",
+          "id": "doner-kebap-chicken",
+          "name": "دۆنەر کباب مۆرغ",
+          "description": "دۆنەر کبابی مۆرغی کلاسیکی لە نانی تازەدا.",
+          "price": 4500,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "yufka-kebap-beef",
+          "name": "یوفکا کباب گۆشت",
+          "description": "یوفکا وەرەقە لەگەڵ گۆشتی دۆنەر و سەلاتە.",
           "price": 6000,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
-          "id": "kebap-plate",
-          "name": "خواردنی کباب",
-          "description": "دۆنەر کباب لە خواردنێکدا بە پێشکەشکراوە.",
+          "id": "yufka-kebap-chicken",
+          "name": "یوفکا کباب مۆرغ",
+          "description": "یوفکا وەرەقە لەگەڵ مۆرغی دۆنەر و سەلاتە.",
+          "price": 5000,
+          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "kebap-plate-beef",
+          "name": "خواردنی کباب گۆشت",
+          "description": "دۆنەر کبابی گۆشت لە خواردنێکدا بە پێشکەشکراوە.",
           "price": 11000,
+          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "kebap-plate-chicken",
+          "name": "خواردنی کباب مۆرغ",
+          "description": "دۆنەر کبابی مۆرغ لە خواردنێکدا بە پێشکەشکراوە.",
+          "price": 10000,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
