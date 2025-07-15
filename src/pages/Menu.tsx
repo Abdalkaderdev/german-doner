@@ -448,10 +448,6 @@ export default function Menu() {
         </div>
       </motion.div>
 
-      {/* Debug: Print loaded categories */}
-      <div className="text-xs text-gray-400 px-2 py-1 bg-yellow-50 border-b border-yellow-200">
-        Loaded categories: {filteredCategories.map(cat => cat.name).join(', ')}
-      </div>
       {/* Category Navigation */}
       <motion.div 
         className="bg-card border-b sticky top-[112px] z-40"

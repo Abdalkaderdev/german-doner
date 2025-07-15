@@ -28,7 +28,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ category, currency, isRTL, fa
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       id={`category-${category.id}`}
-      className="mb-12 border-4 border-dashed border-yellow-400 bg-yellow-50"
+      className="mb-12"
     >
       <motion.h2
         className="text-3xl md:text-4xl font-bold mb-6 px-2"
@@ -36,6 +36,10 @@ const MenuSection: React.FC<MenuSectionProps> = ({ category, currency, isRTL, fa
       >
         {category.name}
       </motion.h2>
+      {/* Debug: Print rendered item IDs and names */}
+      <div className="text-xs text-gray-500 mb-2 px-2">
+        Items: {category.items.map((item: any) => `${item.id} (${item.name})`).join(', ')}
+      </div>
       <div
         className={
           `grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3` +
