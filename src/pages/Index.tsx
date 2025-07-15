@@ -126,7 +126,7 @@ const Index = () => {
             className="text-4xl md:text-5xl font-bold text-berlin-gold mb-4 drop-shadow-lg"
             variants={itemVariants}
           >
-            Berlin Doner
+            German Doner
           </motion.h2>
           <motion.p 
             className="text-xl md:text-2xl text-white/90 mb-2 drop-shadow-md"

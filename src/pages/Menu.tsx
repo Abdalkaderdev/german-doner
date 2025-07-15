@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Search, Filter, Clock, MapPin, Star, Heart, X, ImageOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,9 +6,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollCategory } from "@/hooks/useScrollCategory";
+import MenuSection from "@/components/MenuSection";
 
 interface MenuItem {
   id: string;
@@ -41,11 +42,11 @@ interface MenuData {
 }
 
 export default function Menu() {
+  const { lang } = useParams();
   const navigate = useNavigate();
   const { toast } = useToast();
   const [menuData, setMenuData] = useState<MenuData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [currentLanguage, setCurrentLanguage] = useState("en");
   const [isRTL, setIsRTL] = useState(false);
   
   // Search and filter states
@@ -59,6 +60,8 @@ export default function Menu() {
     categories: menuData?.categories.map(cat => cat.id) || []
   });
 
+  const mainRef = useRef<HTMLDivElement>(null);
+
   // Load favorites from localStorage
   useEffect(() => {
     const savedFavorites = localStorage.getItem('menuFavorites');
@@ -67,25 +70,43 @@ export default function Menu() {
     }
   }, []);
 
-  // Load menu data based on selected language
+  // Language switcher logic
+  const languages = [
+    { code: "en", label: "EN", flag: "🇬🇧" },
+    { code: "ku", label: "KU", flag: "🇮🇶" },
+    { code: "ar", label: "AR", flag: "🇸🇾" },
+  ];
+  const currentLanguage = lang || "en";
+  const selectedLang = currentLanguage;
+  const handleLanguageSwitch = (newLang: string) => {
+    if (newLang === currentLanguage) return;
+    localStorage.setItem("selectedLanguage", newLang);
+    navigate(`/menu/${newLang}`);
+    setTimeout(() => {
+      if (mainRef.current) {
+        // Adjust offset for sticky headers (header + search/filters + nav)
+        const y = mainRef.current.getBoundingClientRect().top + window.scrollY - 24; // tweak offset as needed
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
+  // Load menu data based on lang param
   useEffect(() => {
+    if (!currentLanguage) return;
+    localStorage.setItem("selectedLanguage", currentLanguage);
+    setIsRTL(currentLanguage === "ar");
+    document.documentElement.dir = currentLanguage === "ar" ? "rtl" : "ltr";
+    document.documentElement.lang = currentLanguage;
+    setLoading(true);
     const loadMenuData = async () => {
       try {
-        const selectedLang = localStorage.getItem('selectedLanguage') || 'en';
-        setCurrentLanguage(selectedLang);
-        setIsRTL(selectedLang === 'ar');
-        
-        // Update document direction for RTL
-        document.documentElement.dir = selectedLang === 'ar' ? 'rtl' : 'ltr';
-        document.documentElement.lang = selectedLang;
-
-        const response = await fetch(`/menu_${selectedLang}.json`);
+        const response = await fetch(`/menu_${currentLanguage}.json`);
         if (!response.ok) {
           throw new Error('Failed to load menu');
         }
         const data = await response.json();
         setMenuData(data);
-        
       } catch (error) {
         console.error('Error loading menu:', error);
         toast({
@@ -97,9 +118,8 @@ export default function Menu() {
         setLoading(false);
       }
     };
-
     loadMenuData();
-  }, [toast]);
+  }, [currentLanguage, toast]);
 
   // Toggle favorite item
   const toggleFavorite = (itemId: string) => {
@@ -110,40 +130,61 @@ export default function Menu() {
     localStorage.setItem('menuFavorites', JSON.stringify(newFavorites));
   };
 
-  // Filter items based on search and filters
-  const filteredCategories = menuData?.categories.map(category => ({
-    ...category,
-    items: category.items.filter(item => {
-      // Check availability and stock
-      if (item.available === false || (item.stock !== undefined && item.stock <= 0)) {
-        return false;
-      }
-
-      // Search filter
-      if (searchQuery) {
-        const query = searchQuery.toLowerCase();
-        const matchesName = item.name.toLowerCase().includes(query);
-        const matchesDescription = item.description.toLowerCase().includes(query);
-        if (!matchesName && !matchesDescription) return false;
-      }
-
-      // Dietary filters
-      if (selectedFilters.length > 0) {
-        const itemFilters = [];
-        if (item.vegetarian) itemFilters.push('vegetarian');
-        if (item.vegan) itemFilters.push('vegan');
-        if (item.glutenFree) itemFilters.push('glutenFree');
-        if (item.spicy) itemFilters.push('spicy');
-        if (item.popular) itemFilters.push('popular');
-        if (item.isSpecial) itemFilters.push('special');
-        if (favorites.includes(item.id)) itemFilters.push('favorites');
-
-        return selectedFilters.every(filter => itemFilters.includes(filter));
-      }
-
-      return true;
-    })
-  })).filter(category => category.items.length > 0);
+  // --- Search Logic (modular, ready for extraction) ---
+  // Memoize filtered categories for performance
+  const filteredCategories = useMemo(() => {
+    if (!menuData) return [];
+    // If no search, return all categories with items
+    if (!searchQuery.trim()) {
+      return menuData.categories.map(category => ({
+        ...category,
+        items: category.items.filter(item => {
+          // Check availability and stock
+          if (item.available === false || (item.stock !== undefined && item.stock <= 0)) return false;
+          // Dietary filters
+          if (selectedFilters.length > 0) {
+            const itemFilters = [];
+            if (item.vegetarian) itemFilters.push('vegetarian');
+            if (item.vegan) itemFilters.push('vegan');
+            if (item.glutenFree) itemFilters.push('glutenFree');
+            if (item.spicy) itemFilters.push('spicy');
+            if (item.popular) itemFilters.push('popular');
+            if (item.isSpecial) itemFilters.push('special');
+            if (favorites.includes(item.id)) itemFilters.push('favorites');
+            return selectedFilters.every(filter => itemFilters.includes(filter));
+          }
+          return true;
+        })
+      })).filter(category => category.items.length > 0);
+    }
+    // If searching, filter items by name or description (case-insensitive)
+    const query = searchQuery.toLowerCase();
+    return menuData.categories
+      .map(category => ({
+        ...category,
+        items: category.items.filter(item => {
+          if (item.available === false || (item.stock !== undefined && item.stock <= 0)) return false;
+          const matchesName = item.name.toLowerCase().includes(query);
+          const matchesDescription = item.description?.toLowerCase().includes(query);
+          // Only match if name or description matches
+          if (!matchesName && !matchesDescription) return false;
+          // Dietary filters
+          if (selectedFilters.length > 0) {
+            const itemFilters = [];
+            if (item.vegetarian) itemFilters.push('vegetarian');
+            if (item.vegan) itemFilters.push('vegan');
+            if (item.glutenFree) itemFilters.push('glutenFree');
+            if (item.spicy) itemFilters.push('spicy');
+            if (item.popular) itemFilters.push('popular');
+            if (item.isSpecial) itemFilters.push('special');
+            if (favorites.includes(item.id)) itemFilters.push('favorites');
+            return selectedFilters.every(filter => itemFilters.includes(filter));
+          }
+          return true;
+        })
+      }))
+      .filter(category => category.items.length > 0);
+  }, [menuData, searchQuery, selectedFilters, favorites]);
 
   // Available filter options
   const filterOptions = [
@@ -256,37 +297,120 @@ export default function Menu() {
   }
 
   return (
-    <div className={`min-h-screen bg-background ${isRTL ? 'rtl' : 'ltr'}`}>
-      {/* Sticky Header */}
-      <motion.div 
-        className="sticky top-0 z-50 bg-warm-gradient backdrop-blur-md border-b border-white/10"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      >
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => navigate("/")}
-                className="text-white hover:bg-white/20"
-              >
-                <ArrowLeft className="h-4 w-4" />
-              </Button>
-              <motion.h1 
-                className="text-2xl font-bold text-white"
-                initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                {menuData.shopName}
-              </motion.h1>
-            </div>
-          </div>
+    <div
+      className={`min-h-screen bg-background ${isRTL ? 'rtl' : 'ltr'}`}
+      dir={isRTL ? 'rtl' : 'ltr'}
+    >
+      {/* Sticky Header with Language Switcher */}
+      <header className="sticky top-0 z-50 bg-[#C62828] text-white py-4 px-4 shadow-md flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-center flex-1">German Doner</h1>
+        {/* Language Switcher */}
+        <div className="flex items-center gap-2 sm:gap-4 ml-auto">
+          {languages.map((lang) => (
+            <button
+              key={lang.code}
+              onClick={() => handleLanguageSwitch(lang.code)}
+              className={`flex items-center gap-1 px-2 py-1 rounded-md text-sm font-semibold transition-all duration-200
+                ${selectedLang === lang.code ? 'bg-[#FFD54F] text-[#C62828] underline' : 'hover:bg-white/20'}
+                ${isRTL ? 'ml-1' : 'mr-1'}
+              `}
+              aria-current={selectedLang === lang.code ? 'page' : undefined}
+            >
+              <span>{lang.label}</span>
+              <span>{lang.flag}</span>
+            </button>
+          ))}
         </div>
-      </motion.div>
+      </header>
+
+      {/* --- Search Input & Filters --- */}
+      <div className="w-full flex flex-col items-center bg-background py-6 px-2 border-b">
+        <div className="relative w-full max-w-md mb-2">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+            placeholder={isRTL ? "...ابحث في القائمة" : "Search menu..."}
+            className={`w-full rounded-lg shadow px-4 py-2 border border-gray-200 focus:border-[#C62828] focus:ring-2 focus:ring-[#FFD54F] bg-white text-gray-900 placeholder-gray-400 transition-all duration-200 ${isRTL ? 'text-right pr-10' : 'text-left pl-10'}`}
+            style={{ direction: isRTL ? 'rtl' : 'ltr' }}
+            aria-label="Search menu"
+          />
+          <Search className={`absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'right-3' : 'left-3'} h-5 w-5 text-gray-400 pointer-events-none`} />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery("")}
+              className={`absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'left-3' : 'right-3'} text-gray-400 hover:text-[#C62828] focus:outline-none`}
+              aria-label="Clear search"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          )}
+        </div>
+        {/* Filter Button */}
+        <div className="w-full max-w-md flex justify-end mb-2">
+          <Button
+            variant={showFilters ? "default" : "outline"}
+            size="sm"
+            onClick={() => setShowFilters(!showFilters)}
+            className="flex items-center gap-2"
+          >
+            <Filter className="h-4 w-4" />
+            {isRTL ? "تصفية" : "Filters"}
+            {selectedFilters.length > 0 && (
+              <Badge variant="secondary" className="ml-1">
+                {selectedFilters.length}
+              </Badge>
+            )}
+          </Button>
+        </div>
+        {/* Filter Options */}
+        {showFilters && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="w-full max-w-md mt-2 pt-2 border-t"
+          >
+            <div className="flex flex-wrap gap-2">
+              {filterOptions.map((option) => (
+                <Button
+                  key={option.id}
+                  variant={selectedFilters.includes(option.id) ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => {
+                    setSelectedFilters(prev => 
+                      prev.includes(option.id)
+                        ? prev.filter(f => f !== option.id)
+                        : [...prev, option.id]
+                    );
+                  }}
+                  className="text-xs"
+                >
+                  {option.label}
+                  {option.count > 0 && !selectedFilters.includes(option.id) && (
+                    <Badge variant="secondary" className="ml-1 text-xs">
+                      {option.count}
+                    </Badge>
+                  )}
+                </Button>
+              ))}
+            </div>
+            {selectedFilters.length > 0 && (
+              <div className="flex items-center gap-2 mt-4">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setSelectedFilters([])}
+                  className="text-xs"
+                >
+                  <X className="h-3 w-3 mr-1" />
+                  {isRTL ? "مسح التصفية" : "Clear all filters"}
+                </Button>
+              </div>
+            )}
+          </motion.div>
+        )}
+      </div>
 
       {/* Restaurant Status & Info */}
       <motion.div 
@@ -320,93 +444,9 @@ export default function Menu() {
         </div>
       </motion.div>
 
-      {/* Search and Filters */}
-      <motion.div 
-        className="bg-background border-b sticky top-[73px] z-40"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex gap-3 items-center">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                placeholder="Search menu items..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-4"
-              />
-            </div>
-            <Button
-              variant={showFilters ? "default" : "outline"}
-              size="sm"
-              onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2"
-            >
-              <Filter className="h-4 w-4" />
-              Filters
-              {selectedFilters.length > 0 && (
-                <Badge variant="secondary" className="ml-1">
-                  {selectedFilters.length}
-                </Badge>
-              )}
-            </Button>
-          </div>
-
-          {/* Filter Options */}
-          {showFilters && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="mt-4 pt-4 border-t"
-            >
-              <div className="flex flex-wrap gap-2">
-                {filterOptions.map((option) => (
-                  <Button
-                    key={option.id}
-                    variant={selectedFilters.includes(option.id) ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => {
-                      setSelectedFilters(prev => 
-                        prev.includes(option.id)
-                          ? prev.filter(f => f !== option.id)
-                          : [...prev, option.id]
-                      );
-                    }}
-                    className="text-xs"
-                  >
-                    {option.label}
-                    {option.count > 0 && !selectedFilters.includes(option.id) && (
-                      <Badge variant="secondary" className="ml-1 text-xs">
-                        {option.count}
-                      </Badge>
-                    )}
-                  </Button>
-                ))}
-              </div>
-              {selectedFilters.length > 0 && (
-                <div className="flex items-center gap-2 mt-4">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setSelectedFilters([])}
-                    className="text-xs"
-                  >
-                    <X className="h-3 w-3 mr-1" />
-                    Clear all filters
-                  </Button>
-                </div>
-              )}
-            </motion.div>
-          )}
-        </div>
-      </motion.div>
-
       {/* Category Navigation */}
       <motion.div 
-        className="bg-card border-b sticky top-[177px] z-40"
+        className="bg-card border-b sticky top-[112px] z-40"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
@@ -434,187 +474,29 @@ export default function Menu() {
         </div>
       </motion.div>
 
-      {/* Menu Items */}
-      <div className="container mx-auto px-4 py-6">
-        <motion.div 
-          className="space-y-16"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {(filteredCategories || []).map((category, categoryIndex) => (
-            <motion.section
+      {/* Menu Sections */}
+      <main ref={mainRef} className="container mx-auto px-2 py-6">
+        {filteredCategories && filteredCategories.length > 0 ? (
+          filteredCategories.map((category) => (
+            <MenuSection
               key={category.id}
-              id={`category-${category.id}`}
-              ref={(el) => {
-                if (el) {
-                  categoryRefs.current.set(category.id, el);
-                  // Set up intersection observer
-                  const cleanup = observeCategory(category.id, el);
-                  return cleanup;
-                }
-              }}
-              variants={categoryVariants}
-              className="scroll-mt-[240px]"
-            >
-              <motion.h2 
-                className="text-4xl font-bold mb-8 text-foreground"
-                variants={categoryVariants}
-              >
-                {category.name}
-              </motion.h2>
-              
-              <motion.div 
-                className="grid gap-6 md:gap-8"
-                variants={containerVariants}
-              >
-                {category.items.map((item, index) => (
-                  <motion.div
-                    key={item.id}
-                    variants={itemVariants}
-                    whileHover="hover"
-                    custom={index}
-                  >
-                    <Card className="overflow-hidden hover:shadow-warm transition-all duration-300 border-border/50 hover:border-primary/30">
-                      <CardContent className="p-0">
-                        <div className="flex flex-col md:flex-row">
-                          {/* Image Section */}
-                          <div className="md:w-48 h-48 md:h-32 relative overflow-hidden bg-muted flex-shrink-0">
-                            {item.image ? (
-                              <motion.img
-                                src={item.image}
-                                alt={item.name}
-                                className="w-full h-full object-cover"
-                                variants={cardImageVariants}
-                                onError={(e) => {
-                                  const target = e.target as HTMLImageElement;
-                                  target.style.display = 'none';
-                                  target.nextElementSibling?.classList.remove('hidden');
-                                }}
-                              />
-                            ) : null}
-                            <div className={`absolute inset-0 flex items-center justify-center bg-muted ${item.image ? 'hidden' : ''}`}>
-                              <div className="text-center">
-                                <ImageOff className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
-                                <p className="text-xs text-muted-foreground">No Image</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Content Section */}
-                          <div className="flex-1 p-6">
-                            <div className="flex justify-between items-start gap-4">
-                              <div className="flex-1">
-                                <div className="flex items-center gap-2 mb-3">
-                                  <h3 className="text-xl font-semibold text-foreground">
-                                    {item.name}
-                                  </h3>
-                                  {item.popular && (
-                                    <Badge className="bg-berlin-gold text-white">
-                                      Popular
-                                    </Badge>
-                                  )}
-                                  {item.spicy && (
-                                    <Badge className="bg-destructive text-destructive-foreground">
-                                      🌶️ Spicy
-                                    </Badge>
-                                  )}
-                                  {item.vegetarian && (
-                                    <Badge className="bg-fresh-green text-white">
-                                      🌱 Vegetarian
-                                    </Badge>
-                                  )}
-                                  {item.vegan && (
-                                    <Badge className="bg-fresh-green text-white">
-                                      🌿 Vegan  
-                                    </Badge>
-                                  )}
-                                  {item.glutenFree && (
-                                    <Badge className="bg-purple-600 text-white">
-                                      🌾 Gluten Free
-                                    </Badge>
-                                  )}
-                                </div>
-                                
-                                <p className="text-muted-foreground mb-4 leading-relaxed">
-                                  {item.description}
-                                </p>
-                                
-                                <div className="flex items-center justify-between">
-                                  <div className="text-2xl font-bold text-primary">
-                                    {item.isSpecial ? (
-                                      <div className="flex items-center gap-2">
-                                        <span className="text-destructive line-through text-lg">
-                                          {formatPrice(item.price, menuData.currency)}
-                                        </span>
-                                        <span className="text-primary">
-                                          {formatPrice(item.specialPrice || item.price, menuData.currency)}
-                                        </span>
-                                        <Badge className="bg-berlin-gold text-white">Special!</Badge>
-                                      </div>
-                                    ) : (
-                                      <span>{formatPrice(item.price, menuData.currency)}</span>
-                                    )}
-                                  </div>
-                                  
-                                  {/* Favorite Button */}
-                                  <Button
-                                    variant="ghost"
-                                    size="sm"
-                                    onClick={() => toggleFavorite(item.id)}
-                                    className="ml-4 p-2 hover:scale-110 transition-transform"
-                                  >
-                                    <Heart 
-                                      className={`h-5 w-5 ${
-                                        favorites.includes(item.id) 
-                                          ? 'fill-red-500 text-red-500' 
-                                          : 'text-muted-foreground hover:text-red-500'
-                                      }`}
-                                    />
-                                  </Button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.section>
-          ))}
-          
-          {/* No Results Message */}
-          {(filteredCategories?.length === 0 || filteredCategories?.every(cat => cat.items.length === 0)) && (
-            <motion.div 
-              className="text-center py-16"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              <div className="max-w-md mx-auto">
-                <Search className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-xl font-medium text-foreground mb-2">No items found</h3>
-                <p className="text-muted-foreground mb-4">
-                  {searchQuery 
-                    ? `No items match "${searchQuery}" with the selected filters.`
-                    : "No items match the selected filters."
-                  }
-                </p>
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    setSearchQuery("");
-                    setSelectedFilters([]);
-                  }}
-                >
-                  Clear search and filters
-                </Button>
-              </div>
-            </motion.div>
-          )}
-        </motion.div>
-      </div>
+              category={category}
+              currency={menuData.currency}
+              isRTL={isRTL}
+              favorites={favorites}
+              onFavoriteToggle={toggleFavorite}
+            />
+          ))
+        ) : (
+          <motion.div
+            className="text-center py-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <p className="text-lg text-gray-500">{searchQuery ? (isRTL ? "لا توجد نتائج مطابقة" : "No items found.") : (isRTL ? "القائمة فارغة" : "Menu is empty.")}</p>
+          </motion.div>
+        )}
+      </main>
     </div>
   );
 }
