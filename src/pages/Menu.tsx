@@ -440,11 +440,6 @@ export default function Menu() {
               <MapPin className="h-4 w-4" />
               <span>Queen Towers, Erbil Iraq</span>
             </div>
-            <Separator orientation="vertical" className="h-4" />
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-              <span>4.8 (324 reviews)</span>
-            </div>
           </div>
         </div>
       </motion.div>
