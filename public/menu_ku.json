@@ -119,6 +119,40 @@
       ]
     },
     {
+      "id": "pizza",
+      "name": "پیتزا",
+      "items": [
+        {
+          "id": "margherita-pizza",
+          "name": "پیتزا مارگه‌ریتا",
+          "description": "پیتزای کلاسیکی بە سۆس فڕە، مۆزارێلا و ریحان.",
+          "price": 9000,
+          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "pepperoni-pizza",
+          "name": "پیتزا پێپەرۆنی",
+          "description": "پیتزا بە پێپەرۆنی و پەنیر.",
+          "price": 11000,
+          "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "chicken-pizza",
+          "name": "پیتزا مۆرغ",
+          "description": "پیتزا بە مۆرغی برژاو، پەنیر و سەوزەکان.",
+          "price": 11000,
+          "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "vegetarian-pizza",
+          "name": "پیتزا سەوزەدار",
+          "description": "پیتزا بە سەوزە تازەکان و پەنیر.",
+          "price": 10000,
+          "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
+        }
+      ]
+    },
+    {
       "id": "kids-meal",
       "name": "خواردنی منداڵان",
       "items": [
