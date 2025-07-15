@@ -44,252 +44,145 @@
           "description": "مزيج من الدجاج ولحم البقر مع صلصة خاصة",
           "price": 12500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
-        }
-      ]
-    },
-    {
-      "id": "wraps",
-      "name": "لفائف دورم",
-      "items": [
+        },
         {
-          "id": "chicken-durum",
-          "name": "دورم دجاج",
-          "description": "خبز رقيق ملفوف بالدجاج والمكونات الطازجة",
+          "id": "doner-kebap",
+          "name": "دونر كباب",
+          "description": "دونر كباب كلاسيكي في خبز طازج.",
+          "price": 5500,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "yufka-kebap",
+          "name": "يوفكا كباب",
+          "description": "لفافة يوفكا مع لحم الدونر وسلطة.",
+          "price": 6000,
+          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "kebap-plate",
+          "name": "طبق كباب",
+          "description": "دونر كباب يقدم في طبق مع مقبلات.",
           "price": 11000,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "lamb-durum",
-          "name": "دورم لحم ضأن",
-          "description": "لحم ضأن طري في خبز رقيق",
-          "price": 12500,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
-          "id": "adana-durum",
-          "name": "دورم أضنة",
-          "description": "كباب لحم مفروم حار في خبز لافاش",
-          "price": 13500,
-          "spicy": true,
+          "id": "lahmacun",
+          "name": "لحم عجين",
+          "description": "خبز تركي رقيق مع لحم متبل.",
+          "price": 9000,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
-          "id": "vegan-durum",
-          "name": "دورم نباتي",
-          "description": "بروتينات نباتية مع خضار طازجة وصلصة نباتية",
+          "id": "lahmacun-plate",
+          "name": "طبق لحم عجين",
+          "description": "لحم عجين يقدم مع سلطة ومقبلات.",
+          "price": 11000,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+        }
+      ]
+    },
+    {
+      "id": "pide",
+      "name": "بيـده",
+      "items": [
+        {
+          "id": "sucuk-pide",
+          "name": "بيده سجق",
+          "description": "خبز تركي مع سجق حار.",
           "price": 12000,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "cheese-pide",
+          "name": "بيده جبن",
+          "description": "خبز تركي مع جبن.",
+          "price": 10000,
+          "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "doner-pide",
+          "name": "بيده دونر",
+          "description": "بيده محشوة بلحم الدونر.",
+          "price": 10000,
+          "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "special-pide",
+          "name": "بيده خاصة",
+          "description": "بيده تركية خاصة من الشيف.",
+          "price": 13000,
+          "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
         }
       ]
     },
     {
-      "id": "platters",
-      "name": "أطباق الكباب",
+      "id": "kids-meal",
+      "name": "وجبة أطفال",
       "items": [
         {
-          "id": "mixed-grill",
-          "name": "طبق مشاوي مختلطة",
-          "description": "أنواع مختلفة من اللحوم المشوية مع الأرز والسلطة والخبز",
-          "price": 24000,
-          "popular": true,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+          "id": "kids-nugget",
+          "name": "ناجت",
+          "description": "قطع دجاج للأطفال.",
+          "price": 5000,
+          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
         },
         {
-          "id": "chicken-platter",
-          "name": "طبق شيش دجاج",
-          "description": "أسياخ دجاج مشوية مع أرز البرغل والخضار",
-          "price": 19000,
+          "id": "kids-fries",
+          "name": "بطاطس",
+          "description": "بطاطس مقلية للأطفال.",
+          "price": 3500,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "lamb-platter",
-          "name": "طبق شيش لحم ضأن",
-          "description": "أسياخ لحم ضأن طرية مع الأطباق الجانبية التقليدية",
-          "price": 22000,
-          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "vegetarian-platter",
-          "name": "طبق نباتي",
-          "description": "فلافل وخضار مشوية وحمص وتبولة",
-          "price": 17500,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         }
       ]
     },
     {
-      "id": "salads",
-      "name": "سلطات طازجة",
+      "id": "rizzo",
+      "name": "ريزو",
       "items": [
         {
-          "id": "shepherd-salad",
-          "name": "سلطة الراعي",
-          "description": "طماطم وخيار وبصل وفلفل مع زيت الزيتون والليمون",
-          "price": 8500,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "tabbouleh",
-          "name": "تبولة",
-          "description": "سلطة بقدونس طازجة مع البرغل والطماطم والنعناع",
-          "price": 9500,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "chicken-salad",
-          "name": "سلطة دجاج مشوي",
-          "description": "خضار ورقية مختلطة مع دجاج مشوي وتتبيلة متوسطية",
-          "price": 13500,
-          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
-        }
-      ]
-    },
-    {
-      "id": "soups",
-      "name": "شوربات تقليدية",
-      "items": [
-        {
-          "id": "lentil-soup",
-          "name": "شوربة العدس الأحمر",
-          "description": "شوربة عدس أحمر تركية مع الأعشاب والتوابل",
-          "price": 7000,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "chicken-soup",
-          "name": "مرق دجاج",
-          "description": "شوربة دجاج تقليدية مع الخضار",
-          "price": 8000,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
-        }
-      ]
-    },
-    {
-      "id": "sides",
-      "name": "المقبلات والجانبية",
-      "items": [
-        {
-          "id": "fries",
-          "name": "البطاطس الذهبية",
-          "description": "بطاطس مقلية ذهبية مقرمشة",
-          "price": 5500,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "hummus",
-          "name": "حمص مع خبز",
-          "description": "حمص منزلي مع خبز البيتا الدافئ",
+          "id": "rizzo-item",
+          "name": "ريزو",
+          "description": "دجاج مقرمش مع أرز.",
           "price": 6500,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "stuffed-grape-leaves",
-          "name": "ورق عنب محشي",
-          "description": "ورق عنب محشي بالأرز والأعشاب وزيت الزيتون",
-          "price": 8500,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "cheese-borek",
-          "name": "بوريك بالجبن",
-          "description": "معجنات مقرمشة محشوة بالجبن والأعشاب",
-          "price": 7000,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "falafel",
-          "name": "فلافل (6 قطع)",
-          "description": "كرات الحمص المقلية مع صلصة الطحينة",
-          "price": 8000,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+          "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
         }
       ]
     },
     {
-      "id": "desserts",
-      "name": "حلويات",
+      "id": "pizza",
+      "name": "بيتزا",
       "items": [
-        {
-          "id": "baklava",
-          "name": "بقلاوة",
-          "description": "حلوى تركية بالمكسرات والعسل",
-          "price": 4500,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "kunefe",
-          "name": "كنافة",
-          "description": "معجنات الجبن التقليدية منقوعة في الشراب",
-          "price": 7000,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "rice-pudding",
-          "name": "مهلبية أرز",
-          "description": "مهلبية أرز تركية كريمية مع القرفة",
-          "price": 5500,
-          "vegetarian": true,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
-        }
+        { "id": "salmon-pizza", "name": "بيتزا سلمون", "description": "بيتزا مع سلمون.", "price": 14000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
+        { "id": "four-season-pizza", "name": "بيتزا أربعة فصول", "description": "بيتزا بأربع نكهات مختلفة.", "price": 12000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "doner-pizza", "name": "بيتزا دونر", "description": "بيتزا مع لحم الدونر.", "price": 12000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
+        { "id": "doner-chicken-pizza", "name": "بيتزا دونر دجاج", "description": "بيتزا مع دونر دجاج.", "price": 11000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
+        { "id": "diavolo-pizza", "name": "بيتزا ديافولو", "description": "بيتزا ديافولو حارة.", "price": 11000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
+        { "id": "pizza-mix", "name": "بيتزا مشكلة", "description": "بيتزا بنكهات متنوعة.", "price": 13000, "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" },
+        { "id": "turkey-beef-salami", "name": "بيتزا سلامي تركي ولحم بقر", "description": "بيتزا مع سلامي تركي ولحم بقر.", "price": 11000, "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop" },
+        { "id": "four-cheese-pizza", "name": "بيتزا أربعة أجبان", "description": "بيتزا بأربعة أنواع جبن.", "price": 10000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "tuna-pizza", "name": "بيتزا تونة", "description": "بيتزا مع تونة.", "price": 9000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
+        { "id": "pepperoni-pizza", "name": "بيتزا ببروني", "description": "بيتزا ببروني كلاسيكية.", "price": 9000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "margherita-pizza", "name": "بيتزا مارجريتا", "description": "بيتزا مارجريتا كلاسيكية.", "price": 8000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
+        { "id": "turkey-pizza", "name": "بيتزا تركي", "description": "بيتزا مع لحم تركي.", "price": 10000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
+        { "id": "salami-pizza", "name": "بيتزا سلامي", "description": "بيتزا مع سلامي.", "price": 10000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
+        { "id": "mushroom-pizza", "name": "بيتزا فطر", "description": "بيتزا مع فطر.", "price": 9000, "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" },
+        { "id": "spinach-pizza", "name": "بيتزا سبانخ", "description": "بيتزا مع سبانخ.", "price": 9000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "rodi-pizza", "name": "بيتزا رودي", "description": "بيتزا رودي مميزة.", "price": 12000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" }
       ]
     },
     {
       "id": "drinks",
       "name": "المشروبات",
       "items": [
-        {
-          "id": "ayran",
-          "name": "عيران",
-          "description": "مشروب الزبادي التركي",
-          "price": 4000,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "turkish-tea",
-          "name": "شاي تركي",
-          "description": "شاي أسود تقليدي",
-          "price": 3000,
-          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "turkish-coffee",
-          "name": "قهوة تركية",
-          "description": "قهوة تقليدية قوية مع الرغوة",
-          "price": 4500,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "cola",
-          "name": "كولا",
-          "description": "مشروب كولا منعش",
-          "price": 4000,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "fresh-orange",
-          "name": "عصير برتقال طازج",
-          "description": "عصير برتقال طازج مع اللب",
-          "price": 5500,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "pomegranate-juice",
-          "name": "عصير رمان",
-          "description": "عصير رمان طبيعي طازج",
-          "price": 6500,
-          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
-        }
+        { "id": "cola", "name": "كولا", "description": "مشروب كولا منعش.", "price": 1000, "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop" },
+        { "id": "fanta", "name": "فانتا", "description": "مشروب غازي بنكهة البرتقال.", "price": 1000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
+        { "id": "water", "name": "ماء", "description": "ماء معبأ.", "price": 1000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "sprite", "name": "سبرايت", "description": "مشروب غازي بنكهة الليمون.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
+        { "id": "cola-diet", "name": "كولا دايت", "description": "مشروب كولا دايت.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
+        { "id": "yogurt", "name": "لبن", "description": "مشروب لبن.", "price": 1500, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
+        { "id": "soda", "name": "صودا", "description": "مياه غازية.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
+        { "id": "tea", "name": "شاي", "description": "شاي أسود ساخن.", "price": 1000, "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" }
       ]
     }
   ]
