@@ -10,6 +10,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollCategory } from "@/hooks/useScrollCategory";
 import MenuSection from "@/components/MenuSection";
+import logo from "@/assets/logo.jpg";
 
 interface MenuItem {
   id: string;
@@ -303,7 +304,10 @@ export default function Menu() {
     >
       {/* Sticky Header with Language Switcher */}
       <header className="sticky top-0 z-50 bg-[#C62828] text-white py-4 px-4 shadow-md flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-center flex-1">German Doner</h1>
+        <div className="flex items-center gap-3">
+          <img src={logo} alt="German Doner Logo" className="h-10 w-auto rounded-none" style={{maxHeight: 40}} />
+          <h1 className="text-2xl font-bold text-center flex-1">German Doner</h1>
+        </div>
         {/* Language Switcher */}
         <div className="flex items-center gap-2 sm:gap-4 ml-auto">
           {languages.map((lang) => (
@@ -451,8 +455,8 @@ export default function Menu() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        <div className="container mx-auto px-4">
-          <div className="flex gap-2 py-4 overflow-x-auto">
+        <div className="w-full px-4">
+          <div className="flex gap-2 py-4 overflow-x-auto scrollbar-hide w-full">
             {(filteredCategories || []).map((category, index) => (
               <motion.div
                 key={category.id}
