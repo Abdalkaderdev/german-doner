@@ -448,6 +448,10 @@ export default function Menu() {
         </div>
       </motion.div>
 
+      {/* Debug: Print loaded categories */}
+      <div className="text-xs text-gray-400 px-2 py-1 bg-yellow-50 border-b border-yellow-200">
+        Loaded categories: {filteredCategories.map(cat => cat.name).join(', ')}
+      </div>
       {/* Category Navigation */}
       <motion.div 
         className="bg-card border-b sticky top-[112px] z-40"
@@ -455,8 +459,8 @@ export default function Menu() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        <div className="w-full px-4">
-          <div className="flex gap-2 py-4 overflow-x-auto scrollbar-hide w-full">
+        <div className="relative w-full">
+          <div className="flex gap-2 py-4 overflow-x-auto scrollbar-hide w-full" style={{ WebkitOverflowScrolling: 'touch' }}>
             {(filteredCategories || []).map((category, index) => (
               <motion.div
                 key={category.id}
@@ -475,6 +479,8 @@ export default function Menu() {
               </motion.div>
             ))}
           </div>
+          {/* Right-edge fade for scroll cue */}
+          <div className="pointer-events-none absolute top-0 right-0 h-full w-8 bg-gradient-to-l from-card to-transparent" />
         </div>
       </motion.div>
 
