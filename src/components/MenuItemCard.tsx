@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import React from "react";
+import logo from "../assets/logo.jpg";
 
 // Brand colors
 const BRAND_RED = "#C62828";
@@ -24,19 +25,19 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.5, type: "spring", stiffness: 120, damping: 12 }
+    transition: { duration: 0.5, type: "spring" as const, stiffness: 120, damping: 12 }
   },
   hover: {
     scale: 1.02,
     y: -4,
-    transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 10 }
+    transition: { duration: 0.2, type: "spring" as const, stiffness: 400, damping: 10 }
   }
 };
 
 const cardImageVariants = {
   hover: {
     scale: 1.1,
-    transition: { duration: 0.4, type: "spring", stiffness: 200, damping: 15 }
+    transition: { duration: 0.4, type: "spring" as const, stiffness: 200, damping: 15 }
   }
 };
 
@@ -66,11 +67,17 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                 variants={cardImageVariants}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  target.nextElementSibling?.classList.remove('hidden');
+                  target.src = logo;
                 }}
               />
-            ) : null}
+            ) : (
+              <motion.img
+                src={logo}
+                alt="Logo"
+                className="w-full h-full object-cover"
+                variants={cardImageVariants}
+              />
+            )}
             {/* Placeholder if no image */}
             <div className={`absolute inset-0 flex items-center justify-center bg-gray-100 ${item.image ? 'hidden' : ''}`}>
               <img src="/images/placeholder.png" alt="No Image" className="w-16 h-16 object-contain opacity-60 mb-2" />

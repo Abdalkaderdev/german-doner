@@ -122,22 +122,102 @@
       "id": "pizza",
       "name": "Pizza",
       "items": [
-        { "id": "salmon-pizza", "name": "Salmon Pizza", "description": "Pizza with salmon.", "price": 14000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "four-season-pizza", "name": "Four Season Pizza", "description": "Pizza with four different toppings.", "price": 12000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
-        { "id": "doner-pizza", "name": "Doner Pizza", "description": "Pizza with doner meat.", "price": 12000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
-        { "id": "doner-chicken-pizza", "name": "Doner Chicken Pizza", "description": "Pizza with doner chicken.", "price": 11000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
-        { "id": "diavolo-pizza", "name": "Diavolo Pizza", "description": "Spicy Diavolo pizza.", "price": 11000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
-        { "id": "pizza-mix", "name": "Pizza Mix", "description": "Mixed toppings pizza.", "price": 13000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "turkey-beef-salami", "name": "Turkey & Beef Salami Pizza", "description": "Pizza with turkey and beef salami.", "price": 11000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
-        { "id": "four-cheese-pizza", "name": "Four Cheese Pizza", "description": "Pizza with four cheeses.", "price": 10000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
-        { "id": "tuna-pizza", "name": "Tuna Pizza", "description": "Pizza with tuna.", "price": 9000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
-        { "id": "pepperoni-pizza", "name": "Pepperoni Pizza", "description": "Pizza topped with pepperoni and cheese.", "price": 9000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
-        { "id": "margherita-pizza", "name": "Margherita Pizza", "description": "Classic pizza with tomato sauce, mozzarella, and basil.", "price": 8000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "turkey-pizza", "name": "Turkey Pizza", "description": "Pizza with turkey.", "price": 10000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
-        { "id": "salami-pizza", "name": "Salami Pizza", "description": "Pizza with salami.", "price": 10000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
-        { "id": "mushroom-pizza", "name": "Mushroom Pizza", "description": "Pizza with mushrooms.", "price": 9000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
-        { "id": "spinach-pizza", "name": "Spinach Pizza", "description": "Pizza with spinach.", "price": 9000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "rodi-pizza", "name": "Rodi Pizza", "description": "Special Rodi pizza.", "price": 12000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" }
+        {
+          "id": "salmon-pizza",
+          "name": "Salmon Pizza",
+          "description": "Pizza topped with fresh salmon and cheese.",
+          "price": 14000
+        },
+        {
+          "id": "four-season-pizza",
+          "name": "Four Season Pizza",
+          "description": "Pizza with four different toppings, one for each quarter.",
+          "price": 12000
+        },
+        {
+          "id": "doner-pizza",
+          "name": "Doner Pizza",
+          "description": "Pizza topped with doner meat and cheese.",
+          "price": 12000
+        },
+        {
+          "id": "doner-chicken-pizza",
+          "name": "Doner Chicken Pizza",
+          "description": "Pizza topped with doner chicken and cheese.",
+          "price": 11000
+        },
+        {
+          "id": "diavolo-pizza",
+          "name": "Diavolo Pizza",
+          "description": "Spicy pizza with pepperoni and chili.",
+          "price": 11000
+        },
+        {
+          "id": "pizza-mix",
+          "name": "Pizza Mix",
+          "description": "Pizza with a mix of meats and vegetables.",
+          "price": 13000
+        },
+        {
+          "id": "turkey-beef-salami-pizza",
+          "name": "Turkey & Beef Salami Pizza",
+          "description": "Pizza topped with turkey and beef salami.",
+          "price": 11000
+        },
+        {
+          "id": "four-cheese-pizza",
+          "name": "Four Cheese Pizza",
+          "description": "Pizza with four types of cheese.",
+          "price": 10000
+        },
+        {
+          "id": "tuna-pizza",
+          "name": "Tuna Pizza",
+          "description": "Pizza topped with tuna and onions.",
+          "price": 9000
+        },
+        {
+          "id": "pepperoni-pizza",
+          "name": "Pepperoni Pizza",
+          "description": "Pizza topped with pepperoni and cheese.",
+          "price": 9000
+        },
+        {
+          "id": "margherita-pizza",
+          "name": "Margherita Pizza",
+          "description": "Classic pizza with tomato sauce, mozzarella, and basil.",
+          "price": 8000
+        },
+        {
+          "id": "turkey-pizza",
+          "name": "Turkey Pizza",
+          "description": "Pizza topped with turkey and cheese.",
+          "price": 10000
+        },
+        {
+          "id": "salami-pizza",
+          "name": "Salami Pizza",
+          "description": "Pizza topped with salami and cheese.",
+          "price": 10000
+        },
+        {
+          "id": "mushroom-pizza",
+          "name": "Mushroom Pizza",
+          "description": "Pizza topped with mushrooms and cheese.",
+          "price": 9000
+        },
+        {
+          "id": "spinach-pizza",
+          "name": "Spinach Pizza",
+          "description": "Pizza topped with spinach and cheese.",
+          "price": 9000
+        },
+        {
+          "id": "rodi-pizza",
+          "name": "Rodi Pizza",
+          "description": "Specialty pizza with assorted toppings.",
+          "price": 12000
+        }
       ]
     },
     {
