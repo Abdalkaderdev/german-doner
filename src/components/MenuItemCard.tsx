@@ -60,8 +60,8 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
           {/* Image Section */}
           <div className="w-full h-48 relative overflow-hidden bg-gray-100 flex-shrink-0">
             <motion.img
-              src={item.image || logo}
-              alt={item.name || "Logo"}
+              src={logo}
+              alt="Logo"
               className="w-full h-full object-cover"
               variants={cardImageVariants}
             />

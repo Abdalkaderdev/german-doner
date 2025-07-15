@@ -512,8 +512,8 @@ export const MenuManagement = () => {
                       <div className="flex items-center gap-4">
                         <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted">
                           <img 
-                            src={item.image || require('../../assets/logo.jpg')}
-                            alt={item.name}
+                            src={require('../../assets/logo.jpg')}
+                            alt="Logo"
                             className="w-full h-full object-cover"
                           />
                         </div>
