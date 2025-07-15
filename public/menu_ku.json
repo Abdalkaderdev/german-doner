@@ -122,34 +122,22 @@
       "id": "pizza",
       "name": "پیتزا",
       "items": [
-        {
-          "id": "margherita-pizza",
-          "name": "پیتزا مارگه‌ریتا",
-          "description": "پیتزای کلاسیکی بە سۆس فڕە، مۆزارێلا و ریحان.",
-          "price": 9000,
-          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "pepperoni-pizza",
-          "name": "پیتزا پێپەرۆنی",
-          "description": "پیتزا بە پێپەرۆنی و پەنیر.",
-          "price": 11000,
-          "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "chicken-pizza",
-          "name": "پیتزا مۆرغ",
-          "description": "پیتزا بە مۆرغی برژاو، پەنیر و سەوزەکان.",
-          "price": 11000,
-          "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "vegetarian-pizza",
-          "name": "پیتزا سەوزەدار",
-          "description": "پیتزا بە سەوزە تازەکان و پەنیر.",
-          "price": 10000,
-          "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
-        }
+        { "id": "salmon-pizza", "name": "پیتزا سامۆن", "description": "پیتزا بە سامۆن.", "price": 14000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
+        { "id": "four-season-pizza", "name": "پیتزا چوار وەرز", "description": "پیتزا بە چوار جۆری پڕکردنەوە.", "price": 12000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "doner-pizza", "name": "پیتزا دۆنەر", "description": "پیتزا بە گۆشتی دۆنەر.", "price": 12000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
+        { "id": "doner-chicken-pizza", "name": "پیتزا دۆنەر مۆرغ", "description": "پیتزا بە مۆرغی دۆنەر.", "price": 11000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
+        { "id": "diavolo-pizza", "name": "پیتزا دیافۆلۆ", "description": "پیتزای توند دیافۆلۆ.", "price": 11000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
+        { "id": "pizza-mix", "name": "پیتزا میکس", "description": "پیتزا بە پڕکردنەوەی جۆراوجۆر.", "price": 13000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
+        { "id": "turkey-beef-salami", "name": "پیتزا تەرکی و سەلامی گۆشت", "description": "پیتزا بە تەرکی و سەلامی گۆشتی.", "price": 11000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "four-cheese-pizza", "name": "پیتزا چوار پەنیر", "description": "پیتزا بە چوار جۆری پەنیر.", "price": 10000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
+        { "id": "tuna-pizza", "name": "پیتزا تونا", "description": "پیتزا بە تونا.", "price": 9000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "pepperoni-pizza", "name": "پیتزا پێپەرۆنی", "description": "پیتزا بە پێپەرۆنی و پەنیر.", "price": 9000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "margherita-pizza", "name": "پیتزا مارگه‌ریتا", "description": "پیتزای کلاسیکی بە سۆس فڕە، مۆزارێلا و ریحان.", "price": 8000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
+        { "id": "turkey-pizza", "name": "پیتزا تەرکی", "description": "پیتزا بە تەرکی.", "price": 10000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
+        { "id": "salami-pizza", "name": "پیتزا سەلامی", "description": "پیتزا بە سەلامی.", "price": 10000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
+        { "id": "mushroom-pizza", "name": "پیتزا مێشک", "description": "پیتزا بە مێشک.", "price": 9000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
+        { "id": "spinach-pizza", "name": "پیتزا سپیناج", "description": "پیتزا بە سپیناج.", "price": 9000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
+        { "id": "rodi-pizza", "name": "پیتزا رۆدی", "description": "پیتزای تایبەتی رۆدی.", "price": 12000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" }
       ]
     },
     {
