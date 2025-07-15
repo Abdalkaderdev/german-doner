@@ -21,6 +21,8 @@ const sectionVariants: Variants = {
 };
 
 const MenuSection: React.FC<MenuSectionProps> = ({ category, currency, isRTL, favorites = [], onFavoriteToggle }) => {
+  // Debug: Log category and items
+  console.log('Rendering category:', category.id, category.items);
   return (
     <motion.section
       variants={sectionVariants}
@@ -28,7 +30,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ category, currency, isRTL, fa
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       id={`category-${category.id}`}
-      className="mb-12"
+      className={`mb-12 ${category.id === 'pizza' ? 'border-4 border-red-500' : ''}`}
     >
       <motion.h2
         className="text-3xl md:text-4xl font-bold mb-6 px-2"
@@ -42,7 +44,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ category, currency, isRTL, fa
       </div>
       <div
         className={
-          `grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3` +
+          `grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3` +
           (isRTL ? ' direction-rtl' : '')
         }
       >
