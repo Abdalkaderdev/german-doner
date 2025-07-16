@@ -508,7 +508,7 @@ export const MenuManagement = () => {
                   {category.items.map(item => (
                     <motion.div
                       key={item.id}
-                      className="group flex items-center justify-between p-6 border rounded-2xl hover:shadow-xl transition-all bg-white gap-4"
+                      className="group flex items-center justify-between p-6 border rounded-2xl hover:shadow-xl transition-all bg-[#f5f5f4] gap-4"
                       whileHover={{ scale: 1.02 }}
                     >
                       <div className="flex items-center gap-6">
@@ -609,7 +609,7 @@ export const MenuManagement = () => {
 
       {zoomImage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" onClick={() => setZoomImage(null)}>
-          <div className="relative bg-white rounded-lg shadow-lg max-w-md w-full mx-4" onClick={e => e.stopPropagation()}>
+          <div className="relative bg-[#f5f5f4] rounded-lg shadow-lg max-w-md w-full mx-4 border border-[#f5f5f4]" onClick={e => e.stopPropagation()}>
             <button
               className="absolute top-2 right-2 text-2xl text-gray-500 hover:text-red-500 focus:outline-none"
               onClick={() => setZoomImage(null)}

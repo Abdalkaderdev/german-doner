@@ -95,7 +95,7 @@ const Index = () => {
         {/* Logo/Brand */}
         <motion.div className="mb-8" variants={itemVariants}>
           <motion.div 
-            className="w-28 h-28 mx-auto mb-6 bg-white rounded-full flex items-center justify-center shadow-warm"
+            className="w-28 h-28 mx-auto mb-6 bg-[#f5f5f4] rounded-full flex items-center justify-center shadow-warm"
             variants={logoVariants}
           >
             <img src={logo} alt="German Doner Logo" className="w-20 h-20 object-contain" />
@@ -116,7 +116,7 @@ const Index = () => {
 
         {/* Language Selection */}
         <motion.div variants={itemVariants}>
-          <Card className="bg-white/95 backdrop-blur-sm shadow-elegant border-0">
+          <Card className="bg-[#f5f5f4] backdrop-blur-sm shadow-elegant border-0">
             <CardContent className="p-8">
               <motion.div 
                 className="flex items-center justify-center gap-2 mb-6"
@@ -161,7 +161,7 @@ const Index = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <Card className="bg-white/90 backdrop-blur-sm border-0 hover:shadow-warm transition-all duration-300">
+            <Card className="bg-[#f5f5f4] backdrop-blur-sm border-0 hover:shadow-warm transition-all duration-300">
               <CardContent className="p-6 text-center">
                 <div className="text-3xl mb-3">📍</div>
                 <h3 className="font-semibold text-foreground mb-2">Location</h3>
@@ -174,7 +174,7 @@ const Index = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <Card className="bg-white/90 backdrop-blur-sm border-0 hover:shadow-warm transition-all duration-300">
+            <Card className="bg-[#f5f5f4] backdrop-blur-sm border-0 hover:shadow-warm transition-all duration-300">
               <CardContent className="p-6 text-center">
                 <div className="text-3xl mb-3">🕐</div>
                 <h3 className="font-semibold text-foreground mb-2">Hours</h3>
