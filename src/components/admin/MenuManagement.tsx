@@ -64,6 +64,8 @@ export const MenuManagement = () => {
   const [editingItem, setEditingItem] = useState<MenuItem | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const { toast } = useToast();
+  const [zoomImage, setZoomImage] = useState<string | null>(null);
+  const [zoomName, setZoomName] = useState<string | null>(null);
 
   const languages = [
     { code: "en", name: "English", flag: "🇬🇧" },
@@ -506,11 +508,11 @@ export const MenuManagement = () => {
                   {category.items.map(item => (
                     <motion.div
                       key={item.id}
-                      className="flex items-center justify-between p-4 border rounded-lg hover:shadow-md transition-all"
+                      className="group flex items-center justify-between p-4 border rounded-lg hover:shadow-lg transition-all bg-white"
                       whileHover={{ scale: 1.02 }}
                     >
                       <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted">
+                        <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted cursor-zoom-in" onClick={() => { setZoomImage(require('../../assets/logo.jpg')); setZoomName(item.name); }}>
                           <img 
                             src={require('../../assets/logo.jpg')}
                             alt="Logo"
@@ -567,7 +569,7 @@ export const MenuManagement = () => {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity">
                         <Button
                           variant="ghost"
                           size="sm"
@@ -612,6 +614,24 @@ export const MenuManagement = () => {
           </motion.div>
         ))}
       </div>
+
+      {zoomImage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" onClick={() => setZoomImage(null)}>
+          <div className="relative bg-white rounded-lg shadow-lg max-w-md w-full mx-4" onClick={e => e.stopPropagation()}>
+            <button
+              className="absolute top-2 right-2 text-2xl text-gray-500 hover:text-red-500 focus:outline-none"
+              onClick={() => setZoomImage(null)}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <img src={zoomImage} alt={zoomName || ''} className="w-full h-72 object-contain rounded-t-lg bg-gray-100" />
+            <div className="p-4 text-center">
+              <h3 className="text-xl font-bold text-[#C62828] mb-2">{zoomName}</h3>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
