@@ -8,8 +8,8 @@ interface ScrollCategoryOptions {
 
 export const useScrollCategory = ({ 
   categories, 
-  rootMargin = '-20% 0px -80% 0px',
-  threshold = 0.1 
+  rootMargin = '-100px 0px 0px 0px',
+  threshold = 0 
 }: ScrollCategoryOptions) => {
   const [activeCategory, setActiveCategory] = useState<string>(categories[0] || '');
   const [observers, setObservers] = useState<Map<string, IntersectionObserver>>(new Map());
@@ -37,11 +37,21 @@ export const useScrollCategory = ({
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveCategory(categoryId);
+        // Find all intersecting entries
+        const visibleEntries = entries.filter(entry => entry.isIntersecting);
+        if (visibleEntries.length > 0) {
+          // Pick the one closest to the top (smallest boundingClientRect.top)
+          const topEntry = visibleEntries.reduce((prev, curr) =>
+            prev.boundingClientRect.top < curr.boundingClientRect.top ? prev : curr
+          );
+          // Debug logging
+          console.log(`[IntersectionObserver] Setting active category to:`, topEntry.target.id);
+          // Extract categoryId from id (assumes id="category-<id>")
+          const match = topEntry.target.id.match(/^category-(.+)$/);
+          if (match) {
+            setActiveCategory(match[1]);
           }
-        });
+        }
       },
       {
         rootMargin,

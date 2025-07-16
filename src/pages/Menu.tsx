@@ -461,6 +461,7 @@ export default function Menu() {
         categories={(filteredCategories || []).map(cat => ({ id: cat.id, name: cat.name, count: cat.items.length }))}
         activeCategory={activeCategory}
         onCategoryClick={scrollToCategory}
+        isRTL={isRTL}
       />
 
       {/* Menu Sections */}
@@ -474,6 +475,8 @@ export default function Menu() {
               isRTL={isRTL}
               favorites={favorites}
               onFavoriteToggle={toggleFavorite}
+              observeCategory={observeCategory}
+              categoryId={category.id}
             />
           ))
         ) : (

@@ -75,15 +75,15 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
               <motion.img
                 src={logo}
                 alt="Logo"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-t-xl"
                 variants={cardImageVariants}
               />
             </div>
 
             {/* Content Section */}
-            <div className={`flex-1 flex flex-col p-4 ${isRTL ? 'text-right' : 'text-left'}`}>
-              <div className="flex items-start justify-between gap-2 mb-2">
-                <h3 className="text-lg font-bold text-gray-900 flex-1" style={{ color: BRAND_RED }}>{item.name}</h3>
+            <div className={`flex-1 flex flex-col p-6 gap-2 ${isRTL ? 'text-right' : 'text-left'}`}>
+              <div className="flex items-start justify-between gap-2 mb-3">
+                <h3 className="text-2xl font-extrabold flex-1 text-[#C62828] leading-tight">{item.name}</h3>
                 {onFavoriteToggle && (
                   <Button
                     variant="ghost"
@@ -101,11 +101,11 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                 {item.spicy && <Badge className="bg-red-600 text-white">🌶️ Spicy</Badge>}
                 {item.vegetarian && <Badge className="bg-green-600 text-white">🌱 Vegetarian</Badge>}
                 {item.vegan && <Badge className="bg-green-700 text-white">🌿 Vegan</Badge>}
-                {item.glutenFree && <Badge className="bg-purple-600 text-white">�� Gluten Free</Badge>}
+                {item.glutenFree && <Badge className="bg-purple-600 text-white">🌾 Gluten Free</Badge>}
               </div>
-              <p className="text-gray-600 text-sm mb-4 min-h-[2.5em]">{item.description}</p>
+              <p className="text-gray-600 text-base mb-6 min-h-[2.5em] leading-relaxed">{item.description}</p>
               <div className="flex items-center justify-between mt-auto">
-                <span className="text-xl font-bold" style={{ color: BRAND_GOLD }}>{formatPrice(item.price, currency)}</span>
+                <span className="text-2xl font-bold text-[#FFD54F]">{formatPrice(item.price, currency)}</span>
                 {item.isSpecial && (
                   <Badge className="bg-[${BRAND_GOLD}] text-gray-900 ml-2">Special!</Badge>
                 )}

@@ -141,10 +141,9 @@ const Index = () => {
                       variant={lang.code === "en" ? "default" : "outline"}
                       size="lg"
                       onClick={() => handleLanguageSelect(lang.code)}
-                      className="w-full text-lg py-6 justify-start gap-4 border-2 hover:border-primary transition-all duration-300"
+                      className="w-full text-lg py-6 flex items-center justify-center border-2 hover:border-primary transition-all duration-300"
                     >
-                      <span className="font-semibold">{lang.name}</span>
-                      <span className="text-sm text-muted-foreground">{lang.nativeName}</span>
+                      <span className="font-semibold">{lang.nativeName}</span>
                     </Button>
                   </motion.div>
                 ))}

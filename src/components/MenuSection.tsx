@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { motion, Variants } from "framer-motion";
 import MenuItemCard from "./MenuItemCard";
 
@@ -9,6 +9,8 @@ interface MenuSectionProps {
   isRTL: boolean;
   favorites?: string[];
   onFavoriteToggle?: (id: string) => void;
+  observeCategory?: (categoryId: string, element: HTMLElement) => void;
+  categoryId?: string;
 }
 
 const sectionVariants: Variants = {
@@ -20,12 +22,28 @@ const sectionVariants: Variants = {
   }
 };
 
-const MenuSection: React.FC<MenuSectionProps> = ({ category, currency, isRTL, favorites = [], onFavoriteToggle }) => {
+const MenuSection: React.FC<MenuSectionProps> = ({
+  category,
+  currency,
+  isRTL,
+  favorites = [],
+  onFavoriteToggle,
+  observeCategory,
+  categoryId
+}) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (observeCategory && sectionRef.current && categoryId) {
+      observeCategory(categoryId, sectionRef.current);
+    }
+  }, [observeCategory, categoryId]);
+
   // Debug: Log category and items
   console.log('Rendering category:', category.id, category.items);
   const isPizza = category.id === 'pizza';
   return (
     <motion.section
+      ref={sectionRef}
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, type: 'spring', stiffness: 80, damping: 18 }}
@@ -38,13 +56,9 @@ const MenuSection: React.FC<MenuSectionProps> = ({ category, currency, isRTL, fa
       >
         {category.name}
       </motion.h2>
-      {/* Debug: Print rendered item IDs and names */}
-      <div className="text-xs text-gray-500 mb-2 px-2">
-        Items: {category.items.map((item: any) => `${item.id} (${item.name})`).join(', ')}
-      </div>
       <div
         className={
-          `grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3` +
+          `grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 px-2 py-4` +
           (isRTL ? ' direction-rtl' : '')
         }
       >

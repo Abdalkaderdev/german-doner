@@ -508,21 +508,20 @@ export const MenuManagement = () => {
                   {category.items.map(item => (
                     <motion.div
                       key={item.id}
-                      className="group flex items-center justify-between p-4 border rounded-lg hover:shadow-lg transition-all bg-white"
+                      className="group flex items-center justify-between p-6 border rounded-2xl hover:shadow-xl transition-all bg-white gap-4"
                       whileHover={{ scale: 1.02 }}
                     >
-                      <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted cursor-zoom-in" onClick={() => { setZoomImage(require('../../assets/logo.jpg')); setZoomName(item.name); }}>
+                      <div className="flex items-center gap-6">
+                        <div className="w-20 h-20 rounded-xl overflow-hidden bg-muted cursor-zoom-in" onClick={() => { setZoomImage(require('../../assets/logo.jpg')); setZoomName(item.name); }}>
                           <img 
                             src={require('../../assets/logo.jpg')}
                             alt="Logo"
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        
-                        <div className="flex-1">
+                        <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1 flex-wrap">
-                            <h3 className="font-semibold">{item.name}</h3>
+                            <h3 className="font-bold text-xl truncate text-[#C62828]">{item.name}</h3>
                             <div className="flex items-center gap-2">
                               {item.isSpecial ? (
                                 <div className="flex items-center gap-1">
@@ -558,14 +557,7 @@ export const MenuManagement = () => {
                               </Badge>
                             )}
                           </div>
-                          <p className="text-sm text-muted-foreground mb-2">{item.description}</p>
-                          
-                          {item.allergens && item.allergens.length > 0 && (
-                            <div className="text-xs text-orange-600 flex items-center gap-1">
-                              <AlertTriangle className="h-3 w-3" />
-                              Contains: {item.allergens.join(", ")}
-                            </div>
-                          )}
+                          <p className="text-base text-gray-600 truncate mb-2">{item.description}</p>
                         </div>
                       </div>
 
