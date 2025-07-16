@@ -68,7 +68,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
         whileHover="hover"
         className="h-full"
       >
-        <Card className="overflow-hidden rounded-xl shadow-md bg-[#f5f5f4] flex flex-col h-full border border-gray-100">
+        <Card className="overflow-hidden rounded-xl shadow-md bg-[#ffffe4] flex flex-col h-full border border-gray-100">
           <CardContent className="p-0">
             {/* Image Section */}
             <div className="w-full h-48 relative overflow-hidden bg-gray-100 flex-shrink-0 cursor-zoom-in" onClick={() => setModalOpen(true)}>
@@ -117,7 +117,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
       {/* Modal/Lightbox */}
       {modalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" onClick={() => setModalOpen(false)}>
-          <div className="relative bg-[#f5f5f4] rounded-lg shadow-lg max-w-md w-full mx-4 border border-[#f5f5f4]" onClick={e => e.stopPropagation()}>
+          <div className="relative bg-[#ffffe4] rounded-lg shadow-lg max-w-md w-full mx-4 border border-[#ffffe4]" onClick={e => e.stopPropagation()}>
             <button
               className="absolute top-2 right-2 text-2xl text-gray-500 hover:text-red-500 focus:outline-none"
               onClick={() => setModalOpen(false)}

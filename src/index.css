@@ -8,13 +8,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 30 6% 96%; /* #f5f5f4 */
+    --background: 60 100% 94%; /* #ffffe4 */
     --foreground: 20 50% 15%;
 
-    --card: 30 6% 96%; /* #f5f5f4 */
+    --card: 60 100% 94%; /* #ffffe4 */
     --card-foreground: 20 50% 15%;
 
-    --popover: 30 6% 96%; /* #f5f5f4 */
+    --popover: 60 100% 94%; /* #ffffe4 */
     --popover-foreground: 20 50% 15%;
 
     /* Berlin Doner Brand Colors - Red & Gold */

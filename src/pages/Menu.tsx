@@ -313,7 +313,7 @@ export default function Menu() {
         {/* Language Menu Button shows current language */}
         <div className="relative ml-auto">
           <button
-            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#f5f5f4]/10 hover:bg-[#FFD54F]/20 focus:outline-none focus:ring-2 focus:ring-[#FFD54F] text-white font-semibold"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#ffffe4]/10 hover:bg-[#FFD54F]/20 focus:outline-none focus:ring-2 focus:ring-[#FFD54F] text-white font-semibold"
             onClick={() => setLangMenuOpen(v => !v)}
             aria-label="Open language menu"
           >
@@ -321,7 +321,7 @@ export default function Menu() {
             <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${langMenuOpen ? 'rotate-180' : ''}`} />
           </button>
           {langMenuOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-[#f5f5f4] text-[#C62828] rounded-lg shadow-lg py-2 z-50 border border-[#f5f5f4] animate-fade-in" onClick={() => setLangMenuOpen(false)}>
+            <div className="absolute right-0 mt-2 w-48 bg-[#ffffe4] text-[#C62828] rounded-lg shadow-lg py-2 z-50 border border-[#ffffe4] animate-fade-in" onClick={() => setLangMenuOpen(false)}>
               {languages.map(lang => (
                 <button
                   key={lang.code}
@@ -348,7 +348,7 @@ export default function Menu() {
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             placeholder={isRTL ? "...ابحث في القائمة" : "Search menu..."}
-            className={`w-full rounded-lg shadow px-4 py-2 border border-[#f5f5f4] focus:border-[#C62828] focus:ring-2 focus:ring-[#FFD54F] bg-[#f5f5f4] text-gray-900 placeholder-gray-400 transition-all duration-200 ${isRTL ? 'text-right pr-10' : 'text-left pl-10'}`}
+            className={`w-full rounded-lg shadow px-4 py-2 border border-[#ffffe4] focus:border-[#C62828] focus:ring-2 focus:ring-[#FFD54F] bg-[#ffffe4] text-gray-900 placeholder-gray-400 transition-all duration-200 ${isRTL ? 'text-right pr-10' : 'text-left pl-10'}`}
             style={{ direction: isRTL ? 'rtl' : 'ltr' }}
             aria-label="Search menu"
           />
