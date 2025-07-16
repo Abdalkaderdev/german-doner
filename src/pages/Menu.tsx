@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, Search, Filter, Clock, MapPin, Star, Heart, X, ImageOff } from "lucide-react";
+import { ArrowLeft, Search, Filter, Clock, MapPin, Star, Heart, X, ImageOff, Menu as MenuIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -63,6 +63,7 @@ export default function Menu() {
   });
 
   const mainRef = useRef<HTMLDivElement>(null);
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
 
   // Load favorites from localStorage
   useEffect(() => {
@@ -309,22 +310,33 @@ export default function Menu() {
           <img src={logo} alt="German Doner Logo" className="h-10 w-auto rounded-none" style={{maxHeight: 40}} />
           <h1 className="text-2xl font-bold text-center flex-1">German Doner</h1>
         </div>
-        {/* Language Switcher */}
-        <div className="flex items-center gap-2 sm:gap-4 ml-auto">
-          {languages.map((lang) => (
-            <button
-              key={lang.code}
-              onClick={() => handleLanguageSwitch(lang.code)}
-              className={`flex items-center gap-1 px-2 py-1 rounded-md text-sm font-semibold transition-all duration-200
-                ${selectedLang === lang.code ? 'bg-[#FFD54F] text-[#C62828] underline' : 'hover:bg-white/20'}
-                ${isRTL ? 'ml-1' : 'mr-1'}
-              `}
-              aria-current={selectedLang === lang.code ? 'page' : undefined}
-            >
-              <span>{lang.label}</span>
-              <span>{lang.flag}</span>
-            </button>
-          ))}
+        {/* Hamburger Language Menu */}
+        <div className="relative ml-auto">
+          <button
+            className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#FFD54F]/20 focus:outline-none focus:ring-2 focus:ring-[#FFD54F]"
+            onClick={() => setLangMenuOpen(v => !v)}
+            aria-label="Open language menu"
+          >
+            <MenuIcon className="h-6 w-6" />
+          </button>
+          {langMenuOpen && (
+            <div className="absolute right-0 mt-2 w-48 bg-white text-[#C62828] rounded-lg shadow-lg py-2 z-50 border border-gray-100 animate-fade-in" onClick={() => setLangMenuOpen(false)}>
+              {languages.map(lang => (
+                <button
+                  key={lang.code}
+                  onClick={e => { e.stopPropagation(); handleLanguageSwitch(lang.code); }}
+                  className={`flex items-center w-full px-4 py-2 text-left hover:bg-[#FFD54F]/20 focus:bg-[#FFD54F]/30 transition-colors relative ${selectedLang === lang.code ? 'font-bold' : ''}`}
+                  aria-current={selectedLang === lang.code ? 'page' : undefined}
+                >
+                  <span className="mr-2 text-lg">{lang.flag}</span>
+                  <span className="flex-1">{lang.name}</span>
+                  {selectedLang === lang.code && (
+                    <span className="ml-2 w-2 h-2 bg-green-500 rounded-full inline-block" aria-label="Current language" />
+                  )}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </header>
 
