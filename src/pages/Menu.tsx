@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, Search, Filter, Clock, MapPin, Star, Heart, X, ImageOff, Menu as MenuIcon } from "lucide-react";
+import { ArrowLeft, Search, Filter, Clock, MapPin, Star, Heart, X, ImageOff, Menu as MenuIcon, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -319,6 +319,7 @@ export default function Menu() {
           >
             <span className="text-lg">{languages.find(l => l.code === selectedLang)?.flag}</span>
             <span>{languages.find(l => l.code === selectedLang)?.label}</span>
+            <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${langMenuOpen ? 'rotate-180' : ''}`} />
           </button>
           {langMenuOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white text-[#C62828] rounded-lg shadow-lg py-2 z-50 border border-gray-100 animate-fade-in" onClick={() => setLangMenuOpen(false)}>
