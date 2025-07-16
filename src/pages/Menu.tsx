@@ -75,9 +75,9 @@ export default function Menu() {
 
   // Language switcher logic
   const languages = [
-    { code: "en", label: "English", flag: "🇬🇧" },
-    { code: "ku", label: "كوردي", flag: "🇮🇶" },
-    { code: "ar", label: "العربيه", flag: "🇸🇾" },
+    { code: "en", label: "English" },
+    { code: "ku", label: "كوردي" },
+    { code: "ar", label: "العربيه" },
   ];
   const currentLanguage = lang || "en";
   const selectedLang = currentLanguage;
@@ -317,7 +317,6 @@ export default function Menu() {
             onClick={() => setLangMenuOpen(v => !v)}
             aria-label="Open language menu"
           >
-            <span className="text-lg">{languages.find(l => l.code === selectedLang)?.flag}</span>
             <span>{languages.find(l => l.code === selectedLang)?.label}</span>
             <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${langMenuOpen ? 'rotate-180' : ''}`} />
           </button>
@@ -330,7 +329,6 @@ export default function Menu() {
                   className={`flex items-center w-full px-4 py-2 text-left hover:bg-[#FFD54F]/20 focus:bg-[#FFD54F]/30 transition-colors relative ${selectedLang === lang.code ? 'font-bold' : ''}`}
                   aria-current={selectedLang === lang.code ? 'page' : undefined}
                 >
-                  <span className="mr-2 text-lg">{lang.flag}</span>
                   <span className="flex-1">{lang.label}</span>
                   {selectedLang === lang.code && (
                     <span className="ml-2 w-2 h-2 bg-green-500 rounded-full inline-block" aria-label="Current language" />
