@@ -310,14 +310,15 @@ export default function Menu() {
           <img src={logo} alt="German Doner Logo" className="h-10 w-auto rounded-none" style={{maxHeight: 40}} />
           <h1 className="text-2xl font-bold text-center flex-1">German Doner</h1>
         </div>
-        {/* Hamburger Language Menu */}
+        {/* Language Menu Button shows current language */}
         <div className="relative ml-auto">
           <button
-            className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#FFD54F]/20 focus:outline-none focus:ring-2 focus:ring-[#FFD54F]"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-[#FFD54F]/20 focus:outline-none focus:ring-2 focus:ring-[#FFD54F] text-white font-semibold"
             onClick={() => setLangMenuOpen(v => !v)}
             aria-label="Open language menu"
           >
-            <MenuIcon className="h-6 w-6" />
+            <span className="text-lg">{languages.find(l => l.code === selectedLang)?.flag}</span>
+            <span>{languages.find(l => l.code === selectedLang)?.label}</span>
           </button>
           {langMenuOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white text-[#C62828] rounded-lg shadow-lg py-2 z-50 border border-gray-100 animate-fade-in" onClick={() => setLangMenuOpen(false)}>
@@ -329,7 +330,7 @@ export default function Menu() {
                   aria-current={selectedLang === lang.code ? 'page' : undefined}
                 >
                   <span className="mr-2 text-lg">{lang.flag}</span>
-                  <span className="flex-1">{lang.name}</span>
+                  <span className="flex-1">{lang.label}</span>
                   {selectedLang === lang.code && (
                     <span className="ml-2 w-2 h-2 bg-green-500 rounded-full inline-block" aria-label="Current language" />
                   )}
