@@ -75,9 +75,9 @@ export default function Menu() {
 
   // Language switcher logic
   const languages = [
-    { code: "en", label: "EN", flag: "🇬🇧" },
-    { code: "ku", label: "KU", flag: "🇮🇶" },
-    { code: "ar", label: "AR", flag: "🇸🇾" },
+    { code: "en", label: "English", flag: "🇬🇧" },
+    { code: "ku", label: "كوردي", flag: "🇮🇶" },
+    { code: "ar", label: "العربيه", flag: "🇸🇾" },
   ];
   const currentLanguage = lang || "en";
   const selectedLang = currentLanguage;
