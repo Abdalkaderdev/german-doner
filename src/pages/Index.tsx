@@ -112,18 +112,6 @@ const Index = () => {
           >
             German Doner
           </motion.h2>
-          <motion.p 
-            className="text-xl md:text-2xl text-white/90 mb-2 drop-shadow-md"
-            variants={itemVariants}
-          >
-            Authentic German-Turkish Cuisine
-          </motion.p>
-          <motion.p 
-            className="text-lg text-white/80 drop-shadow-md"
-            variants={itemVariants}
-          >
-            Fresh Made – Premium Quality
-          </motion.p>
         </motion.div>
 
         {/* Language Selection */}
