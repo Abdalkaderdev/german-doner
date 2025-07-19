@@ -70,6 +70,12 @@ export default {
 				'spice-gold': 'hsl(var(--spice-gold))',
 				'meat-brown': 'hsl(var(--meat-brown))',
 				'fresh-green': 'hsl(var(--fresh-green))',
+				// German Flag Colors
+				'german-black': '#000000',
+				'german-red': '#FF0000',
+				'german-yellow': '#FFD700',
+				'german-dark-gray': '#1a1a1a',
+				'german-medium-gray': '#2a2a2a',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

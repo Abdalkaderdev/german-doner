@@ -8,48 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 60 100% 94%; /* #ffffe4 */
-    --foreground: 20 50% 15%;
+    /* German Flag Theme: Black Backgrounds, Red Text, Yellow Numbers */
+    --background: 0 0% 0%; /* Pure Black */
+    --foreground: 0 100% 50%; /* Bright Red */
 
-    --card: 60 100% 94%; /* #ffffe4 */
-    --card-foreground: 20 50% 15%;
+    --card: 0 0% 5%; /* Very Dark Gray */
+    --card-foreground: 0 100% 50%; /* Bright Red */
 
-    --popover: 60 100% 94%; /* #ffffe4 */
-    --popover-foreground: 20 50% 15%;
+    --popover: 0 0% 5%; /* Very Dark Gray */
+    --popover-foreground: 0 100% 50%; /* Bright Red */
 
-    /* Berlin Doner Brand Colors - Red & Gold */
-    --primary: 0 75% 55%; /* Rich Red */
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 0 85% 65%; /* Lighter Red */
+    /* German Flag Colors */
+    --primary: 0 100% 50%; /* German Red */
+    --primary-foreground: 0 0% 0%; /* Black */
+    --primary-glow: 0 100% 60%; /* Lighter Red */
 
-    --secondary: 45 90% 55%; /* Berlin Gold */
-    --secondary-foreground: 20 50% 15%;
+    --secondary: 60 100% 50%; /* German Yellow */
+    --secondary-foreground: 0 0% 0%; /* Black */
 
-    --muted: 25 10% 90%;
-    --muted-foreground: 20 25% 45%;
+    --muted: 0 0% 10%; /* Dark Gray */
+    --muted-foreground: 0 100% 60%; /* Lighter Red */
 
-    --accent: 45 85% 60%; /* Warm Gold */
-    --accent-foreground: 20 50% 15%;
+    --accent: 60 100% 50%; /* German Yellow */
+    --accent-foreground: 0 0% 0%; /* Black */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 100% 50%; /* Red */
+    --destructive-foreground: 0 0% 0%; /* Black */
 
-    --border: 25 15% 85%;
-    --input: 25 15% 85%;
-    --ring: 15 75% 45%;
+    --border: 0 0% 15%; /* Medium Dark Gray */
+    --input: 0 0% 15%; /* Medium Dark Gray */
+    --ring: 0 100% 50%; /* Red */
 
-    /* Berlin Doner Brand Gradients & Colors */
-    --warm-gradient: linear-gradient(135deg, hsl(0 75% 55%), hsl(45 85% 60%));
-    --hero-gradient: linear-gradient(135deg, hsl(0 40% 15% / 0.95), hsl(0 50% 25% / 0.90));
-    --berlin-red: 0 75% 55%;
-    --berlin-gold: 45 85% 60%;
-    --spice-gold: 45 90% 65%;
-    --meat-brown: 25 40% 35%;
-    --fresh-green: 120 60% 45%;
+    /* German Flag Brand Colors */
+    --warm-gradient: linear-gradient(135deg, hsl(0 100% 50%), hsl(60 100% 50%));
+    --hero-gradient: linear-gradient(135deg, hsl(0 0% 0% / 0.95), hsl(0 0% 5% / 0.90));
+    --berlin-red: 0 100% 50%; /* German Red */
+    --berlin-gold: 60 100% 50%; /* German Yellow */
+    --spice-gold: 60 100% 60%; /* Lighter Yellow */
+    --meat-brown: 0 0% 20%; /* Dark Gray */
+    --fresh-green: 0 100% 50%; /* Red (keeping consistent) */
     
     /* Shadows */
-    --shadow-warm: 0 10px 30px -5px hsl(15 75% 45% / 0.3);
-    --shadow-elegant: 0 20px 40px -10px hsl(20 50% 15% / 0.4);
+    --shadow-warm: 0 10px 30px -5px hsl(0 100% 50% / 0.3);
+    --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.4);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -57,68 +58,63 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 0%; /* Black */
+    --sidebar-foreground: 0 100% 50%; /* Red */
+    --sidebar-primary: 60 100% 50%; /* Yellow */
+    --sidebar-primary-foreground: 0 0% 0%; /* Black */
+    --sidebar-accent: 0 0% 10%; /* Dark Gray */
+    --sidebar-accent-foreground: 0 100% 50%; /* Red */
+    --sidebar-border: 0 0% 15%; /* Medium Dark Gray */
+    --sidebar-ring: 0 100% 50%; /* Red */
   }
 
   .dark {
-    --background: 20 50% 8%;
-    --foreground: 25 15% 95%;
+    /* Dark mode - same as light mode for German flag theme */
+    --background: 0 0% 0%; /* Pure Black */
+    --foreground: 0 100% 50%; /* Bright Red */
 
-    --card: 20 45% 12%;
-    --card-foreground: 25 15% 95%;
+    --card: 0 0% 5%; /* Very Dark Gray */
+    --card-foreground: 0 100% 50%; /* Bright Red */
 
-    --popover: 20 45% 12%;
-    --popover-foreground: 25 15% 95%;
+    --popover: 0 0% 5%; /* Very Dark Gray */
+    --popover-foreground: 0 100% 50%; /* Bright Red */
 
-    --primary: 0 85% 65%; /* Lighter Red for dark mode */
-    --primary-foreground: 20 50% 8%;
-    --primary-glow: 0 90% 75%;
+    --primary: 0 100% 50%; /* German Red */
+    --primary-foreground: 0 0% 0%; /* Black */
+    --primary-glow: 0 100% 60%; /* Lighter Red */
 
-    --secondary: 45 85% 65%; /* Gold for dark mode */
-    --secondary-foreground: 20 50% 8%;
+    --secondary: 60 100% 50%; /* German Yellow */
+    --secondary-foreground: 0 0% 0%; /* Black */
 
-    --muted: 20 40% 15%;
-    --muted-foreground: 25 15% 65%;
+    --muted: 0 0% 10%; /* Dark Gray */
+    --muted-foreground: 0 100% 60%; /* Lighter Red */
 
-    --accent: 45 90% 70%; /* Bright Gold for dark mode */
-    --accent-foreground: 20 50% 8%;
+    --accent: 60 100% 50%; /* German Yellow */
+    --accent-foreground: 0 0% 0%; /* Black */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 25 15% 95%;
+    --destructive: 0 100% 50%; /* Red */
+    --destructive-foreground: 0 0% 0%; /* Black */
 
-    --border: 20 40% 20%;
-    --input: 20 40% 20%;
-    --ring: 20 85% 55%;
+    --border: 0 0% 15%; /* Medium Dark Gray */
+    --input: 0 0% 15%; /* Medium Dark Gray */
+    --ring: 0 100% 50%; /* Red */
 
-    --warm-gradient: linear-gradient(135deg, hsl(0 85% 65%), hsl(45 90% 70%));
-    --hero-gradient: linear-gradient(135deg, hsl(0 40% 8% / 0.95), hsl(0 50% 15% / 0.90));
-    --berlin-red: 0 85% 65%;
-    --berlin-gold: 45 90% 70%;
-    --spice-gold: 45 85% 70%;
-    --meat-brown: 25 35% 45%;
-    --fresh-green: 120 55% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --warm-gradient: linear-gradient(135deg, hsl(0 100% 50%), hsl(60 100% 50%));
+    --hero-gradient: linear-gradient(135deg, hsl(0 0% 0% / 0.95), hsl(0 0% 5% / 0.90));
+    --berlin-red: 0 100% 50%; /* German Red */
+    --berlin-gold: 60 100% 50%; /* German Yellow */
+    --spice-gold: 60 100% 60%; /* Lighter Yellow */
+    --meat-brown: 0 0% 20%; /* Dark Gray */
+    --fresh-green: 0 100% 50%; /* Red (keeping consistent) */
+    
+    --sidebar-background: 0 0% 0%; /* Black */
+    --sidebar-foreground: 0 100% 50%; /* Red */
+    --sidebar-primary: 60 100% 50%; /* Yellow */
+    --sidebar-primary-foreground: 0 0% 0%; /* Black */
+    --sidebar-accent: 0 0% 10%; /* Dark Gray */
+    --sidebar-accent-foreground: 0 100% 50%; /* Red */
+    --sidebar-border: 0 0% 15%; /* Medium Dark Gray */
+    --sidebar-ring: 0 100% 50%; /* Red */
   }
 }
 
@@ -129,5 +125,24 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom German Flag Theme Classes */
+@layer components {
+  .german-number {
+    @apply text-yellow-400 font-bold; /* Yellow numbers */
+  }
+  
+  .german-text {
+    @apply text-red-500; /* Red text */
+  }
+  
+  .german-bg {
+    @apply bg-black; /* Black background */
+  }
+  
+  .german-card {
+    @apply bg-gray-900 border-gray-800; /* Dark card background */
   }
 }

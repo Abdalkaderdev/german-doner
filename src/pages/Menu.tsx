@@ -281,11 +281,11 @@ export default function Menu() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="min-h-screen bg-black flex items-center justify-center">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-          className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full"
+          className="w-8 h-8 border-2 border-german-red border-t-transparent rounded-full"
         />
       </div>
     );
@@ -293,27 +293,27 @@ export default function Menu() {
 
   if (!menuData) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-muted-foreground">Failed to load menu</p>
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <p className="text-german-red">Failed to load menu</p>
       </div>
     );
   }
 
   return (
     <div
-      className={`min-h-screen bg-background ${isRTL ? 'rtl' : 'ltr'}`}
+      className={`min-h-screen bg-black ${isRTL ? 'rtl' : 'ltr'}`}
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       {/* Sticky Header with Language Switcher */}
-      <header className="sticky top-0 z-50 bg-[#C62828] text-white py-4 px-4 shadow-md flex items-center justify-between">
+      <header className="sticky top-0 z-50 bg-german-dark-gray text-german-red py-4 px-4 shadow-md flex items-center justify-between border-b-2 border-german-red">
         <div className="flex items-center gap-3">
           <img src={logo} alt="German Doner Logo" className="h-10 w-auto rounded-none" style={{maxHeight: 40}} />
-          <h1 className="text-2xl font-bold text-center flex-1">German Doner</h1>
+          <h1 className="text-2xl font-bold text-center flex-1 text-german-red">German Doner</h1>
         </div>
         {/* Language Menu Button shows current language */}
         <div className="relative ml-auto">
           <button
-            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#ffffe4]/10 hover:bg-[#FFD54F]/20 focus:outline-none focus:ring-2 focus:ring-[#FFD54F] text-white font-semibold"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-german-medium-gray hover:bg-german-dark-gray focus:outline-none focus:ring-2 focus:ring-german-yellow text-german-red font-semibold border border-german-red"
             onClick={() => setLangMenuOpen(v => !v)}
             aria-label="Open language menu"
           >
@@ -321,17 +321,17 @@ export default function Menu() {
             <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${langMenuOpen ? 'rotate-180' : ''}`} />
           </button>
           {langMenuOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-[#ffffe4] text-[#C62828] rounded-lg shadow-lg py-2 z-50 border border-[#ffffe4] animate-fade-in" onClick={() => setLangMenuOpen(false)}>
+            <div className="absolute right-0 mt-2 w-48 bg-german-dark-gray text-german-red rounded-lg shadow-lg py-2 z-50 border-2 border-german-red animate-fade-in" onClick={() => setLangMenuOpen(false)}>
               {languages.map(lang => (
                 <button
                   key={lang.code}
                   onClick={e => { e.stopPropagation(); handleLanguageSwitch(lang.code); }}
-                  className={`flex items-center w-full px-4 py-2 text-left hover:bg-[#FFD54F]/20 focus:bg-[#FFD54F]/30 transition-colors relative ${selectedLang === lang.code ? 'font-bold' : ''}`}
+                  className={`flex items-center w-full px-4 py-2 text-left hover:bg-german-medium-gray focus:bg-german-medium-gray transition-colors relative ${selectedLang === lang.code ? 'font-bold text-german-yellow' : 'text-german-red'}`}
                   aria-current={selectedLang === lang.code ? 'page' : undefined}
                 >
                   <span className="flex-1">{lang.label}</span>
                   {selectedLang === lang.code && (
-                    <span className="ml-2 w-2 h-2 bg-green-500 rounded-full inline-block" aria-label="Current language" />
+                    <span className="ml-2 w-2 h-2 bg-german-yellow rounded-full inline-block" aria-label="Current language" />
                   )}
                 </button>
               ))}
@@ -341,22 +341,22 @@ export default function Menu() {
       </header>
 
       {/* --- Search Input & Filters --- */}
-      <div className="w-full flex flex-col items-center bg-background py-6 px-2 border-b">
+      <div className="w-full flex flex-col items-center bg-black py-6 px-2 border-b-2 border-german-red">
         <div className="relative w-full max-w-md mb-2">
           <input
             type="text"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             placeholder={isRTL ? "...ابحث في القائمة" : "Search menu..."}
-            className={`w-full rounded-lg shadow px-4 py-2 border border-[#ffffe4] focus:border-[#C62828] focus:ring-2 focus:ring-[#FFD54F] bg-[#ffffe4] text-gray-900 placeholder-gray-400 transition-all duration-200 ${isRTL ? 'text-right pr-10' : 'text-left pl-10'}`}
+            className={`w-full rounded-lg shadow px-4 py-2 border-2 border-german-red focus:border-german-yellow focus:ring-2 focus:ring-german-yellow bg-german-dark-gray text-german-red placeholder-gray-400 transition-all duration-200 ${isRTL ? 'text-right pr-10' : 'text-left pl-10'}`}
             style={{ direction: isRTL ? 'rtl' : 'ltr' }}
             aria-label="Search menu"
           />
-          <Search className={`absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'right-3' : 'left-3'} h-5 w-5 text-gray-400 pointer-events-none`} />
+          <Search className={`absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'right-3' : 'left-3'} h-5 w-5 text-german-red pointer-events-none`} />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
-              className={`absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'left-3' : 'right-3'} text-gray-400 hover:text-[#C62828] focus:outline-none`}
+              className={`absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'left-3' : 'right-3'} text-german-red hover:text-german-yellow focus:outline-none`}
               aria-label="Clear search"
             >
               <X className="h-5 w-5" />
@@ -369,12 +369,12 @@ export default function Menu() {
             variant={showFilters ? "default" : "outline"}
             size="sm"
             onClick={() => setShowFilters(!showFilters)}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 bg-german-dark-gray text-german-red border-german-red hover:bg-german-medium-gray hover:text-german-yellow"
           >
             <Filter className="h-4 w-4" />
             {isRTL ? "تصفية" : "Filters"}
             {selectedFilters.length > 0 && (
-              <Badge variant="secondary" className="ml-1">
+              <Badge variant="secondary" className="ml-1 bg-german-yellow text-black">
                 {selectedFilters.length}
               </Badge>
             )}
@@ -386,7 +386,7 @@ export default function Menu() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="w-full max-w-md mt-2 pt-2 border-t"
+            className="w-full max-w-md mt-2 pt-2 border-t-2 border-german-red"
           >
             <div className="flex flex-wrap gap-2">
               {filterOptions.map((option) => (
@@ -401,11 +401,13 @@ export default function Menu() {
                         : [...prev, option.id]
                     );
                   }}
-                  className="text-xs"
+                  className={`text-xs ${selectedFilters.includes(option.id) 
+                    ? 'bg-german-red text-black hover:bg-german-yellow hover:text-black' 
+                    : 'bg-german-dark-gray text-german-red border-german-red hover:bg-german-medium-gray hover:text-german-yellow'}`}
                 >
                   {option.label}
                   {option.count > 0 && !selectedFilters.includes(option.id) && (
-                    <Badge variant="secondary" className="ml-1 text-xs">
+                    <Badge variant="secondary" className="ml-1 text-xs bg-german-yellow text-black">
                       {option.count}
                     </Badge>
                   )}
@@ -418,7 +420,7 @@ export default function Menu() {
                   variant="ghost"
                   size="sm"
                   onClick={() => setSelectedFilters([])}
-                  className="text-xs"
+                  className="text-xs text-german-red hover:text-german-yellow"
                 >
                   <X className="h-3 w-3 mr-1" />
                   {isRTL ? "مسح التصفية" : "Clear all filters"}
@@ -431,7 +433,7 @@ export default function Menu() {
 
       {/* Restaurant Status & Info */}
       <motion.div 
-        className="bg-card border-b"
+        className="bg-german-dark-gray border-b-2 border-german-red"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
@@ -439,16 +441,16 @@ export default function Menu() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-wrap items-center gap-4 text-sm">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-foreground font-medium">Open Now</span>
+              <div className="w-2 h-2 bg-german-yellow rounded-full animate-pulse"></div>
+              <span className="text-german-red font-medium">Open Now</span>
             </div>
-            <Separator orientation="vertical" className="h-4" />
-            <div className="flex items-center gap-2 text-muted-foreground">
+            <Separator orientation="vertical" className="h-4 bg-german-red" />
+            <div className="flex items-center gap-2 text-german-yellow">
               <Clock className="h-4 w-4" />
               <span>Closes at 11:00 PM</span>
             </div>
-            <Separator orientation="vertical" className="h-4" />
-            <div className="flex items-center gap-2 text-muted-foreground">
+            <Separator orientation="vertical" className="h-4 bg-german-red" />
+            <div className="flex items-center gap-2 text-german-yellow">
               <MapPin className="h-4 w-4" />
               <span>Queen Towers, Erbil Iraq</span>
             </div>
@@ -485,7 +487,7 @@ export default function Menu() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <p className="text-lg text-gray-500">{searchQuery ? (isRTL ? "لا توجد نتائج مطابقة" : "No items found.") : (isRTL ? "القائمة فارغة" : "Menu is empty.")}</p>
+            <p className="text-lg text-german-red">{searchQuery ? (isRTL ? "لا توجد نتائج مطابقة" : "No items found.") : (isRTL ? "القائمة فارغة" : "Menu is empty.")}</p>
           </motion.div>
         )}
       </main>

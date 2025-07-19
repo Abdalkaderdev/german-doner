@@ -30,7 +30,7 @@ const DynamicCategoryNav: React.FC<DynamicCategoryNavProps> = ({ categories, act
   }, [activeCategory]);
 
   return (
-    <div ref={navRef} className="sticky top-[72px] w-full bg-[#ffffe4] border-b z-40">
+    <div ref={navRef} className="sticky top-[72px] w-full bg-black border-b-2 border-german-red z-40">
       {/* Smokey Cursor Effect */}
       <SmokeyCursor />
       <nav
@@ -47,10 +47,10 @@ const DynamicCategoryNav: React.FC<DynamicCategoryNavProps> = ({ categories, act
             key={cat.id}
             ref={el => (btnRefs.current[cat.id] = el)}
             onClick={() => onCategoryClick(cat.id)}
-            className={`whitespace-nowrap px-4 py-2 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#FFD54F] scroll-snap-align-center ${
+            className={`whitespace-nowrap px-4 py-2 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-german-yellow scroll-snap-align-center ${
               activeCategory === cat.id
-                ? 'text-primary font-bold border-b-2 border-primary bg-[#FFD54F]/80 shadow'
-                : 'bg-transparent text-[#C62828] hover:bg-[#FFD54F]/30'
+                ? 'text-black font-bold border-b-2 border-german-yellow bg-german-yellow shadow'
+                : 'bg-transparent text-german-red hover:bg-german-dark-gray hover:text-german-yellow'
             }`}
             aria-current={activeCategory === cat.id ? 'page' : undefined}
             initial={false}

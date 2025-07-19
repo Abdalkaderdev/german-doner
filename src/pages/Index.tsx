@@ -79,12 +79,8 @@ const Index = () => {
 
   return (
     <div 
-      className="min-h-screen relative flex items-center justify-center bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${background})` }}
+      className="min-h-screen relative flex items-center justify-center bg-black"
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-hero-gradient" />
-      
       {/* Content */}
       <motion.div 
         className="relative z-10 text-center px-4 max-w-2xl mx-auto"
@@ -95,19 +91,19 @@ const Index = () => {
         {/* Logo/Brand */}
         <motion.div className="mb-8" variants={itemVariants}>
           <motion.div 
-            className="w-28 h-28 mx-auto mb-6 bg-[#ffffe4] rounded-full flex items-center justify-center shadow-warm"
+            className="w-28 h-28 mx-auto mb-6 bg-german-dark-gray rounded-full flex items-center justify-center shadow-warm border-2 border-german-red"
             variants={logoVariants}
           >
             <img src={logo} alt="German Doner Logo" className="w-20 h-20 object-contain" />
           </motion.div>
           <motion.h1 
-            className="text-6xl md:text-7xl font-bold text-white mb-4 drop-shadow-lg"
+            className="text-6xl md:text-7xl font-bold text-german-red mb-4 drop-shadow-lg"
             variants={itemVariants}
           >
             Welcome to
           </motion.h1>
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-berlin-gold mb-4 drop-shadow-lg"
+            className="text-4xl md:text-5xl font-bold text-german-yellow mb-4 drop-shadow-lg"
             variants={itemVariants}
           >
             German Doner
@@ -116,14 +112,14 @@ const Index = () => {
 
         {/* Language Selection */}
         <motion.div variants={itemVariants}>
-          <Card className="bg-[#ffffe4] backdrop-blur-sm shadow-elegant border-0">
+          <Card className="bg-german-dark-gray backdrop-blur-sm shadow-elegant border-2 border-german-red">
             <CardContent className="p-8">
               <motion.div 
                 className="flex items-center justify-center gap-2 mb-6"
                 variants={itemVariants}
               >
-                <Languages className="h-6 w-6 text-primary" />
-                <h2 className="text-2xl font-semibold text-foreground">
+                <Languages className="h-6 w-6 text-german-red" />
+                <h2 className="text-2xl font-semibold text-german-red">
                   Choose Your Language
                 </h2>
               </motion.div>
@@ -141,7 +137,7 @@ const Index = () => {
                       variant={lang.code === "en" ? "default" : "outline"}
                       size="lg"
                       onClick={() => handleLanguageSelect(lang.code)}
-                      className="w-full text-lg py-6 flex items-center justify-center border-2 hover:border-primary transition-all duration-300"
+                      className="w-full text-lg py-6 flex items-center justify-center border-2 border-german-red hover:border-german-yellow transition-all duration-300 bg-german-dark-gray text-german-red hover:bg-german-medium-gray hover:text-german-yellow"
                     >
                       <span className="font-semibold">{lang.nativeName}</span>
                     </Button>
@@ -161,11 +157,11 @@ const Index = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <Card className="bg-[#ffffe4] backdrop-blur-sm border-0 hover:shadow-warm transition-all duration-300">
+            <Card className="bg-german-dark-gray backdrop-blur-sm border-2 border-german-red hover:border-german-yellow transition-all duration-300">
               <CardContent className="p-6 text-center">
                 <div className="text-3xl mb-3">📍</div>
-                <h3 className="font-semibold text-foreground mb-2">Location</h3>
-                <p className="text-muted-foreground">Queen Towers, Erbil</p>
+                <h3 className="font-semibold text-german-red mb-2">Location</h3>
+                <p className="text-german-yellow">Queen Towers, Erbil</p>
               </CardContent>
             </Card>
           </motion.div>
@@ -174,11 +170,11 @@ const Index = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <Card className="bg-[#ffffe4] backdrop-blur-sm border-0 hover:shadow-warm transition-all duration-300">
+            <Card className="bg-german-dark-gray backdrop-blur-sm border-2 border-german-red hover:border-german-yellow transition-all duration-300">
               <CardContent className="p-6 text-center">
                 <div className="text-3xl mb-3">🕐</div>
-                <h3 className="font-semibold text-foreground mb-2">Hours</h3>
-                <p className="text-muted-foreground">Daily: 11:00 - 22:00</p>
+                <h3 className="font-semibold text-german-red mb-2">Hours</h3>
+                <p className="text-german-yellow">Daily: 11:00 - 22:00</p>
               </CardContent>
             </Card>
           </motion.div>

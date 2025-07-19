@@ -51,8 +51,8 @@ const MenuSection: React.FC<MenuSectionProps> = ({
       className="mb-12"
     >
       <motion.h2
-        className="text-3xl md:text-4xl font-bold mb-6 px-2"
-        style={{ color: '#C62828 !important', borderLeft: isRTL ? undefined : '6px solid #FFD54F', borderRight: isRTL ? '6px solid #FFD54F' : undefined }}
+        className="text-3xl md:text-4xl font-bold mb-6 px-2 text-german-red"
+        style={{ borderLeft: isRTL ? undefined : '6px solid #FFD700', borderRight: isRTL ? '6px solid #FFD700' : undefined }}
       >
         {category.name}
       </motion.h2>
