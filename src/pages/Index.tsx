@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Languages, Settings } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Languages } from "lucide-react";
+import ImageOptimized from "@/components/ImageOptimized";
+const logo = "/images/logo.png";
 import { useNavigate } from "react-router-dom";
-import heroImage from "@/assets/doner-hero.jpg";
-import background from "../assets/background.jpg";
-import logo from "../assets/logo.png";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -43,20 +42,6 @@ const Index = () => {
     }
   };
 
-  const logoVariants = {
-    hidden: { scale: 0, rotate: -180 },
-    visible: {
-      scale: 1,
-      rotate: 0,
-      transition: {
-        type: "spring" as const,
-        stiffness: 100,
-        damping: 10,
-        duration: 1
-      }
-    }
-  };
-
   const buttonVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: {
@@ -90,13 +75,14 @@ const Index = () => {
       >
         {/* Logo/Brand */}
         <motion.div className="mb-6 sm:mb-8" variants={itemVariants}>
-          <motion.img
+          <ImageOptimized
             src={logo}
             alt="German Doner Logo"
             className="mx-auto mb-6 w-24 sm:w-32 md:w-40 lg:w-48 h-auto max-w-full object-contain"
-            loading="eager"
-            decoding="async"
-            variants={logoVariants}
+            priority={true}
+            width={400}
+            sizes="(min-width:1024px) 480px, 40vw"
+            srcSet={`${logo} 400w, ${logo} 800w`}
           />
           <motion.h1 
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-2 sm:mb-4 drop-shadow-lg font-display tracking-wide"

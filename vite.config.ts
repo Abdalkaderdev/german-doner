@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+import { visualizer } from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -13,22 +14,32 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     ViteImageOptimizer({
-      // Sensible defaults for large photos
-      jpg: { quality: 70, progressive: true },
-      jpeg: { quality: 70, progressive: true },
-      png: { quality: 70 },
-      webp: { quality: 70 },
-      avif: { cqLevel: 33 },
-      // Resize very large images to a max width for faster delivery
-      // leaving original ext so our imports work; plugin writes optimized files
-      maxWidth: 1400,
-      maxHeight: 1400,
-      preserveAspectRatio: true,
-      overrideURL: false,
+      png: { quality: 70 }, jpeg: { quality: 70 }, jpg: { quality: 70 },
+      tiff: { quality: 70 }, webp: { quality: 70 }, avif: { quality: 70 },
+      exclude: /node_modules/, include: /\.(png|jpg|jpeg|gif|webp|svg|tiff|avif)$/i,
     }),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
+    mode === 'analyze' && visualizer({
+      filename: 'dist/stats.html',
+      open: true,
+      gzipSize: true,
+      brotliSize: true,
+    }),
   ].filter(Boolean),
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('framer-motion')) return 'vendor-motion';
+            if (id.includes('lucide-react')) return 'vendor-icons';
+            if (id.includes('@radix-ui')) return 'vendor-radix';
+            return 'vendor';
+          }
+        },
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

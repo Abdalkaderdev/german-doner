@@ -1,28 +1,31 @@
 import { motion } from "framer-motion";
-import { Heart, ImageOff } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Star } from "lucide-react";
 import React, { useState } from "react";
-import logo from "../assets/logo.png";
-import pepperoniImg from "@/assets/IMG_2862.jpg";
-import salmonImg from "@/assets/IMG_2864.jpg";
-import turkeyBeefSalamiImg from "@/assets/IMG_2865.jpg";
-import pizzaMixImg from "@/assets/IMG_2876.jpg";
-import cheesePideImg from "@/assets/IMG_2885.jpg";
-import sucukPideImg from "@/assets/IMG_2893.jpg";
-import donerChickenImg from "@/assets/IMG_2901.jpg";
-import donerBeefImg from "@/assets/IMG_2903.jpg";
-import yufkaBeefImg from "@/assets/IMG_2909.jpg";
+import ImageOptimized from "@/components/ImageOptimized";
 
-// Modern palette (kept for potential inline styles if needed)
-const GERMAN_RED = "#D62828"; // Warm Red
-const GERMAN_YELLOW = "#F6AA1C"; // Golden Mustard
-const GERMAN_BLACK = "#2B2B2B"; // Dark Charcoal
+interface MenuItem {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image?: string;
+  popular?: boolean;
+  vegetarian?: boolean;
+  spicy?: boolean;
+  available?: boolean;
+  stock?: number;
+  isSpecial?: boolean;
+  specialPrice?: number;
+  vegan?: boolean;
+  glutenFree?: boolean;
+  allergens?: string[];
+}
 
 // Props for MenuItemCard
 interface MenuItemCardProps {
-  item: any;
+  item: MenuItem;
   currency: string;
   isRTL: boolean;
   isFavorite?: boolean;
@@ -41,13 +44,6 @@ const itemVariants = {
     scale: 1.02,
     y: -4,
     transition: { duration: 0.2, type: "spring" as const, stiffness: 400, damping: 10 }
-  }
-};
-
-const cardImageVariants = {
-  hover: {
-    scale: 1.1,
-    transition: { duration: 0.4, type: "spring" as const, stiffness: 200, damping: 15 }
   }
 };
 
@@ -73,18 +69,19 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
 
   // Resolve image source: prefer local mapping, then item.image, then fallback logo
   const localImageByItemId: Record<string, string> = {
-    "pepperoni-pizza": pepperoniImg,
-    "salmon-pizza": salmonImg,
-    "turkey-beef-salami-pizza": turkeyBeefSalamiImg,
-    "pizza-mix": pizzaMixImg,
-    "cheese-pide": cheesePideImg,
-    "sucuk-pide": sucukPideImg,
-    "doner-kebap-chicken": donerChickenImg,
-    "doner-kebap-beef": donerBeefImg,
-    "yufka-kebap-beef": yufkaBeefImg,
+    "pepperoni-pizza": "/images/IMG_2862.jpg",
+    "salmon-pizza": "/images/IMG_2864.jpg",
+    "turkey-beef-salami-pizza": "/images/IMG_2865.jpg",
+    "pizza-mix": "/images/IMG_2876.jpg",
+    "cheese-pide": "/images/IMG_2885.jpg",
+    "sucuk-pide": "/images/IMG_2893.jpg",
+    "doner-kebap-chicken": "/images/IMG_2901.jpg",
+    "doner-kebap-beef": "/images/IMG_2903.jpg",
+    "yufka-kebap-beef": "/images/IMG_2909.jpg",
   };
-  const imageSrc: string = localImageByItemId[item?.id] || logo;
-  const isFallbackLogo = imageSrc === logo;
+  const fallbackLogo = "/images/logo.png";
+  const imageSrc: string = localImageByItemId[item?.id] || fallbackLogo;
+  const isFallbackLogo = imageSrc === fallbackLogo;
   const imageBgClass = isFallbackLogo ? 'bg-[hsl(42_73%_94%)]' : 'bg-[hsl(0_0%_24%)]';
   const imageObjectClass = isFallbackLogo ? 'object-contain p-6' : 'object-cover';
 
@@ -98,18 +95,14 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
         <Card className="overflow-hidden rounded-xl shadow-md bg-card flex flex-col h-full border border-border hover:border-primary transition-colors">
           <CardContent className="p-0">
             {/* Image Section */}
-            <div className={`w-full h-48 relative overflow-hidden ${imageBgClass} flex-shrink-0 cursor-zoom-in`} onClick={() => setModalOpen(true)}>
-              <motion.img
+            <div className={`w-full h-48 relative overflow-hidden ${imageBgClass} flex-shrink-0 cursor-zoom-in aspect-[4/3]`} onClick={() => setModalOpen(true)}>
+              <ImageOptimized
                 src={imageSrc}
                 alt={item?.name || "Menu item"}
                 className={`w-full h-full ${imageObjectClass} rounded-t-xl`}
-                loading="lazy"
-                decoding="async"
-                fetchPriority="low"
-                sizes="(min-width:1280px) 25vw, (min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                width={800}
-                height={600}
-                variants={cardImageVariants}
+                width={400}
+                sizes="(min-width:1024px) 25vw, (min-width:640px) 33vw, 50vw"
+                srcSet={`${imageSrc} 400w, ${imageSrc} 800w, ${imageSrc} 1200w`}
               />
             </div>
 
@@ -118,15 +111,13 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
               <div className="flex items-start justify-between gap-2 mb-3">
                 <h3 className="text-2xl font-extrabold flex-1 text-foreground leading-tight">{item.name}</h3>
                 {onFavoriteToggle && (
-                  <Button
-                    variant="ghost"
-                    size="icon"
+                  <button
                     onClick={() => onFavoriteToggle(item.id)}
                     className="ml-2 p-2 hover:scale-110 transition-transform bg-transparent hover:bg-[hsl(39_92%_53%)] hover:text-[hsl(0_0%_15%)]"
                     aria-label="Toggle favorite"
                   >
-                    <Heart className={`h-5 w-5 ${isFavorite ? 'fill-primary text-primary' : ''}`} />
-                  </Button>
+                    <Star className={`h-5 w-5 ${isFavorite ? 'fill-primary text-primary' : ''}`} />
+                  </button>
                 )}
               </div>
               <div className="flex items-center gap-2 mb-2 flex-wrap">
@@ -158,7 +149,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
             >
               &times;
             </button>
-            <img src={imageSrc} alt={item.name} className={`w-full h-72 object-contain rounded-t-lg ${imageBgClass}`} loading="lazy" decoding="async" sizes="90vw" width={800} height={600} />
+            <ImageOptimized src={imageSrc} alt={item.name} className={`w-full h-72 object-contain rounded-t-lg ${imageBgClass}`} width={800} height={600} />
             <div className="p-4 text-center">
               <h3 className="text-xl font-bold text-foreground mb-2">{item.name}</h3>
             </div>

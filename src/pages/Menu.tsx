@@ -1,16 +1,15 @@
-import { useState, useEffect, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, Search, Filter, Clock, MapPin, Star, Heart, X, ImageOff, Menu as MenuIcon, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState, useRef, useMemo } from "react";
+import MenuSection from "@/components/MenuSection";
+import { Button } from "@/components/ui/button";
+import { Search, Filter, X, ChevronDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollCategory } from "@/hooks/useScrollCategory";
-import MenuSection from "@/components/MenuSection";
-import logo from "@/assets/logo.png";
+import ImageOptimized from "@/components/ImageOptimized";
+import { Separator } from "@/components/ui/separator";
+const logo = "/images/logo.png";
 import DynamicCategoryNav from "@/components/ui/DynamicCategoryNav";
 
 interface MenuItem {
@@ -57,8 +56,7 @@ export default function Menu() {
   const [showFilters, setShowFilters] = useState(false);
   const [favorites, setFavorites] = useState<string[]>([]);
   
-  const categoryRefs = useRef<Map<string, HTMLElement>>(new Map());
-  const { activeCategory, scrollToCategory, observeCategory } = useScrollCategory({
+  const { activeCategory, scrollToCategory } = useScrollCategory({
     categories: menuData?.categories.map(cat => cat.id) || []
   });
 
@@ -111,7 +109,6 @@ export default function Menu() {
         const data = await response.json();
         setMenuData(data);
       } catch (error) {
-        console.error('Error loading menu:', error);
         toast({
           title: "Error loading menu",
           description: "Please try refreshing the page",
@@ -190,7 +187,7 @@ export default function Menu() {
   }, [menuData, searchQuery, selectedFilters, favorites]);
 
   // Available filter options
-  const filterOptions = [
+  const filterOptions = useMemo(() => [
     { id: 'vegetarian', label: '🌱 Vegetarian', count: 0 },
     { id: 'vegan', label: '🌿 Vegan', count: 0 },
     { id: 'glutenFree', label: '🌾 Gluten Free', count: 0 },
@@ -198,86 +195,7 @@ export default function Menu() {
     { id: 'popular', label: '⭐ Popular', count: 0 },
     { id: 'special', label: '🏷️ Special Offers', count: 0 },
     { id: 'favorites', label: '❤️ Favorites', count: favorites.length },
-  ];
-
-  const formatPrice = (price: number, currency: string) => {
-    // Format Iraqi Dinar prices appropriately
-    if (currency === 'IQD') {
-      return `${price.toLocaleString()} ${currency}`;
-    }
-    return `${currency}${(price / 1000).toFixed(2)}`;
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const categoryVariants = {
-    hidden: { 
-      opacity: 0, 
-      x: isRTL ? 50 : -50,
-      scale: 0.95
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        type: "spring" as const,
-        stiffness: 100,
-        damping: 15
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 30,
-      scale: 0.95
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        type: "spring" as const,
-        stiffness: 120,
-        damping: 12
-      }
-    },
-    hover: {
-      scale: 1.02,
-      y: -4,
-      transition: {
-        duration: 0.2,
-        type: "spring" as const,
-        stiffness: 400,
-        damping: 10
-      }
-    }
-  };
-
-  const cardImageVariants = {
-    hover: {
-      scale: 1.1,
-      transition: {
-        duration: 0.4,
-        type: "spring" as const,
-        stiffness: 200,
-        damping: 15
-      }
-    }
-  };
+  ], [favorites]);
 
   if (loading) {
     return (
@@ -309,7 +227,7 @@ export default function Menu() {
         <div className="grid grid-cols-3 items-center">
           <div />
           <div className="flex justify-center">
-            <img src={logo} alt="German Doner" className="h-8 sm:h-10 w-auto" style={{maxHeight: 40}} />
+            <ImageOptimized src={logo} alt="German Doner" className="h-10 sm:h-12 md:h-14 w-auto" width={400} priority={true} sizes="200px" srcSet={`${logo} 400w, ${logo} 800w`} />
           </div>
           {/* Language Menu Button shows current language */}
           <div className="relative justify-self-end">
@@ -446,12 +364,10 @@ export default function Menu() {
             </div>
             <Separator orientation="vertical" className="h-4" />
             <div className="flex items-center gap-2 text-[hsl(39_92%_53%)]">
-              <Clock className="h-4 w-4" />
               <span>Closes at 11:00 PM</span>
             </div>
             <Separator orientation="vertical" className="h-4" />
             <div className="flex items-center gap-2 text-[hsl(39_92%_53%)]">
-              <MapPin className="h-4 w-4" />
               <span>Queen Towers, Erbil Iraq</span>
             </div>
           </div>
@@ -469,7 +385,7 @@ export default function Menu() {
       {/* Menu Sections */}
       <main ref={mainRef} className="container mx-auto px-2 py-6">
         {filteredCategories && filteredCategories.length > 0 ? (
-          filteredCategories.map((category, idx) => (
+          filteredCategories.map((category) => (
             // Force specific categories to use light background per feedback
             // Fresh Salads, Pizza, Rizzo should be light
             <MenuSection
@@ -477,15 +393,8 @@ export default function Menu() {
               category={category}
               currency={menuData.currency}
               isRTL={isRTL}
-              favorites={favorites}
+              favorites={new Set(favorites)}
               onFavoriteToggle={toggleFavorite}
-              observeCategory={observeCategory}
-              categoryId={category.id}
-              isAlt={(() => {
-                const forceLight = ['salads', 'pizza', 'rizzo'];
-                if (forceLight.includes(category.id)) return false; // light background
-                return idx % 2 === 1; // otherwise alternate
-              })()}
             />
           ))
         ) : (

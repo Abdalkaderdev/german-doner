@@ -1,54 +1,53 @@
-import React, { useRef, useEffect } from "react";
-import { motion, Variants } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import MenuItemCard from "./MenuItemCard";
 
-// Props for MenuSection
-interface MenuSectionProps {
-  category: any;
-  currency: string;
-  isRTL: boolean;
-  favorites?: string[];
-  onFavoriteToggle?: (id: string) => void;
-  observeCategory?: (categoryId: string, element: HTMLElement) => void;
-  categoryId?: string;
-  isAlt?: boolean;
+interface MenuItem {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image?: string;
+  popular?: boolean;
+  vegetarian?: boolean;
+  spicy?: boolean;
+  available?: boolean;
+  stock?: number;
+  isSpecial?: boolean;
+  specialPrice?: number;
+  vegan?: boolean;
+  glutenFree?: boolean;
+  allergens?: string[];
 }
 
-const sectionVariants: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, type: "spring", stiffness: 80, damping: 18 }
-  }
-};
+interface MenuCategory {
+  id: string;
+  name: string;
+  items: MenuItem[];
+}
+
+interface MenuSectionProps {
+  category: MenuCategory;
+  currency: string;
+  isRTL: boolean;
+  onFavoriteToggle?: (itemId: string) => void;
+  favorites?: Set<string>;
+}
 
 const MenuSection: React.FC<MenuSectionProps> = ({
   category,
   currency,
   isRTL,
-  favorites = [],
+  favorites = new Set(),
   onFavoriteToggle,
-  observeCategory,
-  categoryId,
-  isAlt
 }) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (observeCategory && sectionRef.current && categoryId) {
-      observeCategory(categoryId, sectionRef.current);
-    }
-  }, [observeCategory, categoryId]);
-
-  const isPizza = category.id === 'pizza';
   return (
     <motion.section
-      ref={sectionRef}
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, type: 'spring', stiffness: 80, damping: 18 }}
       id={`category-${category.id}`}
-      className={`mb-12 ${isAlt ? 'bg-[hsl(0_0%_24%)/85%] text-[hsl(42_73%_94%)]' : 'bg-background'} rounded-xl p-2 sm:p-4 scroll-mt-[88px] sm:scroll-mt-[112px]`}
+      className="mb-12 bg-background rounded-xl p-2 sm:p-4 scroll-mt-[88px] sm:scroll-mt-[112px]"
     >
       <motion.h2
         className="text-3xl md:text-4xl font-bold mb-6 px-4"
@@ -62,13 +61,13 @@ const MenuSection: React.FC<MenuSectionProps> = ({
           (isRTL ? ' direction-rtl' : '')
         }
       >
-        {category.items.map((item: any) => (
+        {category.items.map((item: MenuItem) => (
           <MenuItemCard
             key={item.id}
             item={item}
             currency={currency}
             isRTL={isRTL}
-            isFavorite={favorites.includes(item.id)}
+            isFavorite={favorites.has(item.id)}
             onFavoriteToggle={onFavoriteToggle}
           />
         ))}
