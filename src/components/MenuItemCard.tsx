@@ -100,6 +100,12 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                 src={imageSrc}
                 alt={item?.name || "Menu item"}
                 className="w-full h-full object-cover rounded-t-xl"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                sizes="(min-width:1280px) 25vw, (min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+                width={800}
+                height={600}
                 variants={cardImageVariants}
               />
             </div>
@@ -149,7 +155,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
             >
               &times;
             </button>
-            <img src={imageSrc} alt={item.name} className="w-full h-72 object-contain rounded-t-lg bg-[hsl(0_0%_24%)]" />
+            <img src={imageSrc} alt={item.name} className="w-full h-72 object-contain rounded-t-lg bg-[hsl(0_0%_24%)]" loading="lazy" decoding="async" sizes="90vw" width={800} height={600} />
             <div className="p-4 text-center">
               <h3 className="text-xl font-bold text-foreground mb-2">{item.name}</h3>
             </div>

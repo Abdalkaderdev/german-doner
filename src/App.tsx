@@ -3,10 +3,11 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Menu from "./pages/Menu";
-import AdminDashboard from "./pages/AdminDashboard";
-import AdminLogin from "./pages/AdminLogin";
+import { lazy, Suspense } from "react";
+const Index = lazy(() => import("./pages/Index"));
+const Menu = lazy(() => import("./pages/Menu"));
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -17,14 +18,16 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/menu/:lang" element={<Menu />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/menu/:lang" element={<Menu />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

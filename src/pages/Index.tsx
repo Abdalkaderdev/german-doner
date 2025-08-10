@@ -94,6 +94,8 @@ const Index = () => {
             src={logo}
             alt="German Doner Logo"
             className="mx-auto mb-6 w-24 sm:w-32 md:w-40 lg:w-48 h-auto max-w-full object-contain"
+            loading="eager"
+            decoding="async"
             variants={logoVariants}
           />
           <motion.h1 
