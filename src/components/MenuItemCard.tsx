@@ -5,8 +5,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
 import logo from "../assets/logo.jpg";
-import pepperoniImg from "@/assets/IMG_2862.JPG";
-import salmonImg from "@/assets/IMG_2864.JPG";
+import pepperoniImg from "@/assets/IMG_2862.jpg";
+import salmonImg from "@/assets/IMG_2864.jpg";
+import turkeyBeefSalamiImg from "@/assets/IMG_2865.jpg";
+import pizzaMixImg from "@/assets/IMG_2876.jpg";
+import cheesePideImg from "@/assets/IMG_2885.jpg";
+import sucukPideImg from "@/assets/IMG_2893.jpg";
+import donerChickenImg from "@/assets/IMG_2901.jpg";
+import donerBeefImg from "@/assets/IMG_2903.jpg";
+import yufkaBeefImg from "@/assets/IMG_2909.jpg";
 
 // Modern palette (kept for potential inline styles if needed)
 const GERMAN_RED = "#D62828"; // Warm Red
@@ -68,8 +75,15 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
   const localImageByItemId: Record<string, string> = {
     "pepperoni-pizza": pepperoniImg,
     "salmon-pizza": salmonImg,
+    "turkey-beef-salami-pizza": turkeyBeefSalamiImg,
+    "pizza-mix": pizzaMixImg,
+    "cheese-pide": cheesePideImg,
+    "sucuk-pide": sucukPideImg,
+    "doner-kebap-chicken": donerChickenImg,
+    "doner-kebap-beef": donerBeefImg,
+    "yufka-kebap-beef": yufkaBeefImg,
   };
-  const imageSrc: string = localImageByItemId[item?.id] || item?.image || logo;
+  const imageSrc: string = localImageByItemId[item?.id] || logo;
 
   return (
     <>
