@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+				fontFamily: {
+					sans: ["Manrope", "ui-sans-serif", "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"],
+					display: ["Bebas Neue", "Manrope", "ui-sans-serif", "system-ui"],
+				},
 			backgroundImage: {
 				'warm-gradient': 'var(--warm-gradient)',
 				'hero-gradient': 'var(--hero-gradient)',

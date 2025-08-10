@@ -99,13 +99,13 @@ const Index = () => {
             variants={logoVariants}
           />
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-2 sm:mb-4 drop-shadow-lg"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-2 sm:mb-4 drop-shadow-lg font-display tracking-wide"
             variants={itemVariants}
           >
             Welcome to
           </motion.h1>
           <motion.h2 
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[hsl(39_92%_53%)] mb-4 drop-shadow-lg"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[hsl(39_92%_53%)] mb-4 drop-shadow-lg font-display tracking-wide"
             variants={itemVariants}
           >
             German Doner
