@@ -31,51 +31,52 @@ export default {
 				'bounce': 'var(--transition-bounce)',
 			},
 			colors: {
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
+					border: 'hsl(var(--border))',
+					input: 'hsl(var(--input))',
+					ring: 'hsl(var(--ring))',
+					background: 'hsl(var(--background))',
+					foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))',
-					glow: 'hsl(var(--primary-glow))'
+						DEFAULT: 'hsl(var(--primary))',
+						foreground: 'hsl(var(--primary-foreground))',
+						glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+						DEFAULT: 'hsl(var(--secondary))',
+						foreground: 'hsl(var(--secondary-foreground))'
 				},
 				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
+						DEFAULT: 'hsl(var(--destructive))',
+						foreground: 'hsl(var(--destructive-foreground))'
 				},
 				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
+						DEFAULT: 'hsl(var(--muted))',
+						foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+						DEFAULT: 'hsl(var(--accent))',
+						foreground: 'hsl(var(--accent-foreground))'
 				},
 				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
+						DEFAULT: 'hsl(var(--popover))',
+						foreground: 'hsl(var(--popover-foreground))'
 				},
 				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+						DEFAULT: 'hsl(var(--card))',
+						foreground: 'hsl(var(--card-foreground))'
 				},
-				'berlin-red': 'hsl(var(--berlin-red))',
-				'berlin-gold': 'hsl(var(--berlin-gold))',
-				'spice-gold': 'hsl(var(--spice-gold))',
-				'meat-brown': 'hsl(var(--meat-brown))',
-				'fresh-green': 'hsl(var(--fresh-green))',
+					'berlin-red': 'hsl(var(--berlin-red))',
+					'berlin-gold': 'hsl(var(--berlin-gold))',
+					'spice-gold': 'hsl(var(--spice-gold))',
+					'meat-brown': 'hsl(var(--meat-brown))',
+					'fresh-green': 'hsl(var(--fresh-green))',
+					'cream-white': 'hsl(var(--cream-white))',
 				// German Flag Colors
-				'german-black': '#000000',
-				'german-red': '#FF0000',
-				'german-yellow': '#FFD700',
-				'german-dark-gray': '#1a1a1a',
-				'german-medium-gray': '#2a2a2a',
+					'german-black': '#000000',
+					'german-red': '#D62828', // Warm Red
+					'german-yellow': '#F6AA1C', // Golden Mustard
+					'german-dark-gray': '#2B2B2B', // Dark Charcoal
+					'german-medium-gray': '#3C3C3C', // Lighter Charcoal
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

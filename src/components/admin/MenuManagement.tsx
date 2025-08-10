@@ -608,7 +608,7 @@ export const MenuManagement = () => {
       </div>
 
       {zoomImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" onClick={() => setZoomImage(null)}>
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-[hsl(0_0%_17%)]/70 backdrop-blur-sm" onClick={() => setZoomImage(null)}>
           <div className="relative bg-[#ffffe4] rounded-lg shadow-lg max-w-md w-full mx-4 border border-[#ffffe4]" onClick={e => e.stopPropagation()}>
             <button
               className="absolute top-2 right-2 text-2xl text-gray-500 hover:text-red-500 focus:outline-none"

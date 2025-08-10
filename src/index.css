@@ -8,113 +8,117 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* German Flag Theme: Black Backgrounds, Red Text, Yellow Numbers */
-    --background: 0 0% 0%; /* Pure Black */
-    --foreground: 0 100% 50%; /* Bright Red */
+    /* Modern Street-Food Palette */
+    /* Primary Colors */
+    /* Warm Red: #D62828 */
+    --primary: 1 69% 49%;
+    --primary-foreground: 40 79% 95%; /* Cream White text on primary */
+    --primary-glow: 1 69% 59%;
 
-    --card: 0 0% 5%; /* Very Dark Gray */
-    --card-foreground: 0 100% 50%; /* Bright Red */
+    /* Golden Mustard: #F6AA1C */
+    --secondary: 39 92% 53%;
+    --secondary-foreground: 0 0% 15%; /* Dark text on mustard */
 
-    --popover: 0 0% 5%; /* Very Dark Gray */
-    --popover-foreground: 0 100% 50%; /* Bright Red */
+    /* Neutrals */
+    /* Cream White background: #FAF3E0 */
+    --background: 42 73% 94%;
+    --foreground: 0 0% 15%; /* Dark Charcoal text in light sections */
 
-    /* German Flag Colors */
-    --primary: 0 100% 50%; /* German Red */
-    --primary-foreground: 0 0% 0%; /* Black */
-    --primary-glow: 0 100% 60%; /* Lighter Red */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
 
-    --secondary: 60 100% 50%; /* German Yellow */
-    --secondary-foreground: 0 0% 0%; /* Black */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
 
-    --muted: 0 0% 10%; /* Dark Gray */
-    --muted-foreground: 0 100% 60%; /* Lighter Red */
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 60 100% 50%; /* German Yellow */
-    --accent-foreground: 0 0% 0%; /* Black */
+    --accent: 39 92% 53%; /* Golden Mustard as accent */
+    --accent-foreground: 0 0% 15%;
 
-    --destructive: 0 100% 50%; /* Red */
-    --destructive-foreground: 0 0% 0%; /* Black */
+    --destructive: 1 69% 49%; /* Warm Red */
+    --destructive-foreground: 42 73% 94%; /* Cream White */
 
-    --border: 0 0% 15%; /* Medium Dark Gray */
-    --input: 0 0% 15%; /* Medium Dark Gray */
-    --ring: 0 100% 50%; /* Red */
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 1 69% 49%;
 
-    /* German Flag Brand Colors */
-    --warm-gradient: linear-gradient(135deg, hsl(0 100% 50%), hsl(60 100% 50%));
-    --hero-gradient: linear-gradient(135deg, hsl(0 0% 0% / 0.95), hsl(0 0% 5% / 0.90));
-    --berlin-red: 0 100% 50%; /* German Red */
-    --berlin-gold: 60 100% 50%; /* German Yellow */
-    --spice-gold: 60 100% 60%; /* Lighter Yellow */
-    --meat-brown: 0 0% 20%; /* Dark Gray */
-    --fresh-green: 0 100% 50%; /* Red (keeping consistent) */
-    
+    /* Brand aliases for old usage mapping */
+    --berlin-red: 1 69% 49%;
+    --berlin-gold: 39 92% 53%;
+    --spice-gold: 39 92% 63%;
+    --meat-brown: 0 0% 23%;
+    --fresh-green: 82 70% 38%; /* #76A21E */
+    --cream-white: 42 73% 94%;
+
     /* Shadows */
-    --shadow-warm: 0 10px 30px -5px hsl(0 100% 50% / 0.3);
-    --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.4);
-    
+    --shadow-warm: 0 10px 30px -5px hsl(1 69% 49% / 0.25);
+    --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.25);
+
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 0%; /* Black */
-    --sidebar-foreground: 0 100% 50%; /* Red */
-    --sidebar-primary: 60 100% 50%; /* Yellow */
-    --sidebar-primary-foreground: 0 0% 0%; /* Black */
-    --sidebar-accent: 0 0% 10%; /* Dark Gray */
-    --sidebar-accent-foreground: 0 100% 50%; /* Red */
-    --sidebar-border: 0 0% 15%; /* Medium Dark Gray */
-    --sidebar-ring: 0 100% 50%; /* Red */
+    /* Sidebar and dark sections use Dark Charcoal */
+    --sidebar-background: 0 0% 17%; /* #2B2B2B */
+    --sidebar-foreground: 39 92% 53%;
+    --sidebar-primary: 39 92% 53%;
+    --sidebar-primary-foreground: 0 0% 15%;
+    --sidebar-accent: 0 0% 24%; /* #3C3C3C */
+    --sidebar-accent-foreground: 42 73% 94%;
+    --sidebar-border: 0 0% 24%;
+    --sidebar-ring: 1 69% 49%;
   }
 
   .dark {
-    /* Dark mode - same as light mode for German flag theme */
-    --background: 0 0% 0%; /* Pure Black */
-    --foreground: 0 100% 50%; /* Bright Red */
+    /* Dark mode uses Dark Charcoal surfaces with mustard accents */
+    --background: 0 0% 17%; /* #2B2B2B */
+    --foreground: 42 73% 94%; /* Cream White text on dark */
 
-    --card: 0 0% 5%; /* Very Dark Gray */
-    --card-foreground: 0 100% 50%; /* Bright Red */
+    --card: 0 0% 24%; /* #3C3C3C */
+    --card-foreground: 42 73% 94%;
 
-    --popover: 0 0% 5%; /* Very Dark Gray */
-    --popover-foreground: 0 100% 50%; /* Bright Red */
+    --popover: 0 0% 24%;
+    --popover-foreground: 42 73% 94%;
 
-    --primary: 0 100% 50%; /* German Red */
-    --primary-foreground: 0 0% 0%; /* Black */
-    --primary-glow: 0 100% 60%; /* Lighter Red */
+    --primary: 1 69% 49%;
+    --primary-foreground: 42 73% 94%;
+    --primary-glow: 1 69% 59%;
 
-    --secondary: 60 100% 50%; /* German Yellow */
-    --secondary-foreground: 0 0% 0%; /* Black */
+    --secondary: 39 92% 53%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 0 0% 10%; /* Dark Gray */
-    --muted-foreground: 0 100% 60%; /* Lighter Red */
+    --muted: 0 0% 29%;
+    --muted-foreground: 42 73% 84%;
 
-    --accent: 60 100% 50%; /* German Yellow */
-    --accent-foreground: 0 0% 0%; /* Black */
+    --accent: 39 92% 53%;
+    --accent-foreground: 0 0% 15%;
 
-    --destructive: 0 100% 50%; /* Red */
-    --destructive-foreground: 0 0% 0%; /* Black */
+    --destructive: 1 69% 49%;
+    --destructive-foreground: 42 73% 94%;
 
-    --border: 0 0% 15%; /* Medium Dark Gray */
-    --input: 0 0% 15%; /* Medium Dark Gray */
-    --ring: 0 100% 50%; /* Red */
+    --border: 0 0% 24%;
+    --input: 0 0% 24%;
+    --ring: 39 92% 53%;
 
-    --warm-gradient: linear-gradient(135deg, hsl(0 100% 50%), hsl(60 100% 50%));
-    --hero-gradient: linear-gradient(135deg, hsl(0 0% 0% / 0.95), hsl(0 0% 5% / 0.90));
-    --berlin-red: 0 100% 50%; /* German Red */
-    --berlin-gold: 60 100% 50%; /* German Yellow */
-    --spice-gold: 60 100% 60%; /* Lighter Yellow */
-    --meat-brown: 0 0% 20%; /* Dark Gray */
-    --fresh-green: 0 100% 50%; /* Red (keeping consistent) */
-    
-    --sidebar-background: 0 0% 0%; /* Black */
-    --sidebar-foreground: 0 100% 50%; /* Red */
-    --sidebar-primary: 60 100% 50%; /* Yellow */
-    --sidebar-primary-foreground: 0 0% 0%; /* Black */
-    --sidebar-accent: 0 0% 10%; /* Dark Gray */
-    --sidebar-accent-foreground: 0 100% 50%; /* Red */
-    --sidebar-border: 0 0% 15%; /* Medium Dark Gray */
-    --sidebar-ring: 0 100% 50%; /* Red */
+    --warm-gradient: linear-gradient(135deg, hsl(1 69% 49%), hsl(39 92% 53%));
+    --hero-gradient: linear-gradient(135deg, hsl(0 0% 17% / 0.95), hsl(0 0% 24% / 0.90));
+    --berlin-red: 1 69% 49%;
+    --berlin-gold: 39 92% 53%;
+    --spice-gold: 39 92% 63%;
+    --meat-brown: 0 0% 23%;
+    --fresh-green: 82 70% 38%;
+
+    --sidebar-background: 0 0% 17%;
+    --sidebar-foreground: 39 92% 53%;
+    --sidebar-primary: 39 92% 53%;
+    --sidebar-primary-foreground: 0 0% 15%;
+    --sidebar-accent: 0 0% 24%;
+    --sidebar-accent-foreground: 42 73% 94%;
+    --sidebar-border: 0 0% 24%;
+    --sidebar-ring: 1 69% 49%;
   }
 }
 
@@ -131,18 +135,18 @@ All colors MUST be HSL.
 /* Custom German Flag Theme Classes */
 @layer components {
   .german-number {
-    @apply text-yellow-400 font-bold; /* Yellow numbers */
+    @apply font-bold text-[hsl(39_92%_53%)]; /* Golden Mustard */
   }
   
   .german-text {
-    @apply text-red-500; /* Red text */
+    color: hsl(1 69% 49%); /* Warm Red */
   }
   
   .german-bg {
-    @apply bg-black; /* Black background */
+    background-color: hsl(42 73% 94%); /* Cream White background */
   }
   
   .german-card {
-    @apply bg-gray-900 border-gray-800; /* Dark card background */
+    @apply border-gray-200; /* Light border; card bg from tokens */
   }
 }

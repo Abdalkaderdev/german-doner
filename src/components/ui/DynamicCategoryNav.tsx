@@ -30,7 +30,7 @@ const DynamicCategoryNav: React.FC<DynamicCategoryNavProps> = ({ categories, act
   }, [activeCategory]);
 
   return (
-    <div ref={navRef} className="sticky top-[72px] w-full bg-black border-b-2 border-german-red z-40">
+    <div ref={navRef} className="sticky top-[72px] w-full bg-[hsl(0_0%_17%)] text-[hsl(42_73%_94%)] border-b border-border z-40">
       {/* Smokey Cursor Effect */}
       <SmokeyCursor />
       <nav
@@ -47,10 +47,10 @@ const DynamicCategoryNav: React.FC<DynamicCategoryNavProps> = ({ categories, act
             key={cat.id}
             ref={el => (btnRefs.current[cat.id] = el)}
             onClick={() => onCategoryClick(cat.id)}
-            className={`whitespace-nowrap px-4 py-2 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-german-yellow scroll-snap-align-center ${
+            className={`whitespace-nowrap px-4 py-2 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[hsl(39_92%_53%)] scroll-snap-align-center ${
               activeCategory === cat.id
-                ? 'text-black font-bold border-b-2 border-german-yellow bg-german-yellow shadow'
-                : 'bg-transparent text-german-red hover:bg-german-dark-gray hover:text-german-yellow'
+                ? 'text-[hsl(0_0%_15%)] font-bold border-b-2 border-[hsl(39_92%_53%)] bg-[hsl(39_92%_53%)] shadow'
+                : 'bg-transparent text-[hsl(42_73%_94%)] hover:bg-[hsl(1_69%_49%)] hover:text-[hsl(42_73%_94%)]'
             }`}
             aria-current={activeCategory === cat.id ? 'page' : undefined}
             initial={false}

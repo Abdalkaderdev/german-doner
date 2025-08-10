@@ -11,6 +11,7 @@ interface MenuSectionProps {
   onFavoriteToggle?: (id: string) => void;
   observeCategory?: (categoryId: string, element: HTMLElement) => void;
   categoryId?: string;
+  isAlt?: boolean;
 }
 
 const sectionVariants: Variants = {
@@ -29,7 +30,8 @@ const MenuSection: React.FC<MenuSectionProps> = ({
   favorites = [],
   onFavoriteToggle,
   observeCategory,
-  categoryId
+  categoryId,
+  isAlt
 }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -48,17 +50,17 @@ const MenuSection: React.FC<MenuSectionProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, type: 'spring', stiffness: 80, damping: 18 }}
       id={`category-${category.id}`}
-      className="mb-12"
+      className={`mb-12 ${isAlt ? 'bg-[hsl(0_0%_24%)/85%] text-[hsl(42_73%_94%)]' : 'bg-background'} rounded-xl p-2 sm:p-4`}
     >
       <motion.h2
-        className="text-3xl md:text-4xl font-bold mb-6 px-2 text-german-red"
-        style={{ borderLeft: isRTL ? undefined : '6px solid #FFD700', borderRight: isRTL ? '6px solid #FFD700' : undefined }}
+        className="text-3xl md:text-4xl font-bold mb-6 px-4"
+        style={{ borderLeft: isRTL ? undefined : '6px solid hsl(39 92% 53%)', borderRight: isRTL ? '6px solid hsl(39 92% 53%)' : undefined }}
       >
         {category.name}
       </motion.h2>
       <div
         className={
-          `grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 px-2 py-4` +
+          `grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 px-4 py-6` +
           (isRTL ? ' direction-rtl' : '')
         }
       >

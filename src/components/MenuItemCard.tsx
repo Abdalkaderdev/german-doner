@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
 import logo from "../assets/logo.jpg";
 
-// German Flag colors
-const GERMAN_RED = "#FF0000";
-const GERMAN_YELLOW = "#FFD700";
-const GERMAN_BLACK = "#000000";
+// Modern palette (kept for potential inline styles if needed)
+const GERMAN_RED = "#D62828"; // Warm Red
+const GERMAN_YELLOW = "#F6AA1C"; // Golden Mustard
+const GERMAN_BLACK = "#2B2B2B"; // Dark Charcoal
 
 // Props for MenuItemCard
 interface MenuItemCardProps {
@@ -69,10 +69,10 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
         whileHover="hover"
         className="h-full"
       >
-        <Card className="overflow-hidden rounded-xl shadow-md bg-german-dark-gray flex flex-col h-full border-2 border-german-red hover:border-german-yellow transition-colors">
+        <Card className="overflow-hidden rounded-xl shadow-md bg-card flex flex-col h-full border border-border hover:border-primary transition-colors">
           <CardContent className="p-0">
             {/* Image Section */}
-            <div className="w-full h-48 relative overflow-hidden bg-german-medium-gray flex-shrink-0 cursor-zoom-in" onClick={() => setModalOpen(true)}>
+            <div className="w-full h-48 relative overflow-hidden bg-[hsl(0_0%_24%)] flex-shrink-0 cursor-zoom-in" onClick={() => setModalOpen(true)}>
               <motion.img
                 src={logo}
                 alt="Logo"
@@ -84,31 +84,31 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
             {/* Content Section */}
             <div className={`flex-1 flex flex-col p-6 gap-2 ${isRTL ? 'text-right' : 'text-left'}`}>
               <div className="flex items-start justify-between gap-2 mb-3">
-                <h3 className="text-2xl font-extrabold flex-1 text-german-red leading-tight">{item.name}</h3>
+                <h3 className="text-2xl font-extrabold flex-1 text-foreground leading-tight">{item.name}</h3>
                 {onFavoriteToggle && (
                   <Button
                     variant="ghost"
                     size="icon"
                     onClick={() => onFavoriteToggle(item.id)}
-                    className="ml-2 p-2 hover:scale-110 transition-transform bg-transparent hover:bg-german-medium-gray"
+                    className="ml-2 p-2 hover:scale-110 transition-transform bg-transparent hover:bg-[hsl(39_92%_53%)] hover:text-[hsl(0_0%_15%)]"
                     aria-label="Toggle favorite"
                   >
-                    <Heart className={`h-5 w-5 ${isFavorite ? 'fill-german-red text-german-red' : 'text-german-red hover:text-german-yellow'}`} />
+                    <Heart className={`h-5 w-5 ${isFavorite ? 'fill-primary text-primary' : ''}`} />
                   </Button>
                 )}
               </div>
               <div className="flex items-center gap-2 mb-2 flex-wrap">
-                {item.popular && <Badge className="bg-german-yellow text-black">Popular</Badge>}
-                {item.spicy && <Badge className="bg-german-red text-black">🌶️ Spicy</Badge>}
-                {item.vegetarian && <Badge className="bg-german-yellow text-black">🌱 Vegetarian</Badge>}
-                {item.vegan && <Badge className="bg-german-yellow text-black">🌿 Vegan</Badge>}
-                {item.glutenFree && <Badge className="bg-german-yellow text-black">🌾 Gluten Free</Badge>}
+                {item.popular && <Badge className="bg-secondary text-[hsl(0_0%_15%)]">Popular</Badge>}
+                {item.spicy && <Badge className="bg-primary text-[hsl(42_73%_94%)]">🌶️ Hot</Badge>}
+                {item.vegetarian && <Badge className="bg-[hsl(82_70%_38%)] text-[hsl(42_73%_94%)]">🌱 Vegetarian</Badge>}
+                {item.vegan && <Badge className="bg-[hsl(82_70%_38%)] text-[hsl(42_73%_94%)]">🌿 Vegan</Badge>}
+                {item.glutenFree && <Badge className="bg-secondary text-[hsl(0_0%_15%)]">🌾 Gluten Free</Badge>}
               </div>
-              <p className="text-german-yellow text-base mb-6 min-h-[2.5em] leading-relaxed">{item.description}</p>
+              <p className="text-muted-foreground text-base mb-6 min-h-[2.5em] leading-relaxed">{item.description}</p>
               <div className="flex items-center justify-between mt-auto">
-                <span className="text-2xl font-bold text-german-yellow">{formatPrice(item.price, currency)}</span>
+                <span className="text-2xl font-bold px-2 py-1 rounded bg-secondary text-[hsl(0_0%_15%)]">{formatPrice(item.price, currency)}</span>
                 {item.isSpecial && (
-                  <Badge className="bg-german-yellow text-black ml-2">Special!</Badge>
+                  <Badge className="bg-primary text-[hsl(42_73%_94%)] ml-2">New</Badge>
                 )}
               </div>
             </div>
@@ -117,18 +117,18 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
       </motion.div>
       {/* Modal/Lightbox */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={() => setModalOpen(false)}>
-          <div className="relative bg-german-dark-gray rounded-lg shadow-lg max-w-md w-full mx-4 border-2 border-german-red" onClick={e => e.stopPropagation()}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[hsl(0_0%_17%)]/90 backdrop-blur-sm" onClick={() => setModalOpen(false)}>
+          <div className="relative bg-card rounded-lg shadow-lg max-w-md w-full mx-4 border border-border" onClick={e => e.stopPropagation()}>
             <button
-              className="absolute top-2 right-2 text-2xl text-german-red hover:text-german-yellow focus:outline-none"
+              className="absolute top-2 right-2 text-2xl text-foreground hover:text-primary focus:outline-none"
               onClick={() => setModalOpen(false)}
               aria-label="Close"
             >
               &times;
             </button>
-            <img src={logo} alt={item.name} className="w-full h-72 object-contain rounded-t-lg bg-german-medium-gray" />
+            <img src={logo} alt={item.name} className="w-full h-72 object-contain rounded-t-lg bg-[hsl(0_0%_24%)]" />
             <div className="p-4 text-center">
-              <h3 className="text-xl font-bold text-german-red mb-2">{item.name}</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">{item.name}</h3>
             </div>
           </div>
         </div>

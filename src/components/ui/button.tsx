@@ -9,17 +9,18 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-warm hover:shadow-elegant hover:scale-105",
+        // Buttons: Golden Mustard bg, Dark Charcoal text; hover = Warm Red bg, Cream White text
+        default: "bg-secondary text-[hsl(0_0%_15%)] hover:bg-primary hover:text-[hsl(42_73%_94%)] shadow-warm hover:shadow-elegant hover:scale-105",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border border-input bg-background text-foreground hover:bg-secondary hover:text-[hsl(0_0%_15%)]",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-md hover:shadow-lg",
+          "bg-secondary text-[hsl(0_0%_15%)] hover:bg-primary hover:text-[hsl(42_73%_94%)] shadow-md hover:shadow-lg",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         hero: "bg-warm-gradient text-white hover:scale-105 shadow-warm hover:shadow-elegant backdrop-blur-sm border border-white/20",
-        menu: "bg-card text-card-foreground hover:bg-primary/10 border border-border hover:border-primary/30 hover:scale-102 shadow-md hover:shadow-lg",
+        menu: "bg-card text-card-foreground hover:bg-secondary border border-border hover:border-primary/30 hover:scale-102 shadow-md hover:shadow-lg",
       },
       size: {
         default: "h-10 px-4 py-2",
