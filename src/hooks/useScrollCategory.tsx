@@ -38,8 +38,6 @@ export const useScrollCategory = ({
           const topEntry = visibleEntries.reduce((prev, curr) =>
             prev.boundingClientRect.top < curr.boundingClientRect.top ? prev : curr
           );
-          // Debug logging
-          console.log(`[IntersectionObserver] Setting active category to:`, topEntry.target.id);
           // Extract categoryId from id (assumes id="category-<id>")
           const match = topEntry.target.id.match(/^category-(.+)$/);
           if (match) {

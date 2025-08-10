@@ -40,8 +40,6 @@ const MenuSection: React.FC<MenuSectionProps> = ({
     }
   }, [observeCategory, categoryId]);
 
-  // Debug: Log category and items
-  console.log('Rendering category:', category.id, category.items);
   const isPizza = category.id === 'pizza';
   return (
     <motion.section

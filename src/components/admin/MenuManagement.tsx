@@ -512,9 +512,9 @@ export const MenuManagement = () => {
                       whileHover={{ scale: 1.02 }}
                     >
                       <div className="flex items-center gap-6">
-                        <div className="w-20 h-20 rounded-xl overflow-hidden bg-muted cursor-zoom-in" onClick={() => { setZoomImage(require('../../assets/logo.jpg')); setZoomName(item.name); }}>
+          <div className="w-20 h-20 rounded-xl overflow-hidden bg-muted cursor-zoom-in" onClick={() => { setZoomImage(require('../../assets/logo.png')); setZoomName(item.name); }}>
                           <img 
-                            src={require('../../assets/logo.jpg')}
+            src={require('../../assets/logo.png')}
                             alt="Logo"
                             className="w-full h-full object-cover"
                           />

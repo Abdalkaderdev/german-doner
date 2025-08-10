@@ -5,7 +5,7 @@ import { Languages, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/doner-hero.jpg";
 import background from "../assets/background.jpg";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -139,7 +139,7 @@ const Index = () => {
                       variant="default"
                       size="lg"
                       onClick={() => handleLanguageSelect(lang.code)}
-                      className="w-full text-base sm:text-lg py-4 sm:py-6"
+                      className={`w-full text-base sm:text-lg py-4 sm:py-6 ${lang.code === 'ar' ? 'font-arabic' : ''}`}
                     >
                       <span className="font-semibold">{lang.nativeName}</span>
                     </Button>

@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import pepperoniImg from "@/assets/IMG_2862.jpg";
 import salmonImg from "@/assets/IMG_2864.jpg";
 import turkeyBeefSalamiImg from "@/assets/IMG_2865.jpg";
@@ -84,6 +84,9 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
     "yufka-kebap-beef": yufkaBeefImg,
   };
   const imageSrc: string = localImageByItemId[item?.id] || logo;
+  const isFallbackLogo = imageSrc === logo;
+  const imageBgClass = isFallbackLogo ? 'bg-[hsl(42_73%_94%)]' : 'bg-[hsl(0_0%_24%)]';
+  const imageObjectClass = isFallbackLogo ? 'object-contain p-6' : 'object-cover';
 
   return (
     <>
@@ -95,11 +98,11 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
         <Card className="overflow-hidden rounded-xl shadow-md bg-card flex flex-col h-full border border-border hover:border-primary transition-colors">
           <CardContent className="p-0">
             {/* Image Section */}
-            <div className="w-full h-48 relative overflow-hidden bg-[hsl(0_0%_24%)] flex-shrink-0 cursor-zoom-in" onClick={() => setModalOpen(true)}>
+            <div className={`w-full h-48 relative overflow-hidden ${imageBgClass} flex-shrink-0 cursor-zoom-in`} onClick={() => setModalOpen(true)}>
               <motion.img
                 src={imageSrc}
                 alt={item?.name || "Menu item"}
-                className="w-full h-full object-cover rounded-t-xl"
+                className={`w-full h-full ${imageObjectClass} rounded-t-xl`}
                 loading="lazy"
                 decoding="async"
                 fetchPriority="low"
@@ -155,7 +158,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
             >
               &times;
             </button>
-            <img src={imageSrc} alt={item.name} className="w-full h-72 object-contain rounded-t-lg bg-[hsl(0_0%_24%)]" loading="lazy" decoding="async" sizes="90vw" width={800} height={600} />
+            <img src={imageSrc} alt={item.name} className={`w-full h-72 object-contain rounded-t-lg ${imageBgClass}`} loading="lazy" decoding="async" sizes="90vw" width={800} height={600} />
             <div className="p-4 text-center">
               <h3 className="text-xl font-bold text-foreground mb-2">{item.name}</h3>
             </div>

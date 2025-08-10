@@ -10,7 +10,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollCategory } from "@/hooks/useScrollCategory";
 import MenuSection from "@/components/MenuSection";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 import DynamicCategoryNav from "@/components/ui/DynamicCategoryNav";
 
 interface MenuItem {
@@ -301,17 +301,18 @@ export default function Menu() {
 
   return (
     <div
-      className={`min-h-screen bg-background ${isRTL ? 'rtl' : 'ltr'}`}
+      className={`min-h-screen bg-background ${isRTL ? 'rtl font-arabic' : 'ltr'}`}
       dir={isRTL ? 'rtl' : 'ltr'}
     >
-      {/* Sticky Header with Language Switcher */}
-      <header className="sticky top-0 z-50 bg-[hsl(0_0%_17%)] text-[hsl(42_73%_94%)] py-3 sm:py-4 px-3 sm:px-4 shadow-md flex items-center justify-between border-b border-border">
-        <div className="flex items-center gap-3">
-          <img src={logo} alt="German Doner Logo" className="h-8 sm:h-10 w-auto rounded-none" style={{maxHeight: 40}} />
-          <h1 className="text-xl sm:text-2xl font-bold text-center flex-1">German Doner</h1>
-        </div>
-        {/* Language Menu Button shows current language */}
-        <div className="relative ml-auto">
+      {/* Sticky Header with centered logo and language menu */}
+      <header className="sticky top-0 z-50 bg-[hsl(0_0%_17%)] text-[hsl(42_73%_94%)] py-3 sm:py-4 px-3 sm:px-4 shadow-md border-b border-border">
+        <div className="grid grid-cols-3 items-center">
+          <div />
+          <div className="flex justify-center">
+            <img src={logo} alt="German Doner" className="h-8 sm:h-10 w-auto" style={{maxHeight: 40}} />
+          </div>
+          {/* Language Menu Button shows current language */}
+          <div className="relative justify-self-end">
           <button
             className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[hsl(0_0%_24%)] hover:bg-[hsl(1_69%_49%)] hover:text-[hsl(42_73%_94%)] focus:outline-none focus:ring-2 focus:ring-[hsl(39_92%_53%)] text-[hsl(42_73%_94%)] font-semibold border border-border"
             onClick={() => setLangMenuOpen(v => !v)}
@@ -336,7 +337,8 @@ export default function Menu() {
                 </button>
               ))}
             </div>
-          )}
+            )}
+          </div>
         </div>
       </header>
 
