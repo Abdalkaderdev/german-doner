@@ -305,10 +305,10 @@ export default function Menu() {
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       {/* Sticky Header with Language Switcher */}
-      <header className="sticky top-0 z-50 bg-[hsl(0_0%_17%)] text-[hsl(42_73%_94%)] py-4 px-4 shadow-md flex items-center justify-between border-b border-border">
+      <header className="sticky top-0 z-50 bg-[hsl(0_0%_17%)] text-[hsl(42_73%_94%)] py-3 sm:py-4 px-3 sm:px-4 shadow-md flex items-center justify-between border-b border-border">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="German Doner Logo" className="h-10 w-auto rounded-none" style={{maxHeight: 40}} />
-          <h1 className="text-2xl font-bold text-center flex-1">German Doner</h1>
+          <img src={logo} alt="German Doner Logo" className="h-8 sm:h-10 w-auto rounded-none" style={{maxHeight: 40}} />
+          <h1 className="text-xl sm:text-2xl font-bold text-center flex-1">German Doner</h1>
         </div>
         {/* Language Menu Button shows current language */}
         <div className="relative ml-auto">
@@ -341,18 +341,18 @@ export default function Menu() {
       </header>
 
       {/* --- Search Input & Filters --- */}
-      <div className="w-full flex flex-col items-center bg-background py-6 px-2 border-b border-border">
+      <div className="w-full flex flex-col items-center bg-background py-4 sm:py-6 px-2 border-b border-border">
         <div className="relative w-full max-w-md mb-2">
           <input
             type="text"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             placeholder={isRTL ? "...ابحث في القائمة" : "Search menu..."}
-            className={`w-full rounded-lg shadow px-4 py-2 border border-border focus:border-[hsl(39_92%_53%)] focus:ring-2 focus:ring-[hsl(39_92%_53%)] bg-card text-foreground placeholder-gray-500 transition-all duration-200 ${isRTL ? 'text-right pr-10' : 'text-left pl-10'}`}
+            className={`w-full rounded-lg shadow px-3 sm:px-4 py-2 border border-border focus:border-[hsl(39_92%_53%)] focus:ring-2 focus:ring-[hsl(39_92%_53%)] bg-card text-foreground placeholder-gray-500 transition-all duration-200 ${isRTL ? 'text-right pr-9 sm:pr-10' : 'text-left pl-9 sm:pl-10'}`}
             style={{ direction: isRTL ? 'rtl' : 'ltr' }}
             aria-label="Search menu"
           />
-          <Search className={`absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'right-3' : 'left-3'} h-5 w-5 text-muted-foreground pointer-events-none`} />
+          <Search className={`absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'right-2.5 sm:right-3' : 'left-2.5 sm:left-3'} h-5 w-5 text-muted-foreground pointer-events-none`} />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}

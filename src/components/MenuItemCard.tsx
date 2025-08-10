@@ -5,6 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
 import logo from "../assets/logo.jpg";
+import pepperoniImg from "@/assets/IMG_2862.JPG";
+import salmonImg from "@/assets/IMG_2864.JPG";
 
 // Modern palette (kept for potential inline styles if needed)
 const GERMAN_RED = "#D62828"; // Warm Red
@@ -62,6 +64,13 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
     return () => { document.body.style.overflow = ''; };
   }, [modalOpen]);
 
+  // Resolve image source: prefer local mapping, then item.image, then fallback logo
+  const localImageByItemId: Record<string, string> = {
+    "pepperoni-pizza": pepperoniImg,
+    "salmon-pizza": salmonImg,
+  };
+  const imageSrc: string = localImageByItemId[item?.id] || item?.image || logo;
+
   return (
     <>
       <motion.div
@@ -74,8 +83,8 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
             {/* Image Section */}
             <div className="w-full h-48 relative overflow-hidden bg-[hsl(0_0%_24%)] flex-shrink-0 cursor-zoom-in" onClick={() => setModalOpen(true)}>
               <motion.img
-                src={logo}
-                alt="Logo"
+                src={imageSrc}
+                alt={item?.name || "Menu item"}
                 className="w-full h-full object-cover rounded-t-xl"
                 variants={cardImageVariants}
               />
@@ -126,7 +135,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
             >
               &times;
             </button>
-            <img src={logo} alt={item.name} className="w-full h-72 object-contain rounded-t-lg bg-[hsl(0_0%_24%)]" />
+            <img src={imageSrc} alt={item.name} className="w-full h-72 object-contain rounded-t-lg bg-[hsl(0_0%_24%)]" />
             <div className="p-4 text-center">
               <h3 className="text-xl font-bold text-foreground mb-2">{item.name}</h3>
             </div>

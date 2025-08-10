@@ -17,14 +17,8 @@ export const useScrollCategory = ({
   const scrollToCategory = useCallback((categoryId: string) => {
     const element = document.getElementById(`category-${categoryId}`);
     if (element) {
-      const headerHeight = 146; // Height of sticky headers (73px + 73px)
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - headerHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      // Use CSS scroll-margin on sections for reliable mobile offset
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }, []);
 

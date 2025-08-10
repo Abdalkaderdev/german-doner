@@ -50,7 +50,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, type: 'spring', stiffness: 80, damping: 18 }}
       id={`category-${category.id}`}
-      className={`mb-12 ${isAlt ? 'bg-[hsl(0_0%_24%)/85%] text-[hsl(42_73%_94%)]' : 'bg-background'} rounded-xl p-2 sm:p-4`}
+      className={`mb-12 ${isAlt ? 'bg-[hsl(0_0%_24%)/85%] text-[hsl(42_73%_94%)]' : 'bg-background'} rounded-xl p-2 sm:p-4 scroll-mt-[88px] sm:scroll-mt-[112px]`}
     >
       <motion.h2
         className="text-3xl md:text-4xl font-bold mb-6 px-4"

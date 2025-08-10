@@ -89,21 +89,21 @@ const Index = () => {
         animate="visible"
       >
         {/* Logo/Brand */}
-        <motion.div className="mb-8" variants={itemVariants}>
-          <motion.div 
-            className="w-28 h-28 mx-auto mb-6 bg-[hsl(0_0%_24%)] rounded-full flex items-center justify-center shadow-warm border-2 border-primary"
+        <motion.div className="mb-6 sm:mb-8" variants={itemVariants}>
+          <motion.img
+            src={logo}
+            alt="German Doner Logo"
+            className="mx-auto mb-6 w-24 sm:w-32 md:w-40 lg:w-48 h-auto max-w-full object-contain"
             variants={logoVariants}
-          >
-            <img src={logo} alt="German Doner Logo" className="w-20 h-20 object-contain" />
-          </motion.div>
+          />
           <motion.h1 
-            className="text-6xl md:text-7xl font-bold text-primary mb-4 drop-shadow-lg"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-2 sm:mb-4 drop-shadow-lg"
             variants={itemVariants}
           >
             Welcome to
           </motion.h1>
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-[hsl(39_92%_53%)] mb-4 drop-shadow-lg"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[hsl(39_92%_53%)] mb-4 drop-shadow-lg"
             variants={itemVariants}
           >
             German Doner
@@ -113,7 +113,7 @@ const Index = () => {
         {/* Language Selection */}
         <motion.div variants={itemVariants}>
           <Card className="bg-card backdrop-blur-sm shadow-elegant border border-border">
-            <CardContent className="p-8">
+            <CardContent className="p-4 sm:p-8">
               <motion.div 
                 className="flex items-center justify-center gap-2 mb-6"
                 variants={itemVariants}
@@ -124,7 +124,7 @@ const Index = () => {
                 </h2>
               </motion.div>
               
-              <div className="grid gap-4">
+              <div className="grid gap-3 sm:gap-4">
                 {languages.map((lang, index) => (
                   <motion.div
                     key={lang.code}
@@ -137,7 +137,7 @@ const Index = () => {
                       variant="default"
                       size="lg"
                       onClick={() => handleLanguageSelect(lang.code)}
-                      className="w-full text-lg py-6"
+                      className="w-full text-base sm:text-lg py-4 sm:py-6"
                     >
                       <span className="font-semibold">{lang.nativeName}</span>
                     </Button>

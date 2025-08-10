@@ -30,7 +30,7 @@ const DynamicCategoryNav: React.FC<DynamicCategoryNavProps> = ({ categories, act
   }, [activeCategory]);
 
   return (
-    <div ref={navRef} className="sticky top-[72px] w-full bg-[hsl(0_0%_17%)] text-[hsl(42_73%_94%)] border-b border-border z-40">
+    <div ref={navRef} className="sticky top-[56px] sm:top-[72px] w-full bg-[hsl(0_0%_17%)] text-[hsl(42_73%_94%)] border-b border-border z-40">
       {/* Smokey Cursor Effect */}
       <SmokeyCursor />
       <nav
