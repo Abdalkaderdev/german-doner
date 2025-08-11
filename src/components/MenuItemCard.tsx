@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
 import React, { useState } from "react";
 import ImageOptimized from "@/components/ImageOptimized";
+import { resolveItemImage } from "@/lib/imageMap";
 
 interface MenuItem {
   id: string;
@@ -67,21 +67,9 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
     return () => { document.body.style.overflow = ''; };
   }, [modalOpen]);
 
-  // Resolve image source: prefer local mapping, then item.image, then fallback logo
-  const localImageByItemId: Record<string, string> = {
-    "pepperoni-pizza": "/images/IMG_2862.jpg",
-    "salmon-pizza": "/images/IMG_2864.jpg",
-    "turkey-beef-salami-pizza": "/images/IMG_2865.jpg",
-    "pizza-mix": "/images/IMG_2876.jpg",
-    "cheese-pide": "/images/IMG_2885.jpg",
-    "sucuk-pide": "/images/IMG_2893.jpg",
-    "doner-kebap-chicken": "/images/IMG_2901.jpg",
-    "doner-kebap-beef": "/images/IMG_2903.jpg",
-    "yufka-kebap-beef": "/images/IMG_2909.jpg",
-  };
-  const fallbackLogo = "/images/logo.png";
-  const imageSrc: string = localImageByItemId[item?.id] || fallbackLogo;
-  const isFallbackLogo = imageSrc === fallbackLogo;
+  // Resolve image source shared with categories
+  const imageSrc: string = resolveItemImage(item);
+  const isFallbackLogo = imageSrc.endsWith("/images/logo.png");
   const imageBgClass = isFallbackLogo ? 'bg-[hsl(42_73%_94%)]' : 'bg-[hsl(0_0%_24%)]';
   const imageObjectClass = isFallbackLogo ? 'object-contain p-6' : 'object-cover';
 
@@ -95,7 +83,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
         <Card className="overflow-hidden rounded-xl shadow-md bg-card flex flex-col h-full border border-border hover:border-primary transition-colors">
           <CardContent className="p-0">
             {/* Image Section */}
-            <div className={`w-full h-48 relative overflow-hidden ${imageBgClass} flex-shrink-0 cursor-zoom-in aspect-[4/3]`} onClick={() => setModalOpen(true)}>
+          <div className={`w-full h-48 relative overflow-hidden ${imageBgClass} flex-shrink-0 cursor-zoom-in aspect-[4/3] mb-4`} onClick={() => setModalOpen(true)}>
               <ImageOptimized
                 src={imageSrc}
                 alt={item?.name || "Menu item"}
@@ -107,28 +95,19 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
             </div>
 
             {/* Content Section */}
-            <div className={`flex-1 flex flex-col p-6 gap-2 ${isRTL ? 'text-right' : 'text-left'}`}>
-              <div className="flex items-start justify-between gap-2 mb-3">
-                <h3 className="text-2xl font-extrabold flex-1 text-foreground leading-tight">{item.name}</h3>
-                {onFavoriteToggle && (
-                  <button
-                    onClick={() => onFavoriteToggle(item.id)}
-                    className="ml-2 p-2 hover:scale-110 transition-transform bg-transparent hover:bg-[hsl(39_92%_53%)] hover:text-[hsl(0_0%_15%)]"
-                    aria-label="Toggle favorite"
-                  >
-                    <Star className={`h-5 w-5 ${isFavorite ? 'fill-primary text-primary' : ''}`} />
-                  </button>
-                )}
+            <div className="flex-1 flex flex-col p-5 gap-2 items-center text-center">
+              <div className="flex flex-col items-center gap-1 mb-1">
+                <h3 className="text-2xl font-extrabold text-foreground leading-tight">{item.name}</h3>
               </div>
-              <div className="flex items-center gap-2 mb-2 flex-wrap">
+              <div className="flex items-center justify-center gap-1 mb-2 flex-wrap">
                 {item.popular && <Badge className="bg-secondary text-[hsl(0_0%_15%)]">Popular</Badge>}
                 {item.spicy && <Badge className="bg-primary text-[hsl(42_73%_94%)]">🌶️ Hot</Badge>}
                 {item.vegetarian && <Badge className="bg-[hsl(82_70%_38%)] text-[hsl(42_73%_94%)]">🌱 Vegetarian</Badge>}
                 {item.vegan && <Badge className="bg-[hsl(82_70%_38%)] text-[hsl(42_73%_94%)]">🌿 Vegan</Badge>}
                 {item.glutenFree && <Badge className="bg-secondary text-[hsl(0_0%_15%)]">🌾 Gluten Free</Badge>}
               </div>
-              <p className="text-muted-foreground text-base mb-6 min-h-[2.5em] leading-relaxed">{item.description}</p>
-              <div className="flex items-center justify-between mt-auto">
+              <p className="text-muted-foreground text-base mb-4 min-h-[2.5em] leading-relaxed text-center">{item.description}</p>
+              <div className="flex items-center justify-center mt-auto">
                 <span className="text-2xl font-bold px-2 py-1 rounded bg-secondary text-[hsl(0_0%_15%)]">{formatPrice(item.price, currency)}</span>
                 {item.isSpecial && (
                   <Badge className="bg-primary text-[hsl(42_73%_94%)] ml-2">New</Badge>

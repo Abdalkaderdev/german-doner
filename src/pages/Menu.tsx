@@ -2,15 +2,14 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef, useMemo } from "react";
-import MenuSection from "@/components/MenuSection";
 import { Button } from "@/components/ui/button";
-import { Search, Filter, X, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollCategory } from "@/hooks/useScrollCategory";
 import ImageOptimized from "@/components/ImageOptimized";
 import { Separator } from "@/components/ui/separator";
+import MenuItemCard from "@/components/MenuItemCard";
 const logo = "/images/logo.png";
-import DynamicCategoryNav from "@/components/ui/DynamicCategoryNav";
 
 interface MenuItem {
   id: string;
@@ -44,6 +43,7 @@ interface MenuData {
 
 export default function Menu() {
   const { lang } = useParams();
+  const urlCategory = new URLSearchParams(window.location.search).get('category') || undefined;
   const navigate = useNavigate();
   const { toast } = useToast();
   const [menuData, setMenuData] = useState<MenuData | null>(null);
@@ -56,9 +56,10 @@ export default function Menu() {
   const [showFilters, setShowFilters] = useState(false);
   const [favorites, setFavorites] = useState<string[]>([]);
   
-  const { activeCategory, scrollToCategory } = useScrollCategory({
+  const { activeCategory } = useScrollCategory({
     categories: menuData?.categories.map(cat => cat.id) || []
   });
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(urlCategory || "all");
 
   const mainRef = useRef<HTMLDivElement>(null);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
@@ -130,61 +131,21 @@ export default function Menu() {
     localStorage.setItem('menuFavorites', JSON.stringify(newFavorites));
   };
 
-  // --- Search Logic (modular, ready for extraction) ---
-  // Memoize filtered categories for performance
-  const filteredCategories = useMemo(() => {
-    if (!menuData) return [];
-    // If no search, return all categories with items
-    if (!searchQuery.trim()) {
-      return menuData.categories.map(category => ({
-        ...category,
-        items: category.items.filter(item => {
-          // Check availability and stock
-          if (item.available === false || (item.stock !== undefined && item.stock <= 0)) return false;
-          // Dietary filters
-          if (selectedFilters.length > 0) {
-            const itemFilters = [];
-            if (item.vegetarian) itemFilters.push('vegetarian');
-            if (item.vegan) itemFilters.push('vegan');
-            if (item.glutenFree) itemFilters.push('glutenFree');
-            if (item.spicy) itemFilters.push('spicy');
-            if (item.popular) itemFilters.push('popular');
-            if (item.isSpecial) itemFilters.push('special');
-            if (favorites.includes(item.id)) itemFilters.push('favorites');
-            return selectedFilters.every(filter => itemFilters.includes(filter));
-          }
-          return true;
-        })
-      })).filter(category => category.items.length > 0);
-    }
-    // If searching, filter items by name or description (case-insensitive)
-    const query = searchQuery.toLowerCase();
-    return menuData.categories
-      .map(category => ({
-        ...category,
-        items: category.items.filter(item => {
-          if (item.available === false || (item.stock !== undefined && item.stock <= 0)) return false;
-          const matchesName = item.name.toLowerCase().includes(query);
-          const matchesDescription = item.description?.toLowerCase().includes(query);
-          // Only match if name or description matches
-          if (!matchesName && !matchesDescription) return false;
-          // Dietary filters
-          if (selectedFilters.length > 0) {
-            const itemFilters = [];
-            if (item.vegetarian) itemFilters.push('vegetarian');
-            if (item.vegan) itemFilters.push('vegan');
-            if (item.glutenFree) itemFilters.push('glutenFree');
-            if (item.spicy) itemFilters.push('spicy');
-            if (item.popular) itemFilters.push('popular');
-            if (item.isSpecial) itemFilters.push('special');
-            if (favorites.includes(item.id)) itemFilters.push('favorites');
-            return selectedFilters.every(filter => itemFilters.includes(filter));
-          }
-          return true;
-        })
-      }))
-      .filter(category => category.items.length > 0);
-  }, [menuData, searchQuery, selectedFilters, favorites]);
+  // Build list of items filtered by selected category
+  const allItems = useMemo(() => {
+    if (!menuData) return [] as Array<{categoryId: string; categoryName: string; item: any}>;
+    return menuData.categories.flatMap(cat =>
+      cat.items.map(item => ({ categoryId: cat.id, categoryName: cat.name, item }))
+    );
+  }, [menuData]);
+
+  const visibleItems = useMemo(() => {
+    if (!menuData) return [] as Array<{categoryId: string; categoryName: string; item: any}>;
+    const base = selectedCategoryId === 'all'
+      ? allItems
+      : allItems.filter(entry => entry.categoryId === selectedCategoryId);
+    return base.filter(({ item }) => item.available !== false && (item.stock === undefined || item.stock > 0));
+  }, [allItems, menuData, selectedCategoryId]);
 
   // Available filter options
   const filterOptions = useMemo(() => [
@@ -260,152 +221,60 @@ export default function Menu() {
         </div>
       </header>
 
-      {/* --- Search Input & Filters --- */}
-      <div className="w-full flex flex-col items-center bg-background py-4 sm:py-6 px-2 border-b border-border">
-        <div className="relative w-full max-w-md mb-2">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-            placeholder={isRTL ? "...ابحث في القائمة" : "Search menu..."}
-            className={`w-full rounded-lg shadow px-3 sm:px-4 py-2 border border-border focus:border-[hsl(39_92%_53%)] focus:ring-2 focus:ring-[hsl(39_92%_53%)] bg-card text-foreground placeholder-gray-500 transition-all duration-200 ${isRTL ? 'text-right pr-9 sm:pr-10' : 'text-left pl-9 sm:pl-10'}`}
-            style={{ direction: isRTL ? 'rtl' : 'ltr' }}
-            aria-label="Search menu"
-          />
-          <Search className={`absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'right-2.5 sm:right-3' : 'left-2.5 sm:left-3'} h-5 w-5 text-muted-foreground pointer-events-none`} />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery("")}
-              className={`absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'left-3' : 'right-3'} text-foreground hover:text-primary focus:outline-none`}
-              aria-label="Clear search"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          )}
-        </div>
-        {/* Filter Button */}
-        <div className="w-full max-w-md flex justify-end mb-2">
-          <Button
-            variant={showFilters ? "default" : "outline"}
-            size="sm"
-            onClick={() => setShowFilters(!showFilters)}
-            className="flex items-center gap-2"
-          >
-            <Filter className="h-4 w-4" />
-            {isRTL ? "تصفية" : "Filters"}
-            {selectedFilters.length > 0 && (
-              <Badge variant="secondary" className="ml-1 bg-[hsl(39_92%_53%)] text-[hsl(0_0%_15%)]">
-                {selectedFilters.length}
-              </Badge>
-            )}
-          </Button>
-        </div>
-        {/* Filter Options */}
-        {showFilters && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="w-full max-w-md mt-2 pt-2 border-t border-border"
-          >
-            <div className="flex flex-wrap gap-2">
-              {filterOptions.map((option) => (
-                <Button
-                  key={option.id}
-                  variant={selectedFilters.includes(option.id) ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => {
-                    setSelectedFilters(prev => 
-                      prev.includes(option.id)
-                        ? prev.filter(f => f !== option.id)
-                        : [...prev, option.id]
-                    );
-                  }}
-                  className={`text-xs`}
-                >
-                  {option.label}
-                  {option.count > 0 && !selectedFilters.includes(option.id) && (
-                    <Badge variant="secondary" className="ml-1 text-xs bg-[hsl(39_92%_53%)] text-[hsl(0_0%_15%)]">
-                      {option.count}
-                    </Badge>
-                  )}
-                </Button>
-              ))}
-            </div>
-            {selectedFilters.length > 0 && (
-              <div className="flex items-center gap-2 mt-4">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setSelectedFilters([])}
-                  className="text-xs"
-                >
-                  <X className="h-3 w-3 mr-1" />
-                  {isRTL ? "مسح التصفية" : "Clear all filters"}
-                </Button>
-              </div>
-            )}
-          </motion.div>
-        )}
-      </div>
-
-      {/* Restaurant Status & Info */}
-      <motion.div 
-        className="bg-[hsl(0_0%_17%)] text-[hsl(42_73%_94%)] border-b border-border"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-wrap items-center gap-4 text-sm">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[hsl(39_92%_53%)] rounded-full animate-pulse"></div>
-              <span className="font-medium">Open Now</span>
-            </div>
-            <Separator orientation="vertical" className="h-4" />
-            <div className="flex items-center gap-2 text-[hsl(39_92%_53%)]">
-              <span>Closes at 11:00 PM</span>
-            </div>
-            <Separator orientation="vertical" className="h-4" />
-            <div className="flex items-center gap-2 text-[hsl(39_92%_53%)]">
-              <span>Queen Towers, Erbil Iraq</span>
-            </div>
+      {/* Category navigation bar */}
+      <div className="w-full sticky top-[56px] sm:top-[64px] z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75 border-b border-border">
+        <div className="container mx-auto px-2 py-3 overflow-x-auto no-scrollbar">
+          <div className="flex items-center gap-2 sm:gap-3 whitespace-nowrap">
+            {[
+              { id: 'all', name: isRTL ? 'الكل' : 'All' },
+              ...(menuData?.categories || []).map(c => ({ id: c.id, name: c.name }))
+            ].map(cat => (
+              <button
+                key={cat.id}
+                onClick={() => setSelectedCategoryId(cat.id)}
+                className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${selectedCategoryId === cat.id ? 'bg-[hsl(39_92%_53%)] text-[hsl(0_0%_15%)] border-[hsl(39_92%_53%)]' : 'bg-card text-foreground border-border hover:bg-muted'}`}
+                aria-pressed={selectedCategoryId === cat.id}
+              >
+                {cat.name}
+              </button>
+            ))}
           </div>
         </div>
-      </motion.div>
+      </div>
 
-      {/* Dynamic Category Navigation */}
-      <DynamicCategoryNav
-        categories={(filteredCategories || []).map(cat => ({ id: cat.id, name: cat.name, count: cat.items.length }))}
-        activeCategory={activeCategory}
-        onCategoryClick={scrollToCategory}
-        isRTL={isRTL}
-      />
+      {/* Optional status bar removed for cleaner look */}
 
-      {/* Menu Sections */}
+      {/* Menu Grid */}
       <main ref={mainRef} className="container mx-auto px-2 py-6">
-        {filteredCategories && filteredCategories.length > 0 ? (
-          filteredCategories.map((category) => (
-            // Force specific categories to use light background per feedback
-            // Fresh Salads, Pizza, Rizzo should be light
-            <MenuSection
-              key={category.id}
-              category={category}
-              currency={menuData.currency}
-              isRTL={isRTL}
-              favorites={new Set(favorites)}
-              onFavoriteToggle={toggleFavorite}
-            />
-          ))
+        {visibleItems.length > 0 ? (
+          <div className={`grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${isRTL ? 'rtl font-arabic' : ''}`}>
+            {visibleItems.map(({ item, categoryId }) => (
+              <MenuItemCard
+                key={item.id}
+                item={item}
+                currency={menuData.currency}
+                isRTL={isRTL}
+                isFavorite={favorites.includes(item.id)}
+                onFavoriteToggle={toggleFavorite}
+              />
+            ))}
+          </div>
         ) : (
-          <motion.div
-            className="text-center py-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <p className="text-lg text-foreground">{searchQuery ? (isRTL ? "لا توجد نتائج مطابقة" : "No items found.") : (isRTL ? "القائمة فارغة" : "Menu is empty.")}</p>
+          <motion.div className="text-center py-16" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <p className="text-lg text-foreground">{isRTL ? "القائمة فارغة" : "Menu is empty."}</p>
           </motion.div>
         )}
+
+        {/* Back to main menu (category cards) */}
+        <div className="mt-10 flex justify-center">
+          <Button
+            variant="outline"
+            onClick={() => navigate(`/categories/${lang}`)}
+            className="px-6"
+          >
+            {isRTL ? 'الرجوع إلى القائمة الرئيسية' : 'Back to main menu'}
+          </Button>
+        </div>
       </main>
     </div>
   );

@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 const Index = lazy(() => import("./pages/Index"));
 const Menu = lazy(() => import("./pages/Menu"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const Categories = lazy(() => import("./pages/Categories"));
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/menu/:lang" element={<Menu />} />
+            <Route path="/categories/:lang" element={<Categories />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
