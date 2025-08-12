@@ -20,6 +20,8 @@ export const localImageByItemId: Record<string, string> = {
   "doner-kebap-beef": "/images/optimized/IMG_1098_TIF.webp",
   "yufka-kebap-beef": "/images/optimized/IMG_1093_TIF.webp",
   "yufka-kebap-chicken": "/images/optimized/IMG_1100_TIF.webp",
+  "kebap-plate-chicken": "/images/optimized/IMG_1100_TIF.webp",
+  "kebap-plate-beef": "/images/optimized/IMG_1093_TIF.webp",
 
   // Beverages (use a representative image for all)
   "cola": "/images/optimized/assorted-beverages.webp",
