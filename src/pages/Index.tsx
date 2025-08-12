@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Languages } from "lucide-react";
 import ImageOptimized from "@/components/ImageOptimized";
-const logo = "/images/logo.png";
+const logo = "/images/optimized/logo.webp";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {

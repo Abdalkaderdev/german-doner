@@ -69,7 +69,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
 
   // Resolve image source shared with categories
   const imageSrc: string = resolveItemImage(item);
-  const isFallbackLogo = imageSrc.endsWith("/images/logo.png");
+  const isFallbackLogo = imageSrc.endsWith("/images/logo.webp");
   const imageBgClass = isFallbackLogo ? 'bg-[hsl(42_73%_94%)]' : 'bg-[hsl(0_0%_24%)]';
   const imageObjectClass = isFallbackLogo ? 'object-contain p-6' : 'object-cover';
 

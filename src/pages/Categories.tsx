@@ -48,13 +48,13 @@ const Categories = () => {
         <div className="grid gap-6 sm:gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
           {categories.map((cat) => {
             const preview = cat.id === 'pide'
-              ? '/images/IMG_2885.jpg'
+              ? '/images/optimized/IMG_2885.webp'
               : cat.id === 'doner'
-                ? '/images/IMG_2901.jpg'
+                ? '/images/optimized/IMG_1098_TIF.webp'
                 : cat.id === 'pizza'
-                  ? '/images/IMG_2865.jpg'
+                  ? '/images/optimized/IMG_2865.webp'
               : cat.id === 'drinks'
-                ? '/images/assorted-beverages.jpg'
+                ? '/images/optimized/assorted-beverages.webp'
                   : resolveItemImage(cat.items?.[0] || {});
             return (
               <motion.button

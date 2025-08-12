@@ -1,0 +1,147 @@
+import sharp from 'sharp';
+import { promises as fs } from 'fs';
+import path from 'path';
+
+const IMAGES_DIR = './public/images';
+const OUTPUT_DIR = './public/images/optimized';
+
+// Quality settings for different image types
+const QUALITY = {
+  webp: 80,
+  jpg: 85,
+  png: 90
+};
+
+// Sizes for responsive images
+const SIZES = {
+  thumbnail: 150,
+  small: 300,
+  medium: 600,
+  large: 1200
+};
+
+async function ensureDir(dir) {
+  try {
+    await fs.access(dir);
+  } catch {
+    await fs.mkdir(dir, { recursive: true });
+  }
+}
+
+async function optimizeImage(inputPath, outputPath, width, height, quality, format) {
+  try {
+    const image = sharp(inputPath);
+    
+    if (width || height) {
+      image.resize(width, height, {
+        fit: 'inside',
+        withoutEnlargement: true
+      });
+    }
+    
+    switch (format) {
+      case 'webp':
+        await image.webp({ quality }).toFile(outputPath);
+        break;
+      case 'jpg':
+        await image.jpeg({ quality }).toFile(outputPath);
+        break;
+      case 'png':
+        await image.png({ quality }).toFile(outputPath);
+        break;
+      default:
+        await image.toFile(outputPath);
+    }
+    
+    const stats = await fs.stat(outputPath);
+    const originalStats = await fs.stat(inputPath);
+    const savings = ((originalStats.size - stats.size) / originalStats.size * 100).toFixed(1);
+    
+    console.log(`✓ ${path.basename(outputPath)} - ${(stats.size / 1024).toFixed(1)}KB (${savings}% smaller)`);
+    
+    return { success: true, size: stats.size, savings };
+  } catch (error) {
+    console.error(`✗ Error processing ${inputPath}:`, error.message);
+    return { success: false, error: error.message };
+  }
+}
+
+async function processImage(filePath) {
+  const ext = path.extname(filePath).toLowerCase();
+  const name = path.basename(filePath, ext);
+  const isImage = ['.jpg', '.jpeg', '.png', '.webp', '.tif', '.tiff'].includes(ext);
+  
+  if (!isImage) return;
+  
+  // Check if file exists before processing
+  try {
+    await fs.access(filePath);
+  } catch {
+    console.log(`⚠️  Skipping ${path.basename(filePath)} - file not found`);
+    return;
+  }
+  
+  console.log(`\nProcessing: ${path.basename(filePath)}`);
+  
+  // Skip if already optimized
+  if (filePath.includes('/optimized/')) return;
+  
+  const results = [];
+  
+  // Generate WebP versions at different sizes
+  for (const [sizeName, size] of Object.entries(SIZES)) {
+    const outputPath = path.join(OUTPUT_DIR, `${name}-${sizeName}.webp`);
+    const result = await optimizeImage(filePath, outputPath, size, null, QUALITY.webp, 'webp');
+    if (result.success) results.push(result);
+  }
+  
+  // Generate high-quality WebP for full-size
+  const fullSizeWebp = path.join(OUTPUT_DIR, `${name}.webp`);
+  await optimizeImage(filePath, fullSizeWebp, null, null, QUALITY.webp, 'webp');
+  
+  // Generate JPG fallback for older browsers
+  const jpgFallback = path.join(OUTPUT_DIR, `${name}.jpg`);
+  await optimizeImage(filePath, jpgFallback, 800, null, QUALITY.jpg, 'jpg');
+  
+  return results;
+}
+
+async function main() {
+  console.log('🚀 Starting image optimization...\n');
+  
+  await ensureDir(OUTPUT_DIR);
+  
+  const files = await fs.readdir(IMAGES_DIR);
+  const imageFiles = files.filter(file => {
+    const ext = path.extname(file).toLowerCase();
+    return ['.jpg', '.jpeg', '.png', '.webp', '.tif', '.tiff'].includes(ext);
+  });
+  
+  console.log(`Found ${imageFiles.length} images to process\n`);
+  
+  let totalOriginalSize = 0;
+  let totalOptimizedSize = 0;
+  
+  for (const file of imageFiles) {
+    const filePath = path.join(IMAGES_DIR, file);
+    const stats = await fs.stat(filePath);
+    totalOriginalSize += stats.size;
+    
+    const results = await processImage(filePath);
+    if (results) {
+      results.forEach(result => {
+        totalOptimizedSize += result.size;
+      });
+    }
+  }
+  
+  const totalSavings = ((totalOriginalSize - totalOptimizedSize) / totalOriginalSize * 100).toFixed(1);
+  
+  console.log(`\n🎉 Optimization complete!`);
+  console.log(`Original size: ${(totalOriginalSize / 1024 / 1024).toFixed(1)}MB`);
+  console.log(`Optimized size: ${(totalOptimizedSize / 1024 / 1024).toFixed(1)}MB`);
+  console.log(`Total savings: ${totalSavings}%`);
+  console.log(`\nOptimized images saved to: ${OUTPUT_DIR}`);
+}
+
+main().catch(console.error);

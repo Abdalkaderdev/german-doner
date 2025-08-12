@@ -9,7 +9,7 @@ import { useScrollCategory } from "@/hooks/useScrollCategory";
 import ImageOptimized from "@/components/ImageOptimized";
 import { Separator } from "@/components/ui/separator";
 import MenuItemCard from "@/components/MenuItemCard";
-const logo = "/images/logo.png";
+const logo = "/images/optimized/logo.webp";
 
 interface MenuItem {
   id: string;
