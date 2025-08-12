@@ -8,6 +8,7 @@ export const localImageByItemId: Record<string, string> = {
   "turkey-beef-salami-pizza": "/images/optimized/IMG_2865.webp",
   "salami-pizza": "/images/optimized/IMG_1145_TIF.webp",
   "pizza-mix": "/images/optimized/IMG_1156_TIF.webp",
+  "diavolo-pizza": "/images/optimized/IMG_1169_TIF.webp",
   "turkey-pizza": "/images/optimized/IMG_1168_TIF.webp",
 
   // Pide
