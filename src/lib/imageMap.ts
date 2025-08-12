@@ -32,7 +32,7 @@ export const localImageByItemId: Record<string, string> = {
 };
 
 export function resolveItemImage(item: { id?: string; image?: string }): string {
-  // Use ONLY local curated images when known; otherwise fall back to logo
+  // Use curated images when available; otherwise fall back to logo
   if (item?.id && localImageByItemId[item.id]) return localImageByItemId[item.id];
   return fallbackLogo;
 }
