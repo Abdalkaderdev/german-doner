@@ -10,28 +10,28 @@
           "id": "doner-kebap-beef",
           "name": "Doner Kebap Beef",
           "description": "Classic beef doner kebap in fresh bread.",
-          "price": 5500,
+          "price": 6500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "doner-kebap-chicken",
           "name": "Doner Kebap Chicken",
           "description": "Classic chicken doner kebap in fresh bread.",
-          "price": 4500,
+          "price": 5500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "yufka-kebap-beef",
           "name": "Yufka Kebap Beef",
           "description": "Yufka wrap with beef doner meat and salad.",
-          "price": 6000,
+          "price": 6500,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "yufka-kebap-chicken",
           "name": "Yufka Kebap Chicken",
           "description": "Yufka wrap with chicken doner meat and salad.",
-          "price": 5000,
+          "price": 5500,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
@@ -61,6 +61,12 @@
           "description": "Lahmacun served with salad and sides.",
           "price": 11000,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "doner-box",
+          "name": "Doner Box",
+          "description": "Doner meat with fries and salad.",
+          "price": 6500
         }
       ]
     },
@@ -106,7 +112,7 @@
           "id": "doner-pide",
           "name": "Doner Pide",
           "description": "Pide stuffed with doner meat.",
-          "price": 10000,
+          "price": 12000,
           "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop"
         },
         {
@@ -150,7 +156,7 @@
           "id": "diavolo-pizza",
           "name": "Diavolo Pizza",
           "description": "Spicy pizza with pepperoni and chili.",
-          "price": 11000
+          "price": 12000
         },
         {
           "id": "pizza-mix",
@@ -162,13 +168,13 @@
           "id": "turkey-beef-salami-pizza",
           "name": "Turkey & Beef Salami Pizza",
           "description": "Pizza topped with turkey and beef salami.",
-          "price": 11000
+          "price": 12000
         },
         {
           "id": "four-cheese-pizza",
           "name": "Four Cheese Pizza",
           "description": "Pizza with four types of cheese.",
-          "price": 10000
+          "price": 11000
         },
         {
           "id": "tuna-pizza",
@@ -180,7 +186,7 @@
           "id": "pepperoni-pizza",
           "name": "Pepperoni Pizza",
           "description": "Pizza topped with pepperoni and cheese.",
-          "price": 9000
+          "price": 12000
         },
         {
           "id": "margherita-pizza",
@@ -210,12 +216,24 @@
           "id": "spinach-pizza",
           "name": "Spinach Pizza",
           "description": "Pizza topped with spinach and cheese.",
-          "price": 9000
+          "price": 10000
         },
         {
           "id": "rodi-pizza",
           "name": "Rodi Pizza",
           "description": "Specialty pizza with assorted toppings.",
+          "price": 12000
+        },
+        {
+          "id": "vegetarian-pizza",
+          "name": "Vegetarian Pizza",
+          "description": "Vegetarian pizza with assorted vegetables.",
+          "price": 11000
+        },
+        {
+          "id": "calzone-pizza",
+          "name": "Calzone",
+          "description": "Folded pizza with assorted fillings.",
           "price": 12000
         }
       ]
@@ -254,16 +272,34 @@
       ]
     },
     {
+      "id": "special",
+      "name": "Special",
+      "items": [
+        {
+          "id": "german-pizza",
+          "name": "German Pizza",
+          "description": "Crème fraîche sauce, turkey, mushrooms.",
+          "price": 12000
+        },
+        {
+          "id": "kurdish-pizza",
+          "name": "Kurdish Pizza",
+          "description": "Doner meat in fresh cream sauce with red onions.",
+          "price": 12000
+        }
+      ]
+    },
+    {
       "id": "drinks",
       "name": "Beverages",
       "items": [
         { "id": "cola", "name": "Cola", "description": "Refreshing cola drink.", "price": 1000, "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop" },
         { "id": "fanta", "name": "Fanta", "description": "Orange flavored soda.", "price": 1000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "water", "name": "Water", "description": "Bottled water.", "price": 1000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "water", "name": "Water", "description": "Bottled water.", "price": 750, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
         { "id": "sprite", "name": "Sprite", "description": "Lemon-lime soda.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
         { "id": "cola-diet", "name": "Cola Diet", "description": "Diet cola drink.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
-        { "id": "yogurt", "name": "Yogurt", "description": "Yogurt drink.", "price": 1500, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
-        { "id": "soda", "name": "Soda", "description": "Sparkling soda water.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
+        { "id": "yogurt", "name": "Yogurt", "description": "Yogurt drink.", "price": 1000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
+        { "id": "soda", "name": "Soda", "description": "Sparkling soda water.", "price": 1500, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
         { "id": "tea", "name": "Tea", "description": "Hot black tea.", "price": 1000, "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" }
       ]
     }

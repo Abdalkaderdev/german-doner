@@ -10,28 +10,28 @@
           "id": "doner-kebap-beef",
           "name": "دونر كباب لحم",
           "description": "دونر كباب لحم بقري كلاسيكي في خبز طازج.",
-          "price": 5500,
+          "price": 6500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "doner-kebap-chicken",
           "name": "دونر كباب دجاج",
           "description": "دونر كباب دجاج كلاسيكي في خبز طازج.",
-          "price": 4500,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+          "price": 5500,
+          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit/crop"
         },
         {
           "id": "yufka-kebap-beef",
           "name": "يوفكا كباب لحم",
           "description": "لفافة يوفكا مع لحم بقري دونر وسلطة.",
-          "price": 6000,
+          "price": 6500,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "yufka-kebap-chicken",
           "name": "يوفكا كباب دجاج",
           "description": "لفافة يوفكا مع دجاج دونر وسلطة.",
-          "price": 5000,
+          "price": 5500,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
@@ -61,6 +61,12 @@
           "description": "لحم عجين يقدم مع سلطة ومقبلات.",
           "price": 11000,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "doner-box",
+          "name": "دونر بوكس",
+          "description": "لحم دونر مع بطاطس وسلطة.",
+          "price": 6500
         }
       ]
     },
@@ -106,7 +112,7 @@
           "id": "doner-pide",
           "name": "بيده دونر",
           "description": "بيده محشوة بلحم الدونر.",
-          "price": 10000,
+          "price": 12000,
           "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop"
         },
         {
@@ -126,18 +132,20 @@
         { "id": "four-season-pizza", "name": "بيتزا فور سيزون", "description": "بيتزا بأربع نكهات مختلفة لكل ربع.", "price": 12000 },
         { "id": "doner-pizza", "name": "بيتزا دونر", "description": "بيتزا مع لحم دونر وجبن.", "price": 12000 },
         { "id": "doner-chicken-pizza", "name": "بيتزا دونر دجاج", "description": "بيتزا مع دونر دجاج وجبن.", "price": 11000 },
-        { "id": "diavolo-pizza", "name": "بيتزا ديافولو", "description": "بيتزا حارة مع ببروني وفلفل حار.", "price": 11000 },
+        { "id": "diavolo-pizza", "name": "بيتزا ديافولو", "description": "بيتزا حارة مع ببروني وفلفل حار.", "price": 12000 },
         { "id": "pizza-mix", "name": "بيتزا ميكس", "description": "بيتزا مع خليط من اللحوم والخضار.", "price": 13000 },
-        { "id": "turkey-beef-salami-pizza", "name": "بيتزا تركي وسلامي بقري", "description": "بيتزا مع تركي وسلامي بقري.", "price": 11000 },
-        { "id": "four-cheese-pizza", "name": "بيتزا أربع أجبان", "description": "بيتزا مع أربعة أنواع من الجبن.", "price": 10000 },
+        { "id": "turkey-beef-salami-pizza", "name": "بيتزا تركي وسلامي بقري", "description": "بيتزا مع تركي وسلامي بقري.", "price": 12000 },
+        { "id": "four-cheese-pizza", "name": "بيتزا أربع أجبان", "description": "بيتزا مع أربعة أنواع من الجبن.", "price": 11000 },
         { "id": "tuna-pizza", "name": "بيتزا تونة", "description": "بيتزا مع تونة وبصل.", "price": 9000 },
-        { "id": "pepperoni-pizza", "name": "بيتزا ببروني", "description": "بيتزا مع ببروني وجبن.", "price": 9000 },
+        { "id": "pepperoni-pizza", "name": "بيتزا ببروني", "description": "بيتزا مع ببروني وجبن.", "price": 12000 },
         { "id": "margherita-pizza", "name": "بيتزا مارجريتا", "description": "بيتزا كلاسيكية مع صلصة الطماطم والموزاريلا والريحان.", "price": 8000 },
         { "id": "turkey-pizza", "name": "بيتزا تركي", "description": "بيتزا مع تركي وجبن.", "price": 10000 },
         { "id": "salami-pizza", "name": "بيتزا سلامي", "description": "بيتزا مع سلامي وجبن.", "price": 10000 },
         { "id": "mushroom-pizza", "name": "بيتزا مشروم", "description": "بيتزا مع مشروم وجبن.", "price": 9000 },
-        { "id": "spinach-pizza", "name": "بيتزا سبانخ", "description": "بيتزا مع سبانخ وجبن.", "price": 9000 },
-        { "id": "rodi-pizza", "name": "بيتزا رودي", "description": "بيتزا مميزة مع مكونات متنوعة.", "price": 12000 }
+        { "id": "spinach-pizza", "name": "بيتزا سبانخ", "description": "بيتزا مع سبانخ وجبن.", "price": 10000 },
+         { "id": "rodi-pizza", "name": "بيتزا رودي", "description": "بيتزا مميزة مع مكونات متنوعة.", "price": 12000 },
+         { "id": "vegetarian-pizza", "name": "بيتزا نباتية", "description": "بيتزا نباتية مع خضار متنوعة.", "price": 11000 },
+         { "id": "calzone-pizza", "name": "كالزون", "description": "بيتزا مطوية محشوة بمكونات متنوعة.", "price": 12000 }
       ]
     },
     {
@@ -174,16 +182,34 @@
       ]
     },
     {
+      "id": "special",
+      "name": "خاص",
+      "items": [
+        {
+          "id": "german-pizza",
+          "name": "بيتزا ألمانية",
+          "description": "صلصة كريم فريش، تركي، فطر.",
+          "price": 12000
+        },
+        {
+          "id": "kurdish-pizza",
+          "name": "بيتزا كردية",
+          "description": "لحم دونر مع صلصة كريمة طازجة وبصل أحمر.",
+          "price": 12000
+        }
+      ]
+    },
+    {
       "id": "drinks",
       "name": "المشروبات",
       "items": [
         { "id": "cola", "name": "كولا", "description": "مشروب كولا منعش.", "price": 1000, "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop" },
         { "id": "fanta", "name": "فانتا", "description": "مشروب غازي بنكهة البرتقال.", "price": 1000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "water", "name": "ماء", "description": "ماء معبأ.", "price": 1000, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "water", "name": "ماء", "description": "ماء معبأ.", "price": 750, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
         { "id": "sprite", "name": "سبرايت", "description": "مشروب غازي بنكهة الليمون.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
         { "id": "cola-diet", "name": "كولا دايت", "description": "مشروب كولا دايت.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
-        { "id": "yogurt", "name": "لبن", "description": "مشروب لبن.", "price": 1500, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
-        { "id": "soda", "name": "صودا", "description": "مياه غازية.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
+        { "id": "yogurt", "name": "لبن", "description": "مشروب لبن.", "price": 1000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
+        { "id": "soda", "name": "صودا", "description": "مياه غازية.", "price": 1500, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
         { "id": "tea", "name": "شاي", "description": "شاي أسود ساخن.", "price": 1000, "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" }
       ]
     }
