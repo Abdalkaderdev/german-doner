@@ -70,26 +70,7 @@
         }
       ]
     },
-    {
-      "id": "salads",
-      "name": "السلطات الطازجة",
-      "items": [
-        {
-          "id": "caesar-salad",
-          "name": "سلطة سيزر",
-          "description": "سلطة سيزر الكلاسيكية مع خس وقطع خبز وجبن بارميزان.",
-          "price": 6000,
-          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "greek-salad",
-          "name": "سلطة يونانية",
-          "description": "سلطة يونانية طازجة مع جبنة فيتا وزيتون وخضار.",
-          "price": 7500,
-          "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop"
-        }
-      ]
-    },
+    
     {
       "id": "pide",
       "name": "بيده",
@@ -121,6 +102,12 @@
           "description": "بيده تركية خاصة من الشيف.",
           "price": 13000,
           "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "spinach-pide",
+          "name": "بيده سبانخ",
+          "description": "سبانخ مطبوخ مع جبنة موزاريلا وجبنة بيضاء.",
+          "price": 11000
         }
       ]
     },
@@ -189,7 +176,8 @@
           "id": "german-pizza",
           "name": "بيتزا ألمانية",
           "description": "صلصة كريم فريش، تركي، فطر.",
-          "price": 12000
+          "price": 12000,
+          "image": "/images/optimized/IMG_2865.webp"
         },
         {
           "id": "kurdish-pizza",

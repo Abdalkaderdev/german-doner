@@ -5,7 +5,7 @@ export const localImageByItemId: Record<string, string> = {
   // Pizzas
   "pepperoni-pizza": "/images/optimized/IMG_1144_TIF.webp",
   "salmon-pizza": "/images/optimized/IMG_2864.webp",
-  "turkey-beef-salami-pizza": "/images/optimized/IMG_2865.webp",
+  // turkey-beef-salami-pizza intentionally unmapped to use logo fallback
   "salami-pizza": "/images/optimized/IMG_1145_TIF.webp",
   // mix pizza intentionally unmapped to use logo fallback
   "vegetarian-pizza": "/images/optimized/IMG_1156_TIF.webp",

@@ -70,26 +70,7 @@
         }
       ]
     },
-    {
-      "id": "salads",
-      "name": "Fresh Salads",
-      "items": [
-        {
-          "id": "caesar-salad",
-          "name": "Caesar Salad",
-          "description": "Classic Caesar salad with lettuce, croutons, and parmesan.",
-          "price": 6000,
-          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "greek-salad",
-          "name": "Greek Salad",
-          "description": "Fresh Greek salad with feta, olives, and vegetables.",
-          "price": 7500,
-          "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop"
-        }
-      ]
-    },
+    
     {
       "id": "pide",
       "name": "Pide",
@@ -121,6 +102,12 @@
           "description": "Chef's special Turkish pide.",
           "price": 13000,
           "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "spinach-pide",
+          "name": "Spinach Pide",
+          "description": "Cooked spinach with mozzarella and white cheese.",
+          "price": 11000
         }
       ]
     },
@@ -279,7 +266,8 @@
           "id": "german-pizza",
           "name": "German Pizza",
           "description": "Crème fraîche sauce, turkey, mushrooms.",
-          "price": 12000
+          "price": 12000,
+          "image": "/images/optimized/IMG_2865.webp"
         },
         {
           "id": "kurdish-pizza",

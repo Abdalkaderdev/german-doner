@@ -70,26 +70,7 @@
         }
       ]
     },
-    {
-      "id": "salads",
-      "name": "سەلاتە تازەکان",
-      "items": [
-        {
-          "id": "caesar-salad",
-          "name": "سەلاتە سیزەر",
-          "description": "سەلاتەی سیزەر کلاسیکی لەگەڵ خس، نان و پەنیر پارمیزان.",
-          "price": 6000,
-          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "greek-salad",
-          "name": "سەلاتە یونانی",
-          "description": "سەلاتەی یونانی تازە لەگەڵ پەنیر فیەتا، زەیت و سەوزەکان.",
-          "price": 7500,
-          "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop"
-        }
-      ]
-    },
+    
     {
       "id": "pide",
       "name": "پێدە",
@@ -121,6 +102,12 @@
           "description": "پێدەی تایبەتی فەرمێ.",
           "price": 13000,
           "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "spinach-pide",
+          "name": "پێدە سپیناج",
+          "description": "سپیناجی خواردوو بە پەنێری مۆزارێلا و پەنێری سپی.",
+          "price": 11000
         }
       ]
     },
@@ -189,7 +176,8 @@
           "id": "german-pizza",
           "name": "پیتزا ئەڵمانی",
           "description": "سۆسی کریم فریش، تەرکی، قارچ.",
-          "price": 12000
+          "price": 12000,
+          "image": "/images/optimized/IMG_2865.webp"
         },
         {
           "id": "kurdish-pizza",
