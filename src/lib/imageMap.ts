@@ -7,19 +7,18 @@ export const localImageByItemId: Record<string, string> = {
   "salmon-pizza": "/images/optimized/IMG_2864.webp",
   "turkey-beef-salami-pizza": "/images/optimized/IMG_2865.webp",
   "salami-pizza": "/images/optimized/IMG_1145_TIF.webp",
-  "pizza-mix": "/images/optimized/IMG_1156_TIF.webp",
+  // mix pizza intentionally unmapped to use logo fallback
+  "vegetarian-pizza": "/images/optimized/IMG_1156_TIF.webp",
   "diavolo-pizza": "/images/optimized/IMG_1169_TIF.webp",
   "turkey-pizza": "/images/optimized/IMG_1168_TIF.webp",
 
   // Pide
-  "cheese-pide": "/images/optimized/IMG_1163_TIF.webp",
   "sucuk-pide": "/images/optimized/IMG_1158_TIF.webp",
 
   // Doner/Yufka
   "doner-kebap-chicken": "/images/optimized/IMG_1098_TIF.webp",
   "doner-kebap-beef": "/images/optimized/IMG_1098_TIF.webp",
-  "yufka-kebap-beef": "/images/optimized/IMG_1093_TIF.webp",
-  "yufka-kebap-chicken": "/images/optimized/IMG_1100_TIF.webp",
+  // yufka kebap items intentionally unmapped to use logo fallback
   "kebap-plate-chicken": "/images/optimized/IMG_1100_TIF.webp",
   "kebap-plate-beef": "/images/optimized/IMG_1093_TIF.webp",
 
