@@ -106,13 +106,29 @@ async function processImage(filePath) {
   return results;
 }
 
+async function walkDir(dir) {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (fullPath.includes('/optimized')) continue;
+      const nested = await walkDir(fullPath);
+      files.push(...nested);
+    } else {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
+
 async function main() {
   console.log('🚀 Starting image optimization...\n');
   
   await ensureDir(OUTPUT_DIR);
   
-  const files = await fs.readdir(IMAGES_DIR);
-  const imageFiles = files.filter(file => {
+  const allFiles = await walkDir(IMAGES_DIR);
+  const imageFiles = allFiles.filter(file => {
     const ext = path.extname(file).toLowerCase();
     return ['.jpg', '.jpeg', '.png', '.webp', '.tif', '.tiff'].includes(ext);
   });
@@ -122,8 +138,7 @@ async function main() {
   let totalOriginalSize = 0;
   let totalOptimizedSize = 0;
   
-  for (const file of imageFiles) {
-    const filePath = path.join(IMAGES_DIR, file);
+  for (const filePath of imageFiles) {
     const stats = await fs.stat(filePath);
     totalOriginalSize += stats.size;
     
