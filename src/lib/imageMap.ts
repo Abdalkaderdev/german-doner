@@ -3,7 +3,7 @@ export const fallbackLogo = "/images/optimized/logo.webp";
 // Known local images mapped by item id - now using optimized versions
 export const localImageByItemId: Record<string, string> = {
   // Pizzas
-  "pepperoni-pizza": "/images/optimized/IMG_3781.webp",
+  "pepperoni-pizza": "/images/optimized/IMG_3781.PNG.webp",
   "salmon-pizza": "/images/optimized/IMG_2864.webp",
   "turkey-beef-salami-pizza": "/images/optimized/IMG_1168_TIF.webp",
   // salami-pizza intentionally unmapped to use logo fallback

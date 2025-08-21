@@ -192,7 +192,7 @@
       "items": [
         { "id": "cola", "name": "كولا", "description": "مشروب كولا منعش.", "price": 1000, "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop" },
         { "id": "fanta", "name": "فانتا", "description": "مشروب غازي بنكهة البرتقال.", "price": 1000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "water", "name": "ماء", "description": "ماء معبأ.", "price": 750, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "water", "name": "ماء", "description": "ماء معبأ.", "price": 500, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
         { "id": "sprite", "name": "سبرايت", "description": "مشروب غازي بنكهة الليمون.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
         { "id": "cola-diet", "name": "كولا دايت", "description": "مشروب كولا دايت.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
         { "id": "yogurt", "name": "لبن", "description": "مشروب لبن.", "price": 1000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
