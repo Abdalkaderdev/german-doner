@@ -13,7 +13,7 @@ export const localImageByItemId: Record<string, string> = {
   "pizza-mix": "/images/optimized/IMG_3777.PNG.webp",
   "four-cheese-pizza": "/images/optimized/IMG_3779.PNG.webp",
   "calzone-pizza": "/images/optimized/IMG_3782.PNG.webp",
-  "rodi-pizza": "/images/optimized/IMG_3780.PNG.webp",
+  "tuna-pizza": "/images/optimized/IMG_3780.PNG.webp",
   // turkey-pizza intentionally unmapped to use logo fallback
 
   // Pide

@@ -130,7 +130,6 @@
         { "id": "salami-pizza", "name": "پیتزا سەلامی", "description": "پیتزا پڕکراو بە سەلامی و پەنیر.", "price": 10000 },
         { "id": "mushroom-pizza", "name": "پیتزا قارچ", "description": "پیتزا پڕکراو بە قارچ و پەنیر.", "price": 9000 },
         { "id": "spinach-pizza", "name": "پیتزا سپیناج", "description": "پیتزا پڕکراو بە سپیناج و پەنیر.", "price": 10000 },
-         { "id": "rodi-pizza", "name": "پیتزا رۆدی", "description": "پیتزای تایبەتی بە پڕکردنەوە جیاواز.", "price": 12000 },
          { "id": "vegetarian-pizza", "name": "پیتزا ناباتدار", "description": "پیتزا ناباتدار بە سەوزە جیاواز.", "price": 11000 },
          { "id": "calzone-pizza", "name": "کالزۆن", "description": "پیتزای تاوەبوو بە پڕکردنەوە جیاواز.", "price": 12000 }
       ]

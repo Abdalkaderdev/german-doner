@@ -130,7 +130,6 @@
         { "id": "salami-pizza", "name": "بيتزا سلامي", "description": "بيتزا مع سلامي وجبن.", "price": 10000 },
         { "id": "mushroom-pizza", "name": "بيتزا مشروم", "description": "بيتزا مع مشروم وجبن.", "price": 9000 },
         { "id": "spinach-pizza", "name": "بيتزا سبانخ", "description": "بيتزا مع سبانخ وجبن.", "price": 10000 },
-         { "id": "rodi-pizza", "name": "بيتزا رودي", "description": "بيتزا مميزة مع مكونات متنوعة.", "price": 12000 },
          { "id": "vegetarian-pizza", "name": "بيتزا نباتية", "description": "بيتزا نباتية مع خضار متنوعة.", "price": 11000 },
          { "id": "calzone-pizza", "name": "كالزون", "description": "بيتزا مطوية محشوة بمكونات متنوعة.", "price": 12000 }
       ]

@@ -206,12 +206,6 @@
           "price": 10000
         },
         {
-          "id": "rodi-pizza",
-          "name": "Rodi Pizza",
-          "description": "Specialty pizza with assorted toppings.",
-          "price": 12000
-        },
-        {
           "id": "vegetarian-pizza",
           "name": "Vegetarian Pizza",
           "description": "Vegetarian pizza with assorted vegetables.",
