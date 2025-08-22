@@ -23,14 +23,14 @@
         {
           "id": "yufka-kebap-beef",
           "name": "یوفکا کباب گۆشت",
-          "description": "یوفکا وەرەقە لەگەڵ گۆشتی دۆنەر و سەلاتە.",
+          "description": "پێڵەو، تەماتە، کەڵەمبڕی سوور، کەسڵەتی سەوز.",
           "price": 6500,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "yufka-kebap-chicken",
           "name": "یوفکا کباب مۆرغ",
-          "description": "یوفکا وەرەقە لەگەڵ مۆرغی دۆنەر و سەلاتە.",
+          "description": "پێڵەو، تەماتە، کەڵەمبڕی سوور، کەسڵەتی سەوز.",
           "price": 5500,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
@@ -51,63 +51,71 @@
         {
           "id": "lahmacun",
           "name": "لەحمەجون",
-          "description": "نانێکی تورکی لەگەڵ گۆشتی بەهەڵکەوتوو.",
+          "description": "گۆشتی نەرمکراوە بە تێکەڵەیەکی تایبەت. گۆشت، کەسڵەت، تەماتە، کەڵەمبڕ، پێڵەو و سۆسی بەردەست.",
           "price": 9000,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
           "id": "lahmacun-plate",
           "name": "خواردنی لەحمەجون",
-          "description": "لەحمەجون لەگەڵ سەلاتە و پێشکەشکراوەکان.",
+          "description": "گۆشت، کەسڵەت، تەماتە، کەڵەمبڕ، پێڵەو و سۆسی بەردەست.",
           "price": 11000,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "doner-box",
-          "name": "دۆنەر بۆکس",
-          "description": "گۆشتی دۆنەر لەگەڵ پۆتەتی و سەلاتە.",
-          "price": 6500
+          "name": "بۆکسی دۆنەر",
+          "description": "گۆشتی دۆنەر لەگەڵ فرەنچ فرایز و سەلاتە.",
+          "price": 6500,
+          "image": "/new/IMG_3899.JPG"
         }
       ]
     },
     
     {
       "id": "pide",
-      "name": "پێدە",
+      "name": "پیدە",
       "items": [
         {
           "id": "sucuk-pide",
-          "name": "پێدە سوجوق",
-          "description": "نان تورکی بە سوجوقی تیژ.",
+          "name": "پیدەی سۆجوق",
+          "description": "نانی تورکی لەگەڵ سۆجوقی تیژ.",
           "price": 12000,
           "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
         },
         {
           "id": "cheese-pide",
-          "name": "پێدە پەنیر",
-          "description": "نان تورکی بە پەنیر.",
+          "name": "پیدەی پەنیر",
+          "description": "مۆزەرێلا، پەنیری فێتا.",
           "price": 10000,
           "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop"
         },
         {
+          "id": "minced-meat-pide",
+          "name": "گۆشتی وردکراو پیدە",
+          "description": "گۆشتی وردکراو بە رێچەتەیەکی تایبەت.",
+          "price": 11000
+        },
+        {
           "id": "doner-pide",
-          "name": "پێدە دۆنەر",
-          "description": "پێدەی پڕکراو بە گۆشتی دۆنەر.",
+          "name": "پیدەی دۆنەر",
+          "description": "پیدە پڕکراوە بە گۆشتی دۆنەر.",
           "price": 12000,
           "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop"
         },
         {
           "id": "special-pide",
-          "name": "پێدە تایبەتی",
-          "description": "پێدەی تایبەتی فەرمێ.",
+          "name": "پیدەی تایبەت",
+          "description": "گۆشت، مۆرغ، بەرگە سەوز، جەلەپینۆ، پێڵەوی سوور، تەماتە.",
           "price": 13000,
-          "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
+          "image": "/new/IMG_3902.JPG"
         },
         {
           "id": "spinach-pide",
-          "name": "پێدە سپیناج",
-          "description": "سپیناجی خواردوو بە پەنێری مۆزارێلا و پەنێری سپی.",
-          "price": 11000
+          "name": "پیدەی سپێناخ",
+          "description": "سپێناخی چێکراو لەگەڵ مۆزەرێلا و پەنیری سپی.",
+          "price": 11000,
+          "image": "/new/IMG_3903.JPG"
         }
       ]
     },
@@ -115,23 +123,112 @@
       "id": "pizza",
       "name": "پیتزا",
       "items": [
-        { "id": "salmon-pizza", "name": "پیتزا سامۆن", "description": "پیتزا پڕکراو بە سامۆن و پەنیر.", "price": 14000 },
-        { "id": "four-season-pizza", "name": "پیتزا چوار وەرز", "description": "پیتزا بە چوار جۆری پڕکردنەوەی جیاواز.", "price": 12000 },
-        { "id": "doner-pizza", "name": "پیتزا دۆنەر", "description": "پیتزا پڕکراو بە گۆشتی دۆنەر و پەنیر.", "price": 12000 },
-        { "id": "doner-chicken-pizza", "name": "پیتزا دۆنەر مۆرغ", "description": "پیتزا پڕکراو بە مۆرغی دۆنەر و پەنیر.", "price": 11000 },
-        { "id": "diavolo-pizza", "name": "پیتزا دیافۆلۆ", "description": "پیتزای توند بە پێپەرۆنی و بیبەر.", "price": 12000 },
-        { "id": "pizza-mix", "name": "پیتزا میکس", "description": "پیتزا پڕکراو بە گوشت و سەوزە جیاواز.", "price": 13000 },
-        { "id": "turkey-beef-salami-pizza", "name": "پیتزا تەرکی و سەلامی گۆشت", "description": "پیتزا پڕکراو بە تەرکی و سەلامی گۆشت.", "price": 12000 },
-        { "id": "four-cheese-pizza", "name": "پیتزا چوار پەنیر", "description": "پیتزا پڕکراو بە چوار جۆری پەنیر.", "price": 11000 },
-        { "id": "tuna-pizza", "name": "پیتزا تونا", "description": "پیتزا پڕکراو بە تونا و پیاز.", "price": 9000 },
-        { "id": "pepperoni-pizza", "name": "پیتزا پێپەرۆنی", "description": "پیتزا پڕکراو بە پێپەرۆنی و پەنیر.", "price": 12000 },
-        { "id": "margherita-pizza", "name": "پیتزا مارگه‌ریتا", "description": "پیتزای کلاسیکی بە سۆس فڕە، مۆزارێلا و ریحان.", "price": 8000 },
-        { "id": "turkey-pizza", "name": "پیتزا تەرکی", "description": "پیتزا پڕکراو بە تەرکی و پەنیر.", "price": 10000 },
-        { "id": "salami-pizza", "name": "پیتزا سەلامی", "description": "پیتزا پڕکراو بە سەلامی و پەنیر.", "price": 10000 },
-        { "id": "mushroom-pizza", "name": "پیتزا قارچ", "description": "پیتزا پڕکراو بە قارچ و پەنیر.", "price": 9000 },
-        { "id": "spinach-pizza", "name": "پیتزا سپیناج", "description": "پیتزا پڕکراو بە سپیناج و پەنیر.", "price": 10000 },
-         { "id": "vegetarian-pizza", "name": "پیتزا ناباتدار", "description": "پیتزا ناباتدار بە سەوزە جیاواز.", "price": 11000 },
-         { "id": "calzone-pizza", "name": "کالزۆن", "description": "پیتزای تاوەبوو بە پڕکردنەوە جیاواز.", "price": 12000 }
+        {
+          "id": "salmon-pizza",
+          "name": "پیتزای سەڵمۆن",
+          "description": "پیتزا بە سەڵمۆنی تازە و پەنیر.",
+          "price": 14000
+        },
+        {
+          "id": "four-season-pizza",
+          "name": "پیتزای چوار وەرز",
+          "description": "کەڕوو، بەرگە، سەلەمی، تورکی.",
+          "price": 12000,
+          "image": "/images/optimized/IMG_3777.PNG.webp"
+        },
+        {
+          "id": "doner-pizza",
+          "name": "پیتزای دۆنەر",
+          "description": "گۆشتی دۆنەر.",
+          "price": 12000
+        },
+        {
+          "id": "doner-chicken-pizza",
+          "name": "پیتزای مۆرغی دۆنەر",
+          "description": "پیتزا بە مۆرغی دۆنەر و پەنیر.",
+          "price": 11000
+        },
+        {
+          "id": "diavolo-pizza",
+          "name": "پیتزای دیاڤۆلۆ",
+          "description": "پیتزای تیژ بە پێپەرۆنی و چیلی.",
+          "price": 12000
+        },
+        {
+          "id": "pizza-mix",
+          "name": "پیتزای تێکەڵە",
+          "description": "پیتزا بە تێکەڵەیەک لە گۆشت و سەوزەوات.",
+          "price": 13000
+        },
+        {
+          "id": "turkey-beef-salami-pizza",
+          "name": "پیتزای سەلەمی تورکی و گۆشتی",
+          "description": "پیتزا بە سەلەمی تورکی و گۆشتی.",
+          "price": 12000
+        },
+        {
+          "id": "four-cheese-pizza",
+          "name": "پیتزای چوار پەنیر",
+          "description": "مۆزەرێلا، گۆرگۆنزۆلا، فێتا، و پارمێسان.",
+          "price": 11000
+        },
+        {
+          "id": "tuna-pizza",
+          "name": "پیتزای تونا",
+          "description": "تونا، پێڵەوی تازە.",
+          "price": 9000,
+          "image": "/images/optimized/IMG_3780.PNG.webp"
+        },
+        {
+          "id": "pepperoni-pizza",
+          "name": "پیتزای پێپەرۆنی",
+          "description": "پیتزا بە پێپەرۆنی و پەنیر.",
+          "price": 12000
+        },
+        {
+          "id": "margherita-pizza",
+          "name": "پیتزای مارگەریتا",
+          "description": "پیتزای کلاسیک بە سۆسی تەماتە، مۆزەرێلا، و بەیزیل.",
+          "price": 8000
+        },
+        {
+          "id": "turkey-pizza",
+          "name": "پیتزای تورکی",
+          "description": "پیتزا بە تورکی و پەنیر.",
+          "price": 10000,
+          "image": "/images/optimized/IMG_3778.PNG.webp"
+        },
+        {
+          "id": "salami-pizza",
+          "name": "پیتزای سەلەمی",
+          "description": "سەلەمی گۆشتی.",
+          "price": 10000,
+          "image": "/images/optimized/IMG_3781.PNG.webp"
+        },
+        {
+          "id": "mushroom-pizza",
+          "name": "پیتزای کەڕوو",
+          "description": "پیتزا بە کەڕوو و پەنیر.",
+          "price": 9000
+        },
+        {
+          "id": "spinach-pizza",
+          "name": "پیتزای سپێناخ",
+          "description": "پیتزا بە سپێناخ و پەنیر.",
+          "price": 10000
+        },
+        {
+          "id": "vegetarian-pizza",
+          "name": "پیتزای گیانلەبەر",
+          "description": "پیتزای گیانلەبەر بە سەوزەواتی جۆراوجۆر.",
+          "price": 11000
+        },
+        {
+          "id": "calzone-pizza",
+          "name": "کاڵزۆن",
+          "description": "سەلەمی، تورکی، کەڕوو.",
+          "price": 12000
+        }
       ]
     },
     {
@@ -140,17 +237,17 @@
       "items": [
         {
           "id": "kids-nugget",
-          "name": "ناگەت",
-          "description": "پارچە مۆرغ بۆ منداڵان.",
+          "name": "نەگەت",
+          "description": "نەگەتی مۆرغ بۆ منداڵان.",
           "price": 5000,
-          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
+          "image": "/new/IMG_3900.JPG"
         },
         {
           "id": "kids-fries",
-          "name": "فڕایز",
-          "description": "پۆتەتی قڕ بۆ منداڵان.",
+          "name": "فرەنچ فرایز",
+          "description": "فرەنچ فرایزی کرەسپی بۆ منداڵان.",
           "price": 3500,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+          "image": "/new/IMG_3904.JPG"
         }
       ]
     },
@@ -161,7 +258,7 @@
         {
           "id": "rizzo-item",
           "name": "ریزۆ",
-          "description": "مڕۆش قڕ و برنج.",
+          "description": "کەوەی مۆرغی کرەسپی و برنج.",
           "price": 6500,
           "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
         }
@@ -173,31 +270,31 @@
       "items": [
         {
           "id": "german-pizza",
-          "name": "پیتزا ئەڵمانی",
-          "description": "سۆسی کریم فریش، تەرکی، قارچ.",
+          "name": "پیتزای ئەڵمانی",
+          "description": "سۆسی کرێم فڕێش، تورکی، کەڕوو.",
           "price": 12000,
           "image": "/images/optimized/IMG_2865.webp"
         },
         {
           "id": "kurdish-pizza",
-          "name": "پیتزا کوردی",
-          "description": "گۆشتی دۆنەر لە سۆسی کریمی تازەدا بە پیازی سوور.",
+          "name": "پیتزای کوردی",
+          "description": "گۆشتی دۆنەر لە سۆسی کرێمی تازەدا لەگەڵ پێڵەوی سوور.",
           "price": 12000
         }
       ]
     },
     {
       "id": "drinks",
-      "name": "خواردنەوە",
+      "name": "خواردنەوەکان",
       "items": [
-        { "id": "cola", "name": "کۆلا", "description": "خواردنەوەی کۆلا فێنک.", "price": 1000, "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop" },
-        { "id": "fanta", "name": "فانتا", "description": "شەربەتی فێنکی پۆرتەقال.", "price": 1000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "water", "name": "ئاو", "description": "ئاوێ قەبارە.", "price": 500, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
-        { "id": "sprite", "name": "سپرایت", "description": "شەربەتی لیمۆ و لایم.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
-        { "id": "cola-diet", "name": "کۆلا دایت", "description": "خواردنەوەی کۆلا دایت.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
-        { "id": "yogurt", "name": "ماستاو", "description": "خواردنەوەی ماستاو.", "price": 1000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
-        { "id": "soda", "name": "سودا", "description": "ئاوێ سودادار.", "price": 1500, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
-        { "id": "tea", "name": "چای", "description": "چای ڕەشی گەرەم.", "price": 1000, "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" }
+        { "id": "cola", "name": "کۆلا", "description": "خواردنەوەی کۆلای نوێکەرەوە.", "price": 1000, "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop" },
+        { "id": "fanta", "name": "فانتا", "description": "سۆدای بەتامی پرتەقاڵ.", "price": 1000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
+        { "id": "water", "name": "ئاو", "description": "ئاوی شووشەیی.", "price": 500, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
+        { "id": "sprite", "name": "سپرایت", "description": "سۆدای لایم و لیمۆن.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
+        { "id": "cola-diet", "name": "کۆلای دایەت", "description": "خواردنەوەی کۆلای دایەت.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
+        { "id": "yogurt", "name": "مەست", "description": "خواردنەوەی مەست.", "price": 1000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
+        { "id": "soda", "name": "سۆدا", "description": "ئاوی سۆدای گازدار.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
+        { "id": "tea", "name": "چای", "description": "چایە ڕەنگی گەرم.", "price": 1000, "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" }
       ]
     }
   ]

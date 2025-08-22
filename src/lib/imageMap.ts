@@ -1,4 +1,4 @@
-export const fallbackLogo = "/images/optimized/logo.webp";
+export const fallbackLogo = "/images/logo.webp";
 
 // Known local images mapped by item id - now using optimized versions
 export const localImageByItemId: Record<string, string> = {
@@ -6,20 +6,26 @@ export const localImageByItemId: Record<string, string> = {
   "pepperoni-pizza": "/images/optimized/IMG_3781.PNG.webp",
   "salmon-pizza": "/images/optimized/IMG_2864.webp",
   "turkey-beef-salami-pizza": "/images/optimized/IMG_1168_TIF.webp",
-  // salami-pizza intentionally unmapped to use logo fallback
+  "salami-pizza": "/images/optimized/IMG_3781.PNG.webp",
   // mix pizza intentionally unmapped to use logo fallback
-  "vegetarian-pizza": "/images/optimized/IMG_1156_TIF.webp",
   "diavolo-pizza": "/images/optimized/IMG_1169_TIF.webp",
   "pizza-mix": "/images/optimized/IMG_3777.PNG.webp",
   "four-cheese-pizza": "/images/optimized/IMG_3779.PNG.webp",
+  "four-season-pizza": "/images/optimized/IMG_3777.PNG.webp",
   "calzone-pizza": "/images/optimized/IMG_3782.PNG.webp",
   "tuna-pizza": "/images/optimized/IMG_3780.PNG.webp",
-  // turkey-pizza intentionally unmapped to use logo fallback
+  "turkey-pizza": "/images/optimized/IMG_3778.PNG.webp",
+  // mushroom-pizza intentionally unmapped to use logo fallback
+  "spinach-pizza": "/new/IMG_3903.JPG",
+  "vegetarian-pizza": "/new/IMG_3898.JPG",
 
   // Pide
   "sucuk-pide": "/images/optimized/IMG_1158_TIF.webp",
   "cheese-pide": "/images/optimized/IMG_3772.PNG.webp",
+  // spinach-pide intentionally unmapped to use logo fallback
+  "minced-meat-pide": "/images/optimized/minced.webp",
   "lahmacun-plate": "/images/optimized/IMG_3775.PNG.webp",
+  "special-pide": "/images/optimized/IMG_3770.PNG.webp",
 
   // Doner/Yufka
   "doner-kebap-chicken": "/images/optimized/IMG_1098_TIF.webp",
@@ -27,6 +33,7 @@ export const localImageByItemId: Record<string, string> = {
   "yufka-kebap-chicken": "/images/optimized/IMG_3773.PNG.webp",
   "yufka-kebap-beef": "/images/optimized/IMG_3774.PNG.webp",
   "doner-pizza": "/images/optimized/IMG_3778.PNG.webp",
+  "doner-box": "/images/optimized/IMG_3899.webp",
   // yufka kebap items intentionally unmapped to use logo fallback
   "kebap-plate-chicken": "/images/optimized/IMG_1100_TIF.webp",
   "kebap-plate-beef": "/images/optimized/IMG_1093_TIF.webp",

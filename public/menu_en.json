@@ -23,14 +23,14 @@
         {
           "id": "yufka-kebap-beef",
           "name": "Yufka Kebap Beef",
-          "description": "Yufka wrap with beef doner meat and salad.",
+          "description": "Onions, tomatoes, red cabbage, green lettuce.",
           "price": 6500,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "yufka-kebap-chicken",
           "name": "Yufka Kebap Chicken",
-          "description": "Yufka wrap with chicken doner meat and salad.",
+          "description": "Onions, tomatoes, red cabbage, green lettuce.",
           "price": 5500,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
@@ -51,14 +51,14 @@
         {
           "id": "lahmacun",
           "name": "Lahmacun",
-          "description": "Turkish flatbread with spiced meat topping.",
+          "description": "Minced meat with a special mixture. Meat, lettuce, tomatoes, cabbage, onions and optional sauce.",
           "price": 9000,
           "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
         },
         {
           "id": "lahmacun-plate",
           "name": "Lahmacun Plate",
-          "description": "Lahmacun served with salad and sides.",
+          "description": "Meat, lettuce, tomatoes, cabbage, onions and optional sauce.",
           "price": 11000,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
@@ -66,7 +66,8 @@
           "id": "doner-box",
           "name": "Doner Box",
           "description": "Doner meat with fries and salad.",
-          "price": 6500
+          "price": 6500,
+          "image": "/new/IMG_3899.JPG"
         }
       ]
     },
@@ -85,9 +86,15 @@
         {
           "id": "cheese-pide",
           "name": "Cheese Pide",
-          "description": "Turkish flatbread with cheese filling.",
+          "description": "Mozzarella, feta cheese.",
           "price": 10000,
           "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop"
+        },
+        {
+          "id": "minced-meat-pide",
+          "name": "Minced Meat Pide",
+          "description": "Minced meat with special recipe.",
+          "price": 11000
         },
         {
           "id": "doner-pide",
@@ -99,15 +106,16 @@
         {
           "id": "special-pide",
           "name": "Special Pide",
-          "description": "Chef's special Turkish pide.",
+          "description": "Meat, chicken, green pepper, jalapeno, red onion, tomato.",
           "price": 13000,
-          "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
+          "image": "/new/IMG_3902.JPG"
         },
         {
           "id": "spinach-pide",
           "name": "Spinach Pide",
           "description": "Cooked spinach with mozzarella and white cheese.",
-          "price": 11000
+          "price": 11000,
+          "image": "/new/IMG_3903.JPG"
         }
       ]
     },
@@ -124,13 +132,14 @@
         {
           "id": "four-season-pizza",
           "name": "Four Season Pizza",
-          "description": "Pizza with four different toppings, one for each quarter.",
-          "price": 12000
+          "description": "Mushrooms, peppers, salami, turkey.",
+          "price": 12000,
+          "image": "/images/optimized/IMG_3777.PNG.webp"
         },
         {
           "id": "doner-pizza",
           "name": "Doner Pizza",
-          "description": "Pizza topped with doner meat and cheese.",
+          "description": "Doner meat.",
           "price": 12000
         },
         {
@@ -160,14 +169,15 @@
         {
           "id": "four-cheese-pizza",
           "name": "Four Cheese Pizza",
-          "description": "Pizza with four types of cheese.",
+          "description": "Mozzarella, Gorgonzola, feta, and Parmesan.",
           "price": 11000
         },
         {
           "id": "tuna-pizza",
           "name": "Tuna Pizza",
-          "description": "Pizza topped with tuna and onions.",
-          "price": 9000
+          "description": "Tuna, fresh onions.",
+          "price": 9000,
+          "image": "/images/optimized/IMG_3780.PNG.webp"
         },
         {
           "id": "pepperoni-pizza",
@@ -185,13 +195,15 @@
           "id": "turkey-pizza",
           "name": "Turkey Pizza",
           "description": "Pizza topped with turkey and cheese.",
-          "price": 10000
+          "price": 10000,
+          "image": "/images/optimized/IMG_3778.PNG.webp"
         },
         {
           "id": "salami-pizza",
           "name": "Salami Pizza",
-          "description": "Pizza topped with salami and cheese.",
-          "price": 10000
+          "description": "Beef salami.",
+          "price": 10000,
+          "image": "/images/optimized/IMG_3781.PNG.webp"
         },
         {
           "id": "mushroom-pizza",
@@ -203,7 +215,8 @@
           "id": "spinach-pizza",
           "name": "Spinach Pizza",
           "description": "Pizza topped with spinach and cheese.",
-          "price": 10000
+          "price": 10000,
+          "image": "/new/IMG_3903.JPG"
         },
         {
           "id": "vegetarian-pizza",
@@ -214,7 +227,7 @@
         {
           "id": "calzone-pizza",
           "name": "Calzone",
-          "description": "Folded pizza with assorted fillings.",
+          "description": "Salami, turkey, mushrooms.",
           "price": 12000
         }
       ]
@@ -228,14 +241,14 @@
           "name": "Nugget",
           "description": "Chicken nuggets for kids.",
           "price": 5000,
-          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
+          "image": "/new/IMG_3900.JPG"
         },
         {
           "id": "kids-fries",
           "name": "Fries",
           "description": "Crispy fries for kids.",
           "price": 3500,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+          "image": "/new/IMG_3904.JPG"
         }
       ]
     },
