@@ -17,7 +17,7 @@ export const localImageByItemId: Record<string, string> = {
   "turkey-pizza": "/images/optimized/IMG_3778.PNG.webp",
   // mushroom-pizza intentionally unmapped to use logo fallback
   "spinach-pizza": "/new/IMG_3903.JPG",
-  "vegetarian-pizza": "/new/IMG_3898.JPG",
+  "vegetarian-pizza": "/images/optimized/IMG_2878.JPG.webp",
 
   // Pide
   "sucuk-pide": "/images/optimized/IMG_1158_TIF.webp",
@@ -47,6 +47,10 @@ export const localImageByItemId: Record<string, string> = {
   "yogurt": "/images/optimized/assorted-beverages.webp",
   "soda": "/images/optimized/assorted-beverages.webp",
   "tea": "/images/optimized/assorted-beverages.webp",
+
+  // Kids Meals
+  "kids-nugget": "/images/optimized/IMG_3900.JPG.webp",
+  "kids-fries": "/images/optimized/IMG_3904.JPG.webp",
 };
 
 export function resolveItemImage(item: { id?: string; image?: string }): string {
