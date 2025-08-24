@@ -67,6 +67,8 @@ const Categories = () => {
                 ? '/images/optimized/assorted-beverages.webp'
               : cat.id === 'special'
                 ? '/images/optimized/IMG_3902.JPG-medium.webp'
+              : cat.id === 'rizzo'
+                ? '/images/upload/IMG_4123.JPG'
                   : resolveItemImage(cat.items?.[0] || {});
             return (
               <motion.button

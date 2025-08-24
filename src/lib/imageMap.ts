@@ -14,7 +14,8 @@ export const localImageByItemId: Record<string, string> = {
   "calzone-pizza": "/images/optimized/IMG_3782.PNG.webp",
   "tuna-pizza": "/images/optimized/IMG_3780.PNG.webp",
   "turkey-pizza": "/images/optimized/IMG_3778.PNG.webp",
-  // mushroom-pizza intentionally unmapped to use logo fallback
+  "margherita-pizza": "/images/upload/IMG_4121.JPG",
+  "mushroom-pizza": "/images/upload/IMG_4122.JPG",
   "spinach-pizza": "/new/IMG_3903.JPG",
   "vegetarian-pizza": "/images/optimized/IMG_2878.JPG.webp",
 
@@ -34,6 +35,7 @@ export const localImageByItemId: Record<string, string> = {
   "yufka-kebap-chicken": "/images/optimized/IMG_3774.PNG.webp",
   "yufka-kebap-beef": "/images/optimized/IMG_3774.PNG.webp",
   "doner-pizza": "/images/optimized/IMG_3778.PNG.webp",
+  "doner-chicken-pizza": "/images/upload/IMG_4124.JPG",
   "doner-box": "/images/optimized/IMG_3899.webp",
   "chicken-doner-box": "/images/optimized/IMG_3898.JPG-medium.webp",
   // yufka kebap items intentionally unmapped to use logo fallback
@@ -59,7 +61,7 @@ export const localImageByItemId: Record<string, string> = {
   "kurdish-pizza": "/images/optimized/IMG_3902.JPG-medium.webp",
   
   // Rizzo
-  // rizzo-item intentionally unmapped to use logo fallback
+  "rizzo-item": "/images/upload/IMG_4123.JPG",
 };
 
 export function resolveItemImage(item: { id?: string; image?: string }): string {
