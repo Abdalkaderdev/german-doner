@@ -58,8 +58,10 @@ export const localImageByItemId: Record<string, string> = {
 };
 
 export function resolveItemImage(item: { id?: string; image?: string }): string {
-  // Use curated images when available; otherwise fall back to logo
+  // Always prioritize curated local images over JSON image field
   if (item?.id && localImageByItemId[item.id]) return localImageByItemId[item.id];
+  // Fall back to JSON image field if no local mapping exists
+  if (item?.image) return item.image;
   return fallbackLogo;
 }
 

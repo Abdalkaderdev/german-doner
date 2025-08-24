@@ -65,6 +65,8 @@ const Categories = () => {
                   ? '/images/optimized/IMG_2865.webp'
               : cat.id === 'drinks'
                 ? '/images/optimized/assorted-beverages.webp'
+              : cat.id === 'special'
+                ? '/images/optimized/IMG_3902.JPG.webp'
                   : resolveItemImage(cat.items?.[0] || {});
             return (
               <motion.button
