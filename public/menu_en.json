@@ -85,15 +85,13 @@
           "id": "mixed-doner-box",
           "name": "Mixed Doner Box",
           "description": "Mixed beef and chicken doner meat with fries and salad.",
-          "price": 7000,
-          "image": "/new/IMG_3899.JPG"
+          "price": 7000
         },
         {
           "id": "kapsalon-plate",
           "name": "Kapsalon Plate",
           "description": "Fries topped with meat doner and melted cheese.",
-          "price": 12000,
-          "image": "/new/IMG_3899.JPG"
+          "price": 12000
         }
       ]
     },
@@ -126,8 +124,7 @@
           "id": "doner-pide",
           "name": "Doner Pide",
           "description": "Pide stuffed with doner meat.",
-          "price": 12000,
-          "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop"
+          "price": 12000
         },
         {
           "id": "special-pide",
@@ -140,8 +137,7 @@
           "id": "spinach-pide",
           "name": "Spinach Pide",
           "description": "Cooked spinach with mozzarella and white cheese.",
-          "price": 11000,
-          "image": "/new/IMG_3903.JPG"
+          "price": 11000
         }
       ]
     },
@@ -286,8 +282,7 @@
           "id": "rizzo-item",
           "name": "Rizzo",
           "description": "Crispy chicken and rice bowl.",
-          "price": 6500,
-          "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
+          "price": 6500
         }
       ]
     },
@@ -299,8 +294,7 @@
           "id": "german-pizza",
           "name": "German Pizza",
           "description": "Crème fraîche sauce, turkey, mushrooms.",
-          "price": 12000,
-          "image": "/images/optimized/IMG_2865.webp"
+          "price": 12000
         },
         {
           "id": "kurdish-pizza",

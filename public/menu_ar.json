@@ -78,15 +78,13 @@
           "id": "mixed-doner-box",
           "name": "صندوق دونر ميكس",
           "description": "مزيج من لحم البقر والدجاج دونر مع بطاطس مقلية وسلطة.",
-          "price": 7000,
-          "image": "/new/IMG_3899.JPG"
+          "price": 7000
         },
         {
           "id": "kapsalon-plate",
           "name": "طبق كابسالون",
           "description": "بطاطس مقلية مع لحم دونر وجبن مذاب.",
-          "price": 12000,
-          "image": "/new/IMG_3899.JPG"
+          "price": 12000
         }
       ]
     },
@@ -119,8 +117,7 @@
           "id": "doner-pide",
           "name": "بيدا دونر",
           "description": "بيدا محشوة بلحم دونر.",
-          "price": 12000,
-          "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop"
+          "price": 12000
         },
         {
           "id": "special-pide",
@@ -133,8 +130,7 @@
           "id": "spinach-pide",
           "name": "بيدا سبانخ",
           "description": "سبانخ مطبوخ مع موزاريلا وجبن أبيض.",
-          "price": 11000,
-          "image": "/new/IMG_3903.JPG"
+          "price": 11000
         }
       ]
     },
@@ -278,8 +274,7 @@
           "id": "rizzo-item",
           "name": "ريزو",
           "description": "وعاء دجاج مقرمش وأرز.",
-          "price": 6500,
-          "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
+          "price": 6500
         }
       ]
     },
@@ -291,8 +286,7 @@
           "id": "german-pizza",
           "name": "بيتزا ألمانية",
           "description": "صلصة كريم فريش، ديك رومي، فطر.",
-          "price": 12000,
-          "image": "/images/optimized/IMG_2865.webp"
+          "price": 12000
         },
         {
           "id": "kurdish-pizza",

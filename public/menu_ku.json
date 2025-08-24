@@ -78,15 +78,13 @@
           "id": "mixed-doner-box",
           "name": "بۆکسی تێکەڵەی دۆنەر",
           "description": "تێکەڵەی گۆشتی گۆشت و مۆرغی دۆنەر لەگەڵ فرەنچ فرایز و سەلاتە.",
-          "price": 7000,
-          "image": "/new/IMG_3899.JPG"
+          "price": 7000
         },
         {
           "id": "kapsalon-plate",
           "name": "خواردنی کەپسەلۆن",
           "description": "فرەنچ فرایز بە گۆشتی دۆنەر و پەنیری تواوە.",
-          "price": 12000,
-          "image": "/new/IMG_3899.JPG"
+          "price": 12000
         }
       ]
     },
@@ -119,8 +117,7 @@
           "id": "doner-pide",
           "name": "پیدەی دۆنەر",
           "description": "پیدە پڕکراوە بە گۆشتی دۆنەر.",
-          "price": 12000,
-          "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop"
+          "price": 12000
         },
         {
           "id": "special-pide",
@@ -133,8 +130,7 @@
           "id": "spinach-pide",
           "name": "پیدەی سپێناخ",
           "description": "سپێناخی چێکراو لەگەڵ مۆزەرێلا و پەنیری سپی.",
-          "price": 11000,
-          "image": "/new/IMG_3903.JPG"
+          "price": 11000
         }
       ]
     },
@@ -278,8 +274,7 @@
           "id": "rizzo-item",
           "name": "ریزۆ",
           "description": "کەوەی مۆرغی کرەسپی و برنج.",
-          "price": 6500,
-          "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop"
+          "price": 6500
         }
       ]
     },
@@ -291,8 +286,7 @@
           "id": "german-pizza",
           "name": "پیتزای ئەڵمانی",
           "description": "سۆسی کرێم فڕێش، تورکی، کەڕوو.",
-          "price": 12000,
-          "image": "/images/optimized/IMG_2865.webp"
+          "price": 12000
         },
         {
           "id": "kurdish-pizza",
