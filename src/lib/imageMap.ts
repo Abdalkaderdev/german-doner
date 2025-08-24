@@ -21,6 +21,7 @@ export const localImageByItemId: Record<string, string> = {
   // Pide
   "sucuk-pide": "/images/optimized/IMG_1158_TIF.webp",
   "cheese-pide": "/images/optimized/IMG_3772.PNG.webp",
+  // doner-pide intentionally unmapped to use logo fallback
   // spinach-pide intentionally unmapped to use logo fallback
   "minced-meat-pide": "/images/optimized/minced.webp",
   "lahmacun": "/images/optimized/IMG_3773.PNG.webp",
@@ -54,7 +55,11 @@ export const localImageByItemId: Record<string, string> = {
   "kids-fries": "/images/optimized/IMG_3904.JPG.webp",
   
   // Special Pizzas
-  "kurdish-pizza": "/images/optimized/IMG_3902.JPG.webp",
+  // german-pizza intentionally unmapped to use logo fallback
+  "kurdish-pizza": "/images/optimized/IMG_3902.JPG-medium.webp",
+  
+  // Rizzo
+  // rizzo-item intentionally unmapped to use logo fallback
 };
 
 export function resolveItemImage(item: { id?: string; image?: string }): string {
