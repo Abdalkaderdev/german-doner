@@ -66,7 +66,7 @@ const Categories = () => {
               : cat.id === 'drinks'
                 ? '/images/optimized/assorted-beverages.webp'
               : cat.id === 'special'
-                ? '/images/optimized/IMG_3902.JPG-medium.webp'
+                ? resolveItemImage({ id: 'kurdish-pizza' })
               : cat.id === 'rizzo'
                 ? '/images/upload/IMG_4123.JPG'
                   : resolveItemImage(cat.items?.[0] || {});
