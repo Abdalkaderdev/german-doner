@@ -31,8 +31,7 @@
           "id": "yufka-kebap-chicken",
           "name": "Yufka Kebap Chicken",
           "description": "Onions, tomatoes, red cabbage, green lettuce.",
-          "price": 5500,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+          "price": 5500
         },
         {
           "id": "kebap-plate-beef",
@@ -52,8 +51,7 @@
           "id": "lahmacun",
           "name": "Lahmacun",
           "description": "Minced meat with a special mixture. Meat, lettuce, tomatoes, cabbage, onions and optional sauce.",
-          "price": 9000,
-          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
+          "price": 9000
         },
         {
           "id": "lahmacun-plate",
@@ -64,9 +62,30 @@
         },
         {
           "id": "doner-box",
-          "name": "Doner Box",
-          "description": "Doner meat with fries and salad.",
+          "name": "Meat Doner Box",
+          "description": "Beef doner meat with fries and salad.",
           "price": 6500,
+          "image": "/new/IMG_3899.JPG"
+        },
+        {
+          "id": "chicken-doner-box",
+          "name": "Chicken Doner Box",
+          "description": "Chicken doner meat with fries and salad.",
+          "price": 5500,
+          "image": "/new/IMG_3899.JPG"
+        },
+        {
+          "id": "mixed-doner-box",
+          "name": "Mixed Doner Box",
+          "description": "Mixed beef and chicken doner meat with fries and salad.",
+          "price": 7000,
+          "image": "/new/IMG_3899.JPG"
+        },
+        {
+          "id": "kapsalon-plate",
+          "name": "Kapsalon Plate",
+          "description": "Fries topped with meat doner and melted cheese.",
+          "price": 12000,
           "image": "/new/IMG_3899.JPG"
         }
       ]

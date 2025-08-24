@@ -31,8 +31,7 @@
           "id": "yufka-kebap-chicken",
           "name": "یوفکا کباب مۆرغ",
           "description": "پێڵەو، تەماتە، کەڵەمبڕی سوور، کەسڵەتی سەوز.",
-          "price": 5500,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+          "price": 5500
         },
         {
           "id": "kebap-plate-beef",
@@ -51,9 +50,8 @@
         {
           "id": "lahmacun",
           "name": "لەحمەجون",
-          "description": "گۆشتی نەرمکراوە بە تێکەڵەیەکی تایبەت. گۆشت، کەسڵەت، تەماتە، کەڵەمبڕ، پێڵەو و سۆسی بەردەست.",
-          "price": 9000,
-          "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
+          "description": "گۆشتی نەرمکراوە بە تێکەڵەیەکی تایبەت. گۆشت، کەسڵەت، تەماتە، کەڵەمڕ، پێڵەو و سۆسی بەردەست.",
+          "price": 9000
         },
         {
           "id": "lahmacun-plate",
@@ -64,9 +62,30 @@
         },
         {
           "id": "doner-box",
-          "name": "بۆکسی دۆنەر",
-          "description": "گۆشتی دۆنەر لەگەڵ فرەنچ فرایز و سەلاتە.",
+          "name": "بۆکسی گۆشتی دۆنەر",
+          "description": "گۆشتی گۆشتی دۆنەر لەگەڵ فرەنچ فرایز و سەلاتە.",
           "price": 6500,
+          "image": "/new/IMG_3899.JPG"
+        },
+        {
+          "id": "chicken-doner-box",
+          "name": "بۆکسی مۆرغی دۆنەر",
+          "description": "گۆشتی مۆرغی دۆنەر لەگەڵ فرەنچ فرایز و سەلاتە.",
+          "price": 5500,
+          "image": "/new/IMG_3899.JPG"
+        },
+        {
+          "id": "mixed-doner-box",
+          "name": "بۆکسی تێکەڵەی دۆنەر",
+          "description": "تێکەڵەی گۆشتی گۆشت و مۆرغی دۆنەر لەگەڵ فرەنچ فرایز و سەلاتە.",
+          "price": 7000,
+          "image": "/new/IMG_3899.JPG"
+        },
+        {
+          "id": "kapsalon-plate",
+          "name": "خواردنی کەپسەلۆن",
+          "description": "فرەنچ فرایز بە گۆشتی دۆنەر و پەنیری تواوە.",
+          "price": 12000,
           "image": "/new/IMG_3899.JPG"
         }
       ]
