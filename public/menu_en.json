@@ -1,6 +1,13 @@
 {
   "shopName": "German Doner",
   "currency": "IQD",
+  "workingHours": {
+    "daily": "Daily",
+    "hours": "12:00 PM - 11:00 PM",
+    "noDaysOff": "No days off",
+    "open": "Open",
+    "closed": "Closed"
+  },
   "categories": [
     {
       "id": "doner",
@@ -299,7 +306,8 @@
           "id": "kurdish-pizza",
           "name": "Kurdish Pizza",
           "description": "Doner meat in fresh cream sauce with red onions.",
-          "price": 12000
+          "price": 12000,
+          "image": "/images/optimized/IMG_3902.JPG.webp"
         }
       ]
     },

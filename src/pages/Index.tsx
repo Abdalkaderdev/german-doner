@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Languages } from "lucide-react";
 import ImageOptimized from "@/components/ImageOptimized";
+import WorkingHours from "@/components/WorkingHours";
 const logo = "/images/optimized/logo.webp";
 import { useNavigate } from "react-router-dom";
 
@@ -158,13 +159,7 @@ const Index = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <Card className="bg-card backdrop-blur-sm border border-border hover:border-primary transition-all duration-300">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl mb-3">🕐</div>
-                <h3 className="font-semibold text-foreground mb-2">Hours</h3>
-                <p className="text-[hsl(39_92%_53%)]">Daily: 11:00 - 22:00</p>
-              </CardContent>
-            </Card>
+            <WorkingHours language="en" />
           </motion.div>
         </motion.div>
       </motion.div>

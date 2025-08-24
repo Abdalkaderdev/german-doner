@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 const IMAGES_DIR = './public/images';
+const NEW_DIR = './public/new';
 const OUTPUT_DIR = './public/images/optimized';
 
 // Quality settings for different image types
@@ -81,6 +82,16 @@ async function processImage(filePath) {
     return;
   }
   
+  // Check if already optimized by looking for the main WebP file
+  const mainWebpPath = path.join(OUTPUT_DIR, `${name}.webp`);
+  try {
+    await fs.access(mainWebpPath);
+    console.log(`⏭️  Skipping ${path.basename(filePath)} - already optimized`);
+    return;
+  } catch {
+    // File doesn't exist, proceed with optimization
+  }
+  
   console.log(`\nProcessing: ${path.basename(filePath)}`);
   
   // Skip if already optimized
@@ -127,7 +138,11 @@ async function main() {
   
   await ensureDir(OUTPUT_DIR);
   
-  const allFiles = await walkDir(IMAGES_DIR);
+  // Process both images and new directories
+  const imagesFiles = await walkDir(IMAGES_DIR);
+  const newFiles = await walkDir(NEW_DIR);
+  const allFiles = [...imagesFiles, ...newFiles];
+  
   const imageFiles = allFiles.filter(file => {
     const ext = path.extname(file).toLowerCase();
     return ['.jpg', '.jpeg', '.png', '.webp', '.tif', '.tiff'].includes(ext);
@@ -137,6 +152,8 @@ async function main() {
   
   let totalOriginalSize = 0;
   let totalOptimizedSize = 0;
+  let processedCount = 0;
+  let skippedCount = 0;
   
   for (const filePath of imageFiles) {
     const stats = await fs.stat(filePath);
@@ -144,15 +161,20 @@ async function main() {
     
     const results = await processImage(filePath);
     if (results) {
+      processedCount++;
       results.forEach(result => {
         totalOptimizedSize += result.size;
       });
+    } else {
+      skippedCount++;
     }
   }
   
   const totalSavings = ((totalOriginalSize - totalOptimizedSize) / totalOriginalSize * 100).toFixed(1);
   
   console.log(`\n🎉 Optimization complete!`);
+  console.log(`Processed: ${processedCount} images`);
+  console.log(`Skipped (already optimized): ${skippedCount} images`);
   console.log(`Original size: ${(totalOriginalSize / 1024 / 1024).toFixed(1)}MB`);
   console.log(`Optimized size: ${(totalOptimizedSize / 1024 / 1024).toFixed(1)}MB`);
   console.log(`Total savings: ${totalSavings}%`);

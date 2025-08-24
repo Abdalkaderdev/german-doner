@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import ImageOptimized from "@/components/ImageOptimized";
+import WorkingHours from "@/components/WorkingHours";
 import { resolveItemImage } from "@/lib/imageMap";
 
 interface MenuItem { id: string; name: string; description?: string; price: number; image?: string }
@@ -44,6 +45,15 @@ const Categories = () => {
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-6">{data?.shopName || "Menu"}</h1>
         <p className="text-muted-foreground mb-8">Choose a category to browse items.</p>
+        
+        {/* Working Hours */}
+        <div className="flex justify-center mb-8">
+          <WorkingHours 
+            language={lang as 'en' | 'ku' | 'ar'} 
+            variant="compact" 
+            className="text-center"
+          />
+        </div>
 
         <div className="grid gap-6 sm:gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
           {categories.map((cat) => {

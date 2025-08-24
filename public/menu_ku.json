@@ -298,7 +298,8 @@
           "id": "kurdish-pizza",
           "name": "پیتزای کوردی",
           "description": "گۆشتی دۆنەر لە سۆسی کرێمی تازەدا لەگەڵ پێڵەوی سوور.",
-          "price": 12000
+          "price": 12000,
+          "image": "/images/optimized/IMG_3902.JPG.webp"
         }
       ]
     },

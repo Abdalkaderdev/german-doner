@@ -23,7 +23,7 @@ export const localImageByItemId: Record<string, string> = {
   "cheese-pide": "/images/optimized/IMG_3772.PNG.webp",
   // spinach-pide intentionally unmapped to use logo fallback
   "minced-meat-pide": "/images/optimized/minced.webp",
-  "lahmacun": "/images/optimized/IMG_2885.webp",
+  "lahmacun": "/images/optimized/IMG_3773.PNG.webp",
   "lahmacun-plate": "/images/optimized/IMG_3775.PNG.webp",
   "special-pide": "/images/optimized/IMG_3770.PNG.webp",
 
@@ -35,8 +35,6 @@ export const localImageByItemId: Record<string, string> = {
   "doner-pizza": "/images/optimized/IMG_3778.PNG.webp",
   "doner-box": "/images/optimized/IMG_3899.webp",
   "chicken-doner-box": "/images/optimized/IMG_3898.JPG.webp",
-  "mixed-doner-box": "/images/optimized/IMG_3899.webp",
-  "kapsalon-plate": "/images/optimized/IMG_3899.webp",
   // yufka kebap items intentionally unmapped to use logo fallback
   "kebap-plate-chicken": "/images/optimized/IMG_1100_TIF.webp",
   "kebap-plate-beef": "/images/optimized/IMG_1093_TIF.webp",
