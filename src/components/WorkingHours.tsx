@@ -11,24 +11,30 @@ interface WorkingHoursProps {
 const workingHoursData = {
   en: {
     title: 'Working Hours',
-    daily: 'Daily',
-    hours: '12:00 PM - 11:00 PM',
+    daily: 'Sun-Wed, Sat',
+    hours: '12:00 PM - 12:00 AM',
+    thursday: 'Thursday: 12:00 PM - 2:00 AM',
+    friday: 'Friday: 3:00 PM - 1:00 AM',
     noDaysOff: 'No days off',
     open: 'Open',
     closed: 'Closed'
   },
   ku: {
     title: 'کاتی کارکردن',
-    daily: 'هەموو ڕۆژ',
-    hours: '١٢:٠٠ دواتر لە نیوەڕۆ - ١١:٠٠ شەو',
+    daily: 'یەکشەممە-چوارشەممە، شەممە',
+    hours: '١٢:٠٠ دواتر لە نیوەڕۆ - ١٢:٠٠ شەو',
+    thursday: 'پێنجشەممە: ١٢:٠٠ دواتر لە نیوەڕۆ - ٢:٠٠ بەیانی',
+    friday: 'هەینی: ٣:٠٠ دواتر لە نیوەڕۆ - ١:٠٠ بەیانی',
     noDaysOff: 'هیچ ڕۆژێک دانەبەزێنرێت',
     open: 'کراوە',
     closed: 'داخراوە'
   },
   ar: {
     title: 'ساعات العمل',
-    daily: 'يومياً',
-    hours: '١٢:٠٠ ظهراً - ١١:٠٠ مساءً',
+    daily: 'الأحد-الأربعاء، السبت',
+    hours: '١٢:٠٠ ظهراً - ١٢:٠٠ منتصف الليل',
+    thursday: 'الخميس: ١٢:٠٠ ظهراً - ٢:٠٠ صباحاً',
+    friday: 'الجمعة: ٣:٠٠ مساءً - ١:٠٠ صباحاً',
     noDaysOff: 'لا توجد أيام إجازة',
     open: 'مفتوح',
     closed: 'مغلق'
@@ -46,11 +52,19 @@ const WorkingHours: React.FC<WorkingHoursProps> = ({
 
   if (variant === 'compact') {
     return (
-      <div className={`flex items-center gap-2 text-sm ${className}`}>
-        <Clock className="h-4 w-4 text-primary" />
-        <span className={`${isArabic ? 'font-arabic' : ''} ${isKurdish ? 'font-kurdish' : ''}`}>
-          {data.daily}: {data.hours}
-        </span>
+      <div className={`flex flex-col items-center gap-1 text-sm ${className}`}>
+        <div className="flex items-center gap-2">
+          <Clock className="h-4 w-4 text-primary" />
+          <span className={`${isArabic ? 'font-arabic' : ''} ${isKurdish ? 'font-kurdish' : ''}`}>
+            {data.daily}: {data.hours}
+          </span>
+        </div>
+        <div className={`text-xs text-muted-foreground ${isArabic ? 'font-arabic' : ''} ${isKurdish ? 'font-kurdish' : ''}`}>
+          {data.thursday}
+        </div>
+        <div className={`text-xs text-muted-foreground ${isArabic ? 'font-arabic' : ''} ${isKurdish ? 'font-kurdish' : ''}`}>
+          {data.friday}
+        </div>
       </div>
     );
   }
@@ -74,6 +88,15 @@ const WorkingHours: React.FC<WorkingHoursProps> = ({
               <span className={`font-semibold text-primary ${isArabic ? 'font-arabic' : ''} ${isKurdish ? 'font-kurdish' : ''}`}>
                 {data.hours}
               </span>
+            </div>
+            
+            <div className="text-sm space-y-1">
+              <div className={`text-muted-foreground ${isArabic ? 'font-arabic' : ''} ${isKurdish ? 'font-kurdish' : ''}`}>
+                {data.thursday}
+              </div>
+              <div className={`text-muted-foreground ${isArabic ? 'font-arabic' : ''} ${isKurdish ? 'font-kurdish' : ''}`}>
+                {data.friday}
+              </div>
             </div>
             
             <div className="flex justify-between items-center">
@@ -101,6 +124,10 @@ const WorkingHours: React.FC<WorkingHoursProps> = ({
         <p className={`text-[hsl(39_92%_53%)] mb-1 ${isArabic ? 'font-arabic' : ''} ${isKurdish ? 'font-kurdish' : ''}`}>
           {data.daily}: {data.hours}
         </p>
+        <div className={`text-xs text-muted-foreground mb-2 space-y-1 ${isArabic ? 'font-arabic' : ''} ${isKurdish ? 'font-kurdish' : ''}`}>
+          <p>{data.thursday}</p>
+          <p>{data.friday}</p>
+        </div>
         <p className={`text-sm text-muted-foreground ${isArabic ? 'font-arabic' : ''} ${isKurdish ? 'font-kurdish' : ''}`}>
           {data.noDaysOff}
         </p>
