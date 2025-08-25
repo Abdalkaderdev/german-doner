@@ -7,7 +7,7 @@ export const localImageByItemId: Record<string, string> = {
   "salmon-pizza": "/images/optimized/IMG_2864.webp",
   "turkey-beef-salami-pizza": "/images/optimized/IMG_1168_TIF.webp",
   "salami-pizza": "/images/optimized/IMG_3781.PNG.webp",
-  // mix pizza intentionally unmapped to use logo fallback
+  "pizza-mix": "/images/upload/IMG_4138.JPG",
   "diavolo-pizza": "/images/optimized/IMG_1169_TIF.webp",
   "four-cheese-pizza": "/images/optimized/IMG_3779.PNG.webp",
   "four-season-pizza": "/images/optimized/IMG_3777.PNG.webp",
@@ -23,7 +23,7 @@ export const localImageByItemId: Record<string, string> = {
   "sucuk-pide": "/images/optimized/IMG_1158_TIF.webp",
   "cheese-pide": "/images/optimized/IMG_3772.PNG.webp",
   // doner-pide intentionally unmapped to use logo fallback
-  // spinach-pide intentionally unmapped to use logo fallback
+  "spinach-pide": "/images/optimized/IMG_2885.webp",
   "minced-meat-pide": "/images/optimized/minced.webp",
   "lahmacun": "/images/optimized/IMG_3773.PNG.webp",
   "lahmacun-plate": "/images/optimized/IMG_3775.PNG.webp",
@@ -57,7 +57,7 @@ export const localImageByItemId: Record<string, string> = {
   "kids-fries": "/images/optimized/IMG_3904.JPG.webp",
   
   // Special Pizzas
-  // german-pizza intentionally unmapped to use logo fallback
+  "german-pizza": "/images/optimized/IMG_2865.webp",
   "kurdish-pizza": "/images/optimized/IMG_3902.JPG-medium.webp",
   
   // Rizzo
