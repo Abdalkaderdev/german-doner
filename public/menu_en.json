@@ -41,6 +41,12 @@
           "price": 5500
         },
         {
+          "id": "yufka-kebap-mix",
+          "name": "Yufka Kebap Mix",
+          "description": "Mixed beef and chicken with onions, tomatoes, red cabbage, green lettuce.",
+          "price": 7000
+        },
+        {
           "id": "kebap-plate-beef",
           "name": "Kebap Plate Beef",
           "description": "Beef doner kebap served on a plate with sides.",

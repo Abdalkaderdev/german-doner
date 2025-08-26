@@ -34,10 +34,13 @@ export const localImageByItemId: Record<string, string> = {
   "doner-kebap-beef": "/images/optimized/IMG_1098_TIF.webp",
   "yufka-kebap-chicken": "/images/optimized/IMG_3774.PNG.webp",
   "yufka-kebap-beef": "/images/optimized/IMG_3774.PNG.webp",
+  "yufka-kebap-mix": "/images/optimized/IMG_3774.PNG.webp",
   "doner-pizza": "/images/optimized/IMG_3778.PNG.webp",
   "doner-chicken-pizza": "/images/upload/IMG_4124.JPG",
   "doner-box": "/images/optimized/IMG_3899.webp",
   "chicken-doner-box": "/images/optimized/IMG_3898.JPG-medium.webp",
+  "mixed-doner-box": "/images/optimized/IMG_3898.JPG-medium.webp",
+  "kapsalon-plate": "/new/IMG_4190.JPG",
   // yufka kebap items intentionally unmapped to use logo fallback
   "kebap-plate-chicken": "/images/optimized/IMG_1100_TIF.webp",
   "kebap-plate-beef": "/images/optimized/IMG_1093_TIF.webp",
