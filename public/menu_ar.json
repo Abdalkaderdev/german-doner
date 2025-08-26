@@ -21,6 +21,12 @@
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
+          "id": "doner-kebap-mix",
+          "name": "دونر كباب ميكس",
+          "description": "مزيج من لحم البقر والدجاج دونر كباب في خبز طازج.",
+          "price": 6000
+        },
+        {
           "id": "yufka-kebap-beef",
           "name": "يوفكا كباب لحم",
           "description": "بصل، طماطم، ملفوف أحمر، خس أخضر.",
@@ -37,7 +43,7 @@
           "id": "yufka-kebap-mix",
           "name": "يوفكا كباب ميكس",
           "description": "مزيج من لحم البقر والدجاج مع بصل، طماطم، ملفوف أحمر، خس أخضر.",
-          "price": 7000
+          "price": 6000
         },
         {
           "id": "kebap-plate-beef",
@@ -84,7 +90,7 @@
           "id": "mixed-doner-box",
           "name": "صندوق دونر ميكس",
           "description": "مزيج من لحم البقر والدجاج دونر مع بطاطس مقلية وسلطة.",
-          "price": 7000
+          "price": 6000
         },
         {
           "id": "kapsalon-plate",

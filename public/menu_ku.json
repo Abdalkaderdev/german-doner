@@ -21,6 +21,12 @@
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
+          "id": "doner-kebap-mix",
+          "name": "دۆنەر کباب تێکەڵە",
+          "description": "تێکەڵەی گۆشت و مۆرغی دۆنەر کباب لە نانی تازەدا.",
+          "price": 6000
+        },
+        {
           "id": "yufka-kebap-beef",
           "name": "یوفکا کباب گۆشت",
           "description": "پێڵەو، تەماتە، کەڵەمبڕی سوور، کەسڵەتی سەوز.",
@@ -37,7 +43,7 @@
           "id": "yufka-kebap-mix",
           "name": "یوفکا کباب تێکەڵە",
           "description": "تێکەڵەی گۆشت و مۆرغ لەگەڵ پێڵەو، تەماتە، کەڵەمبڕی سوور، کەسڵەتی سەوز.",
-          "price": 7000
+          "price": 6000
         },
         {
           "id": "kebap-plate-beef",
@@ -84,7 +90,7 @@
           "id": "mixed-doner-box",
           "name": "بۆکسی تێکەڵەی دۆنەر",
           "description": "تێکەڵەی گۆشتی گۆشت و مۆرغی دۆنەر لەگەڵ فرەنچ فرایز و سەلاتە.",
-          "price": 7000
+          "price": 6000
         },
         {
           "id": "kapsalon-plate",

@@ -28,6 +28,12 @@
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
+          "id": "doner-kebap-mix",
+          "name": "Doner Kebap Mix",
+          "description": "Mixed beef and chicken doner kebap in fresh bread.",
+          "price": 6000
+        },
+        {
           "id": "yufka-kebap-beef",
           "name": "Yufka Kebap Beef",
           "description": "Onions, tomatoes, red cabbage, green lettuce.",
@@ -44,7 +50,7 @@
           "id": "yufka-kebap-mix",
           "name": "Yufka Kebap Mix",
           "description": "Mixed beef and chicken with onions, tomatoes, red cabbage, green lettuce.",
-          "price": 7000
+          "price": 6000
         },
         {
           "id": "kebap-plate-beef",
@@ -91,7 +97,7 @@
           "id": "mixed-doner-box",
           "name": "Mixed Doner Box",
           "description": "Mixed beef and chicken doner meat with fries and salad.",
-          "price": 7000
+          "price": 6000
         },
         {
           "id": "kapsalon-plate",
