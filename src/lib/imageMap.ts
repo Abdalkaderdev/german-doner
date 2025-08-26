@@ -22,7 +22,7 @@ export const localImageByItemId: Record<string, string> = {
   // Pide
   "sucuk-pide": "/images/optimized/IMG_1158_TIF.webp",
   "cheese-pide": "/images/optimized/IMG_3772.PNG.webp",
-  // doner-pide intentionally unmapped to use logo fallback
+  "doner-pide": "/new/IMG_4192.JPG",
   "spinach-pide": "/images/optimized/IMG_2885.webp",
   "minced-meat-pide": "/images/optimized/minced.webp",
   "lahmacun": "/images/optimized/IMG_3773.PNG.webp",
