@@ -24,7 +24,7 @@
           "id": "doner-kebap-mix",
           "name": "دونر كباب ميكس",
           "description": "مزيج من لحم البقر والدجاج دونر كباب في خبز طازج.",
-          "price": 6000
+          "price": 6500
         },
         {
           "id": "yufka-kebap-beef",
@@ -43,7 +43,7 @@
           "id": "yufka-kebap-mix",
           "name": "يوفكا كباب ميكس",
           "description": "مزيج من لحم البقر والدجاج مع بصل، طماطم، ملفوف أحمر، خس أخضر.",
-          "price": 6000
+          "price": 6500
         },
         {
           "id": "kebap-plate-beef",
@@ -90,7 +90,7 @@
           "id": "mixed-doner-box",
           "name": "صندوق دونر ميكس",
           "description": "مزيج من لحم البقر والدجاج دونر مع بطاطس مقلية وسلطة.",
-          "price": 6000
+          "price": 6500
         },
         {
           "id": "kapsalon-plate",
@@ -313,14 +313,14 @@
       "id": "drinks",
       "name": "مشروبات",
       "items": [
-        { "id": "cola", "name": "كولا", "description": "مشروب كولا منعش.", "price": 1000, "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop" },
-        { "id": "fanta", "name": "فانتا", "description": "صودا بنكهة البرتقال.", "price": 1000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "water", "name": "ماء", "description": "ماء معبأ.", "price": 500, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
-        { "id": "sprite", "name": "سبرايت", "description": "صودا ليمون وليمون.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
+        { "id": "cola", "name": "كولا", "description": "مشروب كولا منعش.", "price": 1000, "image": "/drinks/coca-cola-metal-box-33-cl.jpg" },
+        { "id": "fanta", "name": "فانتا", "description": "صودا بنكهة البرتقال.", "price": 1000, "image": "/drinks/208178_p_590x.webp" },
+        { "id": "water", "name": "ماء", "description": "ماء معبأ.", "price": 500, "image": "/drinks/ماء638314825214263710.jpg" },
+        { "id": "sprite", "name": "سبرايت", "description": "صودا ليمون وليمون.", "price": 1000, "image": "/drinks/spritecan.jpg" },
         { "id": "cola-diet", "name": "كولا دايت", "description": "مشروب كولا دايت.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
-        { "id": "yogurt", "name": "زبادي", "description": "مشروب زبادي.", "price": 1000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
+        { "id": "yogurt", "name": "زبادي", "description": "مشروب زبادي.", "price": 1500, "image": "/drinks/61ObLPiv0UL.jpg" },
         { "id": "soda", "name": "صودا", "description": "ماء صودا فوار.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
-        { "id": "tea", "name": "شاي", "description": "شاي أسود ساخن.", "price": 1000, "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" }
+        { "id": "tea", "name": "شاي", "description": "شاي أسود ساخن.", "price": 1000, "image": "/drinks/68-689870_turkish-tea-glass-png-transparent-png.png" }
       ]
     }
   ]

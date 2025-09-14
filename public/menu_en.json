@@ -31,7 +31,7 @@
           "id": "doner-kebap-mix",
           "name": "Doner Kebap Mix",
           "description": "Mixed beef and chicken doner kebap in fresh bread.",
-          "price": 6000
+          "price": 6500
         },
         {
           "id": "yufka-kebap-beef",
@@ -50,7 +50,7 @@
           "id": "yufka-kebap-mix",
           "name": "Yufka Kebap Mix",
           "description": "Mixed beef and chicken with onions, tomatoes, red cabbage, green lettuce.",
-          "price": 6000
+          "price": 6500
         },
         {
           "id": "kebap-plate-beef",
@@ -97,7 +97,7 @@
           "id": "mixed-doner-box",
           "name": "Mixed Doner Box",
           "description": "Mixed beef and chicken doner meat with fries and salad.",
-          "price": 6000
+          "price": 6500
         },
         {
           "id": "kapsalon-plate",
@@ -321,14 +321,14 @@
       "id": "drinks",
       "name": "Beverages",
       "items": [
-        { "id": "cola", "name": "Cola", "description": "Refreshing cola drink.", "price": 1000, "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop" },
-        { "id": "fanta", "name": "Fanta", "description": "Orange flavored soda.", "price": 1000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "water", "name": "Water", "description": "Bottled water.", "price": 500, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
-        { "id": "sprite", "name": "Sprite", "description": "Lemon-lime soda.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
+        { "id": "cola", "name": "Cola", "description": "Refreshing cola drink.", "price": 1000, "image": "/drinks/coca-cola-metal-box-33-cl.jpg" },
+        { "id": "fanta", "name": "Fanta", "description": "Orange flavored soda.", "price": 1000, "image": "/drinks/208178_p_590x.webp" },
+        { "id": "water", "name": "Water", "description": "Bottled water.", "price": 500, "image": "/drinks/ماء638314825214263710.jpg" },
+        { "id": "sprite", "name": "Sprite", "description": "Lemon-lime soda.", "price": 1000, "image": "/drinks/spritecan.jpg" },
         { "id": "cola-diet", "name": "Cola Diet", "description": "Diet cola drink.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
-        { "id": "yogurt", "name": "Yogurt", "description": "Yogurt drink.", "price": 1000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
+        { "id": "yogurt", "name": "Yogurt", "description": "Yogurt drink.", "price": 1500, "image": "/drinks/61ObLPiv0UL.jpg" },
         { "id": "soda", "name": "Soda", "description": "Sparkling soda water.", "price": 1500, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
-        { "id": "tea", "name": "Tea", "description": "Hot black tea.", "price": 1000, "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" }
+        { "id": "tea", "name": "Tea", "description": "Hot black tea.", "price": 1000, "image": "/drinks/68-689870_turkish-tea-glass-png-transparent-png.png" }
       ]
     }
   ]
