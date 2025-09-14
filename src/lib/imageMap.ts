@@ -47,14 +47,14 @@ export const localImageByItemId: Record<string, string> = {
   "kebap-plate-beef": "/images/optimized/IMG_1093_TIF.webp",
 
   // Beverages (use a representative image for all)
-  "cola": "/images/optimized/assorted-beverages.webp",
-  "fanta": "/images/optimized/assorted-beverages.webp",
-  "water": "/images/optimized/assorted-beverages.webp",
-  "sprite": "/images/optimized/assorted-beverages.webp",
+  "cola": "/drinks/coca-cola-metal-box-33-cl.jpg",
+  "fanta": "/drinks/208178_p_590x.webp",
+  "water": "/drinks/ماء638314825214263710.jpg",
+  "sprite": "/drinks/spritecan.jpg",
   "cola-diet": "/images/optimized/assorted-beverages.webp",
-  "yogurt": "/images/optimized/assorted-beverages.webp",
+  "yogurt": "/drinks/61ObLPiv0UL.jpg",
   "soda": "/images/optimized/assorted-beverages.webp",
-  "tea": "/images/optimized/assorted-beverages.webp",
+  "tea": "/drinks/68-689870_turkish-tea-glass-png-transparent-png.png",
 
   // Kids Meals
   "kids-nugget": "/images/optimized/IMG_3900.JPG.webp",
