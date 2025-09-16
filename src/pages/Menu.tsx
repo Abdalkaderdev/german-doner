@@ -10,6 +10,7 @@ import ImageOptimized from "@/components/ImageOptimized";
 import { Separator } from "@/components/ui/separator";
 import MenuItemCard from "@/components/MenuItemCard";
 import WorkingHours from "@/components/WorkingHours";
+import Footer from "@/components/Footer";
 const logo = "/images/optimized/logo.webp";
 
 interface MenuItem {
@@ -286,6 +287,9 @@ export default function Menu() {
           </Button>
         </div>
       </main>
+      
+      {/* Footer */}
+      <Footer isRTL={isRTL} />
     </div>
   );
 }

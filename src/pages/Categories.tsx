@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import ImageOptimized from "@/components/ImageOptimized";
 import WorkingHours from "@/components/WorkingHours";
+import Footer from "@/components/Footer";
 import { resolveItemImage } from "@/lib/imageMap";
 
 interface MenuItem { id: string; name: string; description?: string; price: number; image?: string }
@@ -104,6 +105,9 @@ const Categories = () => {
           })}
         </div>
       </div>
+      
+      {/* Footer */}
+      <Footer isRTL={lang === 'ar'} />
     </div>
   );
 };
