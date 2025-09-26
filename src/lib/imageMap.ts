@@ -20,7 +20,7 @@ export const localImageByItemId: Record<string, string> = {
   "vegetarian-pizza": "/images/optimized/IMG_2878.JPG.webp",
 
   // Pide
-  "sucuk-pide": "/images/optimized/IMG_1158_TIF.webp",
+  "sucuk-pide": "/images/sujuk-pide.jpg",
   "cheese-pide": "/images/optimized/IMG_3772.PNG.webp",
   "doner-pide": "/new/IMG_4192.JPG",
   "spinach-pide": "/images/optimized/IMG_2885.webp",

@@ -110,7 +110,7 @@
           "name": "بيدا سجق",
           "description": "خبز تركي مسطح مع سجق حار.",
           "price": 12000,
-          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
+          "image": "/images/sujuk-pide.jpg"
         },
         {
           "id": "cheese-pide",
