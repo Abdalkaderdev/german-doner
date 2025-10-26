@@ -16,93 +16,93 @@
         {
           "id": "doner-kebap-beef",
           "name": "Doner Kebap Beef",
-          "description": "Classic beef doner kebap in fresh bread.",
+          "description": "Classic beef doner kebap wrapped in fresh bread with onions, tomatoes, red cabbage, green lettuce, and signature sauce.",
           "price": 6500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "doner-kebap-chicken",
           "name": "Doner Kebap Chicken",
-          "description": "Classic chicken doner kebap in fresh bread.",
+          "description": "Classic chicken doner kebap wrapped in fresh bread with onions, tomatoes, red cabbage, green lettuce, and signature sauce.",
           "price": 5500,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "doner-kebap-mix",
           "name": "Doner Kebap Mix",
-          "description": "Mixed beef and chicken doner kebap in fresh bread.",
+          "description": "Mixed beef and chicken doner kebap wrapped in fresh bread with onions, tomatoes, red cabbage, green lettuce, and signature sauce.",
           "price": 6500
         },
         {
           "id": "yufka-kebap-beef",
           "name": "Yufka Kebap Beef",
-          "description": "Onions, tomatoes, red cabbage, green lettuce.",
+          "description": "Beef doner kebap wrapped in thin yufka bread with onions, tomatoes, red cabbage, green lettuce, and signature sauce.",
           "price": 6500,
           "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
         },
         {
           "id": "yufka-kebap-chicken",
           "name": "Yufka Kebap Chicken",
-          "description": "Onions, tomatoes, red cabbage, green lettuce.",
+          "description": "Chicken doner kebap wrapped in thin yufka bread with onions, tomatoes, red cabbage, green lettuce, and signature sauce.",
           "price": 5500
         },
         {
           "id": "yufka-kebap-mix",
           "name": "Yufka Kebap Mix",
-          "description": "Mixed beef and chicken with onions, tomatoes, red cabbage, green lettuce.",
+          "description": "Mixed beef and chicken doner kebap wrapped in thin yufka bread with onions, tomatoes, red cabbage, green lettuce, and signature sauce.",
           "price": 6500
         },
         {
           "id": "kebap-plate-beef",
           "name": "Kebap Plate Beef",
-          "description": "Beef doner kebap served on a plate with sides.",
+          "description": "Beef doner kebap served on a plate with fresh vegetables and signature sauce.",
           "price": 11000,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "kebap-plate-chicken",
           "name": "Kebap Plate Chicken",
-          "description": "Chicken doner kebap served on a plate with sides.",
+          "description": "Chicken doner kebap served on a plate with fresh vegetables and signature sauce.",
           "price": 10000,
           "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
         },
         {
           "id": "lahmacun",
           "name": "Lahmacun",
-          "description": "Minced meat with a special mixture. Meat, lettuce, tomatoes, cabbage, onions and optional sauce.",
+          "description": "Minced meat flatbread with special spice mixture. Topped with meat, lettuce, tomatoes, cabbage, onions, and optional sauce.",
           "price": 9000
         },
         {
           "id": "lahmacun-plate",
           "name": "Lahmacun Plate",
-          "description": "Meat, lettuce, tomatoes, cabbage, onions and optional sauce.",
+          "description": "Minced meat flatbread served on a plate with lettuce, tomatoes, cabbage, onions, and optional signature sauce.",
           "price": 11000,
           "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
         },
         {
           "id": "doner-box",
           "name": "Meat Doner Box",
-          "description": "Beef doner meat with fries and salad.",
+          "description": "Beef doner meat served in a box with crispy fries and signature sauce.",
           "price": 6500,
           "image": "/new/IMG_3899.JPG"
         },
         {
           "id": "chicken-doner-box",
           "name": "Chicken Doner Box",
-          "description": "Chicken doner meat with fries and salad.",
+          "description": "Chicken doner meat served in a box with crispy fries and signature sauce.",
           "price": 5500,
           "image": "/new/IMG_3899.JPG"
         },
         {
           "id": "mixed-doner-box",
           "name": "Mixed Doner Box",
-          "description": "Mixed beef and chicken doner meat with fries and salad.",
+          "description": "Mixed beef and chicken doner meat served in a box with crispy fries and signature sauce.",
           "price": 6500
         },
         {
           "id": "kapsalon-plate",
           "name": "Kapsalon Plate",
-          "description": "Fries topped with meat doner and melted cheese.",
+          "description": "Crispy fries topped with doner meat, melted cheese, and signature sauce.",
           "price": 12000
         }
       ]
@@ -115,40 +115,40 @@
         {
           "id": "sucuk-pide",
           "name": "Sucuk Pide",
-          "description": "Turkish flatbread with spicy sausage.",
+          "description": "Flatbread topped with spicy sucuk sausage, cheese, and herbs.",
           "price": 12000,
           "image": "/images/sujuk-pide.jpg"
         },
         {
           "id": "cheese-pide",
           "name": "Cheese Pide",
-          "description": "Mozzarella, feta cheese.",
+          "description": "Flatbread filled with mozzarella and feta cheese, baked to perfection.",
           "price": 10000,
           "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop"
         },
         {
           "id": "minced-meat-pide",
           "name": "Minced Meat Pide",
-          "description": "Minced meat with special recipe.",
+          "description": "Flatbread filled with seasoned minced meat, onions, and herbs in our special recipe.",
           "price": 11000
         },
         {
           "id": "doner-pide",
           "name": "Doner Pide",
-          "description": "Pide stuffed with doner meat.",
+          "description": "Flatbread stuffed with flavorful doner meat, cheese, and fresh herbs.",
           "price": 12000
         },
         {
           "id": "special-pide",
           "name": "Special Pide",
-          "description": "Meat, chicken, green pepper, jalapeno, red onion, tomato.",
+          "description": "Flatbread topped with meat, chicken, green peppers, jalapeno, red onions, and tomatoes.",
           "price": 13000,
           "image": "/new/IMG_3902.JPG"
         },
         {
           "id": "spinach-pide",
           "name": "Spinach Pide",
-          "description": "Cooked spinach with mozzarella and white cheese.",
+          "description": "Flatbread filled with cooked spinach, mozzarella cheese, and white cheese.",
           "price": 11000
         }
       ]
@@ -160,108 +160,108 @@
         {
           "id": "salmon-pizza",
           "name": "Salmon Pizza",
-          "description": "Pizza topped with fresh salmon and cheese.",
+          "description": "Fresh pizza topped with premium salmon fillet, mozzarella cheese, and herbs.",
           "price": 14000
         },
         {
           "id": "four-season-pizza",
           "name": "Four Season Pizza",
-          "description": "Mushrooms, peppers, salami, turkey.",
+          "description": "Pizza divided into four sections with mushrooms, bell peppers, salami, and turkey.",
           "price": 12000,
           "image": "/images/optimized/IMG_3777.PNG.webp"
         },
         {
           "id": "doner-pizza",
           "name": "Doner Pizza",
-          "description": "Doner meat.",
+          "description": "Pizza topped with seasoned doner meat, cheese, and fresh herbs.",
           "price": 12000
         },
         {
           "id": "doner-chicken-pizza",
           "name": "Doner Chicken Pizza",
-          "description": "Pizza topped with doner chicken and cheese.",
+          "description": "Pizza topped with tender chicken doner, mozzarella cheese, and fresh herbs.",
           "price": 11000
         },
         {
           "id": "diavolo-pizza",
           "name": "Diavolo Pizza",
-          "description": "Spicy pizza with pepperoni and chili.",
+          "description": "Spicy pizza topped with pepperoni, chili peppers, mozzarella, and herbs.",
           "price": 12000
         },
         {
           "id": "pizza-mix",
           "name": "Pizza Mix",
-          "description": "Pizza with a mix of meats and vegetables.",
+          "description": "Delicious pizza topped with a mix of assorted meats and fresh vegetables.",
           "price": 13000
         },
         {
           "id": "turkey-beef-salami-pizza",
           "name": "Turkey & Beef Salami Pizza",
-          "description": "Pizza topped with turkey and beef salami.",
+          "description": "Flavorful pizza topped with turkey slices, beef salami, and mozzarella cheese.",
           "price": 12000
         },
         {
           "id": "four-cheese-pizza",
           "name": "Four Cheese Pizza",
-          "description": "Mozzarella, Gorgonzola, feta, and Parmesan.",
+          "description": "Rich pizza topped with mozzarella, Gorgonzola, feta, and Parmesan cheeses.",
           "price": 11000
         },
         {
           "id": "tuna-pizza",
           "name": "Tuna Pizza",
-          "description": "Tuna, fresh onions.",
+          "description": "Fresh pizza topped with tuna, red onions, capers, and mozzarella cheese.",
           "price": 9000,
           "image": "/images/optimized/IMG_3780.PNG.webp"
         },
         {
           "id": "pepperoni-pizza",
           "name": "Pepperoni Pizza",
-          "description": "Pizza topped with pepperoni and cheese.",
+          "description": "Pizza topped with spicy pepperoni, mozzarella cheese, and herbs.",
           "price": 12000
         },
         {
           "id": "margherita-pizza",
           "name": "Margherita Pizza",
-          "description": "Classic pizza with tomato sauce, mozzarella, and basil.",
+          "description": "Classic pizza with tomato sauce, fresh mozzarella, and basil.",
           "price": 8000
         },
         {
           "id": "turkey-pizza",
           "name": "Turkey Pizza",
-          "description": "Pizza topped with turkey and cheese.",
+          "description": "Delicious pizza topped with tender turkey slices and mozzarella cheese.",
           "price": 10000,
           "image": "/images/optimized/IMG_3778.PNG.webp"
         },
         {
           "id": "salami-pizza",
           "name": "Salami Pizza",
-          "description": "Beef salami.",
+          "description": "Savory pizza topped with beef salami and mozzarella cheese.",
           "price": 10000,
           "image": "/images/optimized/IMG_3781.PNG.webp"
         },
         {
           "id": "mushroom-pizza",
           "name": "Mushroom Pizza",
-          "description": "Pizza topped with mushrooms and cheese.",
+          "description": "Delicious pizza topped with fresh mushrooms and mozzarella cheese.",
           "price": 9000
         },
         {
           "id": "spinach-pizza",
           "name": "Spinach Pizza",
-          "description": "Pizza topped with spinach and cheese.",
+          "description": "Healthy pizza topped with fresh spinach and mozzarella cheese.",
           "price": 10000,
           "image": "/new/IMG_3903.JPG"
         },
         {
           "id": "vegetarian-pizza",
           "name": "Vegetarian Pizza",
-          "description": "Vegetarian pizza with assorted vegetables.",
+          "description": "Garden-fresh pizza topped with assorted vegetables including peppers, mushrooms, tomatoes, and onions.",
           "price": 11000
         },
         {
           "id": "calzone-pizza",
           "name": "Calzone",
-          "description": "Salami, turkey, mushrooms.",
+          "description": "Folded pizza filled with salami, turkey, mushrooms, and mozzarella cheese.",
           "price": 12000
         }
       ]
@@ -273,14 +273,14 @@
         {
           "id": "kids-nugget",
           "name": "Nugget",
-          "description": "Chicken nuggets for kids.",
+          "description": "Tender chicken nuggets served with dipping sauce.",
           "price": 5000,
           "image": "/new/IMG_3900.JPG"
         },
         {
           "id": "kids-fries",
           "name": "Fries",
-          "description": "Crispy fries for kids.",
+          "description": "Crispy golden fries, perfect for kids.",
           "price": 3500,
           "image": "/new/IMG_3904.JPG"
         }
@@ -293,7 +293,7 @@
         {
           "id": "rizzo-item",
           "name": "Rizzo",
-          "description": "Crispy chicken and rice bowl.",
+          "description": "Crispy chicken and rice bowl served with fresh vegetables and sauce.",
           "price": 6500
         }
       ]
@@ -305,13 +305,13 @@
         {
           "id": "german-pizza",
           "name": "German Pizza",
-          "description": "Crème fraîche sauce, turkey, mushrooms.",
+          "description": "Unique German-style pizza with crème fraîche sauce, tender turkey, and fresh mushrooms.",
           "price": 12000
         },
         {
           "id": "kurdish-pizza",
           "name": "Kurdish Pizza",
-          "description": "Doner meat in fresh cream sauce with red onions.",
+          "description": "Traditional Kurdish pizza topped with doner meat in fresh cream sauce with red onions.",
           "price": 12000,
           "image": "/images/optimized/IMG_3902.JPG.webp"
         }
