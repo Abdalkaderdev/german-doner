@@ -322,7 +322,7 @@
       "items": [
         { "id": "cola", "name": "کۆلا", "description": "خواردنەوەی کۆلای نوێکەرەوە.", "price": 1000, "image": "/drinks/coca-cola-metal-box-33-cl.jpg" },
         { "id": "fanta", "name": "فانتا", "description": "سۆدای بەتامی پرتەقاڵ.", "price": 1000, "image": "/drinks/208178_p_590x.webp" },
-        { "id": "water", "name": "ئاو", "description": "ئاوی شووشەیی.", "price": 500, "image": "/drinks/ماء638314825214263710.jpg" },
+        { "id": "water", "name": "ئاو", "description": "ئاوی شووشەیی.", "price": 750, "image": "/drinks/ماء638314825214263710.jpg" },
         { "id": "sprite", "name": "سپرایت", "description": "سۆدای لایم و لیمۆن.", "price": 1000, "image": "/drinks/spritecan.jpg" },
         { "id": "cola-diet", "name": "کۆلای دایەت", "description": "خواردنەوەی کۆلای دایەت.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
         { "id": "yogurt", "name": "ماستاو", "description": "خواردنەوەی مەست.", "price": 1500, "image": "/drinks/61ObLPiv0UL.jpg" },

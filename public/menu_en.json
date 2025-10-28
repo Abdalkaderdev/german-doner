@@ -323,7 +323,7 @@
       "items": [
         { "id": "cola", "name": "Cola", "description": "Refreshing cola drink.", "price": 1000, "image": "/drinks/coca-cola-metal-box-33-cl.jpg" },
         { "id": "fanta", "name": "Fanta", "description": "Orange flavored soda.", "price": 1000, "image": "/drinks/208178_p_590x.webp" },
-        { "id": "water", "name": "Water", "description": "Bottled water.", "price": 500, "image": "/drinks/ماء638314825214263710.jpg" },
+        { "id": "water", "name": "Water", "description": "Bottled water.", "price": 750, "image": "/drinks/ماء638314825214263710.jpg" },
         { "id": "sprite", "name": "Sprite", "description": "Lemon-lime soda.", "price": 1000, "image": "/drinks/spritecan.jpg" },
         { "id": "cola-diet", "name": "Cola Diet", "description": "Diet cola drink.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
         { "id": "yogurt", "name": "Yogurt", "description": "Yogurt drink.", "price": 1500, "image": "/drinks/61ObLPiv0UL.jpg" },
