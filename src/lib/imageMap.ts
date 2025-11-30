@@ -13,7 +13,7 @@ export const localImageByItemId: Record<string, string> = {
   "four-season-pizza": "/images/optimized/IMG_3777.PNG.webp",
   "calzone-pizza": "/images/optimized/IMG_3782.PNG.webp",
   "tuna-pizza": "/images/optimized/IMG_3780.PNG.webp",
-  "turkey-pizza": "/images/optimized/IMG_3778.PNG.webp",
+  "turkey-pizza": "/images/IMG_1145_TIF.webp",
   "margherita-pizza": "/images/upload/IMG_4121.JPG",
   "mushroom-pizza": "/images/upload/IMG_4122.JPG",
   "spinach-pizza": "/new/IMG_3903.JPG",
