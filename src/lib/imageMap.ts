@@ -18,6 +18,7 @@ export const localImageByItemId: Record<string, string> = {
   "mushroom-pizza": "/images/upload/IMG_4122.JPG",
   "spinach-pizza": "/new/IMG_3903.JPG",
   "vegetarian-pizza": "/images/optimized/IMG_2878.JPG.webp",
+  "qalzone": "/new/IMG_6369.JPG.jpeg",
 
   // Pide
   "sucuk-pide": "/images/sujuk-pide.jpg",

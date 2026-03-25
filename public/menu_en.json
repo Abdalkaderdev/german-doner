@@ -263,6 +263,14 @@
           "name": "Calzone",
           "description": "Folded pizza filled with salami, turkey, mushrooms, and mozzarella cheese.",
           "price": 12000
+        },
+        {
+          "id": "qalzone",
+          "name": "Qalzone",
+          "description": "Grilled doner meat, melted mozzarella cheese, and our special pizza sauce wrapped in fresh dough.",
+          "price": 12000,
+          "image": "/new/IMG_6369.JPG.jpeg",
+          "isSpecial": true
         }
       ]
     },
