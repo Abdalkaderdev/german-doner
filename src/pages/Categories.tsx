@@ -70,6 +70,8 @@ const Categories = () => {
                 ? '/images/optimized/IMG_3902.JPG.jpg'
               : cat.id === 'rizzo'
                 ? '/images/upload/IMG_4123.JPG'
+              : cat.id === 'qalzone'
+                ? '/new/IMG_6369.JPG.jpeg'
                   : resolveItemImage(cat.items?.[0] || {});
             return (
               <motion.button
