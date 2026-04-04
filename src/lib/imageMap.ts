@@ -64,9 +64,6 @@ export const localImageByItemId: Record<string, string> = {
   // Special Pizzas
   "german-pizza": "/images/optimized/IMG_2865.webp",
   "kurdish-pizza": "/images/optimized/IMG_3902.JPG-medium.webp",
-  
-  // Rizzo
-  "rizzo-item": "/images/upload/IMG_4123.JPG",
 };
 
 export function resolveItemImage(item: { id?: string; image?: string }): string {
