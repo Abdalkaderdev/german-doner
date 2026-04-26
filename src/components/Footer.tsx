@@ -1,4 +1,4 @@
-import { Phone, Instagram, Facebook } from "lucide-react";
+import { Phone, Instagram, Facebook, MessageCircle } from "lucide-react";
 
 interface FooterProps {
   isRTL?: boolean;
@@ -31,6 +31,17 @@ export default function Footer({ isRTL = false }: FooterProps) {
               <span className="font-medium">@german_doner_rest</span>
             </a>
             
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/9647505552421"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-[hsl(39_92%_53%)] transition-colors"
+            >
+              <MessageCircle className="h-5 w-5" />
+              <span className="font-medium">WhatsApp</span>
+            </a>
+
             {/* Facebook */}
             <a 
               href="https://www.facebook.com/people/German-doner/61578288360345/?mibextid=wwXIfr&rdid=T9Jt65k1DGFEstZI&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1E2AWyz51e%2F%3Fmibextid%3DwwXIfr" 
