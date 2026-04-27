@@ -109,7 +109,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
               </div>
               <p className="text-muted-foreground text-base mb-4 min-h-[2.5em] leading-relaxed text-center">{item.description}</p>
               <div className="flex items-center justify-center mt-auto">
-                <span className="text-2xl font-bold px-2 py-1 rounded bg-secondary text-[hsl(0_0%_15%)]">{formatPrice(item.price, currency)}</span>
+                <span className="text-2xl font-bold px-2 py-1 rounded bg-secondary text-[hsl(0_0%_15%)]">{item.price ? formatPrice(item.price, currency) : '—'}</span>
                 {item.isSpecial && (
                   <Badge className="bg-primary text-[hsl(42_73%_94%)] ml-2">New</Badge>
                 )}
