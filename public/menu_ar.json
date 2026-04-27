@@ -56,7 +56,8 @@
           "id": "pom-yufka-chicken",
           "name": "بوم يوفكا دجاج",
           "description": "دجاج مع جبنة فيتا، فينغر مقرمش، صلصة خاصة، خس، طماطم، ملفوف أحمر وبصل ملفوف في خبز يوفكا.",
-          "image": "/new/pom-yufka.jpeg"
+          "image": "/new/pom-yufka.jpeg",
+          "price": 8500
         },
         {
           "id": "pom-yufka-beef",

@@ -56,7 +56,8 @@
           "id": "pom-yufka-chicken",
           "name": "پۆم یوفکا مريشك",
           "description": "مريشك لەگەڵ پەنیری فێتا، فینگەری کرەسپی، سۆسی تایبەت، کەسڵەت، تەماتە، کەڵەمبڕی سوور و پێڵەو لە نانی یۆفکادا پێچراوە.",
-          "image": "/new/pom-yufka.jpeg"
+          "image": "/new/pom-yufka.jpeg",
+          "price": 8500
         },
         {
           "id": "pom-yufka-beef",
