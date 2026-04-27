@@ -53,6 +53,20 @@
           "price": 7500
         },
         {
+          "id": "pom-yufka-chicken",
+          "name": "Pom-Yufka Chicken",
+          "description": "Chicken with feta cheese, crispy finger, special sauce, lettuce, tomatoes, red cabbage, and onions wrapped in yufka bread.",
+          "price": 9500,
+          "image": "/new/pom-yufka.jpeg"
+        },
+        {
+          "id": "pom-yufka-beef",
+          "name": "Pom-Yufka Meat",
+          "description": "Beef with feta cheese, crispy finger, special sauce, lettuce, tomatoes, red cabbage, and onions wrapped in yufka bread.",
+          "price": 9500,
+          "image": "/new/pom-yufka.jpeg"
+        },
+        {
           "id": "kebap-plate-beef",
           "name": "Kebap Plate Beef",
           "description": "Beef doner kebap served on a plate with fresh vegetables and signature sauce.",

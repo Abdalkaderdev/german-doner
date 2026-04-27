@@ -37,6 +37,8 @@ export const localImageByItemId: Record<string, string> = {
   "yufka-kebap-chicken": "/images/optimized/IMG_3774.PNG.webp",
   "yufka-kebap-beef": "/images/optimized/IMG_3774.PNG.webp",
   "yufka-kebap-mix": "/images/optimized/IMG_3774.PNG.webp",
+  "pom-yufka-chicken": "/new/pom-yufka.jpeg",
+  "pom-yufka-beef": "/new/pom-yufka.jpeg",
   "doner-pizza": "/images/optimized/IMG_3778.PNG.webp",
   "doner-chicken-pizza": "/images/upload/IMG_4124.JPG",
   "doner-box": "/images/optimized/IMG_3899.webp",
