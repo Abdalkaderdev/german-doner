@@ -9,6 +9,7 @@ const Index = lazy(() => import("./pages/Index"));
 const Menu = lazy(() => import("./pages/Menu"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Categories = lazy(() => import("./pages/Categories"));
+import WhatsAppFloat from "./components/WhatsAppFloat";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
+        <WhatsAppFloat />
       </BrowserRouter>
       <Analytics />
     </TooltipProvider>
