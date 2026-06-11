@@ -122,6 +122,20 @@
       ]
     },
     {
+      "id": "dite-doner",
+      "name": "دایت دۆنەر",
+      "items": [
+        {
+          "id": "dite-doner",
+          "name": "دایت دۆنەر",
+          "description": "کەسڵەت، تەماتە، پێڵەو، کەڵەمبڕی سوور، لەگەڵ سۆسی هەڵبژاردە تیژ یان شیرین.",
+          "price": 8500,
+          "image": "/new/dite-doner.jpeg",
+          "isSpecial": true
+        }
+      ]
+    },
+    {
       "id": "pide",
       "name": "پیدە",
       "items": [

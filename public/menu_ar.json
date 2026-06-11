@@ -122,6 +122,20 @@
       ]
     },
     {
+      "id": "dite-doner",
+      "name": "دايت دونر",
+      "items": [
+        {
+          "id": "dite-doner",
+          "name": "دايت دونر",
+          "description": "خس، بندورة، بصل، ملفوف أحمر، مع صلصة اختيارية حارة أو حلوة.",
+          "price": 8500,
+          "image": "/new/dite-doner.jpeg",
+          "isSpecial": true
+        }
+      ]
+    },
+    {
       "id": "pide",
       "name": "بيدا",
       "items": [

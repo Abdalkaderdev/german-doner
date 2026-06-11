@@ -122,6 +122,20 @@
       ]
     },
     {
+      "id": "dite-doner",
+      "name": "Dite Doner",
+      "items": [
+        {
+          "id": "dite-doner",
+          "name": "Dite Doner",
+          "description": "Lettuce, tomatoes, onions, red cabbage, with optional spicy or sweet sauce.",
+          "price": 8500,
+          "image": "/new/dite-doner.jpeg",
+          "isSpecial": true
+        }
+      ]
+    },
+    {
       "id": "pide",
       "name": "Pide",
       "items": [
