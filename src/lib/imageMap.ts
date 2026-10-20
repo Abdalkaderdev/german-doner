@@ -41,6 +41,7 @@ export const localImageByItemId: Record<string, string> = {
   "pom-yufka-beef": "/new/pom-yufka.jpeg",
   "dite-doner": "/new/dite-doner.jpeg",
   "cheese-chicken-doner": "/new/mozza-cheese-doner.jpeg",
+  "cheese-meat-doner": "/new/mozza-cheese-doner.jpeg",
   "doner-pizza": "/images/optimized/IMG_3778.PNG.webp",
   "doner-chicken-pizza": "/images/upload/IMG_4124.JPG",
   "doner-box": "/images/optimized/IMG_3899.webp",

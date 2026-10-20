@@ -136,14 +136,22 @@
       ]
     },
     {
-      "id": "cheese-chicken-doner",
-      "name": "چیز چیکن دۆنەر",
+      "id": "cheese-doner",
+      "name": "چیز دۆنەر",
       "items": [
         {
           "id": "cheese-chicken-doner",
           "name": "چیز چیکن دۆنەر",
           "description": "پەنیری مۆزەرێلای تواوە لە فەخاردا لەگەڵ مريشكی برژاو و بیبەری تێکەڵی شیرین. کەسڵەت، تەماتە، پێڵەو، کەڵەمبڕی سوور، لەگەڵ سۆسی هەڵبژاردە تیژ یان ئاسایی.",
           "price": 8000,
+          "image": "/new/mozza-cheese-doner.jpeg",
+          "isSpecial": true
+        },
+        {
+          "id": "cheese-meat-doner",
+          "name": "چیز میت دۆنەر",
+          "description": "پەنیری مۆزەرێلای تواوە لە فەخاردا لەگەڵ گۆشتی برژاو و بیبەری تێکەڵی شیرین. کەسڵەت، تەماتە، پێڵەو، کەڵەمبڕی سوور، لەگەڵ سۆسی هەڵبژاردە تیژ یان ئاسایی.",
+          "price": 9000,
           "image": "/new/mozza-cheese-doner.jpeg",
           "isSpecial": true
         }

@@ -136,14 +136,22 @@
       ]
     },
     {
-      "id": "cheese-chicken-doner",
-      "name": "Cheese Chicken Doner",
+      "id": "cheese-doner",
+      "name": "Cheese Doner",
       "items": [
         {
           "id": "cheese-chicken-doner",
           "name": "Cheese Chicken Doner",
           "description": "Melted mozzarella cheese in clay oven with grilled chicken and mixed sweet peppers. Lettuce, tomatoes, onions, red cabbage, with optional spicy or regular sauce.",
           "price": 8000,
+          "image": "/new/mozza-cheese-doner.jpeg",
+          "isSpecial": true
+        },
+        {
+          "id": "cheese-meat-doner",
+          "name": "Cheese Meat Doner",
+          "description": "Melted mozzarella cheese in clay oven with grilled beef and mixed sweet peppers. Lettuce, tomatoes, onions, red cabbage, with optional spicy or regular sauce.",
+          "price": 9000,
           "image": "/new/mozza-cheese-doner.jpeg",
           "isSpecial": true
         }

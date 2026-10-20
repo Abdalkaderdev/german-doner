@@ -136,14 +136,22 @@
       ]
     },
     {
-      "id": "cheese-chicken-doner",
-      "name": "تشيز تشيكن دونر",
+      "id": "cheese-doner",
+      "name": "تشيز دونر",
       "items": [
         {
           "id": "cheese-chicken-doner",
           "name": "تشيز تشيكن دونر",
           "description": "جبنة الموزاريلا الذائبة في الفخار مع الدجاج المشوي وفلفل مشكل حلو. خس، طماطم، بصل، ملفوف أحمر، مع صلصة اختيارية حارة أو عادية.",
           "price": 8000,
+          "image": "/new/mozza-cheese-doner.jpeg",
+          "isSpecial": true
+        },
+        {
+          "id": "cheese-meat-doner",
+          "name": "تشيز ميت دونر",
+          "description": "جبنة الموزاريلا الذائبة في الفخار مع اللحم المشوي وفلفل مشكل حلو. خس، طماطم، بصل، ملفوف أحمر، مع صلصة اختيارية حارة أو عادية.",
+          "price": 9000,
           "image": "/new/mozza-cheese-doner.jpeg",
           "isSpecial": true
         }
