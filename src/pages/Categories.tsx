@@ -72,6 +72,8 @@ const Categories = () => {
                 ? '/new/IMG_6369.JPG.jpeg'
               : cat.id === 'dite-doner'
                 ? '/new/dite-doner.jpeg'
+              : cat.id === 'cheese-chicken-doner'
+                ? '/new/mozza-cheese-doner.jpeg'
                   : resolveItemImage(cat.items?.[0] || {});
             return (
               <motion.button

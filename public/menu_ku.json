@@ -136,6 +136,20 @@
       ]
     },
     {
+      "id": "cheese-chicken-doner",
+      "name": "چیز چیکن دۆنەر",
+      "items": [
+        {
+          "id": "cheese-chicken-doner",
+          "name": "چیز چیکن دۆنەر",
+          "description": "پەنیری مۆزەرێلای تواوە لە فەخاردا لەگەڵ مريشكی برژاو و بیبەری تێکەڵی شیرین. کەسڵەت، تەماتە، پێڵەو، کەڵەمبڕی سوور، لەگەڵ سۆسی هەڵبژاردە تیژ یان ئاسایی.",
+          "price": 8000,
+          "image": "/new/mozza-cheese-doner.jpeg",
+          "isSpecial": true
+        }
+      ]
+    },
+    {
       "id": "pide",
       "name": "پیدە",
       "items": [
